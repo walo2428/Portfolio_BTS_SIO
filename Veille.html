@@ -1,45 +1,98 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veille Technologique</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Technologique - SDN</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="logo">MON PORTFOLIO</div>
-        <nav>
-            <ul>
-                <li><a href="Accueil.html">Accueil</a></li>
-                <li><a href="Projets.html">Projets</a></li>
-                <li><a href="Veille.html">Veille Technologique</a></li>
-                <li><a href="Contact.html">Contact & Avis</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="veille">
-        <h1>Veille Technologique</h1>
-        <p>Découvrez les dernières tendances et évolutions technologiques.</p>
-        
-        <div class="article-container">
-            <article class="veille-article">
-                <h2>Titre de l'Article 1</h2>
-                <p>Résumé de l’article à compléter...</p>
-                <a href="#" class="btn">Lire plus</a>
-            </article>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">OMAR TALIBI</div>
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="veille.html">Veille</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <article class="veille-article">
-                <h2>Titre de l'Article 2</h2>
-                <p>Résumé de l’article à compléter...</p>
-                <a href="#" class="btn">Lire plus</a>
-            </article>
-        </div>
-    </section>
+  <!-- CONTENU PRINCIPAL -->
+  <section class="fade-in" id="veille-sdn">
+    <h1><i class="fas fa-network-wired"></i> Veille Technologique - SDN (Software Defined Networking)</h1>
 
-    <footer>
-        <p>&copy; 2024 - Mon Portfolio</p>
-    </footer>
+    <p>Dans le cadre de mon BTS SIO option SISR, j'ai étudié la virtualisation des réseaux à travers la technologie SDN.</p>
+
+    <h2><i class="fas fa-book"></i> Définition</h2>
+    <p>Le SDN (Software Defined Networking) est une architecture réseau qui sépare le matériel (switchs, routeurs) de l'intelligence réseau (logiciel). Le réseau devient programmable et automatisé via un contrôleur centralisé.</p>
+
+    <h2><i class="fas fa-history"></i> Historique</h2>
+    <p>Le SDN est né en 2011 avec l'Open Networking Foundation. Il répond au besoin de rendre les réseaux plus rapides, flexibles et simples à gérer.</p>
+
+    <h2><i class="fas fa-cogs"></i> Fonctionnement</h2>
+    <ul>
+      <li><strong>Application Layer</strong> : les besoins applicatifs réseau.</li>
+      <li><strong>Control Layer</strong> : le contrôleur qui pilote tout.</li>
+      <li><strong>Infrastructure Layer</strong> : les switchs et routeurs simples.</li>
+    </ul>
+    <p>Le contrôleur envoie ses instructions au matériel via des protocoles comme OpenFlow.</p>
+
+    <h2><i class="fas fa-plus-circle"></i> Avantages</h2>
+    <ul>
+      <li>Automatisation et réduction des erreurs.</li>
+      <li>Flexibilité et adaptation rapide aux besoins métiers.</li>
+      <li>Réduction des coûts matériels.</li>
+      <li>Gestion centralisée et sécurisée du réseau.</li>
+    </ul>
+
+    <h2><i class="fas fa-exclamation-triangle"></i> Inconvénients</h2>
+    <ul>
+      <li>Coût initial de migration élevé.</li>
+      <li>Dépendance forte au contrôleur SDN.</li>
+      <li>Technologie encore jeune dans certaines entreprises.</li>
+    </ul>
+
+    <h2><i class="fas fa-building"></i> Exemples d'utilisation</h2>
+    <ul>
+      <li>Google : Projet "B4" reliant ses Data Centers en SDN.</li>
+      <li>Microsoft Azure et Amazon AWS : gestion cloud dynamique basée sur SDN.</li>
+      <li>Facebook : développement de son propre SDN interne.</li>
+    </ul>
+
+    <h2><i class="fas fa-diagram-project"></i> Schéma simplifié</h2>
+    <p><strong>Réseau Classique :</strong> Utilisateurs -> Switch -> Routeur -> Internet</p>
+    <p><strong>Réseau SDN :</strong> Utilisateurs -> Switch simple -> Contrôleur SDN logiciel -> Routeur -> Internet</p>
+
+    <h2><i class="fas fa-eye"></i> Mon avis personnel</h2>
+    <p>Le SDN est une solution moderne et indispensable pour les grandes infrastructures. Il facilite la gestion, réduit les erreurs humaines, et s'intègre parfaitement aux besoins actuels comme le Cloud et la 5G.</p>
+
+    <h2><i class="fas fa-link"></i> Sources</h2>
+    <ul>
+      <li>Cisco - Introduction au SDN</li>
+      <li>VMware NSX Documentation</li>
+      <li>Open Networking Foundation (ONF)</li>
+      <li>Google Research Paper "B4 SDN Infrastructure"</li>
+    </ul>
+
+    <a href="fiche-veille-sdn.pdf" download class="btn" style="display: inline-block; margin: 20px auto; background: #333; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">📥 Télécharger la fiche PDF</a>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 - Omar Talibi | Portfolio</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
