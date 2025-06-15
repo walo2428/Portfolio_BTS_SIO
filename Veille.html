@@ -1,98 +1,375 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veille Technologique - SDN</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Veille Technologique | Omar Talibi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* ===== Style général ===== */
+    body {
+      background-color: #1b2330;
+      color: #cdd9e5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #0a192f !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+      font-weight: 600;
+    }
+    .navbar-brand {
+      color: #00bfa6 !important;
+      font-size: 1.8rem;
+    }
+    .navbar-nav .nav-link {
+      color: #a3b8cc !important;
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #00bfa6 !important;
+    }
+
+    /* Bannière */
+    .highlight {
+      background: linear-gradient(135deg, #00bfa6, #007b8a);
+      color: #e0f7f4;
+      padding: 80px 20px;
+      text-align: center;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 8px 30px #007b8aaa;
+    }
+    .highlight h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      text-shadow: 1px 1px 6px #004d4d;
+      margin-bottom: 10px;
+    }
+    .highlight p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: 1.1px;
+    }
+
+    /* Titres sections */
+    .section-title {
+      color: #00bfa6;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    /* Sections */
+    section.container {
+      max-width: 900px;
+      margin-bottom: 4rem;
+    }
+    section.container p,
+    section.container ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      text-align: center;
+    }
+
+    /* Cards */
+    .card {
+      background-color: #152536;
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 191, 166, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      color: #a0d9d9;
+    }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 16px 40px rgba(0, 191, 166, 0.7);
+      color: #e0f7f4;
+    }
+    .card h5 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #00bfa6;
+    }
+    .card ul {
+      padding-left: 1rem;
+      text-align: left;
+      list-style: inside disc;
+      color: #b2e2db;
+    }
+
+    /* Image */
+    .img-sdn {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px #00bfa699;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .img-sdn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px #00bfa6cc;
+    }
+    small.text-muted {
+      color: #7f9db9 !important;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0a192f;
+      color: #8892b0;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: inset 0 5px 10px #007b8a22;
+    }
+
+    /* Fade-in animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Scroll to top button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #00bfa6;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 12px 14px;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 6px 16px rgba(0, 191, 166, 0.6);
+      z-index: 9999;
+      transition: background-color 0.3s ease;
+    }
+    #scrollTopBtn:hover {
+      background: #009e8f;
+    }
+
+    /* Dark mode toggle button */
+    .btn-darkmode {
+      border: 2px solid #00bfa6;
+      background: transparent;
+      color: #00bfa6;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-darkmode:hover {
+      background-color: #00bfa6;
+      color: #0a192f;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #0a192f;
+      color: #a8b2d1;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+    body.dark-mode .navbar {
+      background-color: #061420 !important;
+      box-shadow: 0 2px 15px rgba(0, 191, 166, 0.9);
+    }
+    body.dark-mode .navbar-brand,
+    body.dark-mode .navbar-nav .nav-link {
+      color: #00bfa6 !important;
+    }
+    body.dark-mode .card {
+      background-color: #072b34;
+      box-shadow: 0 8px 30px rgba(0, 191, 166, 0.7);
+      color: #a0d9d9;
+    }
+    body.dark-mode .highlight {
+      background: linear-gradient(135deg, #008374, #004d40);
+      color: #c9f9f0;
+      box-shadow: 0 8px 30px #004d4080;
+    }
+    body.dark-mode footer {
+      background-color: #061420;
+      color: #65e4d1;
+      box-shadow: inset 0 5px 15px #004d4077;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">OMAR TALIBI</div>
-    <div class="burger" id="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="veille.html">Veille</a></li>
-        <li><a href="contact.html">Contact</a></li>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Portfolio</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="accueil.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
+        <li class="nav-item"><a class="nav-link active" href="veille.html">Veille</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-3">
+          <button class="btn-darkmode" id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+        </li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </div>
+</nav>
 
-  <!-- CONTENU PRINCIPAL -->
-  <section class="fade-in" id="veille-sdn">
-    <h1><i class="fas fa-network-wired"></i> Veille Technologique - SDN (Software Defined Networking)</h1>
+<!-- BANNIÈRE -->
+<section class="highlight text-center fade-in">
+  <div class="container">
+    <h1 class="fw-bold">Veille Technologique</h1>
+    <p class="lead">Sujet analysé : Software Defined Networking (SDN)</p>
+  </div>
+</section>
 
-    <p>Dans le cadre de mon BTS SIO option SISR, j'ai étudié la virtualisation des réseaux à travers la technologie SDN.</p>
+<!-- INTRODUCTION -->
+<section class="container my-5 fade-in">
+  <h2 class="section-title">🎯 Problématique</h2>
+  <p class="col-lg-10 mx-auto fs-5">
+    <strong>Comment le SDN (Software Defined Networking) révolutionne-t-il l’administration des réseaux en entreprise, et quels sont les impacts pour un technicien SISR ?</strong>
+  </p>
+  <p class="col-lg-10 mx-auto">
+    Cette question oriente ma veille technologique durant le BTS SIO SISR. Elle permet de comprendre les évolutions dans les infrastructures réseaux, leur automatisation, et les nouvelles compétences à maîtriser.
+  </p>
+</section>
 
-    <h2><i class="fas fa-book"></i> Définition</h2>
-    <p>Le SDN (Software Defined Networking) est une architecture réseau qui sépare le matériel (switchs, routeurs) de l'intelligence réseau (logiciel). Le réseau devient programmable et automatisé via un contrôleur centralisé.</p>
+<!-- IMAGE -->
+<section class="container text-center mb-4 fade-in">
+  <img
+    src="https://www.sdxcentral.com/wp-content/uploads/2019/09/SDN-network.png"
+    class="img-sdn"
+    alt="Schéma SDN"
+  />
+  <small class="text-muted d-block mt-1">Illustration d’une architecture SDN</small>
+</section>
 
-    <h2><i class="fas fa-history"></i> Historique</h2>
-    <p>Le SDN est né en 2011 avec l'Open Networking Foundation. Il répond au besoin de rendre les réseaux plus rapides, flexibles et simples à gérer.</p>
+<!-- SDN DEFINITION -->
+<section class="container my-5 fade-in">
+  <h2 class="section-title">📘 Qu’est-ce que le SDN ?</h2>
+  <p class="col-lg-10 mx-auto">
+    Le SDN (Software Defined Networking) est une architecture réseau innovante qui sépare le plan de données (trafic réseau) du plan de contrôle (logique de routage), permettant une gestion centralisée, programmable et automatisée du réseau.
+  </p>
+</section>
 
-    <h2><i class="fas fa-cogs"></i> Fonctionnement</h2>
-    <ul>
-      <li><strong>Application Layer</strong> : les besoins applicatifs réseau.</li>
-      <li><strong>Control Layer</strong> : le contrôleur qui pilote tout.</li>
-      <li><strong>Infrastructure Layer</strong> : les switchs et routeurs simples.</li>
-    </ul>
-    <p>Le contrôleur envoie ses instructions au matériel via des protocoles comme OpenFlow.</p>
+<!-- ARCHITECTURE & OBJECTIFS -->
+<section class="container my-5">
+  <div class="row g-4">
+    <div class="col-md-6 fade-in">
+      <div class="card p-4 h-100">
+        <h4>🔧 Objectifs du SDN</h4>
+        <ul>
+          <li>Centraliser la gestion réseau</li>
+          <li>Réagir rapidement aux besoins métiers</li>
+          <li>Faciliter la supervision et l’automatisation</li>
+          <li>Réduire les erreurs humaines</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6 fade-in">
+      <div class="card p-4 h-100">
+        <h4>🧱 Architecture SDN</h4>
+        <ul>
+          <li><strong>Application Layer :</strong> outils de supervision</li>
+          <li><strong>Control Layer :</strong> contrôleurs SDN (OpenDaylight, ONOS)</li>
+          <li><strong>Infrastructure Layer :</strong> équipements réseau standards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <h2><i class="fas fa-plus-circle"></i> Avantages</h2>
-    <ul>
-      <li>Automatisation et réduction des erreurs.</li>
-      <li>Flexibilité et adaptation rapide aux besoins métiers.</li>
-      <li>Réduction des coûts matériels.</li>
-      <li>Gestion centralisée et sécurisée du réseau.</li>
-    </ul>
+<!-- IMPACT TECHNICIEN -->
+<section class="container my-5 fade-in">
+  <h2 class="section-title">👨‍💻 Impact pour le technicien SISR</h2>
+  <ul class="col-lg-8 mx-auto fs-5">
+    <li>Maîtriser les outils SDN et langages de programmation réseau (Python, REST API)</li>
+    <li>Apprendre la virtualisation et l’automatisation des infrastructures</li>
+    <li>Développer des compétences en sécurité des réseaux programmables</li>
+    <li>Collaborer avec les équipes développement et cloud</li>
+  </ul>
+</section>
 
-    <h2><i class="fas fa-exclamation-triangle"></i> Inconvénients</h2>
-    <ul>
-      <li>Coût initial de migration élevé.</li>
-      <li>Dépendance forte au contrôleur SDN.</li>
-      <li>Technologie encore jeune dans certaines entreprises.</li>
-    </ul>
+<!-- FOOTER -->
+<footer class="mt-5">
+  <p>© 2025 Omar Talibi - Tous droits réservés.</p>
+</footer>
 
-    <h2><i class="fas fa-building"></i> Exemples d'utilisation</h2>
-    <ul>
-      <li>Google : Projet "B4" reliant ses Data Centers en SDN.</li>
-      <li>Microsoft Azure et Amazon AWS : gestion cloud dynamique basée sur SDN.</li>
-      <li>Facebook : développement de son propre SDN interne.</li>
-    </ul>
+<!-- JS Bootstrap (optionnel) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <h2><i class="fas fa-diagram-project"></i> Schéma simplifié</h2>
-    <p><strong>Réseau Classique :</strong> Utilisateurs -> Switch -> Routeur -> Internet</p>
-    <p><strong>Réseau SDN :</strong> Utilisateurs -> Switch simple -> Contrôleur SDN logiciel -> Routeur -> Internet</p>
+<!-- JS Interactions -->
+<script>
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    document.body.classList.toggle('dark-mode');
+    // Change icon
+    const btn = document.getElementById('darkModeToggle');
+    if (document.body.classList.contains('dark-mode')) {
+      btn.textContent = '☀️';
+    } else {
+      btn.textContent = '🌙';
+    }
+  }
+  document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
 
-    <h2><i class="fas fa-eye"></i> Mon avis personnel</h2>
-    <p>Le SDN est une solution moderne et indispensable pour les grandes infrastructures. Il facilite la gestion, réduit les erreurs humaines, et s'intègre parfaitement aux besoins actuels comme le Cloud et la 5G.</p>
+  // Scroll-to-top button
+  const toTopBtn = document.createElement("button");
+  toTopBtn.innerText = "⬆️";
+  toTopBtn.id = "scrollTopBtn";
+  document.body.appendChild(toTopBtn);
 
-    <h2><i class="fas fa-link"></i> Sources</h2>
-    <ul>
-      <li>Cisco - Introduction au SDN</li>
-      <li>VMware NSX Documentation</li>
-      <li>Open Networking Foundation (ONF)</li>
-      <li>Google Research Paper "B4 SDN Infrastructure"</li>
-    </ul>
+  toTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    <a href="fiche-veille-sdn.pdf" download class="btn" style="display: inline-block; margin: 20px auto; background: #333; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">📥 Télécharger la fiche PDF</a>
+  window.addEventListener("scroll", () => {
+    toTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
 
-  </section>
+  // Fade-in animation on scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -100px 0px"
+  };
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2024 - Omar Talibi | Portfolio</p>
-  </footer>
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("appear");
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
 
-  <script src="script.js"></script>
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
 </body>
 </html>

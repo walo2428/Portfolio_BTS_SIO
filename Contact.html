@@ -2,54 +2,248 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Portfolio Omar Talibi</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Portfolio Omar Talibi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* ===== Style général ===== */
+    body {
+      background-color: #1b2330;
+      color: #cdd9e5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #0a192f !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+      font-weight: 600;
+    }
+    .navbar-brand {
+      color: #00bfa6 !important;
+      font-size: 1.8rem;
+    }
+    .navbar-nav .nav-link {
+      color: #a3b8cc !important;
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #00bfa6 !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #00bfa6, #007b8a);
+      padding: 100px 20px;
+      text-align: center;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 8px 30px #007b8aaa;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      text-shadow: 1px 1px 6px #004d4d;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease forwards;
+      opacity: 0;
+    }
+    .hero p {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 30px;
+      animation: fadeInUp 1s ease 0.5s forwards;
+      opacity: 0;
+    }
+
+    /* Bouton personnalisé */
+    .btn-primary-custom {
+      background-color: #073b3a;
+      color: #00bfa6;
+      font-weight: 700;
+      border: 2px solid #00bfa6;
+      padding: 12px 30px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .btn-primary-custom:hover {
+      background-color: #00bfa6;
+      color: #0a192f;
+      text-decoration: none;
+    }
+
+    /* Section Titles */
+    .section-title {
+      color: #00bfa6;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    /* Sections */
+    section.container {
+      max-width: 900px;
+      margin-bottom: 4rem;
+    }
+    section.container p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      text-align: center;
+    }
+
+    /* Formulaire */
+    form {
+      background-color: #152536;
+      padding: 30px 25px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 191, 166, 0.4);
+    }
+    .form-control {
+      background-color: #1b2330;
+      border: 1px solid #00bfa6;
+      color: #cdd9e5;
+      border-radius: 12px;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+      transition: border-color 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: #00f0b3;
+      box-shadow: 0 0 8px #00f0b3;
+      outline: none;
+      background-color: #1b2330;
+      color: #cdd9e5;
+    }
+    label {
+      color: #00bfa6;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0a192f;
+      color: #8892b0;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: inset 0 5px 10px #007b8a22;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">OMAR TALIBI</div>
-    <div class="burger" id="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="veille.html">Veille</a></li>
-        <li><a href="contact.html">Contact</a></li>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Portfolio</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="accueil.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
+        <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </div>
+</nav>
 
-  <!-- CONTACT -->
-  <section class="fade-in" id="contact">
-    <h1>Contact</h1>
-    <p>Une question ? Un projet ? Contactez-moi !</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1 class="fw-bold">Contactez-moi</h1>
+    <p>Une question, un projet ? N'hésitez pas à m'écrire.</p>
+  </div>
+</section>
 
-    <form>
-      <label for="nom">Nom</label>
-      <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+<!-- FORMULAIRE DE CONTACT -->
+<section class="container">
+  <h2 class="section-title">Formulaire de contact</h2>
+  <form>
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" class="form-control" placeholder="Votre nom" required />
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Votre email" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" class="form-control" placeholder="exemple@email.com" required />
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+    <label for="message">Message</label>
+    <textarea id="message" class="form-control" rows="6" placeholder="Votre message..." required></textarea>
 
-      <button type="submit">Envoyer</button>
-    </form>
-  </section>
+    <button type="submit" class="btn-primary-custom w-100">Envoyer</button>
+  </form>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2024 - Omar Talibi | Portfolio</p>
-  </footer>
+<!-- INFOS DE CONTACT -->
+<section class="container">
+  <h2 class="section-title">Mes coordonnées</h2>
+  <div class="info-box text-center">
+    <h4>Omar Talibi</h4>
+    <p>BTS SIO - SISR</p>
+    <p>IRIS MEDIASCHOOL, Nice</p>
+    <p>Email : <a href="mailto:talibiomar28@gmail.com" style="color:#00bfa6; text-decoration:none;">talibiomar28@gmail.com</a></p>
+    <p>Téléphone : 06 41 42 34 32</p>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

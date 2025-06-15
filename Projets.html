@@ -2,59 +2,281 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mes Projets - Portfolio Omar Talibi</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mes Projets – Omar Talibi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    /* ===== Style général ===== */
+    body {
+      background-color: #1b2330;
+      color: #cdd9e5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #0a192f !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+      font-weight: 600;
+    }
+    .navbar-brand {
+      color: #00bfa6 !important;
+      font-size: 1.8rem;
+    }
+    .navbar-nav .nav-link {
+      color: #a3b8cc !important;
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #00bfa6 !important;
+    }
+
+    /* Correction menu burger visible */
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
+    /* Header / Hero */
+    header {
+      background: linear-gradient(135deg, #00bfa6, #007b8a);
+      padding: 80px 20px;
+      text-align: center;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 8px 30px #007b8aaa;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      text-shadow: 1px 1px 6px #004d4d;
+      margin-bottom: 15px;
+    }
+    header p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #d0e9e9;
+      margin-bottom: 0;
+    }
+
+    /* Cards projets */
+    .project-card {
+      background-color: #152536;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 191, 166, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #a0d9d9;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0, 191, 166, 0.7);
+      color: #e0f7f4;
+    }
+    .project-card img {
+      border-radius: 16px 16px 0 0;
+      max-height: 180px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-title {
+      color: #00bfa6;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .card-text {
+      flex-grow: 1;
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #b0d9d9;
+    }
+    .tech-badge {
+      background-color: #00bfa6;
+      color: #0a192f;
+      font-weight: 700;
+      font-size: 0.75rem;
+      margin-right: 6px;
+      margin-top: 12px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      display: inline-block;
+      user-select: none;
+    }
+    .btn-outline-custom {
+      border-color: #00bfa6;
+      color: #00bfa6;
+      font-weight: 700;
+      margin-top: 15px;
+      border-radius: 30px;
+      align-self: flex-start;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-outline-custom:hover {
+      background-color: #00bfa6;
+      color: #0a192f;
+    }
+
+    /* Section container */
+    section.container {
+      max-width: 900px;
+      margin-bottom: 4rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0a192f;
+      color: #8892b0;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: inset 0 5px 10px #007b8a22;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 576px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+      header p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">OMAR TALIBI</div>
-    <div class="burger" id="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="veille.html">Veille</a></li>
-        <li><a href="contact.html">Contact</a></li>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="accueil.html">Portfolio</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="accueil.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link active" href="projets.html">Projets</a></li>
+        <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </div>
+</nav>
 
-  <!-- PROJETS -->
-  <section class="fade-in" id="projets">
-    <h1>Mes Projets</h1>
-    <div class="project-container">
-      <div class="project-card">
-        <img src="img/projet1.jpg" alt="Projet 1">
-        <div class="project-info">
-          <h3>Projet 1 : Site Web</h3>
-          <p>Création d’un site vitrine en HTML/CSS/JS pour une entreprise locale.</p>
-          <a href="#" class="btn">Voir le projet</a>
-        </div>
-      </div>
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <h1>Mes Projets Réalisés</h1>
+    <p>Voici une sélection de projets réalisés dans le cadre de ma formation BTS SIO SISR.</p>
+  </div>
+</header>
 
+<!-- PROJETS -->
+<section class="container">
+  <div class="row g-4">
+    <!-- Projet 1 -->
+    <div class="col-md-6">
       <div class="project-card">
-        <img src="img/projet2.jpg" alt="Projet 2">
-        <div class="project-info">
-          <h3>Projet 2 : Réseau simulé</h3>
-          <p>Configuration d’un réseau avec Packet Tracer (Cisco) et serveur Linux.</p>
-          <a href="#" class="btn">Voir le projet</a>
+        <img src="img/cinezone.png" alt="CinéZone" />
+        <div class="card-body">
+          <h5 class="card-title">CinéZone</h5>
+          <p class="card-text">Un site web de streaming développé en HTML/CSS/JS et hébergé en local sur un serveur Debian. Fonctionne avec un mini back-end local.</p>
+          <div>
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">JS</span>
+            <span class="tech-badge">Bootstrap</span>
+            <span class="tech-badge">Debian</span>
+          </div>
+          <a href="http://192.168.175.17" class="btn btn-outline-custom">Voir le projet</a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2024 - Omar Talibi | Portfolio</p>
-  </footer>
+    <!-- Projet 2 -->
+    <div class="col-md-6">
+      <div class="project-card">
+        <img src="img/nutrifit.png" alt="NutriFit" />
+        <div class="card-body">
+          <h5 class="card-title">NutriFit</h5>
+          <p class="card-text">Assistant nutritionnel connecté à une API alimentaire. Affichage dynamique des produits + filtres. Interface responsive en Bootstrap.</p>
+          <div>
+            <span class="tech-badge">JS</span>
+            <span class="tech-badge">API</span>
+            <span class="tech-badge">Bootstrap</span>
+          </div>
+          <a href="#" class="btn btn-outline-custom">Voir le projet</a>
+        </div>
+      </div>
+    </div>
 
-  <script src="script.js"></script>
+    <!-- Projet 3 -->
+    <div class="col-md-6">
+      <div class="project-card">
+        <img src="img/maintenance.png" alt="Projet Infrastructure" />
+        <div class="card-body">
+          <h5 class="card-title">Projet Infrastructure</h5>
+          <p class="card-text">Mise en place d’un réseau local sécurisé avec serveur DHCP, routage statique et pare-feu sur Debian. TP supervisé en binôme.</p>
+          <div>
+            <span class="tech-badge">Réseau</span>
+            <span class="tech-badge">Linux</span>
+            <span class="tech-badge">Sécurité</span>
+          </div>
+          <a href="#" class="btn btn-outline-custom">Voir le projet</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projet 4 -->
+    <div class="col-md-6">
+      <div class="project-card">
+        <img src="img/formation.png" alt="Projet Samba" />
+        <div class="card-body">
+          <h5 class="card-title">Gestion de fichiers SISR</h5>
+          <p class="card-text">Déploiement d’un partage de fichiers Samba, scripté avec Bash. Gestion des permissions, accès distant sécurisé et supervision basique.</p>
+          <div>
+            <span class="tech-badge">Linux</span>
+            <span class="tech-badge">Samba</span>
+            <span class="tech-badge">Bash</span>
+          </div>
+          <a href="#" class="btn btn-outline-custom">Voir le projet</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Autres projets -->
+    <div class="col-12">
+      <div class="text-center text-muted py-4" style="font-size: 1.2rem;">
+        🚧 D'autres projets seront ajoutés prochainement...
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 - Omar Talibi | Projets BTS SIO</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
