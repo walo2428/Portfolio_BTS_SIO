@@ -5,200 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accueil | Portfolio Omar Talibi</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    /* ===== Style général ===== */
-    body {
-      background-color: #1b2330;
-      color: #cdd9e5;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
-
-    /* Navbar */
-    .navbar {
-      background-color: #0a192f !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-      font-weight: 600;
-    }
-    .navbar-brand {
-      color: #00bfa6 !important;
-      font-size: 1.8rem;
-    }
-    .navbar-nav .nav-link {
-      color: #a3b8cc !important;
-      transition: color 0.3s ease;
-    }
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-      color: #00bfa6 !important;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, #00bfa6, #007b8a);
-      padding: 100px 20px;
-      text-align: center;
-      border-radius: 0 0 40px 40px;
-      box-shadow: 0 8px 30px #007b8aaa;
-    }
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 900;
-      text-shadow: 1px 1px 6px #004d4d;
-      margin-bottom: 20px;
-      animation: fadeInDown 1s ease forwards;
-      opacity: 0;
-    }
-    .hero p {
-      font-size: 1.4rem;
-      font-weight: 500;
-      margin-bottom: 30px;
-      animation: fadeInUp 1s ease 0.5s forwards;
-      opacity: 0;
-    }
-    .btn-primary-custom {
-      background-color: #073b3a;
-      color: #00bfa6;
-      font-weight: 700;
-      border: 2px solid #00bfa6;
-      padding: 12px 30px;
-      border-radius: 30px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-primary-custom:hover {
-      background-color: #00bfa6;
-      color: #0a192f;
-      text-decoration: none;
-    }
-
-    /* Section Titles */
-    .section-title {
-      color: #00bfa6;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 2rem;
-      letter-spacing: 2px;
-      text-align: center;
-    }
-
-    /* Sections */
-    section.container {
-      max-width: 900px;
-      margin-bottom: 4rem;
-    }
-    section.container p {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      color: #cbd5e1;
-      text-align: center;
-    }
-
-    /* Info Boxes */
-    .info-box {
-      background-color: #152536;
-      border-radius: 16px;
-      padding: 30px 25px;
-      box-shadow: 0 8px 24px rgba(0, 191, 166, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #a0d9d9;
-      cursor: default;
-    }
-    .info-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 40px rgba(0, 191, 166, 0.7);
-      color: #e0f7f4;
-    }
-    .info-box h4 {
-      color: #00bfa6;
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    /* Competences Boxes */
-    .competence-box {
-      background-color: #152536;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 6px 20px rgba(0, 191, 166, 0.35);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #a0d9d9;
-      cursor: default;
-      height: 100%;
-    }
-    .competence-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 14px 38px rgba(0, 191, 166, 0.65);
-      color: #e0f7f4;
-    }
-    .competence-box h5 {
-      margin-bottom: 12px;
-      color: #00bfa6;
-      font-weight: 600;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #0a192f;
-      color: #8892b0;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.9rem;
-      font-weight: 500;
-      box-shadow: inset 0 5px 10px #007b8a22;
-    }
-
-    /* Animations */
-    @keyframes fadeInDown {
-      0% {
-        opacity: 0;
-        transform: translateY(-40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 576px) {
-      .hero h1 {
-        font-size: 2.4rem;
-      }
-      .hero p {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="accueil.css" />
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Portfolio</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <a class="navbar-brand fw-bold" href="#">Portfolio | OMAR TALIBI</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -243,7 +58,7 @@
     </div>
     <div class="col-md-6">
       <div class="info-box h-100">
-        <h4>Lycée [Ton lycée]</h4>
+        <h4>IRIS MEDIASCHOOL</h4>
         <p>Formation de deux ans dans un établissement reconnu, avec des projets professionnels et des stages en entreprise.</p>
       </div>
     </div>
@@ -252,7 +67,7 @@
 
 <!-- COMPÉTENCES -->
 <section class="container my-5">
-  <h2 class="section-title">Mes compétences</h2>
+  <h2 class="section-title">Outils maitrisés</h2>
   <div class="row g-4 text-center">
     <div class="col-md-3">
       <div class="competence-box">
@@ -284,12 +99,72 @@
   </div>
 </section>
 
+<!-- SYNTHÈSE DES COMPÉTENCES -->
+<section class="container my-5">
+  <h2 class="section-title">Tableau de synthèse des compétences</h2>
+  <p class="text-center mb-4">
+    Compétences acquises durant ma formation BTS SIO option SISR, justifiées par des projets réels.
+  </p>
+
+  
+  <div class="table-responsive">
+    <table class="table table-dark table-bordered text-center align-middle">
+      <thead class="table-primary text-dark">
+        <tr>
+          <th>Code</th>
+          <th>Compétence</th>
+          <th>Justification par projet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>C1.1</td>
+          <td>Analyser les exigences liées à l’usage d’un service</td>
+          <td>CinéZone – Étude fonctionnelle du site et besoin local</td>
+        </tr>
+        <tr>
+          <td>C1.2</td>
+          <td>Évaluer les risques et déterminer les mesures de sécurité</td>
+          <td>Projet Infrastructure – Routage et pare-feu sous Debian</td>
+        </tr>
+        <tr>
+          <td>C2.3</td>
+          <td>Administrer les réseaux et les systèmes</td>
+          <td>Samba – Mise en place de partage sécurisé sur Linux</td>
+        </tr>
+        <tr>
+          <td>C3.1</td>
+          <td>Gérer le patrimoine informatique</td>
+          <td>Serveur Apache + gestion des droits sur Debian</td>
+        </tr>
+        <tr>
+          <td>C4.1</td>
+          <td>Travailler en mode projet</td>
+          <td>NutriFit – Travail collaboratif avec suivi GIT</td>
+        </tr>
+        <tr>
+          <td>C5.2</td>
+          <td>Mettre à disposition un service</td>
+          <td>Déploiement réseau local d’un site HTML + sécurité</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-center mt-4">
+  <a href="competences_bts_sio.pdf" class="btn btn-outline-success px-4 py-2" download>
+    Télécharger le tableau complet en PDF
+  </a>
+</div>
+
+</section>
+
+
 <!-- FOOTER -->
 <footer>
   <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
