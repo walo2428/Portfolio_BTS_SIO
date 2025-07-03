@@ -29,26 +29,26 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #00bfa6, #007b8a);
+  background: url('img/backround.jpg') center center/cover no-repeat;
   padding: 100px 20px;
   text-align: center;
   border-radius: 0 0 40px 40px;
-  box-shadow: 0 8px 30px #007b8aaa;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  color: white;
+  position: relative;
 }
-.hero h1 {
-  font-size: 3.5rem;
-  font-weight: 900;
-  text-shadow: 1px 1px 6px #004d4d;
-  margin-bottom: 20px;
-  animation: fadeInDown 1s ease forwards;
-  opacity: 0;
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* filtre sombre */
+  z-index: 1;
+  border-radius: 0 0 40px 40px;
 }
-.hero p {
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin-bottom: 30px;
-  animation: fadeInUp 1s ease 0.5s forwards;
-  opacity: 0;
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 .btn-primary-custom {
   background-color: #073b3a;
@@ -61,11 +61,7 @@ body {
   text-decoration: none;
   display: inline-block;
 }
-.btn-primary-custom:hover {
-  background-color: #00bfa6;
-  color: #0a192f;
-  text-decoration: none;
-}
+
 
 /* Section Titles */
 .section-title {
@@ -132,26 +128,65 @@ section.container p {
   font-weight: 600;
 }
 
-
-.table td, .table th {
-  vertical-align: middle;
-}
-
-.table-responsive {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 191, 166, 0.3);
-}
-.btn-outline-success {
+/* plus d'outils */
+.btn-competence-custom {
+  background-color: #152536;
+  color: #00bfa6;
+  border: 2px solid #00bfa6;
+  padding: 12px 28px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.05rem;
   border-radius: 30px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 191, 166, 0.3);
+  text-decoration: none;
+  display: inline-block;
 }
 
-.btn-outline-success:hover {
+.btn-competence-custom:hover {
   background-color: #00bfa6;
   color: #0a192f;
+  box-shadow: 0 10px 30px rgba(0, 191, 166, 0.6);
+  text-decoration: none;
+}
+
+
+/* ======= Tableau de synthèse des compétences ======= */
+.custom-table-wrapper {
+  background-color: #152536;
+  border-radius: 16px;
+  overflow-x: auto;
+  box-shadow: 0 8px 30px rgba(0, 191, 166, 0.3);
+  padding: 1rem;
+}
+
+.custom-competence-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+.custom-competence-table thead {
+  background-color: #00bfa6;
+  color: #0a192f;
+  text-transform: uppercase;
+}
+
+.custom-competence-table th,
+.custom-competence-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #2a3a4d;
+  text-align: left;
+}
+
+.custom-competence-table tbody tr:hover {
+  background-color: rgba(0, 191, 166, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.custom-competence-table tbody tr:last-child td {
+  border-bottom: none;
 }
 
 
@@ -165,6 +200,17 @@ footer {
   font-size: 0.9rem;
   font-weight: 500;
   box-shadow: inset 0 5px 10px #007b8a22;
+  .footer-links a {
+  color: #00bfa6;
+  margin: 0 8px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 }
 
 /* Animations */

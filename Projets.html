@@ -12,7 +12,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="accueil.html">Portfolio</a>
+    <a class="navbar-brand fw-bold" href="accueil.html">Portfolio | OMAR TALIBI</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -46,14 +46,19 @@
         <img src="img/cinezone.png" alt="CinéZone" />
         <div class="card-body">
           <h5 class="card-title">CinéZone</h5>
-          <p class="card-text">Un site web de streaming développé en HTML/CSS/JS et hébergé en local sur un serveur Debian. Fonctionne avec un mini back-end local.</p>
+          <p class="card-text">Un site web de streaming développé en HTML/CSS/JS et hébergé en local sur un serveur Debian.</p>
           <div>
             <span class="tech-badge">HTML</span>
             <span class="tech-badge">JS</span>
             <span class="tech-badge">Bootstrap</span>
             <span class="tech-badge">Debian</span>
+            <span class="tech-badge">WinSCP</span>
           </div>
-          <a href="https://walo2428.github.io/Cine_pro/" class="btn btn-outline-custom">Voir le projet</a>
+          <div class="btn-group mt-3">
+            <a href="https://walo2428.github.io/Cine_pro/" target="_blank" class="btn btn-outline-custom">Voir le projet</a>
+            <a href="https://github.com/walo2428/Cine_pro" target="_blank" class="btn btn-outline-custom">Documentation</a>
+            <a href="tableauxRP/cinezone.html" target="_blank" class="btn btn-outline-custom">Tableau RP</a>
+          </div>
         </div>
       </div>
     </div>
@@ -64,55 +69,78 @@
         <img src="img/nutrifit.png" alt="NutriFit" />
         <div class="card-body">
           <h5 class="card-title">NutriFit</h5>
-          <p class="card-text">Assistant nutritionnel connecté à une API alimentaire. Affichage dynamique des produits + filtres. Interface responsive en Bootstrap.</p>
+          <p class="card-text">Assistant nutritionnel connecté à une API alimentaire. Interface responsive en Bootstrap.</p>
           <div>
             <span class="tech-badge">JS</span>
             <span class="tech-badge">API</span>
             <span class="tech-badge">Bootstrap</span>
+            <span class="tech-badge">Debian</span>
           </div>
-          <a href="https://delcoco95.github.io/Nutrifit/" class="btn btn-outline-custom">Voir le projet</a>
+          <div class="btn-group mt-3">
+            <a href="https://delcoco95.github.io/Nutrifit/" target="_blank" class="btn btn-outline-custom">Voir le projet</a>
+            <a href="https://github.com/delcoco95/Nutrifit" target="_blank" class="btn btn-outline-custom">Documentation</a>
+            <a href="tableauxRP/nutrifit.html" target="_blank" class="btn btn-outline-custom">Tableau RP</a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Projet 3 -->
-    <div class="col-md-6">
-      <div class="project-card">
-        <img src="img/SDN1.png" alt="Projet Infrastructure" />
-        <div class="card-body">
-          <h5 class="card-title">Projet Infrastructure</h5>
-          <p class="card-text">Mise en place d’un réseau local sécurisé avec serveur DHCP, routage statique et pare-feu sur Debian. TP supervisé en binôme.</p>
-          <div>
-            <span class="tech-badge">Réseau</span>
-            <span class="tech-badge">Linux</span>
-            <span class="tech-badge">Sécurité</span>
-          </div>
-          <a href="#" class="btn btn-outline-custom">Voir le projet</a>
-        </div>
+<div class="col-md-6">
+  <div class="project-card">
+    <img src="img/classcord_server.png" alt="ClassCord Server" />
+    <div class="card-body">
+      <h5 class="card-title">ClassCord Server</h5>
+      <p class="card-text">
+        Serveur de chat TCP multi-clients sécurisé, déployé avec Docker et systemd, interopérable avec les clients Java SLAM. Projet réalisé en binôme dans le cadre du BTS SIO.
+      </p>
+      <div>
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Docker</span>
+        <span class="tech-badge">Linux</span>
+        <span class="tech-badge">systemd</span>
+        <span class="tech-badge">fail2ban</span>
+        <span class="tech-badge">SQLite</span>
+      </div>
+      <div class="btn-group mt-3">
+        <a href="https://github.com/AstrowareConception/classcord-server" target="_blank" class="btn btn-outline-custom">Voir le projet</a>
+        <a href="https://github.com/walo2428/classcord_server" target="_blank" class="btn btn-outline-custom">Documentation</a>
+        <a href="tableauxRP/classcord.html" target="_blank" class="btn btn-outline-custom">Tableau RP</a>
       </div>
     </div>
+  </div>
+</div>
+
 
     <!-- Projet 4 -->
-    <div class="col-md-6">
-      <div class="project-card">
-        <img src="img/Windows.png" alt="Projet Samba" />
-        <div class="card-body">
-          <h5 class="card-title">Gestion de fichiers SISR</h5>
-          <p class="card-text">Déploiement d’un partage de fichiers Samba, scripté avec Bash. Gestion des permissions, accès distant sécurisé et supervision basique.</p>
-          <div>
-            <span class="tech-badge">Linux</span>
-            <span class="tech-badge">Samba</span>
-            <span class="tech-badge">Bash</span>
-          </div>
-          <a href="#" class="btn btn-outline-custom">Voir le projet</a>
-        </div>
+<div class="col-md-6">
+  <div class="project-card">
+    <img src="img/windows_server.jpg" alt="Projet Windows Server" />
+    <div class="card-body">
+      <h5 class="card-title">Windows Server & Virtualisation</h5>
+      <p class="card-text">
+        Installation et configuration d’un serveur Windows Server sur VirtualBox (Oracle). 
+        Gestion des rôles AD DS, DNS, GPO et services de fichiers.
+      </p>
+      <div>
+        <span class="tech-badge">Windows Server</span>
+        <span class="tech-badge">Active Directory</span>
+        <span class="tech-badge">Oracle VirtualBox</span>
+      </div>
+      <div class="btn-group mt-3">
+        <a href="#" target="_blank" class="btn btn-outline-custom">Voir le projet</a>
+        <a href="docs/windows-server.pdf" target="_blank" class="btn btn-outline-custom">Documentation</a>
+        <a href="tableauxRP/windows-server.html" target="_blank" class="btn btn-outline-custom">Tableau RP</a>
       </div>
     </div>
+  </div>
+</div>
+
 
     <!-- Autres projets -->
     <div class="col-12">
-      <div class="text-center text-muted py-4" style="font-size: 1.2rem;">
-        🚧 D'autres projets seront ajoutés prochainement...
+      <div class="text-center py-5" style="color: #e99c29ad; font-size: 1.3rem; font-weight: 600; animation: fadeIn 3s infinite;">
+       D'autres projets innovants arrivent très bientôt. Restez connecté !
       </div>
     </div>
 
@@ -121,7 +149,12 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 - Omar Talibi | Projets BTS SIO</p>
+  <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
+  <p>
+    <a href="mentions-legales.html" target="_blank" style="color: #00bfa6;">Mentions légales</a> |
+    <a href="plan-du-site.html" target="_blank" style="color: #00bfa6;">Plan du site</a> |
+    <a href="confidentialite.html" target="_blank" style="color: #00bfa6;">Politique de confidentialité</a>
+  </p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

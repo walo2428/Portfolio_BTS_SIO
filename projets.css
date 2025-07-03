@@ -144,3 +144,18 @@ footer {
     font-size: 1.1rem;
   }
 }
+
+/*projets*/
+@keyframes fadeIn {
+  0% { opacity: 0.2; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.2; transform: scale(0.95); }
+}
+.btn-group .btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.btn-group {
+  flex-wrap: wrap;
+}
+
