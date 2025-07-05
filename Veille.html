@@ -50,7 +50,8 @@
   <div class="row align-items-center">
     <div class="col-md-6 order-md-2">
       <h2 class="section-title text-start">Qu’est-ce que le SDN ?</h2>
-      <p>Le SDN (Software Defined Networking) est une architecture réseau innovante qui sépare le plan de données (trafic réseau) du plan de contrôle (logique de routage), permettant une gestion centralisée, programmable et automatisée du réseau.</p>
+      <p>Le SDN (Software Defined Networking) est une approche innovante de la gestion des réseaux qui dissocie le matériel réseau (commutateurs, routeurs) de l'intelligence logicielle de contrôle. Concrètement, cela signifie que les décisions de routage et de gestion du trafic ne sont plus prises localement sur chaque appareil, mais centralisées via un contrôleur logiciel unique.</p>
+      <p>Cette centralisation permet une vision globale du réseau, une configuration automatisée, et une meilleure capacité à répondre aux besoins dynamiques des entreprises, notamment dans le contexte du cloud computing, des datacenters et des environnements virtualisés.</p>
     </div>
     <div class="col-md-6 order-md-1 text-center">
       <img src="img/SDN.png" alt="SDN" class="img-fluid img-sdn" />
@@ -62,12 +63,14 @@
   <div class="row align-items-center">
     <div class="col-md-6">
       <h2 class="section-title text-start">Objectifs du SDN</h2>
-      <ul>
-        <li>Centraliser la gestion réseau</li>
-        <li>Réagir rapidement aux besoins métiers</li>
-        <li>Faciliter la supervision et l’automatisation</li>
-        <li>Réduire les erreurs humaines</li>
-      </ul>
+<ul>
+  <li>Centraliser la gestion réseau afin de simplifier les opérations et d’augmenter la réactivité.</li>
+  <li>Automatiser la configuration des équipements, réduisant ainsi les délais de déploiement et les risques d’erreur.</li>
+  <li>Améliorer la sécurité en définissant des politiques globales de contrôle du trafic et d'accès.</li>
+  <li>Optimiser les performances du réseau grâce à l’analyse en temps réel du trafic et à la reconfiguration dynamique.</li>
+  <li>Faciliter l'intégration avec des technologies comme le cloud, les conteneurs (Docker), ou Kubernetes.</li>
+</ul>
+
     </div>
     <div class="col-md-6 text-center">
       <img src="img/SDN2.avif" alt="Objectifs SDN" class="img-fluid img-sdn" />
@@ -79,11 +82,12 @@
   <div class="row align-items-center">
     <div class="col-md-6 order-md-2">
       <h2 class="section-title text-start">Architecture SDN</h2>
-      <ul>
-        <li><strong>Application Layer :</strong> outils de supervision</li>
-        <li><strong>Control Layer :</strong> contrôleurs SDN (OpenDaylight, ONOS)</li>
-        <li><strong>Infrastructure Layer :</strong> équipements réseau standards</li>
-      </ul>
+<ul>
+  <li><strong>Application Layer :</strong> C’est le niveau supérieur où résident les applications réseau (pare-feu, outils d’analyse, QoS). Elles communiquent avec le contrôleur SDN pour exprimer des besoins.</li>
+  <li><strong>Control Layer :</strong> Il héberge le contrôleur SDN, véritable cerveau du réseau, qui gère les flux, applique les politiques et supervise les équipements via des protocoles comme OpenFlow.</li>
+  <li><strong>Infrastructure Layer :</strong> Il comprend les équipements réseau physiques ou virtuels (switchs, routeurs) qui obéissent aux instructions envoyées par le contrôleur.</li>
+</ul>
+<p>Cette architecture modulaire améliore la souplesse, la résilience et l’automatisation du réseau. Elle est souvent associée à des solutions open source telles qu’OpenDaylight, ONOS ou Ryu.</p>
     </div>
     <div class="col-md-6 order-md-1 text-center">
       <img src="img/SDN3.png" alt="Architecture SDN" class="img-fluid img-sdn" />
@@ -95,16 +99,55 @@
   <div class="row align-items-center">
     <div class="col-md-6">
       <h2 class="section-title text-start">Impact pour le technicien SISR</h2>
-      <ul>
-        <li>Maîtriser les outils SDN et langages de programmation réseau (Python, REST API)</li>
-        <li>Apprendre la virtualisation et l’automatisation des infrastructures</li>
-        <li>Développer des compétences en sécurité des réseaux programmables</li>
-        <li>Collaborer avec les équipes développement et cloud</li>
-      </ul>
+<ul>
+  <li>Être capable de déployer, configurer et maintenir un contrôleur SDN dans un environnement d'entreprise.</li>
+  <li>Utiliser des langages tels que Python, YAML et des outils comme Ansible pour automatiser les tâches réseau.</li>
+  <li>Maîtriser les API REST pour interagir avec les équipements et les services réseau.</li>
+  <li>Savoir travailler dans des environnements hybrides mêlant infrastructures traditionnelles et virtualisées.</li>
+  <li>Comprendre l’impact de SDN sur la cybersécurité et savoir intégrer des mécanismes de contrôle adaptés (filtrage, segmentation).</li>
+</ul>
+<p>En résumé, le technicien SISR doit évoluer vers un profil de “NetDevOps”, combinant compétences réseaux, systèmes et développement logiciel.</p>
     </div>
     <div class="col-md-6 text-center">
       <img src="img/SDN4.jpg" alt="Impact SISR" class="img-fluid img-sdn" />
     </div>
+  </div>
+</section>
+
+<!-- SECTION SOURCES - TABLEAU CLIQUABLE STYLÉ -->
+<section class="container my-5 fade-in">
+  <h2 class="section-title">Sources utilisées</h2>
+  <div class="table-responsive">
+    <table class="table table-dark custom-sources text-center">
+      <thead>
+        <tr>
+          <th>Nom du site</th>
+          <th>Accès</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Open Networking Foundation</td>
+          <td><a href="https://opennetworking.org/sdn-definition/" target="_blank" class="btn btn-visit">Visiter</a></td>
+        </tr>
+        <tr>
+          <td>Cisco - SDN</td>
+          <td><a href="https://www.cisco.com/c/fr_fr/solutions/software-defined-networking.html" target="_blank" class="btn btn-visit">Visiter</a></td>
+        </tr>
+        <tr>
+          <td>Red Hat - SDN</td>
+          <td><a href="https://www.redhat.com/en/topics/sdn" target="_blank" class="btn btn-visit">Visiter</a></td>
+        </tr>
+        <tr>
+          <td>Journal du Net</td>
+          <td><a href="https://www.journaldunet.fr/web-tech/dictionnaire-du-webmastering/1209979-sdn-software-defined-networking-definition-traduction-et-synonymes/" target="_blank" class="btn btn-visit">Visiter</a></td>
+        </tr>
+        <tr>
+          <td>VMware Glossaire</td>
+          <td><a href="https://www.vmware.com/topics/glossary/content/software-defined-networking.html" target="_blank" class="btn btn-visit">Visiter</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
