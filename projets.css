@@ -1,7 +1,7 @@
 /* ===== Style général ===== */
 body {
-  background-color: #1b2330;
-  color: #cdd9e5;
+  background-color: #d4d8db; /* Gris clair */
+  color: #1e293b; /* Texte foncé */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
@@ -10,21 +10,21 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #0a192f !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  background-color: #1e293b !important; /* Gris foncé */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   font-weight: 600;
 }
 .navbar-brand {
-  color: #00bfa6 !important;
+  color: #f97316 !important; /* Orange */
   font-size: 1.8rem;
 }
 .navbar-nav .nav-link {
-  color: #a3b8cc !important;
+  color: #e2e8f0 !important; /* Gris clair */
   transition: color 0.3s ease;
 }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-  color: #00bfa6 !important;
+  color: #f97316 !important; /* Orange */
 }
 .navbar-toggler-icon {
   filter: invert(1);
@@ -32,41 +32,40 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #00bfa6, #007b8a);
+  background: linear-gradient(to right, #1e293b, #f97316); /* gris foncé → orange */
   padding: 80px 20px;
   text-align: center;
   border-radius: 0 0 40px 40px;
-  box-shadow: 0 8px 30px #007b8aaa;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
   margin-bottom: 40px;
 }
 header h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 900;
-  text-shadow: 1px 1px 6px #004d4d;
+  color: #fff;
   margin-bottom: 15px;
 }
 header p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  color: #d0e9e9;
+  color: #fff7ed;
   margin-bottom: 0;
 }
 
 /* Cards projets */
 .project-card {
-  background-color: #152536;
+  background-color: #ffffff; /* Gris clair pour les cartes */
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 191, 166, 0.4);
+  box-shadow: 0 8px 24px rgba(249,115,22,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #a0d9d9;
+  color: #1e293b;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(0, 191, 166, 0.7);
-  color: #e0f7f4;
+  box-shadow: 0 16px 40px rgba(249,115,22,0.4);
 }
 .project-card img {
   border-radius: 16px 16px 0 0;
@@ -81,7 +80,7 @@ header p {
   padding: 20px;
 }
 .card-title {
-  color: #00bfa6;
+  color: #f97316; /* Orange */
   font-weight: 700;
   margin-bottom: 12px;
 }
@@ -89,11 +88,11 @@ header p {
   flex-grow: 1;
   font-size: 1rem;
   line-height: 1.4;
-  color: #b0d9d9;
+  color: #1e293b;
 }
 .tech-badge {
-  background-color: #00bfa6;
-  color: #0a192f;
+  background-color: #f97316; /* Orange */
+  color: #ffffff;
   font-weight: 700;
   font-size: 0.75rem;
   margin-right: 6px;
@@ -104,8 +103,8 @@ header p {
   user-select: none;
 }
 .btn-outline-custom {
-  border-color: #00bfa6;
-  color: #00bfa6;
+  border-color: #f97316;
+  color: #f97316;
   font-weight: 700;
   margin-top: 15px;
   border-radius: 30px;
@@ -113,44 +112,46 @@ header p {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .btn-outline-custom:hover {
-  background-color: #00bfa6;
-  color: #0a192f;
+  background-color: #f97316;
+  color: #1e293b;
 }
 
 /* Section */
 section.container {
-  max-width: 900px;
+  max-width: 1000px;
   margin-bottom: 4rem;
 }
 
 /* Footer */
 footer {
-  background-color: #0a192f;
-  color: #8892b0;
+  background-color: #1e293b;
+  color: #ffffff;
   text-align: center;
   padding: 20px 0;
   font-size: 0.9rem;
   font-weight: 500;
-  box-shadow: inset 0 5px 10px #007b8a22;
+  border-top: 3px solid #f97316;
   margin-top: 50px;
 }
 
 /* Responsive */
 @media (max-width: 576px) {
   header h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
   }
   header p {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
-/*projets*/
+/* Animations */
 @keyframes fadeIn {
   0% { opacity: 0.2; transform: scale(0.95); }
   50% { opacity: 1; transform: scale(1); }
   100% { opacity: 0.2; transform: scale(0.95); }
 }
+
+/* Filtres projets */
 .btn-group .btn {
   margin-right: 10px;
   margin-bottom: 10px;
@@ -158,4 +159,3 @@ footer {
 .btn-group {
   flex-wrap: wrap;
 }
-

@@ -5,8 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Veille Technologique | Omar Talibi</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="veille.css" rel="stylesheet" />
+  <link rel="stylesheet" href="veille.css" />
+  <style>
+    /* --- Ajout du style pour les cartes de solutions --- */
+    .solutions-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .solution-card {
+      background-color: #ffffff;
+      border: 2px solid #f97316;
+      border-radius: 15px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+    .solution-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(249, 115, 22, 0.3);
+    }
+    .solution-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-bottom: 2px solid #f97316;
+    }
+    .solution-card h4 {
+      color: #f97316;
+      margin-top: 15px;
+      font-weight: 700;
+    }
+    .solution-card p {
+      padding: 0 15px;
+      color: #1e293b;
+      font-size: 1rem;
+    }
+    .solution-card a {
+      display: inline-block;
+      margin: 15px 0 20px 0;
+      background-color: #f97316;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .solution-card a:hover {
+      background-color: white;
+      color: #f97316;
+      border: 2px solid #f97316;
+    }
+  </style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
@@ -18,7 +74,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
         <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
         <li class="nav-item"><a class="nav-link" href="experiences.html">Expériences</a></li>
         <li class="nav-item"><a class="nav-link active" href="veille.html">Veille</a></li>
@@ -28,98 +83,95 @@
   </div>
 </nav>
 
-<!-- BANNIÈRE -->
-<section class="highlight text-center fade-in">
+<!-- HERO -->
+<section class="hero">
   <div class="container">
     <h1 class="fw-bold">Veille Technologique</h1>
-    <p class="lead">Sujet analysé : Software Defined Networking (SDN)</p>
+    <p>Évolution des solutions de virtualisation en entreprise</p>
   </div>
 </section>
 
-<!-- INTRODUCTION -->
-<section class="container my-5 fade-in">
+<!-- PROBLÉMATIQUE -->
+<section class="container">
   <h2 class="section-title">Problématique</h2>
-  <p class="col-lg-10 mx-auto fs-5">
-    <strong>Comment le SDN (Software Defined Networking) révolutionne-t-il l’administration des réseaux en entreprise, et quels sont les impacts pour un technicien SISR ?</strong>
-  </p>
-  <p class="col-lg-10 mx-auto">
-    Cette question oriente ma veille technologique durant le BTS SIO SISR. Elle permet de comprendre les évolutions dans les infrastructures réseaux, leur automatisation, et les nouvelles compétences à maîtriser.
+  <p>
+    Comment les solutions de virtualisation ont-elles évolué pour répondre aux besoins actuels des entreprises en matière de coût, de performance et de sécurité ?
   </p>
 </section>
 
-<section class="container my-5 fade-in">
-  <div class="row align-items-center">
-    <div class="col-md-6 order-md-2">
-      <h2 class="section-title text-start">Qu’est-ce que le SDN ?</h2>
-      <p>Le SDN (Software Defined Networking) est une approche innovante de la gestion des réseaux qui dissocie le matériel réseau (commutateurs, routeurs) de l'intelligence logicielle de contrôle. Concrètement, cela signifie que les décisions de routage et de gestion du trafic ne sont plus prises localement sur chaque appareil, mais centralisées via un contrôleur logiciel unique.</p>
-      <p>Cette centralisation permet une vision globale du réseau, une configuration automatisée, et une meilleure capacité à répondre aux besoins dynamiques des entreprises, notamment dans le contexte du cloud computing, des datacenters et des environnements virtualisés.</p>
+<!-- THEME 1 -->
+<section class="container">
+  <h2 class="section-title text-start">Thème 1 : Comprendre la virtualisation</h2>
+
+  <p>
+    La virtualisation consiste à exécuter plusieurs systèmes d’exploitation indépendants sur une même machine physique.
+    Grâce à un logiciel appelé <strong>hyperviseur</strong>, les ressources matérielles (processeur, RAM, stockage) sont partagées efficacement.
+  </p>
+
+  <p>
+    Cette technologie est devenue indispensable pour les entreprises : elle permet d’optimiser les coûts, de simplifier la maintenance, et de rendre les infrastructures plus flexibles.
+  </p>
+</section>
+
+<!-- THEME 2 : LES PRINCIPALES SOLUTIONS -->
+<section class="container">
+  <h2 class="section-title text-start">Thème 2 : Les principales solutions de virtualisation</h2>
+
+  <div class="solutions-container">
+    <!-- VMware -->
+    <div class="solution-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vmware_workstation_16_icon.png" alt="VMware logo" />
+      <h4>VMware</h4>
+      <p>
+        Solution propriétaire leader du marché. Offre des fonctions avancées comme vMotion et vCenter.
+        Utilisée dans les grands datacenters pour sa stabilité et sa sécurité.
+      </p>
+      <a href="https://www.vmware.com/" target="_blank">Source VMware</a>
     </div>
-    <div class="col-md-6 order-md-1 text-center">
-      <img src="img/SDN.png" alt="SDN" class="img-fluid img-sdn" />
+
+    <!-- Proxmox -->
+    <div class="solution-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Proxmox_logo.png" alt="Proxmox logo" />
+      <h4>Proxmox VE</h4>
+      <p>
+        Plateforme open source basée sur KVM et LXC. Interface Web intuitive, gestion des clusters et sauvegardes intégrées.
+        Très populaire dans les PME.
+      </p>
+      <a href="https://www.proxmox.com/" target="_blank">Source Proxmox</a>
+    </div>
+
+    <!-- Hyper-V -->
+    <div class="solution-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Microsoft_Hyper-V_logo.svg" alt="Hyper-V logo" />
+      <h4>Microsoft Hyper-V</h4>
+      <p>
+        Intégré à Windows Server, Hyper-V permet la virtualisation, la réplication et l’administration centralisée.
+        Solution économique et bien intégrée dans les environnements Windows.
+      </p>
+      <a href="https://learn.microsoft.com/fr-fr/windows-server/" target="_blank">Source Microsoft</a>
     </div>
   </div>
 </section>
 
-<section class="container my-5 fade-in">
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <h2 class="section-title text-start">Objectifs du SDN</h2>
-<ul>
-  <li>Centraliser la gestion réseau afin de simplifier les opérations et d’augmenter la réactivité.</li>
-  <li>Automatiser la configuration des équipements, réduisant ainsi les délais de déploiement et les risques d’erreur.</li>
-  <li>Améliorer la sécurité en définissant des politiques globales de contrôle du trafic et d'accès.</li>
-  <li>Optimiser les performances du réseau grâce à l’analyse en temps réel du trafic et à la reconfiguration dynamique.</li>
-  <li>Faciliter l'intégration avec des technologies comme le cloud, les conteneurs (Docker), ou Kubernetes.</li>
-</ul>
+<!-- THEME 3 -->
+<section class="container">
+  <h2 class="section-title text-start">Thème 3 : Évolutions récentes et tendances</h2>
 
-    </div>
-    <div class="col-md-6 text-center">
-      <img src="img/SDN2.avif" alt="Objectifs SDN" class="img-fluid img-sdn" />
-    </div>
-  </div>
+  <ul>
+    <li><strong>2024 :</strong> Les entreprises migrent vers des environnements hybrides, combinant virtualisation locale et cloud (AWS, Azure, OVHcloud).</li>
+    <li><strong>2023 :</strong> Intégration d’API REST et d’outils comme Terraform ou Ansible pour automatiser la gestion des VM.</li>
+    <li><strong>2022 :</strong> Amélioration de la sécurité des hyperviseurs (chiffrement, sandboxing, snapshots sécurisés).</li>
+    <li><strong>2021 :</strong> Montée en puissance des solutions open source, réduisant la dépendance aux licences propriétaires.</li>
+  </ul>
+
+  <p><em>Sources :</em> IT-Connect, ZDNet, Red Hat Blog, ANSSI</p>
 </section>
 
-<section class="container my-5 fade-in">
-  <div class="row align-items-center">
-    <div class="col-md-6 order-md-2">
-      <h2 class="section-title text-start">Architecture SDN</h2>
-<ul>
-  <li><strong>Application Layer :</strong> C’est le niveau supérieur où résident les applications réseau (pare-feu, outils d’analyse, QoS). Elles communiquent avec le contrôleur SDN pour exprimer des besoins.</li>
-  <li><strong>Control Layer :</strong> Il héberge le contrôleur SDN, véritable cerveau du réseau, qui gère les flux, applique les politiques et supervise les équipements via des protocoles comme OpenFlow.</li>
-  <li><strong>Infrastructure Layer :</strong> Il comprend les équipements réseau physiques ou virtuels (switchs, routeurs) qui obéissent aux instructions envoyées par le contrôleur.</li>
-</ul>
-<p>Cette architecture modulaire améliore la souplesse, la résilience et l’automatisation du réseau. Elle est souvent associée à des solutions open source telles qu’OpenDaylight, ONOS ou Ryu.</p>
-    </div>
-    <div class="col-md-6 order-md-1 text-center">
-      <img src="img/SDN3.png" alt="Architecture SDN" class="img-fluid img-sdn" />
-    </div>
-  </div>
-</section>
-
-<section class="container my-5 fade-in">
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <h2 class="section-title text-start">Impact pour le technicien SISR</h2>
-<ul>
-  <li>Être capable de déployer, configurer et maintenir un contrôleur SDN dans un environnement d'entreprise.</li>
-  <li>Utiliser des langages tels que Python, YAML et des outils comme Ansible pour automatiser les tâches réseau.</li>
-  <li>Maîtriser les API REST pour interagir avec les équipements et les services réseau.</li>
-  <li>Savoir travailler dans des environnements hybrides mêlant infrastructures traditionnelles et virtualisées.</li>
-  <li>Comprendre l’impact de SDN sur la cybersécurité et savoir intégrer des mécanismes de contrôle adaptés (filtrage, segmentation).</li>
-</ul>
-<p>En résumé, le technicien SISR doit évoluer vers un profil de “NetDevOps”, combinant compétences réseaux, systèmes et développement logiciel.</p>
-    </div>
-    <div class="col-md-6 text-center">
-      <img src="img/SDN4.jpg" alt="Impact SISR" class="img-fluid img-sdn" />
-    </div>
-  </div>
-</section>
-
-<!-- SECTION SOURCES - TABLEAU CLIQUABLE STYLÉ -->
-<section class="container my-5 fade-in">
+<!-- SOURCES -->
+<section class="container">
   <h2 class="section-title">Sources utilisées</h2>
   <div class="table-responsive">
-    <table class="table table-dark custom-sources text-center">
+    <table class="table custom-sources text-center">
       <thead>
         <tr>
           <th>Nom du site</th>
@@ -128,31 +180,33 @@
       </thead>
       <tbody>
         <tr>
-          <td>Open Networking Foundation</td>
-          <td><a href="https://opennetworking.org/sdn-definition/" target="_blank" class="btn btn-visit">Visiter</a></td>
+          <td>VMware</td>
+          <td><a href="https://www.vmware.com/"                                                                                                                              target="_blank" class="btn btn-primary-custom">Visiter</a></td>
         </tr>
         <tr>
-          <td>Cisco - SDN</td>
-          <td><a href="https://www.cisco.com/c/fr_fr/solutions/software-defined-networking.html" target="_blank" class="btn btn-visit">Visiter</a></td>
+          <td>Proxmox</td>
+          <td><a href="https://www.proxmox.com/" target="_blank" class="btn btn-primary-custom">Visiter</a></td>
         </tr>
         <tr>
-          <td>Red Hat - SDN</td>
-          <td><a href="https://www.redhat.com/en/topics/sdn" target="_blank" class="btn btn-visit">Visiter</a></td>
+          <td>Microsoft Learn</td>
+          <td><a href="https://learn.microsoft.com/fr-fr/windows-server/" target="_blank" class="btn btn-primary-custom">Visiter</a></td>
         </tr>
         <tr>
-          <td>Journal du Net</td>
-          <td><a href="https://www.journaldunet.fr/web-tech/dictionnaire-du-webmastering/1209979-sdn-software-defined-networking-definition-traduction-et-synonymes/" target="_blank" class="btn btn-visit">Visiter</a></td>
+          <td>IT-Connect</td>
+          <td><a href="https://www.it-connect.fr/" target="_blank" class="btn btn-primary-custom">Visiter</a></td>
         </tr>
         <tr>
-          <td>VMware Glossaire</td>
-          <td><a href="https://www.vmware.com/topics/glossary/content/software-defined-networking.html" target="_blank" class="btn btn-visit">Visiter</a></td>
+          <td>ZDNet France</td>
+          <td><a href="https://www.zdnet.fr/" target="_blank" class="btn btn-primary-custom">Visiter</a></td>
         </tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<!-- FOOTER -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="veille.js"></script>
+
 <footer>
   <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
   <p>
@@ -161,8 +215,5 @@
     <a href="confidentialite.html" target="_blank" style="color: #00bfa6;">Politique de confidentialité</a>
   </p>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="veille.js"></script>
 </body>
 </html>

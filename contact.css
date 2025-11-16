@@ -1,7 +1,7 @@
 /* ===== Style général ===== */
 body {
-  background-color: #1b2330;
-  color: #cdd9e5;
+  background-color: #d4d8db; /* Fond clair */
+  color: #1e293b; /* Texte foncé */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
@@ -10,30 +10,31 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #0a192f !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  background-color: #1e293b !important; /* Gris foncé */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   font-weight: 600;
 }
 .navbar-brand {
-  color: #00bfa6 !important;
+  color: #f97316 !important; /* Orange vif */
   font-size: 1.8rem;
 }
 .navbar-nav .nav-link {
-  color: #a3b8cc !important;
+  color: #e2e8f0 !important; /* Gris clair */
   transition: color 0.3s ease;
 }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-  color: #00bfa6 !important;
+  color: #f97316 !important; /* Orange vif */
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #00bfa6, #007b8a);
+  background: linear-gradient(135deg, #1e293b, #f97316); /* Gris foncé → orange vif */
   padding: 100px 20px;
   text-align: center;
   border-radius: 0 0 40px 40px;
-  box-shadow: 0 8px 30px #007b8aaa;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 .hero h1 {
   font-size: 3.5rem;
@@ -53,26 +54,25 @@ body {
 
 /* Bouton personnalisé */
 .btn-primary-custom {
-  background-color: #073b3a;
-  color: #00bfa6;
+  background-color: #f97316; /* Orange vif */
+  color: #ffffff;
   font-weight: 700;
-  border: 2px solid #00bfa6;
+  border: 2px solid #f97316;
   padding: 12px 30px;
   border-radius: 30px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
 }
 .btn-primary-custom:hover {
-  background-color: #00bfa6;
-  color: #0a192f;
-  text-decoration: none;
+  background-color: #ffffff;
+  color: #f97316;
 }
 
 /* Section Titles */
 .section-title {
-  color: #00bfa6;
+  color: #f97316; /* Orange vif */
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 2rem;
@@ -88,35 +88,35 @@ section.container {
 section.container p {
   font-size: 1.15rem;
   line-height: 1.6;
-  color: #cbd5e1;
+  color: #1e293b;
   text-align: center;
 }
 
 /* Formulaire */
 form {
-  background-color: #152536;
+  background-color: #ffffff; /* blanc pour contraste */
   padding: 30px 25px;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 191, 166, 0.4);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.15); /* orange léger */
 }
 .form-control {
-  background-color: #1b2330;
-  border: 1px solid #00bfa6;
-  color: #cdd9e5;
+  background-color: #f8f9fa; /* gris très clair */
+  border: 1px solid #f97316; /* orange vif */
+  color: #1e293b;
   border-radius: 12px;
   padding: 10px 15px;
   margin-bottom: 20px;
   transition: border-color 0.3s ease;
 }
 .form-control:focus {
-  border-color: #00f0b3;
-  box-shadow: 0 0 8px #00f0b3;
+  border-color: #f97316; /* orange vif */
+  box-shadow: 0 0 8px #f97316;
   outline: none;
-  background-color: #1b2330;
-  color: #cdd9e5;
+  background-color: #f8f9fa;
+  color: #1e293b;
 }
 label {
-  color: #00bfa6;
+  color: #f97316; /* orange vif */
   font-weight: 600;
   margin-bottom: 8px;
   display: block;
@@ -124,43 +124,37 @@ label {
 
 /* Footer */
 footer {
-  background-color: #0a192f;
-  color: #8892b0;
+  background-color: #1e293b; /* gris foncé */
+  color: #ffffff;
   text-align: center;
   padding: 20px 0;
   font-size: 0.9rem;
   font-weight: 500;
-  box-shadow: inset 0 5px 10px #007b8a22;
+  border-top: 3px solid #f97316; /* orange vif */
+}
+footer a {
+  color: #f97316; /* orange vif */
+  margin: 0 8px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* Animations */
 @keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(-40px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive adjustments */
 @media (max-width: 576px) {
-  .hero h1 {
-    font-size: 2.4rem;
-  }
-  .hero p {
-    font-size: 1.1rem;
-  }
+  .hero h1 { font-size: 2.4rem; }
+  .hero p { font-size: 1.1rem; }
 }

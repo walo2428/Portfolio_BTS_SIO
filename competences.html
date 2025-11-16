@@ -9,18 +9,32 @@
 </head>
 <body>
 
-<!-- NAVBAR SIMPLIFIÉE -->
-<nav class="navbar-simple">
-  <a href="index.html#outils" class="navbar-brand">← Retour à l’accueil</a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Omar Talibi</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link active" href="competences.html">Compétences</a></li>
+        <li class="nav-item"><a class="nav-link" href="experiences.html">Expériences</a></li>
+        <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
-<!-- HEADER -->
-<header>
+<!-- HERO -->
+<section class="hero">
   <div class="container">
-    <h1>Mes outils</h1>
-    <p>En tant qu'étudiant en BTS SIO option SISR, je me spécialise dans l’administration des systèmes, réseaux, la sécurité et le développement.</p>
+    <h1>Mes Compétences</h1>
+    <p>Un aperçu de mes savoir-faire en systèmes, réseaux, sécurité et développement.</p>
   </div>
-</header>
+</section>
 
 <!-- COMPETENCES : Systèmes & Réseaux -->
 <section class="container">
@@ -47,74 +61,33 @@
         <p class="competence-desc">Configuration de réseaux, routage, VLANs et simulation avec Cisco PT.</p>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="competence-card">
-        <img src="img/Windows.png" alt="Windows Server" class="competence-icon" />
-        <h5 class="competence-title">Windows Server</h5>
-        <p class="competence-desc">Gestion des rôles, services AD, DHCP, DNS et stratégie de groupe.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="competence-card">
-        <img src="img/Active_Derectory.png" alt="Active Directory" class="competence-icon" />
-        <h5 class="competence-title">Active Directory</h5>
-        <p class="competence-desc">Gestion des utilisateurs, OU, GPO et politiques de sécurité.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="competence-card">
-        <img src="img/powershell.png" alt="SQL" class="competence-icon" />
-        <h5 class="competence-title">PowerShell</h5>
-        <p class="competence-desc">Requêtes cmdd, création de bases de données et manipulation de données.</p>
-      </div>
-    </div>
   </div>
+    
 </section>
 
-<!-- COMPETENCES : Autres outils -->
+<!-- COMPETENCES : Développement -->
 <section class="container">
-  <h2 class="section-title">Développement et Autres</h2>
+  <h2 class="section-title">Développement & Outils</h2>
   <div class="row g-4">
     <div class="col-md-4">
       <div class="competence-card">
-        <img src="img/html.png" alt="HTML" class="competence-icon" />
+        <img src="img/html.png" alt="HTML CSS" class="competence-icon" />
         <h5 class="competence-title">HTML / CSS</h5>
-        <p class="competence-desc">Création de sites web statiques, responsive et accessibles.</p>
+        <p class="competence-desc">Création de sites web modernes, responsives et accessibles.</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="competence-card">
         <img src="img/js.webp" alt="JavaScript" class="competence-icon" />
         <h5 class="competence-title">JavaScript</h5>
-        <p class="competence-desc">Ajout de dynamique sur les pages web avec événements & DOM.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="competence-card">
-        <img src="img/sql.png" alt="PHP" class="competence-icon" />
-        <h5 class="competence-title">SQL</h5>
-        <p class="competence-desc">Création de pages dynamiques et interaction avec des bases de données.</p>
+        <p class="competence-desc">Ajout d’interactivité et d’animations aux pages web.</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="competence-card">
         <img src="img/python.png" alt="Python" class="competence-icon" />
         <h5 class="competence-title">Python</h5>
-        <p class="competence-desc">Utilisation de scripts pour automatisation, traitement simple de données.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="competence-card">
-        <img src="img/github.png" alt="Git" class="competence-icon" />
-        <h5 class="competence-title">Git / GitHub</h5>
-        <p class="competence-desc">Versionnage de code, branches, pull requests, collaboration.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="competence-card">
-        <img src="img/Figma.png" alt="Figma" class="competence-icon" />
-        <h5 class="competence-title">Figma</h5>
-        <p class="competence-desc">Créer, partager et tester différents designs pour des sites Web.</p>
+        <p class="competence-desc">Scripts d’automatisation et petits outils pour faciliter les tâches.</p>
       </div>
     </div>
   </div>
@@ -122,10 +95,14 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 - Omar Talibi | Compétences BTS SIO</p>
+  <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
+  <p>
+    <a href="mentions-legales.html" target="_blank" style="color: #00bfa6;">Mentions légales</a> |
+    <a href="plan-du-site.html" target="_blank" style="color: #00bfa6;">Plan du site</a> |
+    <a href="confidentialite.html" target="_blank" style="color: #00bfa6;">Politique de confidentialité</a>
+  </p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="competences.js"></script>
 </body>
 </html>
