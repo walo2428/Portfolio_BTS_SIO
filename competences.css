@@ -125,6 +125,28 @@ footer a:hover {
   text-decoration: underline;
 }
 
+.btn-retour-floating {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #f97316;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 9999;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.5);
+}
+
+.btn-retour-floating:hover {
+  background-color: #1e293b;
+  color: #f97316;
+  transform: scale(1.05);
+}
+
 /* Animations */
 @keyframes fadeInDown {
   0% { opacity: 0; transform: translateY(-40px); }

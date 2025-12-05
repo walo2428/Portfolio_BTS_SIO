@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio de Omar Talibi, étudiant en BTS SIO SISR passionné par l'administration système, la cybersécurité et la virtualisation.">
   <title>Accueil | Portfolio Omar Talibi</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="accueil.css" />
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm" data-bs-theme="dark">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Portfolio | OMAR TALIBI</a>
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+       <img src="img/logo.png" alt="Logo OM" height="40" class="me-2 rounded">
+       <span>OMAR TALIBI</span>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,120 +28,126 @@
         <li class="nav-item"><a class="nav-link" href="experiences.html">Expériences</a></li>
         <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <a href="img/CV.pdf" class="btn-primary-custom" target="_blank">Voir mon CV</a>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a href="img/CV Professionnel stage.pdf" class="btn btn-primary-custom btn-sm px-3" target="_blank">Mon CV</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
+<section class="hero d-flex align-items-center justify-content-center">
   <div class="container">
-    <h1 class="fw-bold">Bienvenue sur mon Portfolio</h1>
-    <p>Étudiant en BTS SIO SISR — Passionné par les réseaux et les systèmes.</p>
+    <h1 class="fw-bold display-4">Bienvenue sur mon Portfolio</h1>
+    <p class="lead mb-4">Étudiant en BTS SIO SISR — Passionné par les réseaux, la virtualisation et la cybersécurité.</p>
+</section>
+
+<section class="container my-5">
+  <h2 class="section-title">À propos de moi</h2>
+  <div class="row align-items-center gx-5">
+    
+    <div class="col-md-4 text-center mb-4 mb-md-0">
+      <div class="position-relative d-inline-block">
+        <img src="img/logo.png" alt="Omar Talibi" class="img-fluid rounded-circle shadow-lg" style="width: 250px; height: 250px; object-fit: cover; border: 5px solid #f97316;">
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <p class="lead">
+        Je m'appelle <strong>Omar Talibi</strong>, étudiant en <strong>BTS SIO option SISR</strong> (Solutions d’Infrastructure, Systèmes et Réseaux).
+      </p>
+      <p>
+        Passionné par l’informatique, je m’intéresse particulièrement à l’<strong>administration système</strong>, 
+        à la <strong>cybersécurité</strong> et à la <strong>virtualisation</strong> (VMware, VirtuelBox).
+        Au fil de ma formation, j’ai acquis de solides compétences en <em>configuration de serveurs</em>, 
+        en <em>gestion de réseaux</em> et en <em>sécurisation des systèmes</em>.
+      </p>
+      <p>
+        Mon objectif est de devenir <strong>Administrateur Systèmes et Réseaux</strong> et de contribuer à des projets où la fiabilité et la sécurité sont essentielles.
+      </p>
+      <div class="mt-4">
+        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank" class="text-decoration-none me-3"><i class="bi bi-linkedin fs-3" style="color: #0077b5;"></i></a>
+        <a href="https://github.com/walo2428/Portfolio_BTS_SIO" target="_blank" class="text-decoration-none"><i class="bi bi-github fs-3" style="color: #333;"></i></a>
+      </div>
+    </div>
+
   </div>
 </section>
 
-
-<!-- À PROPOS -->
-<section class="container my-5">
-  <h2 class="section-title">À propos de moi</h2>
-  <p>
-        Je m'appelle <strong>Omar Talibi</strong>, étudiant en <strong>BTS SIO option SISR</strong> (Solutions d’Infrastructure, Systèmes et Réseaux).
-        Passionné par l’informatique, je m’intéresse particulièrement à l’<strong>administration système</strong>, 
-        à la <strong>cybersécurité</strong> et à la <strong>virtualisation</strong>.
-           Au fil de ma formation, j’ai acquis de solides compétences en <em>configuration de serveurs</em>, 
-        en <em>gestion de réseaux</em> et en <em>sécurisation des systèmes</em>. 
-        J’aime relever des défis techniques et je m’investis pleinement dans mes projets pour trouver des solutions efficaces et durables.
-      </p>
-      <p>
-        Mon objectif est de devenir <strong>Administrateur Systèmes et Réseaux</strong> et de contribuer à des projets où la sécurité et la fiabilité sont essentielles.
-      </p>
-</section>
-
-<!-- FORMATION -->
 <section class="container my-5">
   <h2 class="section-title">Ma Formation</h2>
   <div class="row g-4">
 
-    <!-- BTS SIO SISR -->
     <div class="col-md-6">
       <div class="info-box h-100">
         <h4><i class="bi bi-hdd-network me-2 text-warning"></i>BTS SIO - Option SISR</h4>
         <p>
           Le <strong>BTS Services Informatiques aux Organisations (SIO)</strong>, spécialité 
-          SISR   (Solutions d’Infrastructure, Systèmes et Réseaux), est une formation de 2 ans 
-          qui forme aux métiers de l’<em>administration systèmes et réseaux</em>.
+          SISR (Solutions d’Infrastructure, Systèmes et Réseaux), forme aux métiers de l’<em>administration systèmes et réseaux</em>.
         </p>
-        <p>
-          J’y ai acquis des compétences en :  
-          <ul>
-            <li>Configuration et sécurisation de serveurs (Linux / Windows Server)</li>
-            <li>Mise en place de réseaux locaux et VLAN</li>
-            <li>Gestion des droits utilisateurs via Active Directory</li>
-            <li>Supervision et automatisation de tâches</li>
-          </ul>
-        </p>
+        <ul class="list-unstyled">
+            <li><i class="bi bi-check2 text-success me-2"></i>Configuration serveurs (Linux / Windows)</li>
+            <li><i class="bi bi-check2 text-success me-2"></i>Réseaux locaux, VLAN, Routage</li>
+            <li><i class="bi bi-check2 text-success me-2"></i>Active Directory & GPO</li>
+            <li><i class="bi bi-check2 text-success me-2"></i>Supervision et Cyber-sécurité</li>
+        </ul>
       </div>
     </div>
 
-    <!-- IRIS MEDIASCHOOL -->
     <div class="col-md-6">
       <div class="info-box h-100">
         <h4><i class="bi bi-building me-2 text-warning"></i>IRIS Mediaschool</h4>
         <p>
-          L’<strong>IRIS Mediaschool</strong> est une école reconnue dans le domaine du numérique et de l’informatique. 
-          Elle met l’accent sur l’<em>apprentissage pratique</em> et l’<em>insertion professionnelle</em>.
+          L’<strong>IRIS Mediaschool</strong> est une école reconnue dans le numérique. Elle met l’accent sur l’<em>apprentissage pratique</em> et l’<em>insertion professionnelle</em>.
         </p>
         <p>
-          Grâce à cet environnement, j’ai pu travailler sur des projets concrets, développer des compétences en 
-          <strong>gestion de projet</strong>, <strong>travail en équipe</strong> et me préparer aux exigences du monde professionnel.
+          J'y développe mes compétences en <strong>gestion de projet</strong> et <strong>travail en équipe</strong> à travers des ateliers concrets et des mises en situation professionnelle.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPÉTENCES -->
-<section class="container my-5"  id="outils">
-  <h2 class="section-title">Outils utilisées</h2>
-  <div class="row g-4 text-center">
+<section class="container my-5" id="outils">
+  <h2 class="section-title">Outils utilisés</h2> <div class="row g-4 text-center">
     <div class="col-md-3">
       <div class="competence-box">
+        <i class="bi bi-router fs-1 mb-2 d-block text-secondary"></i>
         <h5>Réseaux</h5>
-        <p>Cisco, routage, VLAN, Wireshark</p>
+        <p>Cisco, Routage, VLAN, Wireshark</p>
       </div>
     </div>
     <div class="col-md-3">
       <div class="competence-box">
+        <i class="bi bi-pc-display fs-1 mb-2 d-block text-secondary"></i>
         <h5>Systèmes</h5>
-        <p>Debian, Windows Server, Active Directory</p>
+        <p>Debian, Windows Server, AD, VirtuelBox</p>
       </div>
     </div>
     <div class="col-md-3">
       <div class="competence-box">
+        <i class="bi bi-shield-lock fs-1 mb-2 d-block text-secondary"></i>
         <h5>Sécurité</h5>
-        <p>Firewall, UFW, SSH, gestion des ports</p>
+        <p>Firewall, UFW, SSH, Fail2ban</p>
       </div>
     </div>
     <div class="col-md-3">
       <div class="competence-box">
+        <i class="bi bi-code-slash fs-1 mb-2 d-block text-secondary"></i>
         <h5>Développement</h5>
-        <p>HTML, CSS, JS, Bootstrap</p>
+        <p>HTML, CSS, JS, Python, Bash</p>
       </div>
     </div>
   </div>
   <div class="text-center mt-4">
-    <a href="competences.html" class="btn-competence-custom">Voir plus d’outils→</a>
+    <a href="competences.html" class="btn-competence-custom">Voir toutes mes compétences →</a>
   </div>
 </section>
 
-
-<!--Tableau de synthèse des compétences-->
 <section class="container my-5">
-  <h2 class="section-title">Tableau de synthèse des compétences</h2>
+  <h2 class="section-title">Tableau de synthèse</h2>
   <p class="text-center mb-4">
-    Compétences acquises durant ma formation BTS SIO option SISR, justifiées par des projets réels.
+    Compétences acquises durant ma formation, validées par des projets concrets.
   </p>
 
   <div class="custom-table-wrapper">
@@ -144,48 +155,45 @@
       <thead>
         <tr>
           <th>Compétence</th>
-          <th>Justification par projet</th>
+          <th>Projet associé</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Analyser les exigences liées à l’usage d’un service</td>
-          <td>CinéZone – Étude fonctionnelle du site et besoin local</td>
+          <td>Analyser les exigences d'un service</td>
+          <td><strong>CinéZone</strong> – Étude fonctionnelle</td>
         </tr>
         <tr>
-          <td>utilisation des commandes Linux pour gérer un serveur</td>
-          <td>Projet Classcord-Serverr pour le chat sur Linux</td>
+          <td>Gérer un serveur (Commandes Linux)</td>
+          <td><strong>ClassCord Server</strong> – Python sur Linux</td>
         </tr>
         <tr>
-          <td>Administrer les réseaux et les systèmes</td>
-          <td>Mise en place de partage sécurisé sur Linux</td>
+          <td>Administrer les réseaux et systèmes</td>
+          <td><strong>Partage Sécurisé</strong> – Droits & Permissions</td>
         </tr>
         <tr>
           <td>Gérer le patrimoine informatique</td>
-          <td>Serveur Apache + gestion des droits sur Debian</td>
+          <td><strong>Serveur Web</strong> – Apache sur Debian</td>
         </tr>
         <tr>
           <td>Travailler en mode projet</td>
-          <td>NutriFit – Travail collaboratif avec suivi GIT</td>
+          <td><strong>NutriFit</strong> – Gestion collaborative (Git)</td>
         </tr>
         <tr>
-          <td>Mettre à disposition un service</td>
-          <td>Déploiement réseau local d’un site HTML + sécurité</td>
+          <td>Déployer un service</td>
+          <td><strong>Site Web Local</strong> – Déploiement & Sécurité</td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <div class="text-center mt-4">
-    <a href="Tableau de synthèse.pdf" class="btn btn-outline-success px-4 py-2" target="_blank">
-      Voir le tableau complet en PDF
+    <a href="Tableau de synthèse.pdf" class="btn btn-outline-secondary px-4 py-2" target="_blank">
+      <i class="bi bi-file-earmark-pdf me-2"></i>Voir le tableau complet (PDF)
     </a>
   </div>
 </section>
 
-
-
-<!-- FOOTER -->
 <footer>
   <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
   <p>
@@ -194,8 +202,6 @@
     <a href="confidentialite.html" target="_blank" style="color: #00bfa6;">Politique de confidentialité</a>
   </p>
 </footer>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>

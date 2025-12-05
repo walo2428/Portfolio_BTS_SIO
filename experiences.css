@@ -1,7 +1,7 @@
 /* ===== Style général ===== */
 body {
-  background-color: #d4d8db; /* Fond clair */
-  color: #1e293b; /* Texte foncé */
+  background-color: #d4d8db; 
+  color: #1e293b; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
@@ -9,107 +9,117 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #1e293b !important; /* Gris foncé */
+  background-color: #1e293b !important; 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   font-weight: 600;
 }
 .navbar-brand {
-  color: #f97316 !important; /* Orange */
-  font-size: 1.8rem;
+  color: #f97316 !important; 
+  font-size: 1.4rem;
 }
 .navbar-nav .nav-link {
-  color: #e2e8f0 !important; /* Gris clair */
+  color: #e2e8f0 !important; 
   transition: color 0.3s ease;
 }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-  color: #fdba74 !important; /* Orange clair */
-}
-.btn-primary-custom {
-  background-color: #f97316;
-  color: #857d7d;
-  font-weight: 700;
-  border: 2px solid #f97316;
-  padding: 12px 30px;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-.btn-primary-custom:hover {
-  background-color: #fdba74;
-  color: #1e293b;
+  color: #f97316 !important; 
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #1e293b, #f97316); /* Gris foncé → orange vif */
-  color: white;
+  background: linear-gradient(135deg, #1e293b, #f97316);
   padding: 80px 20px;
   text-align: center;
   border-radius: 0 0 40px 40px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 .hero h1 {
   font-size: 3rem;
   font-weight: 900;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .hero p {
   font-size: 1.2rem;
+  opacity: 0.9;
 }
 
-/* Section title */
+/* Section Titles */
 .section-title {
-  color: #f97316; /* Orange vif */
+  color: #f97316; 
   font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 2rem;
   text-align: center;
+  letter-spacing: 1px;
 }
 
-/* Experience blocks améliorés */
+/* --- EXPERIENCE BLOCKS (Timeline Style) --- */
 .experience-block {
-  background-color: #f8f9fa; /* Gris très clair pour contraste doux */
-  border-radius: 20px;        /* Coins arrondis */
-  padding: 40px 35px;         /* Espacement intérieur généreux */
-  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.15); /* Ombre douce */
-  margin-bottom: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid #f97316; /* Barre orange verticale */
 }
 .experience-block:hover {
-  transform: translateY(-5px); /* Légère animation au survol */
-  box-shadow: 0 15px 35px rgba(249, 115, 22, 0.25);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.15);
 }
-.experience-block h3 {
-  color: #f97316; /* Orange vif */
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 1.6rem;
+
+/* Date Badge (Rond avec l'année) */
+.date-badge {
+  background-color: #1e293b;
+  color: #f97316;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  margin: 0 auto;
+  line-height: 1.1;
+  border: 3px solid #f97316;
 }
-.experience-block ul {
-  color: #1e293b; /* Texte foncé */
-  padding-left: 1.2rem;
-  margin-top: 1rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
+
+/* --- BADGES PERSONNALISÉS --- */
+.bg-orange {
+  background-color: #f97316 !important;
 }
-.text-highlight {
-  color: #f97316; /* Orange vif */
+.badge {
+  font-weight: 600;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+/* --- CAROUSEL CUSTOM --- */
+#carouselCertifs {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2rem;
+  height: 2rem;
 }
 
 /* Footer */
 footer {
-  background-color: #1e293b; /* Gris foncé */
+  background-color: #1e293b;
   color: #ffffff;
   text-align: center;
   padding: 20px 0;
   font-size: 0.9rem;
   font-weight: 500;
+  border-top: 3px solid #f97316;
   margin-top: 60px;
 }
 footer a {
-  color: #00bfa6; /* Orange vif */
+  color: #f97316;
   margin: 0 8px;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -119,9 +129,8 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 576px) {
-  .hero h1 { font-size: 2.4rem; }
-  .hero p { font-size: 1.1rem; }
-  .experience-block { padding: 30px 20px; }
+  .hero h1 { font-size: 2.2rem; }
+  .experience-block { padding: 20px; }
 }

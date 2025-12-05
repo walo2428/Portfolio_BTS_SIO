@@ -26,6 +26,9 @@ body {
 .navbar-nav .nav-link.active {
   color: #fdba74 !important; /* Orange clair */
 }
+.navbar-toggler-icon {
+  filter: invert(1);
+}
 .btn-primary-custom {
   background-color: #f97316;
   color: #857d7d;
@@ -44,7 +47,7 @@ body {
     
 /* Hero Section avec image */
 .hero {
-  background: url("img/image.png") center/cover no-repeat; /* Mets ton image ici */
+  background: url("img/accueil/image.png") center/cover no-repeat; /* Mets ton image ici */
   padding: 120px 20px;
   text-align: center;
   border-radius: 0 0 40px 40px;

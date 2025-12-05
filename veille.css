@@ -5,7 +5,6 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -16,7 +15,7 @@ body {
 }
 .navbar-brand {
   color: #f97316 !important; 
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 .navbar-nav .nav-link {
   color: #e2e8f0 !important; 
@@ -27,10 +26,10 @@ body {
   color: #f97316 !important; 
 }
 
-/* Hero Section */
+/* Hero Section (Orange Gradient) */
 .hero {
   background: linear-gradient(135deg, #1e293b, #f97316); 
-  padding: 100px 20px;
+  padding: 80px 20px;
   text-align: center;
   border-radius: 0 0 40px 40px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
@@ -71,7 +70,7 @@ section.container p, section.container ul {
   color: #1e293b;
 }
 
-/* Formulaire et boutons */
+/* Boutons */
 .btn-primary-custom {
   background-color: #f97316;
   color: #ffffff;
@@ -86,20 +85,6 @@ section.container p, section.container ul {
   color: #f97316;
 }
 
-/* Image placeholders */
-.img-placeholder {
-  background-color: #e2e8f0;
-  border: 2px dashed #f97316;
-  border-radius: 16px;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #1e293b;
-  font-size: 1.2rem;
-}
-
 /* Table custom sources */
 .table.custom-sources {
   background-color: #ffffff;
@@ -108,7 +93,7 @@ section.container p, section.container ul {
   box-shadow: 0 8px 24px rgba(249, 115, 22, 0.15);
 }
 .table.custom-sources th {
-  background-color: #f97316;
+  background-color: #1e293b;
   color: white;
 }
 .table.custom-sources td {
@@ -116,6 +101,57 @@ section.container p, section.container ul {
 }
 .table.custom-sources tbody tr:hover {
   background-color: #fde4cc;
+}
+
+/* --- Styles pour les cartes de solutions --- */
+.solution-card {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.solution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+.card-header-img {
+  background-color: #f8f9fa;
+  padding: 30px;
+  text-align: center;
+  border-bottom: 1px solid #e9ecef;
+}
+.card-header-img img {
+  height: 65px;
+  object-fit: contain;
+}
+.solution-card h4 {
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}
+.solution-card p {
+  color: #6c757d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.solution-card a {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #f97316;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.solution-card a:hover {
+  background-color: #1e293b;
 }
 
 /* Footer */
@@ -128,10 +164,25 @@ footer {
   font-weight: 500;
   border-top: 3px solid #f97316;
 }
+footer a {
+  color: #f97316;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* Responsive */
 @media (max-width: 576px) {
   .hero h1 { font-size: 2.4rem; }
   .hero p { font-size: 1.1rem; }
-  .img-placeholder { height: 180px; font-size: 1rem; }
 }

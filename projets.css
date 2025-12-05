@@ -16,7 +16,7 @@ body {
 }
 .navbar-brand {
   color: #f97316 !important; /* Orange */
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 .navbar-nav .nav-link {
   color: #e2e8f0 !important; /* Gris clair */
@@ -26,26 +26,23 @@ body {
 .navbar-nav .nav-link.active {
   color: #f97316 !important; /* Orange */
 }
-.navbar-toggler-icon {
-  filter: invert(1);
-}
 
-/* Header */
-header {
-  background: linear-gradient(to right, #1e293b, #f97316); /* gris foncé → orange */
+/* Hero Section (Standardisé) */
+.hero {
+  background: linear-gradient(135deg, #1e293b, #f97316); 
   padding: 80px 20px;
   text-align: center;
   border-radius: 0 0 40px 40px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-  margin-bottom: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  color: white;
 }
-header h1 {
+.hero h1 {
   font-size: 3rem;
   font-weight: 900;
-  color: #fff;
-  margin-bottom: 15px;
+  text-shadow: 1px 1px 6px #00000055;
+  margin-bottom: 10px;
 }
-header p {
+.hero p {
   font-size: 1.2rem;
   font-weight: 500;
   color: #fff7ed;
@@ -133,22 +130,21 @@ footer {
   border-top: 3px solid #f97316;
   margin-top: 50px;
 }
+footer a {
+  color: #f97316;
+  margin: 0 8px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+footer a:hover {
+  color: #fdba74;
+  text-decoration: underline;
+}
 
 /* Responsive */
 @media (max-width: 576px) {
-  header h1 {
-    font-size: 2.2rem;
-  }
-  header p {
-    font-size: 1rem;
-  }
-}
-
-/* Animations */
-@keyframes fadeIn {
-  0% { opacity: 0.2; transform: scale(0.95); }
-  50% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0.2; transform: scale(0.95); }
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
 }
 
 /* Filtres projets */
@@ -158,4 +154,124 @@ footer {
 }
 .btn-group {
   flex-wrap: wrap;
+}
+
+/* Boutons filtres */
+.filter-group .btn {
+  border: 2px solid #f97316;
+  color: #f97316;
+  font-weight: 700;
+  border-radius: 30px;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+.filter-group .btn:hover,
+.filter-group .btn.active {
+  background-color: #f97316;
+  color: #1e293b;
+}
+
+/* Animation filtre */
+.project-card-wrapper {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.project-card-wrapper.hide {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+/* ==== TAGS ORANGES ==== */
+.project-tags {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: #f97316;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* ==== BOUTONS ==== */
+.project-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.btn-projet-outline {
+  padding: 8px 20px;
+  border: 2px solid #f97316;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #f97316;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: 0.25s ease;
+}
+
+.btn-projet-outline:hover {
+  background-color: #f97316;
+  color: #fff;
+}
+
+/* ==== BOUTON DÉTAILS ==== */
+.btn-details {
+  padding: 8px 20px;
+  background-color: #f97316;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: 0.25s ease;
+  border: 2px solid #f97316;
+}
+
+.btn-details:hover {
+  background-color: transparent;
+  color: #f97316 !important;
+}
+
+.btn-view {
+  padding: 8px 20px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  border: 2px solid #16a34a;
+  font-weight: 600;
+  color: #16a34a;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: 0.25s ease;
+}
+
+.btn-view:hover {
+  background-color: #16a34a;
+  color: white;
+}
+
+/* ==== TEXTE DÉTAILS ==== */
+.details-box {
+  margin-top: 15px;
+  background-color: #fff3e6;
+  border-left: 4px solid #f97316;
+  padding: 12px 15px;
+  border-radius: 10px;
+  display: none;
+  animation: fadeDetails 0.3s ease;
+}
+
+@keyframes fadeDetails {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

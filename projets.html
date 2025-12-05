@@ -4,17 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mes Projets – Omar Talibi</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="projets.css" />
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm" data-bs-theme="dark">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Portfolio | OMAR TALIBI</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <img src="img/logo.png" alt="Logo" height="35" class="me-2 rounded">
+      OMAR TALIBI
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -29,132 +31,225 @@
   </div>
 </nav>
 
-<!-- HEADER -->
-<header>//////
+<section class="hero">
   <div class="container">
-    <h1>Mes Projets Réalisés</h1>
-    <p>Voici une sélection de projets réalisés dans le cadre de ma formation BTS SIO SISR.</p>
-  </div>
-</header>
-
-<!-- PROJETS -->
-<section class="container">
-  <div class="row g-4">
-
-        <!-- Projet 1 -->
-<div class="col-md-6">
-  <div class="project-card">
-    <img src="img/windows_server.jpg" alt="Projet Windows Server" />
-    <div class="card-body">
-      <h5 class="card-title">Windows Server & Virtualisation</h5>
-      <p class="card-text">
-        Installation et configuration d’un serveur Windows Server sur VirtualBox (Oracle). 
-        Gestion des rôles AD DS, DNS, GPO et services de fichiers.
-      </p>
-      <div>
-        <span class="tech-badge">Windows Server</span>
-        <span class="tech-badge">Active Directory</span>
-        <span class="tech-badge">Oracle VirtualBox</span>
-      </div>
-      <div class="btn-group mt-3">
-        <a href="#" target="_blank" class="btn btn-outline-custom">Voir le projet</a>
-        <a href="docs/windows-server.pdf" target="_blank" class="btn btn-outline-custom">Documentation</a>
-        <a href="tableauxRP/windows-server.html" target="_blank" class="btn btn-outline-custom">Tableau RP</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- Projet 2 -->
-<div class="col-md-6">
-  <div class="project-card">
-    <img src="img/classcord_server.png" alt="ClassCord Server" />
-    <div class="card-body">
-      <h5 class="card-title">ClassCord Server</h5>
-      <p class="card-text">
-        Serveur de chat TCP multi-clients sécurisé, déployé avec Docker et systemd, interopérable avec les clients Java SLAM. Projet réalisé en binôme dans le cadre du BTS SIO.
-      </p>
-      <div>
-        <span class="tech-badge">Python</span>
-        <span class="tech-badge">Docker</span>
-        <span class="tech-badge">Linux</span>
-        <span class="tech-badge">systemd</span>
-        <span class="tech-badge">fail2ban</span>
-        <span class="tech-badge">SQLite</span>
-      </div>
-      <div class="btn-group mt-3">
-        <a href="https://github.com/AstrowareConception/classcord-server" target="_blank" class="btn btn-outline-custom">Voir le projet</a>
-        <a href="https://github.com/walo2428/classcord_server" target="_blank" class="btn btn-outline-custom">Documentation</a>
-        <a href="tableauxRP/classcord.html" target="_blank" class="btn btn-outline-custom">Tableau RP</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- Projet 3 -->
-    <div class="col-md-6">
-      <div class="project-card">
-        <img src="img/cinezone.png" alt="CinéZone" />
-        <div class="card-body">
-          <h5 class="card-title">CinéZone</h5>
-          <p class="card-text">Un site web de streaming développé en HTML/CSS/JS et hébergé en local sur un serveur Debian.</p>
-          <div>
-            <span class="tech-badge">HTML</span>
-            <span class="tech-badge">JS</span>
-            <span class="tech-badge">Bootstrap</span>
-            <span class="tech-badge">Debian</span>
-            <span class="tech-badge">WinSCP</span>
-          </div>
-          <div class="btn-group mt-3">
-            <a href="https://walo2428.github.io/Cine_pro/" target="_blank" class="btn btn-outline-custom">Voir le projet</a>
-            <a href="https://github.com/walo2428/Cine_pro" target="_blank" class="btn btn-outline-custom">Documentation</a>
-            <a href="tableauxRP/cinezone.html" target="_blank" class="btn btn-outline-custom">Tableau RP</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Projet 4 -->
-    <div class="col-md-6">
-      <div class="project-card">
-        <img src="img/nutrifit.png" alt="NutriFit" />
-        <div class="card-body">
-          <h5 class="card-title">NutriFit</h5>
-          <p class="card-text">Assistant nutritionnel connecté à une API alimentaire. Interface responsive en Bootstrap.</p>
-          <div>
-            <span class="tech-badge">JS</span>
-            <span class="tech-badge">API</span>
-            <span class="tech-badge">Bootstrap</span>
-            <span class="tech-badge">Debian</span>
-          </div>
-          <div class="btn-group mt-3">
-            <a href="https://delcoco95.github.io/Nutrifit/" target="_blank" class="btn btn-outline-custom">Voir le projet</a>
-            <a href="https://github.com/delcoco95/Nutrifit" target="_blank" class="btn btn-outline-custom">Documentation</a>
-            <a href="tableauxRP/nutrifit.html" target="_blank" class="btn btn-outline-custom">Tableau RP</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-
-
-
-
-
-
-
-    <!-- Autres projets -->
-    <div class="col-12">
-      <div class="text-center py-5" style="color: #00bfa680; font-size: 1.3rem; font-weight: 600; animation: fadeIn 3s infinite;">
-       D'autres projets innovants arrivent très bientôt. Restez connecté !
-      </div>
-    </div>
-
+    <h1 class="fw-bold">Mes Projets Réalisés</h1>
+    <p>Voici une sélection de projets réalisés dans ma formation BTS SIO SISR.</p>
   </div>
 </section>
 
-<!-- FOOTER -->
+<section class="container mt-5">
+  <div id="projects-grid" class="row g-4">
+
+    <div class="col-md-6 project-card-wrapper" data-category="system">
+      <div class="project-card">
+        <img src="img/projets/windows_server.jpg" alt="Windows Server" />
+        <div class="card-body">
+          <h5 class="card-title">Windows Server</h5>
+          <p class="card-text">Déploiement d’une infrastructure Windows Server complète : AD DS, DNS, DHCP, GPO, serveur de fichiers et automatisations PowerShell.</p>
+          <div class="project-tags">
+            <span class="tag">Windows Server</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">GPO</span>
+            <span class="tag">DHCP</span>
+            <span class="tag">DNS</span>
+            <span class="tag">PowerShell</span>
+            <span class="tag">Virtualisation</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/omar/windows-server" class="btn-projet-outline" target="_blank">Documentation</a>
+            <a href="pdf/windows-server.pdf" class="btn-projet-outline" download>Télécharger RP</a>
+            <button class="btn-details">Détails</button>
+            <a href="#" class="btn-view">Voir le projet</a>
+          </div>
+          <div class="details-box">
+            Mise en place complète d'un domaine Active Directory, configuration des rôles, création d’OU, gestion des stratégies GPO.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 project-card-wrapper" data-category="system">
+      <div class="project-card">
+        <img src="img/projets/classcord_server.png" alt="ClassCord" />
+        <div class="card-body">
+          <h5 class="card-title">ClassCord Server</h5>
+          <p class="card-text">Serveur de tchat multi-clients en Python, déployé, sécurisé et supervisé sous Linux, avec accès réseau pour les clients SLAM.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Linux (Debian)</span>
+            <span class="tag">Sockets TCP</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Fail2ban</span>
+            <span class="tag">Virtualisation</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/walo2428/classcord_server" class="btn-projet-outline" target="_blank">Documentation</a>
+            <a href="pdf/classcord.pdf" class="btn-projet-outline" download>Télécharger RP</a>
+            <button class="btn-details">Détails</button>
+            <a href="#" class="btn-view">Voir le projet</a>
+          </div>
+          <div class="details-box">
+            ClassCord est un serveur de tchat multi-clients développé en Python, utilisé par les étudiants SLAM (développeurs) pour tester leurs clients Java.
+            Mon rôle en tant qu’étudiant SISR était de déployer le serveur Python et le rendre accessible sur le réseau pour les clients SLAM.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 project-card-wrapper" data-category="system">
+      <div class="project-card">
+        <img src="img/projets/dhcp_dns.png" alt="Serveur DHCP/DNS" />
+        <div class="card-body">
+          <h5 class="card-title">Serveur DHCP/DNS</h5>
+          <p class="card-text">Hébergement Apache, SSH, SFTP.</p>
+          <div class="project-tags">
+            <span class="tag">Debian</span>
+            <span class="tag">DHCP</span>
+            <span class="tag">DNS</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/omar/dhcp-dns" class="btn-projet-outline" target="_blank">Documentation</a>
+            <a href="pdf/dhcp-dns.pdf" class="btn-projet-outline" download>Télécharger RP</a>
+            <button class="btn-details">Détails</button>
+            <a href="#" class="btn-view">Voir le projet</a>
+          </div>
+          <div class="details-box">
+            Configuration d’un serveur Debian complet : DHCP, DNS bind9, hébergement web Apache, sécurité SSH et SFTP.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 project-card-wrapper" data-category="system">
+      <div class="project-card">
+        <img src="img/projets/grafana.png" alt="Monitoring" />
+        <div class="card-body">
+          <h5 class="card-title">Monitoring</h5>
+          <p class="card-text">Mini app de gestion de produits.</p>
+          <div class="project-tags">
+            <span class="tag">Grafana</span>
+            <span class="tag">InfluxDB</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/omar/monitoring" class="btn-projet-outline" target="_blank">Documentation</a>
+            <a href="pdf/monitoring.pdf" class="btn-projet-outline" download>Télécharger RP</a>
+            <button class="btn-details">Détails</button>
+            <a href="#" class="btn-view">Voir le projet</a>
+          </div>
+          <div class="details-box">
+            Mise en place d’un environnement complet de supervision avec InfluxDB, Grafana et un exporteur métrique Python.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 project-card-wrapper" data-category="system">
+      <div class="project-card">
+        <img src="img/projets/glpi.png" alt="GLPI" />
+        <div class="card-body">
+          <h5 class="card-title">GLPI</h5>
+          <p class="card-text">Fail2ban, clés RSA, durcissement SSH.</p>
+          <div class="project-tags">
+            <span class="tag">GLPI</span>
+            <span class="tag">Fail2ban</span>
+            <span class="tag">Sécurité</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/omar/glpi" class="btn-projet-outline" target="_blank">Documentation</a>
+            <a href="pdf/glpi.pdf" class="btn-projet-outline" download>Télécharger RP</a>
+            <button class="btn-details">Détails</button>
+            <a href="#" class="btn-view">Voir le projet</a>
+          </div>
+          <div class="details-box">
+            Installation GLPI complète + sécurisation avancée (fail2ban, clés RSA, durcissement SSH, droits).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 project-card-wrapper" data-category="system">
+      <div class="project-card">
+        <img src="img/projets/cockpit.png" alt="Gestion utilisateurs" />
+        <div class="card-body">
+          <h5 class="card-title">Gestion utilisateurs et transfert fichiers</h5>
+          <p class="card-text">Création VLAN, trunking, Cisco.</p>
+          <div class="project-tags">
+            <span class="tag">Cisco</span>
+            <span class="tag">VLAN</span>
+            <span class="tag">SSH</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/omar/cisco" class="btn-projet-outline" target="_blank">Documentation</a>
+            <a href="pdf/cisco.pdf" class="btn-projet-outline" download>Télécharger RP</a>
+            <button class="btn-details">Détails</button>
+            <a href="#" class="btn-view">Voir le projet</a>
+          </div>
+          <div class="details-box">
+            Projet réseau complet : VLAN, trunk, configuration SSH, création d’utilisateurs et segmentation réseau.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 project-card-wrapper" data-category="dev">
+      <div class="project-card">
+        <img src="img/projets/cinezone.png" alt="CinéZone" />
+        <div class="card-body">
+          <h5 class="card-title">CinéZone</h5>
+          <p class="card-text">Portail local de consultation de films utilisant l’API TMDB, avec recherche, filtres et gestion des favoris.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">API</span>
+            <span class="tag">Debian</span>
+            <span class="tag">Apache2</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/walo2428/Cine_pro" class="btn-projet-outline" target="_blank">Documentation</a>
+            <a href="pdf/cinezone.pdf" class="btn-projet-outline" download>Télécharger RP</a>
+            <button class="btn-details">Détails</button>
+            <a href="https://walo2428.github.io/Cine_pro/index.html" target="_blank" class="btn-view">Voir le projet</a>
+          </div>
+          <div class="details-box">
+            CinéZone est un portail web local permettant de consulter un catalogue de films en utilisant l’API TMDB.
+            Le site, accessible uniquement sur un réseau local, propose une interface moderne et responsive pour rechercher, filtrer et afficher des informations détaillées sur les films.
+            Les utilisateurs peuvent également gérer une liste de favoris grâce au localStorage.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 project-card-wrapper" data-category="dev">
+      <div class="project-card">
+        <img src="img/projets/nutrifit.png" alt="NutriFit" />
+        <div class="card-body">
+          <h5 class="card-title">NutriFit</h5>
+          <p class="card-text">Assistant nutritionnel local utilisant l’API Open Food Facts avec recommandations sportives et historique personnalisé.</p>
+          <div class="project-tags">
+            <span class="tag">API</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS/Bootstrap</span>
+            <span class="tag">JS</span>
+            <span class="tag">Debian</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/omar/nutrifit" class="btn-projet-outline" target="_blank">Documentation</a>
+            <a href="pdf/nutrifit.pdf" class="btn-projet-outline" download>Télécharger RP</a>
+            <button class="btn-details">Détails</button>
+            <a href="#" class="btn-view">Voir le projet</a>
+          </div>
+          <div class="details-box">
+            NutriFit est une application web locale destinée à être utilisée sur une borne ou un poste fixe dans une salle de sport.
+            Elle permet aux utilisateurs de rechercher consulter obtenir des recommandations personnalisées selon leur profil sportif.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
   <p>
@@ -165,6 +260,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
+<script src="projets.js"></script>
 </body>
 </html>

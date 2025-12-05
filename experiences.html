@@ -4,15 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Expériences | Portfolio Omar Talibi</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="experiences.css" />
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm" data-bs-theme="dark">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Portfolio | OMAR TALIBI</a>
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <img src="img/logo.png" alt="Logo" height="35" class="me-2 rounded">
+      OMAR TALIBI
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,111 +32,191 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
-    <h1 class="fw-bold">Mon Parcours & Mes Expériences</h1>
-    <p>Études et stages réalisés durant mon parcours en BTS SIO</p>
+    <h1 class="fw-bold">Parcours & Expériences</h1>
+    <p>Formation, certifications et expériences professionnelles</p>
   </div>
 </section>
 
-<hr>
+<section class="container mt-5">
+  <h2 class="section-title">Parcours Scolaire</h2>
+  
+  <div class="experience-block mb-4">
+    <div class="row align-items-center">
+      <div class="col-md-2 text-center d-none d-md-block">
+        <div class="date-badge">2024<br>2026</div>
+      </div>
+      <div class="col-md-8">
+        <h3 class="h4 fw-bold mb-1" style="color: #1e293b;">BTS SIO - Option SISR</h3>
+        <p class="text-primary fw-bold mb-2">IRIS Mediaschool — Nice</p>
+        <p class="text-muted mb-2">Solutions d’Infrastructure, Systèmes et Réseaux.</p>
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="badge rounded-pill bg-light text-dark border">Administration Système</span>
+          <span class="badge rounded-pill bg-light text-dark border">Cybersécurité</span>
+          <span class="badge rounded-pill bg-light text-dark border">Réseaux</span>
+        </div>
+      </div>
+      <div class="col-md-2 text-center">
+        <img src="img/exp/etude.png" alt="Etude" class="img-fluid rounded shadow-sm" style="max-height: 80px;">
+      </div>
+    </div>
+  </div>
 
-<!-- PARCOURS SCOLAIRE -->
-<section class="container">
-  <h2 class="section-title">Mon Parcours Scolaire</h2>
   <div class="experience-block">
     <div class="row align-items-center">
-      <div class="col-md-8">
-        <ul>
-          <li><strong>2024 – 2026 :</strong> BTS SIO option SISR – IRIS Mediaschool, Nice</li>
-          <li><strong>2021 – 2022 :</strong> Baccalauréat Sciences Physiques – Lycée HASSAN 2 TINEJDAD, Maroc</li>
-        </ul>
+      <div class="col-md-2 text-center d-none d-md-block">
+        <div class="date-badge">2022</div>
       </div>
-      <div class="col-md-4 text-center">
-        <img src="img/parcours.jpg" alt="Parcours scolaire" class="img-fluid rounded" />
+      <div class="col-md-8">
+        <h3 class="h4 fw-bold mb-1" style="color: #1e293b;">Baccalauréat Sciences Physiques</h3>
+        <p class="text-primary fw-bold mb-2">Lycée Hassan 2 — Maroc</p>
+        <p class="text-muted mb-0">Sciences Physiques.</p>
+      </div>
+      <div class="col-md-2 text-center">
+        <img src="img/exp/hassan2.png" alt="Etude" class="img-fluid rounded shadow-sm" style="max-height: 80px;">
       </div>
     </div>
   </div>
 </section>
 
-<!-- STAGE 1ʳ Année -->
-<section class="container">
-  <h2 class="section-title">Stage 1ʳ Année – BMA TELECOM</h2>
-  <div class="experience-block">
-    <div class="row align-items-center">
-      <div class="col-md-8">
-        <p><strong>Période :</strong> Juillet – Août 2025</p>
-        <ul>
-          <li>Installation et configuration de routeurs Cisco & Huawei</li>
-          <li>Dépannage client (Internet, VoIP, équipements)</li>
-          <li>Observation architecture réseau fibre optique</li>
-          <li>Diagnostic et résolution incidents techniques</li>
-        </ul>
+<section class="container mt-5">
+  <h2 class="section-title">Certifications & MOOCs</h2>
+  
+  <div id="carouselCertifs" class="carousel slide bg-white shadow-sm rounded border-start border-5 border-warning" data-bs-ride="carousel">
+    
+    <div class="carousel-inner p-4">
+      
+      <div class="carousel-item active" data-bs-interval="5000">
+        <div class="row align-items-center">
+          <div class="col-md-3 text-center">
+            <img src="img/exp/CCNA.png" alt="Cisco" class="img-fluid mb-3 mb-md-0" style="max-height: 80px;">
+          </div>
+          <div class="col-md-9">
+            <h3 class="h5 fw-bold" style="color: #1e293b;">Cisco - Introduction to Networks (CCNA 1)</h3>
+            <p class="text-muted small mb-2"><em>EN COURS...</em></p>
+            <ul class="mb-0 small text-secondary">
+              <li>Configuration CLI des routeurs et commutateurs.</li>
+              <li>Maîtrise de l'adressage IPv4 / IPv6 et sous-réseaux.</li>
+              <li>Protocoles et modèles (OSI, TCP/IP).</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4 text-center">
-        <img src="img/stage1.jpg" alt="Stage BMA TELECOM" class="img-fluid rounded" />
+
+      <div class="carousel-item" data-bs-interval="5000">
+        <div class="row align-items-center">
+          <div class="col-md-3 text-center">
+            <img src="img/exp/ANSSI.png" alt="ANSSI" class="img-fluid mb-3 mb-md-0" style="max-height: 80px;">
+          </div>
+          <div class="col-md-9">
+            <h3 class="h5 fw-bold" style="color: #1e293b;">SecNumAcadémie</h3>
+            <p class="text-muted small mb-2"><em>EN COURS...</em></p>
+            <ul class="mb-0 small text-secondary">
+              <li>Hygiène informatique et sécurité des systèmes.</li>
+              <li>Authentification sécurisée et cryptographie.</li>
+              <li>Sécurité du poste de travail et nomadisme.</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
     </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselCertifs" data-bs-slide="prev" style="width: 5%;">
+      <span class="carousel-control-prev-icon bg-secondary rounded-circle p-2" aria-hidden="true" style="background-size: 50%;"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselCertifs" data-bs-slide="next" style="width: 5%;">
+      <span class="carousel-control-next-icon bg-secondary rounded-circle p-2" aria-hidden="true" style="background-size: 50%;"></span>
+    </button>
   </div>
 </section>
 
-<!-- Job Étudiant -->
-<section class="container">
-  <h2 class="section-title">Job Étudiant – HALLES DE L’ARIANE</h2>
-  <div class="experience-block">
-    <div class="row align-items-center">
-      <div class="col-md-8">
-        <p><strong>Période :</strong> Octobre 2023 – Présent</p>
-        <ul>
-          <li>Gestion de la caisse et de la clientèle</li>
-          <li>Accueil, encaissement et fidélisation des clients</li>
-          <li>Organisation, rangement, réassort du magasin</li>
+<section class="container mt-5">
+  <h2 class="section-title">Expériences Professionnelles</h2>
+
+  <div class="experience-block mb-4">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <h3 class="h4 fw-bold" style="color: #1e293b;">Technicien Réseaux & Télécoms (Stagiaire)</h3>
+            <p class="text-primary fw-bold mb-2">BMA TELECOM | Juillet - Août 2025</p>
+          </div>
+          <img src="img/exp/stage.png" alt="BMA" class="rounded d-none d-sm-block" style="height: 50px;">
+        </div>
+        <p class="mt-2 text-muted">Installation et maintenance d'équipements réseaux pour une clientèle professionnelle.</p>
+        <ul class="mb-3">
+          <li>Configuration de routeurs (Cisco, Huawei).</li>
+          <li>Dépannage connectivité (Fibre, xDSL) et VoIP.</li>
+          <li>Diagnostic et résolution d'incidents sur site.</li>
         </ul>
-      </div>
-      <div class="col-md-4 text-center">
-        <img src="img/job.jpg" alt="Job Étudiant" class="img-fluid rounded" />
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="badge bg-orange text-white">Cisco</span>
+          <span class="badge bg-orange text-white">Huawei</span>
+          <span class="badge bg-orange text-white">Troubleshooting</span>
+          <span class="badge bg-orange text-white">Relation Client</span>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- Découverte numérique -->
-<section class="container">
-  <h2 class="section-title">Découverte numérique – LE HUBLOT</h2>
-  <div class="experience-block">
-    <div class="row align-items-center">
-      <div class="col-md-8">
-        <p><strong>Période :</strong> Mai – Juin 2023</p>
-        <ul>
-          <li>Découverte des différents domaines informatiques</li>
-          <li>Web design, Site web: <a href="https://www.onart.lehublot.link" target="_blank">onart.lehublot.link</a></li>
-          <li>Montage vidéo, sonore</li>
-          <li>Création de logo</li>
-        </ul>
-      </div>
-      <div class="col-md-4 text-center">
-        <img src="img/hublot.jpg" alt="Découverte numérique" class="img-fluid rounded" />
+  <div class="experience-block mb-4">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <h3 class="h4 fw-bold" style="color: #1e293b;">Employé Polyvalent (Job Étudiant)</h3>
+            <p class="text-primary fw-bold mb-2">Halles de l'Ariane | Depuis Oct. 2023</p>
+          </div>
+          <img src="img/exp/job.png" alt="Job" class="rounded d-none d-sm-block" style="height: 50px;">
+        </div>
+        <p class="mt-2 text-muted">Gestion de la caisse et accueil client en parallèle de mes études.</p>
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="badge bg-secondary">Autonomie</span>
+          <span class="badge bg-secondary">Gestion du stress</span>
+          <span class="badge bg-secondary">Travail d'équipe</span>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="experience-block">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <h3 class="h4 fw-bold" style="color: #1e293b;">Découverte Numérique</h3>
+            <p class="text-primary fw-bold mb-2">Le Hublot | Mai - Juin 2023</p>
+          </div>
+          <img src="img/exp/hublot.png" alt="Hublot" class="rounded d-none d-sm-block" style="height: 50px;">
+        </div>
+        <p class="mt-2 text-muted">Initiation aux métiers du numérique et création de contenus multimédias.</p>
+        <div class="d-flex gap-2 flex-wrap">
+          <span class="badge bg-secondary">Web Design</span>
+          <span class="badge bg-secondary">Montage Vidéo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
-<!-- Bilan Personnel -->
-<section class="container">
-  <h2 class="section-title">Bilan Personnel</h2>
-  <p>
-    Grâce à mon parcours scolaire et à mes expériences professionnelles, j’ai acquis de solides compétences techniques en administration réseau, virtualisation et cybersécurité. Ces stages m’ont permis de travailler en autonomie, documenter mes tâches et répondre à des besoins concrets d’entreprise.
-  </p>
+<section class="container mt-5 mb-5">
+  <div class="p-4 bg-dark text-white rounded shadow-lg text-center border border-warning">
+    <h3 class="h4 fw-bold text-warning mb-3"> Bilan Personnel</h3>
+    <p class="mb-0" style="font-size: 1.1rem;">
+      Ces expériences m’ont permis de confirmer ma passion pour l'infrastructure réseau. J'ai appris à allier <strong>compétences techniques</strong> (configuration, dépannage) et <strong>savoir-être</strong> (relation client, travail d'équipe), des atouts essentiels pour mon futur métier d'Administrateur Système.
+    </p>
+  </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
   <p>
-    <a href="mentions-legales.html" target="_blank">Mentions légales</a> |
-    <a href="plan-du-site.html" target="_blank">Plan du site</a> |
-    <a href="confidentialite.html" target="_blank">Politique de confidentialité</a>
+    <a href="mentions-legales.html" target="_blank" style="color: #00bfa6;">Mentions légales</a> |
+    <a href="plan-du-site.html" target="_blank" style="color: #00bfa6;">Plan du site</a> |
+    <a href="confidentialite.html" target="_blank" style="color: #00bfa6;">Politique de confidentialité</a>
   </p>
 </footer>
 

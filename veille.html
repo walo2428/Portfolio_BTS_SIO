@@ -4,76 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Veille Technologique | Omar Talibi</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="veille.css" />
-  <style>
-    /* --- Ajout du style pour les cartes de solutions --- */
-    .solutions-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    .solution-card {
-      background-color: #ffffff;
-      border: 2px solid #f97316;
-      border-radius: 15px;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      overflow: hidden;
-    }
-    .solution-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 25px rgba(249, 115, 22, 0.3);
-    }
-    .solution-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-bottom: 2px solid #f97316;
-    }
-    .solution-card h4 {
-      color: #f97316;
-      margin-top: 15px;
-      font-weight: 700;
-    }
-    .solution-card p {
-      padding: 0 15px;
-      color: #1e293b;
-      font-size: 1rem;
-    }
-    .solution-card a {
-      display: inline-block;
-      margin: 15px 0 20px 0;
-      background-color: #f97316;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 25px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .solution-card a:hover {
-      background-color: white;
-      color: #f97316;
-      border: 2px solid #f97316;
-    }
-  </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm" data-bs-theme="dark">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Portfolio | OMAR TALIBI</a>
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <img src="img/logo.png" alt="Logo" height="35" class="me-2 rounded">
+      OMAR TALIBI
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
         <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
         <li class="nav-item"><a class="nav-link" href="experiences.html">Expériences</a></li>
         <li class="nav-item"><a class="nav-link active" href="veille.html">Veille</a></li>
@@ -83,129 +33,226 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
+<section class="hero fade-in">
   <div class="container">
     <h1 class="fw-bold">Veille Technologique</h1>
     <p>Évolution des solutions de virtualisation en entreprise</p>
   </div>
 </section>
 
-<!-- PROBLÉMATIQUE -->
-<section class="container">
+<section class="container mt-5 fade-in">
   <h2 class="section-title">Problématique</h2>
-  <p>
+  <p class="text-center lead" style="font-size: 1.1rem;">
     Comment les solutions de virtualisation ont-elles évolué pour répondre aux besoins actuels des entreprises en matière de coût, de performance et de sécurité ?
   </p>
 </section>
 
-<!-- THEME 1 -->
-<section class="container">
-  <h2 class="section-title text-start">Thème 1 : Comprendre la virtualisation</h2>
-
-  <p>
-    La virtualisation consiste à exécuter plusieurs systèmes d’exploitation indépendants sur une même machine physique.
-    Grâce à un logiciel appelé <strong>hyperviseur</strong>, les ressources matérielles (processeur, RAM, stockage) sont partagées efficacement.
-  </p>
-
-  <p>
-    Cette technologie est devenue indispensable pour les entreprises : elle permet d’optimiser les coûts, de simplifier la maintenance, et de rendre les infrastructures plus flexibles.
-  </p>
-</section>
-
-<!-- THEME 2 : LES PRINCIPALES SOLUTIONS -->
-<section class="container">
-  <h2 class="section-title text-start">Thème 2 : Les principales solutions de virtualisation</h2>
-
-  <div class="solutions-container">
-    <!-- VMware -->
-    <div class="solution-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vmware_workstation_16_icon.png" alt="VMware logo" />
-      <h4>VMware</h4>
+<section class="container mt-5 fade-in">
+  <h2 class="section-title text-start">Thème 1 : La rupture du modèle économique (2024-2025)</h2>
+  <div class="row">
+    <div class="col-lg-8">
       <p>
-        Solution propriétaire leader du marché. Offre des fonctions avancées comme vMotion et vCenter.
-        Utilisée dans les grands datacenters pour sa stabilité et sa sécurité.
+        Depuis l'acquisition de VMware par Broadcom fin 2023, le marché de la virtualisation subit une transformation sans précédent. Ce n'est pas une simple mise à jour tarifaire, mais un <strong>changement de paradigme complet</strong> pour les DSI.
       </p>
-      <a href="https://www.vmware.com/" target="_blank">Source VMware</a>
+      <ul class="list-group list-group-flush mb-3">
+        <li class="list-group-item bg-transparent"><i class="bi bi-arrow-right-circle-fill text-warning me-2"></i> <strong>Fin du CAPEX, place à l'OPEX :</strong> Les licences perpétuelles (achat unique) sont supprimées au profit d'abonnements récurrents.</li>
+        <li class="list-group-item bg-transparent"><i class="bi bi-arrow-right-circle-fill text-warning me-2"></i> <strong>Bundling Forcé :</strong> Broadcom impose désormais des "packages" complets, obligeant à payer pour des produits non utilisés.</li>
+        <li class="list-group-item bg-transparent"><i class="bi bi-arrow-right-circle-fill text-warning me-2"></i> <strong>Conséquence directe :</strong> Une hausse des factures estimée entre <strong>+20% et +300%</strong> [Source: USU].</li>
+      </ul>
     </div>
-
-    <!-- Proxmox -->
-    <div class="solution-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Proxmox_logo.png" alt="Proxmox logo" />
-      <h4>Proxmox VE</h4>
-      <p>
-        Plateforme open source basée sur KVM et LXC. Interface Web intuitive, gestion des clusters et sauvegardes intégrées.
-        Très populaire dans les PME.
-      </p>
-      <a href="https://www.proxmox.com/" target="_blank">Source Proxmox</a>
-    </div>
-
-    <!-- Hyper-V -->
-    <div class="solution-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Microsoft_Hyper-V_logo.svg" alt="Hyper-V logo" />
-      <h4>Microsoft Hyper-V</h4>
-      <p>
-        Intégré à Windows Server, Hyper-V permet la virtualisation, la réplication et l’administration centralisée.
-        Solution économique et bien intégrée dans les environnements Windows.
-      </p>
-      <a href="https://learn.microsoft.com/fr-fr/windows-server/" target="_blank">Source Microsoft</a>
+    <div class="col-lg-4">
+      <div class="p-4 bg-light border rounded h-100 shadow-sm">
+        <h5 class="fw-bold text-dark mb-3"><i class="bi bi-graph-up-arrow me-2"></i>Chiffres Clés</h5>
+        <p class="mb-2"><strong>44%</strong> des clients VMware envisagent une migration.</p>
+        <hr>
+        <p class="mb-2"><strong>2025</strong> : Année charnière pour le renouvellement des contrats.</p>
+        <hr>
+        <p class="mb-0"><strong>Alternative</strong> : Proxmox VE connaît une croissance record.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- THEME 3 -->
-<section class="container">
-  <h2 class="section-title text-start">Thème 3 : Évolutions récentes et tendances</h2>
+<section class="container mt-5 fade-in">
+  <h2 class="section-title text-start">Thème 2 : Panorama technique des solutions</h2>
+  <div class="row g-4 justify-content-center">
+    
+    <div class="col-md-4">
+      <div class="solution-card h-100">
+        <div class="card-header-img">
+          <img src="img/veille/Proxmox.png" alt="Proxmox" />
+        </div>
+        <div class="card-body p-4">
+          <h4>Proxmox VE 8.x</h4>
+          <span class="badge bg-success mb-3">Open Source</span>
+          <p class="text-muted small">L'alternative libre basée sur KVM.</p>
+          <ul class="text-start small mb-0 ps-3">
+            <li><strong>Migration :</strong> Import direct des VM depuis ESXi.</li>
+            <li><strong>Stockage :</strong> ZFS natif et performant.</li>
+            <li><strong>Backup :</strong> Proxmox Backup Server inclus.</li>
+          </ul>
+        </div>
+        <div class="card-footer bg-white border-0 pb-4 pt-0">
+          <a href="https://www.proxmox.com/" target="_blank" class="btn btn-sm btn-outline-dark w-100">Site Officiel</a>
+        </div>
+      </div>
+    </div>
 
-  <ul>
-    <li><strong>2024 :</strong> Les entreprises migrent vers des environnements hybrides, combinant virtualisation locale et cloud (AWS, Azure, OVHcloud).</li>
-    <li><strong>2023 :</strong> Intégration d’API REST et d’outils comme Terraform ou Ansible pour automatiser la gestion des VM.</li>
-    <li><strong>2022 :</strong> Amélioration de la sécurité des hyperviseurs (chiffrement, sandboxing, snapshots sécurisés).</li>
-    <li><strong>2021 :</strong> Montée en puissance des solutions open source, réduisant la dépendance aux licences propriétaires.</li>
-  </ul>
+    <div class="col-md-4">
+      <div class="solution-card h-100">
+        <div class="card-header-img">
+          <img src="img/veille/hyperv.png" alt="Hyper-V" />
+        </div>
+        <div class="card-body p-4">
+          <h4>Windows Server 2025</h4>
+          <span class="badge bg-primary mb-3">Microsoft</span>
+          <p class="text-muted small">La puissance de l'écosystème Windows.</p>
+          <ul class="text-start small mb-0 ps-3">
+            <li><strong>Hotpatching :</strong> Mises à jour sans redémarrage.</li>
+            <li><strong>GPU-P :</strong> Partitionnement GPU pour l'IA.</li>
+            <li><strong>Performance :</strong> NVMe optimisé (+70% IOPS).</li>
+          </ul>
+        </div>
+        <div class="card-footer bg-white border-0 pb-4 pt-0">
+          <a href="https://www.microsoft.com/fr-fr/windows-server" target="_blank" class="btn btn-sm btn-outline-dark w-100">Site Officiel</a>
+        </div>
+      </div>
+    </div>
 
-  <p><em>Sources :</em> IT-Connect, ZDNet, Red Hat Blog, ANSSI</p>
+    <div class="col-md-4">
+      <div class="solution-card h-100">
+        <div class="card-header-img">
+          <img src="img/veille/vmware.png" alt="VMware" />
+        </div>
+        <div class="card-body p-4">
+          <h4>VMware vSphere 8</h4>
+          <span class="badge bg-secondary mb-3">Leader Historique</span>
+          <p class="text-muted small">La référence pour les Grands Comptes.</p>
+          <ul class="text-start small mb-0 ps-3">
+            <li><strong>vMotion & DRS :</strong> Gestion de charge inégalée.</li>
+            <li><strong>Ecosystème :</strong> Standard de l'industrie.</li>
+            <li><strong>Stabilité :</strong> Pour la production critique.</li>
+          </ul>
+        </div>
+        <div class="card-footer bg-white border-0 pb-4 pt-0">
+          <a href="https://www.vmware.com/" target="_blank" class="btn btn-sm btn-outline-dark w-100">Site Officiel</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- SOURCES -->
-<section class="container">
-  <h2 class="section-title">Sources utilisées</h2>
-  <div class="table-responsive">
-    <table class="table custom-sources text-center">
-      <thead>
+<section class="container mt-5 fade-in">
+  <h2 class="section-title text-start">Comparatif Stratégique 2025</h2>
+  <div class="table-responsive shadow-sm rounded">
+    <table class="table table-bordered table-hover mb-0 text-center align-middle bg-white">
+      <thead class="table-light">
         <tr>
-          <th>Nom du site</th>
-          <th>Accès</th>
+          <th class="w-25">Critères</th>
+          <th class="w-25 text-success">Proxmox VE</th>
+          <th class="w-25 text-primary">Hyper-V (WS 2025)</th>
+          <th class="w-25 text-secondary">VMware vSphere</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>VMware</td>
-          <td><a href="https://www.vmware.com/"                                                                                                                              target="_blank" class="btn btn-primary-custom">Visiter</a></td>
+          <td class="fw-bold text-start bg-light">Modèle de Licence</td>
+          <td>Open Source (Gratuit)<br><small>Option support payant</small></td>
+          <td>Par cœur (Payant)<br><small>Inclus dans Windows Server</small></td>
+          <td>Souscription (Cher)<br><small>Abonnement annuel obligatoire</small></td>
         </tr>
         <tr>
-          <td>Proxmox</td>
-          <td><a href="https://www.proxmox.com/" target="_blank" class="btn btn-primary-custom">Visiter</a></td>
+          <td class="fw-bold text-start bg-light">Facilité de Migration</td>
+          <td>⭐⭐⭐⭐<br><small>Assistant natif depuis ESXi</small></td>
+          <td>⭐⭐⭐<br><small>Outils Microsoft efficaces</small></td>
+          <td>-</td>
         </tr>
         <tr>
-          <td>Microsoft Learn</td>
-          <td><a href="https://learn.microsoft.com/fr-fr/windows-server/" target="_blank" class="btn btn-primary-custom">Visiter</a></td>
-        </tr>
-        <tr>
-          <td>IT-Connect</td>
-          <td><a href="https://www.it-connect.fr/" target="_blank" class="btn btn-primary-custom">Visiter</a></td>
-        </tr>
-        <tr>
-          <td>ZDNet France</td>
-          <td><a href="https://www.zdnet.fr/" target="_blank" class="btn btn-primary-custom">Visiter</a></td>
+          <td class="fw-bold text-start bg-light">Cible Idéale</td>
+          <td><strong>PME / ETI</strong><br><small>Recherche d'économies</small></td>
+          <td><strong>Env. Windows</strong><br><small>PME & Grands Comptes</small></td>
+          <td><strong>Grands Comptes</strong><br><small>Infra critique & Banque</small></td>
         </tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="veille.js"></script>
+<section class="container mt-5 fade-in">
+  <h2 class="section-title text-start">Thème 3 : Ma Synthèse & Recommandations</h2>
+  <div class="p-4 bg-white rounded border-start border-5 border-warning shadow-sm">
+    <h5 class="fw-bold">Vers une architecture hybride ou "Multi-Hyperviseur"</h5>
+    <p>
+      L'hégémonie du "Tout VMware" est terminée. En tant que futur administrateur SISR, je constate que la compétence clé de demain sera l'adaptabilité.
+    </p>
+    <p class="mb-0">
+      <strong>Ma préconisation :</strong> Pour les nouveaux déploiements ou le renouvellement de matériel dans une PME, <strong>Proxmox VE</strong> est devenu la solution la plus rationnelle. Elle offre les fonctionnalités "Enterprise" (Haute Dispo, Cluster) sans la barrière financière. Cependant, pour les entreprises déjà fortement investies dans l'écosystème Microsoft (AD, Azure), la bascule vers <strong>Windows Server 2025</strong> est la suite logique.
+    </p>
+  </div>
+</section>
+
+<section class="container mt-5 fade-in">
+  <h2 class="section-title">Sources Documentaires</h2>
+  <div class="table-responsive bg-white rounded shadow-sm">
+    <table class="table table-hover mb-0 align-middle">
+      <thead class="table-light">
+        <tr>
+          <th class="ps-4">Date</th>
+          <th>Sujet</th>
+          <th>Source</th>
+          <th class="text-end pe-4">Accès</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ps-4 text-muted small">12/2024</td>
+          <td>Outil de migration Proxmox pour vSphere</td>
+          <td><span class="badge bg-light text-dark border">NEXT2i</span></td>
+          <td class="text-end pe-4"><a href="https://www.next2i.fr/blog/2024/12/07/proxmox-gagne-du-terrain-face-a-vmware-avec-un-nouvel-assistant-de-migration-pour-vsphere-esxi/" target="_blank" class="btn btn-sm btn-link"><i class="bi bi-box-arrow-up-right"></i></a></td>
+        </tr>
+        <tr>
+          <td class="ps-4 text-muted small">11/2024</td>
+          <td>Nouveautés Windows Server 2025</td>
+          <td><span class="badge bg-light text-dark border">IT-Connect</span></td>
+          <td class="text-end pe-4"><a href="https://www.it-connect.fr/windows-server-2025-est-disponible-quelles-sont-les-nouveautes/" target="_blank" class="btn btn-sm btn-link"><i class="bi bi-box-arrow-up-right"></i></a></td>
+        </tr>
+        <tr>
+          <td class="ps-4 text-muted small">05/2024</td>
+          <td>Impact licences VMware Broadcom</td>
+          <td><span class="badge bg-light text-dark border">USU Blog</span></td>
+          <td class="text-end pe-4"><a href="https://www.usu.com/fr/blog/broadcom-vmware-licensing" target="_blank" class="btn btn-sm btn-link"><i class="bi bi-box-arrow-up-right"></i></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="container mt-5 mb-5 fade-in">
+  <h2 class="section-title">Outils de veille</h2>
+  <div class="row text-center g-4">
+    <div class="col-md-4">
+      <div class="p-3 bg-white border rounded shadow-sm h-100">
+        <div class="mb-2"><i class="bi bi-google text-warning fs-3"></i></div>
+        <h5 class="fw-bold">Google Alerts</h5>
+        <p class="small text-muted mb-0">"Migration VMware", "Proxmox"</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 bg-white border rounded shadow-sm h-100">
+        <div class="mb-2"><i class="bi bi-rss-fill text-success fs-3"></i></div>
+        <h5 class="fw-bold">Feedly (RSS)</h5>
+        <p class="small text-muted mb-0">IT-Connect, ZDNet, Microsoft</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 bg-white border rounded shadow-sm h-100">
+        <div class="mb-2"><i class="bi bi-envelope-paper-fill text-primary fs-3"></i></div>
+        <h5 class="fw-bold">Newsletters</h5>
+        <p class="small text-muted mb-0">ANSSI (CertFR), Silicon.fr</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
@@ -215,5 +262,8 @@
     <a href="confidentialite.html" target="_blank" style="color: #00bfa6;">Politique de confidentialité</a>
   </p>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="veille.js"></script>
 </body>
 </html>

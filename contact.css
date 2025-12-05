@@ -1,139 +1,133 @@
 /* ===== Style général ===== */
 body {
-  background-color: #d4d8db; /* Fond clair */
-  color: #1e293b; /* Texte foncé */
+  background-color: #d4d8db; 
+  color: #1e293b; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #1e293b !important; /* Gris foncé */
+  background-color: #1e293b !important; 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   font-weight: 600;
 }
 .navbar-brand {
-  color: #f97316 !important; /* Orange vif */
-  font-size: 1.8rem;
+  color: #f97316 !important; 
+  font-size: 1.4rem;
 }
 .navbar-nav .nav-link {
-  color: #e2e8f0 !important; /* Gris clair */
+  color: #e2e8f0 !important; 
   transition: color 0.3s ease;
 }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-  color: #f97316 !important; /* Orange vif */
+  color: #f97316 !important; 
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #1e293b, #f97316); /* Gris foncé → orange vif */
-  padding: 100px 20px;
+  background: linear-gradient(135deg, #1e293b, #f97316);
+  padding: 80px 20px;
   text-align: center;
   border-radius: 0 0 40px 40px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   color: white;
 }
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 900;
-  text-shadow: 1px 1px 6px #004d4d;
-  margin-bottom: 20px;
-  animation: fadeInDown 1s ease forwards;
-  opacity: 0;
+  text-shadow: 1px 1px 6px #00000055;
+  margin-bottom: 15px;
 }
 .hero p {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  margin-bottom: 30px;
-  animation: fadeInUp 1s ease 0.5s forwards;
-  opacity: 0;
+  opacity: 0.9;
 }
 
-/* Bouton personnalisé */
-.btn-primary-custom {
-  background-color: #f97316; /* Orange vif */
-  color: #ffffff;
-  font-weight: 700;
-  border: 2px solid #f97316;
-  padding: 12px 30px;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
+/* --- CONTACT INFO (Gauche) --- */
+.contact-card {
+  border-left: 5px solid #f97316; /* Barre orange verticale */
 }
-.btn-primary-custom:hover {
-  background-color: #ffffff;
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: #fff7ed; /* Orange très clair */
   color: #f97316;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0; /* Empêche l'icône de s'écraser */
 }
 
-/* Section Titles */
-.section-title {
-  color: #f97316; /* Orange vif */
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-/* Sections */
-section.container {
-  max-width: 900px;
-  margin-bottom: 4rem;
-}
-section.container p {
-  font-size: 1.15rem;
-  line-height: 1.6;
+.social-btn {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  background-color: #f1f5f9;
   color: #1e293b;
-  text-align: center;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+.social-btn:hover {
+  background-color: #f97316;
+  color: white;
+  transform: translateY(-3px);
 }
 
-/* Formulaire */
-form {
-  background-color: #ffffff; /* blanc pour contraste */
-  padding: 30px 25px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.15); /* orange léger */
+/* --- FORMULAIRE (Droite) --- */
+.border-top-orange {
+  border-top: 5px solid #f97316;
 }
-.form-control {
-  background-color: #f8f9fa; /* gris très clair */
-  border: 1px solid #f97316; /* orange vif */
-  color: #1e293b;
-  border-radius: 12px;
-  padding: 10px 15px;
-  margin-bottom: 20px;
-  transition: border-color 0.3s ease;
+
+/* Personnalisation des champs Bootstrap "Floating" */
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  color: #f97316;
+  font-weight: 600;
 }
 .form-control:focus {
-  border-color: #f97316; /* orange vif */
-  box-shadow: 0 0 8px #f97316;
-  outline: none;
-  background-color: #f8f9fa;
-  color: #1e293b;
+  border-color: #f97316;
+  box-shadow: 0 0 0 0.25rem rgba(249, 115, 22, 0.25);
 }
-label {
-  color: #f97316; /* orange vif */
-  font-weight: 600;
-  margin-bottom: 8px;
-  display: block;
+
+/* Bouton Envoyer */
+.btn-primary-custom {
+  background-color: #f97316;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.btn-primary-custom:hover {
+  background-color: #1e293b;
+  color: #f97316; /* Texte orange au survol */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* Footer */
 footer {
-  background-color: #1e293b; /* gris foncé */
+  background-color: #1e293b;
   color: #ffffff;
   text-align: center;
   padding: 20px 0;
   font-size: 0.9rem;
   font-weight: 500;
-  border-top: 3px solid #f97316; /* orange vif */
+  border-top: 3px solid #f97316;
+  margin-top: 60px;
 }
 footer a {
-  color: #f97316; /* orange vif */
+  color: #f97316;
   margin: 0 8px;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -143,18 +137,8 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Animations */
-@keyframes fadeInDown {
-  0% { opacity: 0; transform: translateY(-40px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(40px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive adjustments */
-@media (max-width: 576px) {
-  .hero h1 { font-size: 2.4rem; }
-  .hero p { font-size: 1.1rem; }
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .contact-form { padding: 25px !important; }
 }
