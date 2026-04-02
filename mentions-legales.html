@@ -6,96 +6,68 @@
   <title>Mentions Légales | Portfolio Omar Talibi</title>
   <link rel="icon" type="image/png" href="img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="contact.css" />
   <style>
-    /* ===== CSS INTÉGRÉ (Basé sur contact.css comme à l'origine) ===== */
-    
-    /* Style général */
-    body {
-      background-color: #d4d8db; 
-      color: #1e293b; 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
+    .legal-card {
+      background: var(--dark-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 36px 40px;
+      margin-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
     }
-
-    /* Navbar */
-    .navbar {
-      background-color: #1e293b !important; 
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      font-weight: 600;
+    .legal-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--orange);
+      border-radius: 20px 0 0 20px;
     }
-    .navbar-brand {
-      color: #f97316 !important; 
-      font-size: 1.4rem;
+    .legal-section { margin-bottom: 32px; }
+    .legal-section:last-child { margin-bottom: 0; }
+    .legal-section h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .navbar-nav .nav-link {
-      color: #e2e8f0 !important; 
-      transition: color 0.3s ease;
+    .legal-section h3 i { font-size: 1rem; }
+    .legal-section p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
     }
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-      color: #f97316 !important; 
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, #1e293b, #f97316); 
-      padding: 100px 20px;
-      text-align: center;
-      border-radius: 0 0 40px 40px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-      color: white;
-    }
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 900;
-      text-shadow: 1px 1px 6px #004d4d;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.4rem;
-      font-weight: 500;
-      margin-bottom: 30px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #1e293b;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.9rem;
-      font-weight: 500;
-      border-top: 3px solid #f97316;
-      margin-top: 50px;
-    }
-    footer a {
-      color: #00bfa6;
-      margin: 0 8px;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    footer a:hover {
-      color: #ffffff;
-      text-decoration: underline;
+    .legal-section p strong { color: var(--light); }
+    .legal-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 28px 0;
     }
   </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm" data-bs-theme="dark">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img src="img/logo.png" alt="Logo" height="35" class="me-2 rounded">
+      <img src="img/logo.png" alt="Logo" height="38" class="me-2 rounded">
       OMAR TALIBI
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
+      <ul class="navbar-nav ms-auto align-items-center gap-1">
         <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
         <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
         <li class="nav-item"><a class="nav-link" href="experiences.html">Expériences</a></li>
@@ -106,56 +78,92 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="container">
-    <h1 class="fw-bold">Mentions Légales</h1>
-    <p>Informations légales relatives à l’éditeur, l’hébergement et l’utilisation de ce site.</p>
+    <h1>Mentions <span>Légales</span></h1>
+    <p>Informations légales relatives à l'éditeur, l'hébergement et l'utilisation de ce site.</p>
   </div>
 </section>
 
-<section class="container my-5">
-  <div class="bg-white text-dark rounded p-4 shadow-sm" style="line-height: 1.7; font-size: 1.05rem;">
-    <h3 style="color: #f97316;">Éditeur du site</h3>
-    <p>
-      Nom : Omar Talibi<br />
-      Statut : Étudiant BTS SIO SISR<br />
-      Adresse : Nice, France<br />
-      Email : omar.talibi@gmail.com
-    </p>
+<!-- CONTENU -->
+<section class="container mt-5 reveal">
+  <div class="legal-card">
 
-    <h3 class="mt-4" style="color: #f97316;">Hébergement</h3>
-    <p>
-      Le site est hébergé par <strong>GitHub Pages</strong>.
-    </p>
+    <div class="legal-section">
+      <h3><i class="bi bi-person-fill"></i> Éditeur du site</h3>
+      <p>
+        <strong>Nom :</strong> Omar Talibi<br>
+        <strong>Statut :</strong> Étudiant BTS SIO SISR<br>
+        <strong>Établissement :</strong> IRIS Mediaschool, Nice<br>
+        <strong>Email :</strong> omar.talibi@gmail.com
+      </p>
+    </div>
 
-    <h3 class="mt-4" style="color: #f97316;">Propriété intellectuelle</h3>
-    <p>
-      L’ensemble des contenus (textes, images, code source) de ce portfolio sont la propriété exclusive de Omar Talibi, sauf indication contraire.
-      Toute reproduction est interdite sans autorisation préalable.
-    </p>
+    <div class="legal-divider"></div>
 
-    <h3 class="mt-4" style="color: #f97316;">Collecte de données</h3>
-    <p>
-      Ce site ne collecte pas de données personnelles sans votre consentement.<br />
-      Les formulaires présents (si existants) sont utilisés uniquement à des fins de contact.
-    </p>
+    <div class="legal-section">
+      <h3><i class="bi bi-server"></i> Hébergement</h3>
+      <p>
+        Ce site est hébergé par <strong>GitHub Pages</strong>, service proposé par GitHub Inc.<br>
+        88 Colin P. Kelly Jr. St, San Francisco, CA 94107, États-Unis.
+      </p>
+    </div>
 
-    <h3 class="mt-4" style="color: #f97316;">Responsabilité</h3>
-    <p>
-      Ce site est un projet éducatif. Omar Talibi ne peut être tenu responsable en cas d’erreur, d’inexactitude ou de problème technique.
-    </p>
+    <div class="legal-divider"></div>
+
+    <div class="legal-section">
+      <h3><i class="bi bi-shield-lock-fill"></i> Propriété intellectuelle</h3>
+      <p>
+        L'ensemble des contenus présents sur ce portfolio (textes, images, code source, projets) sont la propriété exclusive de <strong>Omar Talibi</strong>, sauf mention contraire.
+        Toute reproduction, distribution ou utilisation sans autorisation préalable est interdite.
+      </p>
+    </div>
+
+    <div class="legal-divider"></div>
+
+    <div class="legal-section">
+      <h3><i class="bi bi-database-fill"></i> Collecte de données</h3>
+      <p>
+        Ce site ne collecte aucune donnée personnelle sans votre consentement explicite.
+        Le formulaire de contact est utilisé uniquement à des fins de communication directe
+        et les données transmises ne sont pas conservées au-delà de l'échange.
+      </p>
+    </div>
+
+    <div class="legal-divider"></div>
+
+    <div class="legal-section">
+      <h3><i class="bi bi-exclamation-triangle-fill"></i> Responsabilité</h3>
+      <p>
+        Ce site est un <strong>projet éducatif</strong> réalisé dans le cadre d'un BTS SIO.
+        Omar Talibi ne peut être tenu responsable en cas d'erreur, d'inexactitude ou de problème technique.
+        Les liens externes présents sur ce site renvoient vers des ressources indépendantes sur lesquelles l'auteur n'a aucun contrôle.
+      </p>
+    </div>
+
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
-  <p>
-    <a href="mentions-legales.html" target="_blank" style="color: #00bfa6;">Mentions légales</a> |
-    <a href="plan-du-site.html" target="_blank" style="color: #00bfa6;">Plan du site</a> |
-    <a href="confidentialite.html" target="_blank" style="color: #00bfa6;">Politique de confidentialité</a>
+  <p>© 2025 — Omar Talibi · Portfolio BTS SIO</p>
+  <p class="mt-1">
+    <a href="mentions-legales.html" target="_blank">Mentions légales</a> |
+    <a href="plan-du-site.html" target="_blank">Plan du site</a> |
+    <a href="confidentialite.html" target="_blank">Politique de confidentialité</a>
   </p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>

@@ -6,21 +6,83 @@
   <title>Politique de confidentialité | Portfolio Omar Talibi</title>
   <link rel="icon" type="image/png" href="img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="contact.css" />
+  <style>
+    .legal-card {
+      background: var(--dark-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 36px 40px;
+      margin-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .legal-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px; height: 100%;
+      background: var(--orange);
+      border-radius: 20px 0 0 20px;
+    }
+    .legal-section { margin-bottom: 32px; }
+    .legal-section:last-child { margin-bottom: 0; }
+    .legal-section h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .legal-section h3 i { font-size: 1rem; }
+    .legal-section p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+    .legal-section p strong { color: var(--light); }
+    .legal-section a { color: var(--orange); text-decoration: none; transition: color 0.2s; }
+    .legal-section a:hover { color: var(--orange-light); }
+    .legal-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin: 28px 0;
+    }
+    .rgpd-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(249,115,22,0.1);
+      border: 1px solid rgba(249,115,22,0.25);
+      color: var(--orange);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm" data-bs-theme="dark">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img src="img/logo.png" alt="Logo" height="35" class="me-2 rounded">
+      <img src="img/logo.png" alt="Logo" height="38" class="me-2 rounded">
       OMAR TALIBI
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
+      <ul class="navbar-nav ms-auto align-items-center gap-1">
         <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
         <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
         <li class="nav-item"><a class="nav-link" href="experiences.html">Expériences</a></li>
@@ -31,43 +93,110 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="container">
-    <h1 class="fw-bold">Politique de confidentialité</h1>
+    <h1>Politique de <span>Confidentialité</span></h1>
     <p>Découvrez comment vos données sont protégées et utilisées sur ce site.</p>
   </div>
 </section>
 
-<section class="container my-5">
-  <div class="bg-white text-dark rounded p-4 shadow-sm" style="line-height: 1.7; font-size: 1.05rem;">
-    <p>Le site <strong>Portfolio Omar Talibi</strong> respecte la vie privée des utilisateurs. Aucune donnée personnelle n’est collectée à votre insu, vendue ou utilisée à des fins commerciales.</p>
+<!-- CONTENU -->
+<section class="container mt-5 reveal">
+  <div class="legal-card">
 
-    <h5 class="mt-4" style="color:#f97316; font-weight:700;">1. Collecte des données</h5>
-    <p>Aucune donnée personnelle n’est automatiquement collectée sur ce site. Les seules informations que vous pourriez transmettre volontairement sont via le formulaire de contact (nom, e-mail, message).</p>
+    <div class="rgpd-badge">
+      <i class="bi bi-shield-check-fill"></i> Conforme RGPD
+    </div>
 
-    <h5 class="mt-4" style="color:#f97316; font-weight:700;">2. Utilisation des données</h5>
-    <p>Les données envoyées via le formulaire sont utilisées uniquement pour répondre à vos messages. Elles ne sont conservées que pendant la durée nécessaire à l’échange.</p>
+    <div class="legal-section">
+      <h3><i class="bi bi-database-fill-slash"></i> Collecte des données</h3>
+      <p>
+        Aucune donnée personnelle n'est automatiquement collectée sur ce site.
+        Les seules informations que vous pourriez transmettre volontairement sont via le
+        <strong>formulaire de contact</strong> (nom, e-mail, message).
+      </p>
+    </div>
 
-    <h5 class="mt-4" style="color:#f97316; font-weight:700;">3. Cookies</h5>
-    <p>Ce site n’utilise pas de cookies de suivi ou de services d’analyse externes (comme Google Analytics). Seuls les cookies nécessaires au bon fonctionnement peuvent être utilisés temporairement.</p>
+    <div class="legal-divider"></div>
 
-    <h5 class="mt-4" style="color:#f97316; font-weight:700;">4. Droits des utilisateurs</h5>
-    <p>Conformément au RGPD, vous pouvez demander l’accès, la rectification ou la suppression de vos données en m’écrivant via la page <a href="contact.html" style="color:#f97316; font-weight:600;">contact</a>.</p>
+    <div class="legal-section">
+      <h3><i class="bi bi-gear-fill"></i> Utilisation des données</h3>
+      <p>
+        Les données envoyées via le formulaire de contact sont utilisées
+        <strong>uniquement pour répondre à vos messages</strong>.
+        Elles ne sont pas conservées au-delà de la durée nécessaire à l'échange,
+        ni partagées avec des tiers.
+      </p>
+    </div>
 
-    <h5 class="mt-4" style="color:#f97316; font-weight:700;">5. Sécurité</h5>
-    <p>Ce site est protégé contre tout accès non autorisé. Les échanges sont sécurisés par le protocole HTTPS si activé sur le serveur d’hébergement.</p>
+    <div class="legal-divider"></div>
+
+    <div class="legal-section">
+      <h3><i class="bi bi-cookie"></i> Cookies</h3>
+      <p>
+        Ce site <strong>n'utilise pas de cookies</strong> de suivi ou de services d'analyse externes
+        (tel que Google Analytics). Seuls les cookies techniques strictement nécessaires
+        au bon fonctionnement du site peuvent être utilisés temporairement.
+      </p>
+    </div>
+
+    <div class="legal-divider"></div>
+
+    <div class="legal-section">
+      <h3><i class="bi bi-person-check-fill"></i> Droits des utilisateurs</h3>
+      <p>
+        Conformément au <strong>Règlement Général sur la Protection des Données (RGPD)</strong>,
+        vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles.
+        Pour exercer ces droits, contactez-moi via la page
+        <a href="contact.html">Contact</a>.
+      </p>
+    </div>
+
+    <div class="legal-divider"></div>
+
+    <div class="legal-section">
+      <h3><i class="bi bi-lock-fill"></i> Sécurité</h3>
+      <p>
+        Ce site est hébergé sur <strong>GitHub Pages</strong> et bénéficie d'une connexion
+        sécurisée via le protocole <strong>HTTPS</strong>. Toutes les communications entre
+        votre navigateur et ce site sont chiffrées.
+      </p>
+    </div>
+
+    <div class="legal-divider"></div>
+
+    <div class="legal-section">
+      <h3><i class="bi bi-arrow-clockwise"></i> Mise à jour</h3>
+      <p>
+        Cette politique de confidentialité peut être mise à jour à tout moment.
+        La date de dernière modification est indiquée en pied de page.
+        <strong>Dernière mise à jour : 2025.</strong>
+      </p>
+    </div>
+
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
-  <p>
-    <a href="mentions-legales.html" target="_blank" style="color: #00bfa6;">Mentions légales</a> |
-    <a href="plan-du-site.html" target="_blank" style="color: #00bfa6;">Plan du site</a> |
-    <a href="confidentialite.html" target="_blank" style="color: #00bfa6;">Politique de confidentialité</a>
+  <p>© 2025 — Omar Talibi · Portfolio BTS SIO</p>
+  <p class="mt-1">
+    <a href="mentions-legales.html" target="_blank">Mentions légales</a> |
+    <a href="plan-du-site.html" target="_blank">Plan du site</a> |
+    <a href="confidentialite.html" target="_blank">Politique de confidentialité</a>
   </p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>

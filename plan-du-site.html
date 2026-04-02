@@ -6,21 +6,153 @@
   <title>Plan du site | Portfolio Omar Talibi</title>
   <link rel="icon" type="image/png" href="img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="contact.css" />
+  <style>
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 5rem;
+    }
+    .sitemap-card {
+      background: var(--dark-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 26px 24px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .sitemap-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .sitemap-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(249,115,22,0.25);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    }
+    .sitemap-card:hover::before { transform: scaleX(1); }
+
+    .sitemap-icon {
+      width: 46px; height: 46px;
+      background: rgba(249,115,22,0.1);
+      border: 1px solid rgba(249,115,22,0.2);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--orange);
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      transition: all 0.3s;
+    }
+    .sitemap-card:hover .sitemap-icon {
+      background: var(--orange);
+      color: white;
+    }
+    .sitemap-card h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .sitemap-card p {
+      color: var(--muted);
+      font-size: 0.83rem;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .sitemap-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--orange);
+      font-size: 0.83rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .sitemap-link:hover { gap: 10px; color: var(--orange-light); }
+    .sitemap-link i { font-size: 0.75rem; }
+
+    /* Section fichiers */
+    .files-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 5rem;
+    }
+    .file-card {
+      background: var(--dark-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .file-card:hover {
+      border-color: rgba(249,115,22,0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .file-icon {
+      width: 40px; height: 40px;
+      background: rgba(249,115,22,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--orange);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      transition: all 0.3s;
+    }
+    .file-card:hover .file-icon { background: var(--orange); color: white; }
+    .file-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--light);
+      margin-bottom: 2px;
+    }
+    .file-desc { color: var(--muted); font-size: 0.78rem; }
+
+    .section-title { font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 0.4rem; }
+    .section-title span { color: var(--orange); }
+    .section-divider { width: 40px; height: 3px; background: var(--orange); border-radius: 2px; margin: 10px 0 2rem; }
+
+    @media (max-width: 768px) {
+      .sitemap-grid { grid-template-columns: 1fr 1fr; }
+      .files-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .sitemap-grid { grid-template-columns: 1fr; }
+      .files-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm" data-bs-theme="dark">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img src="img/logo.png" alt="Logo" height="35" class="me-2 rounded">
+      <img src="img/logo.png" alt="Logo" height="38" class="me-2 rounded">
       OMAR TALIBI
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
+      <ul class="navbar-nav ms-auto align-items-center gap-1">
         <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
         <li class="nav-item"><a class="nav-link" href="projets.html">Projets</a></li>
         <li class="nav-item"><a class="nav-link" href="experiences.html">Expériences</a></li>
@@ -31,40 +163,141 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="container">
-    <h1 class="fw-bold">Plan du site</h1>
-    <p>Retrouvez ci-dessous la liste des pages et documents disponibles sur mon portfolio.</p>
+    <h1>Plan <span>du Site</span></h1>
+    <p>Retrouvez l'ensemble des pages et documents disponibles sur ce portfolio.</p>
   </div>
 </section>
 
-<section class="container my-5">
-  <div class="bg-white text-dark rounded p-4 shadow-sm" style="line-height: 1.7; font-size: 1.05rem;">
-    <ul class="list-unstyled">
-      <li><a href="index.html" style="color:#f97316; font-weight:600;">Accueil</a> – Introduction et résumé du portfolio</li>
-      <li><a href="projets.html" style="color:#f97316; font-weight:600;">Projets</a> – Présentation de mes projets techniques</li>
-      <li><a href="experiences.html" style="color:#f97316; font-weight:600;">Expériences</a> – Mes expériences professionnelles</li>
-      <li><a href="veille.html" style="color:#f97316; font-weight:600;">Veille</a> – Articles de veille technologique</li>
-      <li><a href="contact.html" style="color:#f97316; font-weight:600;">Contact</a> – Formulaire et informations pour me joindre</li>
-      <li><a href="competences.html" style="color:#f97316; font-weight:600;">Compétences</a> – Outils et technologies maîtrisés</li>
-      <li><a href="Tableau de synthèse.pdf" style="color:#f97316; font-weight:600;" download>Tableau de synthèse (PDF)</a> – Compétences justifiées par projet</li>
-      <li><a href="cv.pdf" style="color:#f97316; font-weight:600;" download>CV (PDF)</a> – Télécharger mon CV</li>
-      <li><a href="mentions-legales.html" style="color:#f97316; font-weight:600;">Mentions légales</a></li>
-      <li><a href="plan-du-site.html" style="color:#f97316; font-weight:600;">Plan du site</a></li>
-      <li><a href="confidentialite.html" style="color:#f97316; font-weight:600;">Politique de confidentialité</a></li>
-    </ul>
+<!-- PAGES PRINCIPALES -->
+<section class="container mt-5 reveal">
+  <p class="section-title">Pages <span>principales</span></p>
+  <div class="section-divider"></div>
+  <div class="sitemap-grid">
+
+    <div class="sitemap-card">
+      <div class="sitemap-icon"><i class="bi bi-house-fill"></i></div>
+      <h4>Accueil</h4>
+      <p>Présentation générale, à propos, formation, outils et tableau de synthèse.</p>
+      <a href="index.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="sitemap-card">
+      <div class="sitemap-icon"><i class="bi bi-folder2-open"></i></div>
+      <h4>Projets</h4>
+      <p>Sélection de projets réalisés en formation BTS SIO SISR avec documentation.</p>
+      <a href="projets.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="sitemap-card">
+      <div class="sitemap-icon"><i class="bi bi-person-lines-fill"></i></div>
+      <h4>Expériences</h4>
+      <p>Parcours scolaire, certifications, expériences professionnelles et stages.</p>
+      <a href="experiences.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="sitemap-card">
+      <div class="sitemap-icon"><i class="bi bi-newspaper"></i></div>
+      <h4>Veille Technologique</h4>
+      <p>Évolution des solutions de virtualisation en entreprise — analyse et synthèse.</p>
+      <a href="veille.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="sitemap-card">
+      <div class="sitemap-icon"><i class="bi bi-stars"></i></div>
+      <h4>Compétences</h4>
+      <p>Systèmes, réseaux, sécurité et développement — tous mes savoir-faire.</p>
+      <a href="competences.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="sitemap-card">
+      <div class="sitemap-icon"><i class="bi bi-envelope-fill"></i></div>
+      <h4>Contact</h4>
+      <p>Formulaire de contact, coordonnées et réseaux sociaux.</p>
+      <a href="contact.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+    </div>
+
   </div>
 </section>
 
+<!-- DOCUMENTS -->
+<section class="container reveal">
+  <p class="section-title">Documents <span>disponibles</span></p>
+  <div class="section-divider"></div>
+  <div class="files-grid">
+
+    <a href="files/CV Professionnel stage.pdf" target="_blank" class="file-card">
+      <div class="file-icon"><i class="bi bi-file-person-fill"></i></div>
+      <div>
+        <p class="file-name">Mon CV</p>
+        <p class="file-desc">CV professionnel — PDF</p>
+      </div>
+    </a>
+
+    <a href="files/tableau de synthese.pdf" target="_blank" class="file-card">
+      <div class="file-icon"><i class="bi bi-table"></i></div>
+      <div>
+        <p class="file-name">Tableau de synthèse</p>
+        <p class="file-desc">Compétences BTS SIO — PDF</p>
+      </div>
+    </a>
+
+    <a href="files/Rapport_de_Stage_1.pdf" target="_blank" class="file-card">
+      <div class="file-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+      <div>
+        <p class="file-name">Rapport de Stage 1</p>
+        <p class="file-desc">BMA · Juil–Août 2025 — PDF</p>
+      </div>
+    </a>
+
+    <a href="files/Rapport_de_Stage_2.pdf" target="_blank" class="file-card">
+      <div class="file-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+      <div>
+        <p class="file-name">Rapport de Stage 2</p>
+        <p class="file-desc">BMA · Jan–Fév 2026 — PDF</p>
+      </div>
+    </a>
+
+    <a href="mentions-legales.html" class="file-card">
+      <div class="file-icon"><i class="bi bi-file-ruled-fill"></i></div>
+      <div>
+        <p class="file-name">Mentions légales</p>
+        <p class="file-desc">Informations légales du site</p>
+      </div>
+    </a>
+
+    <a href="confidentialite.html" class="file-card">
+      <div class="file-icon"><i class="bi bi-shield-check-fill"></i></div>
+      <div>
+        <p class="file-name">Confidentialité</p>
+        <p class="file-desc">Politique de protection des données</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
-  <p>
-    <a href="mentions-legales.html" target="_blank" style="color: #00bfa6;">Mentions légales</a> |
-    <a href="plan-du-site.html" target="_blank" style="color: #00bfa6;">Plan du site</a> |
-    <a href="confidentialite.html" target="_blank" style="color: #00bfa6;">Politique de confidentialité</a>
+  <p>© 2025 — Omar Talibi · Portfolio BTS SIO</p>
+  <p class="mt-1">
+    <a href="mentions-legales.html" target="_blank">Mentions légales</a> |
+    <a href="plan-du-site.html" target="_blank">Plan du site</a> |
+    <a href="confidentialite.html" target="_blank">Politique de confidentialité</a>
   </p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>

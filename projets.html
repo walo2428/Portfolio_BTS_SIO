@@ -6,21 +6,23 @@
   <title>Mes Projets – Omar Talibi</title>
   <link rel="icon" type="image/png" href="img/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="projets.css" />
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm" data-bs-theme="dark">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img src="img/logo.png" alt="Logo" height="35" class="me-2 rounded">
+      <img src="img/logo.png" alt="Logo" height="38" class="me-2 rounded">
       OMAR TALIBI
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
+      <ul class="navbar-nav ms-auto align-items-center gap-1">
         <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
         <li class="nav-item"><a class="nav-link active" href="projets.html">Projets</a></li>
         <li class="nav-item"><a class="nav-link" href="experiences.html">Expériences</a></li>
@@ -31,241 +33,557 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="container">
-    <h1 class="fw-bold">Mes Projets Réalisés</h1>
-    <p>Voici une sélection de projets réalisés dans ma formation BTS SIO SISR.</p>
+    <h1>Mes <span>Projets</span></h1>
+    <p>Sélection de projets réalisés durant ma formation BTS SIO SISR.</p>
   </div>
 </section>
 
-<section class="container mt-5">
-  <div id="projects-grid" class="row g-4">
+<!-- PROJETS -->
+<section class="container mt-5 reveal">
 
-    <div class="col-md-6 project-card-wrapper" data-category="system">
-      <div class="project-card">
-        <img src="img/projets/windows_server.jpg" alt="Windows Server" />
-        <div class="card-body">
-          <h5 class="card-title">Windows Server</h5>
-          <p class="card-text">Déploiement d’une infrastructure Windows Server complète : AD DS, DNS, DHCP, GPO, serveur de fichiers et automatisations PowerShell.</p>
-          <div class="project-tags">
-            <span class="tag">Windows Server</span>
-            <span class="tag">Active Directory</span>
-            <span class="tag">GPO</span>
-            <span class="tag">DHCP</span>
-            <span class="tag">DNS</span>
-            <span class="tag">PowerShell</span>
-            <span class="tag">Virtualisation</span>
-          </div>
-          <div class="project-buttons">
-            <a href="https://github.com/Mediaschool-IRIS-BTS-SISR-2025/WinServ-PowerShell" class="btn-projet-outline" target="_blank">Documentation</a>
-            <a href="files/7- Annexes 7 - Epreuve E5 - winserver.pdf" class="btn-projet-outline" download>Télécharger RP</a>
-            <button class="btn-details">Détails</button>
-            <a href="#" class="btn-view">Voir le projet</a>
-          </div>
-          <div class="details-box">
-            Mise en place complète d'un domaine Active Directory, configuration des rôles, création d’OU, gestion des stratégies GPO.
-          </div>
+  <!-- FILTRES -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">Tous les projets</button>
+    <button class="filter-btn" data-filter="system">Systèmes & Réseaux</button>
+    <button class="filter-btn" data-filter="dev">Développement Web</button>
+  </div>
+
+  <!-- GRILLE -->
+  <div class="projects-grid" id="projects-grid">
+
+    <!-- Windows Server -->
+    <div class="project-card card-stagger" data-category="system">
+      <div class="project-img-wrap">
+        <img src="img/projets/windows_server.jpg" alt="Windows Server" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">Windows Server</h5>
+        <p class="project-desc">Déploiement d'une infrastructure Windows Server complète : AD DS, DNS, DHCP, GPO, serveur de fichiers et automatisations PowerShell.</p>
+        <div class="project-tags">
+          <span class="tag">Windows Server</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">GPO</span>
+          <span class="tag">DHCP</span>
+          <span class="tag">DNS</span>
+          <span class="tag">PowerShell</span>
+        </div>
+        <div class="project-buttons">
+          <a href="https://github.com/Mediaschool-IRIS-BTS-SISR-2025/WinServ-PowerShell" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
+          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - AD DS.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
+          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
+          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
+        </div>
+        <div class="details-box">Mise en place complète d'un domaine Active Directory, configuration des rôles, création d'OU, gestion des stratégies GPO et scripts PowerShell d'automatisation.</div>
+      </div>
+    </div>
+
+    <!-- ClassCord -->
+    <div class="project-card card-stagger" data-category="system">
+      <div class="project-img-wrap">
+        <img src="img/projets/classcord_server.png" alt="ClassCord" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">ClassCord Server</h5>
+        <p class="project-desc">Serveur de tchat multi-clients en Python, déployé, sécurisé et supervisé sous Linux, avec accès réseau pour les clients SLAM.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Linux (Debian)</span>
+          <span class="tag">Sockets TCP</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Fail2ban</span>
+        </div>
+        <div class="project-buttons">
+          <a href="https://github.com/walo2428/classcord_server" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
+          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - ClassCord.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
+          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
+          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
+        </div>
+        <div class="details-box">Serveur de tchat multi-clients développé en Python. Mon rôle SISR : déployer le serveur Python et le rendre accessible sur le réseau pour les clients Java des étudiants SLAM.</div>
+      </div>
+    </div>
+
+    <!-- DHCP/DNS -->
+    <div class="project-card card-stagger" data-category="system">
+      <div class="project-img-wrap">
+        <img src="img/projets/dhcp_dns.png" alt="DHCP/DNS" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">Serveur DHCP / DNS</h5>
+        <p class="project-desc">Mise en place de DHCP et DNS sur Debian avec isc-dhcp-server et bind9, incluant zones de résolution directe et inverse.</p>
+        <div class="project-tags">
+          <span class="tag">Debian</span>
+          <span class="tag">DHCP</span>
+          <span class="tag">DNS</span>
+          <span class="tag">bind9</span>
+        </div>
+        <div class="project-buttons">
+          <a href="https://github.com/walo2428/DHCP_DNS" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
+          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - DHCP DNS.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
+          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
+          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
+        </div>
+        <div class="details-box">Configuration d'un serveur Debian complet : DHCP avec plages dynamiques, DNS bind9 avec zones primaires et secondaires, sécurisation SSH.</div>
+      </div>
+    </div>
+
+    <!-- Monitoring -->
+    <div class="project-card card-stagger" data-category="system">
+      <div class="project-img-wrap">
+        <img src="img/projets/grafana.png" alt="Monitoring" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">Monitoring</h5>
+        <p class="project-desc">Stack complète de supervision temps réel pour surveiller la santé des serveurs avec tableaux de bord Grafana.</p>
+        <div class="project-tags">
+          <span class="tag">Prometheus</span>
+          <span class="tag">Grafana</span>
+          <span class="tag">Node Exporter</span>
+          <span class="tag">InfluxDB</span>
+        </div>
+        <div class="project-buttons">
+          <a href="https://github.com/Mediaschool-IRIS-BTS-SISR-2025/Vagrant_TP" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
+          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - Supervision.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
+          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
+          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
+        </div>
+        <div class="details-box">Déploiement d'une stack de supervision avec Prometheus pour la collecte de métriques, Node Exporter sur les serveurs cibles, et Grafana pour la visualisation en temps réel.</div>
+      </div>
+    </div>
+
+    <!-- GLPI -->
+    <div class="project-card card-stagger" data-category="system">
+      <div class="project-img-wrap">
+        <img src="img/projets/glpi.png" alt="GLPI" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">GLPI</h5>
+        <p class="project-desc">Déploiement de GLPI pour la gestion de parc informatique et tickets d'incidents, avec sécurisation SSH par clés RSA.</p>
+        <div class="project-tags">
+          <span class="tag">GLPI</span>
+          <span class="tag">Apache</span>
+          <span class="tag">SSH</span>
+          <span class="tag">Fail2ban</span>
+        </div>
+        <div class="project-buttons">
+          <a href="https://github.com/walo2428/GLPI_Projet" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
+          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - GLPI.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
+          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
+          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
+        </div>
+        <div class="details-box">Installation GLPI complète sur Debian avec Apache/MariaDB, déploiement des agents sur postes clients, et sécurisation avancée : Fail2ban, clés RSA, durcissement SSH.</div>
+      </div>
+    </div>
+
+    <!-- Server IRIS / Gestion Utilisateurs -->
+    <div class="project-card card-stagger" data-category="system">
+      <div class="project-img-wrap">
+        <img src="img/projets/cockpit.png" alt="Server IRIS" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">Gestion Utilisateurs & Fichiers</h5>
+        <p class="project-desc">Déploiement d'un serveur complet avec Cockpit pour l'administration web et Nextcloud via Docker pour le stockage collaboratif.</p>
+        <div class="project-tags">
+          <span class="tag">Docker</span>
+          <span class="tag">Linux</span>
+          <span class="tag">MariaDB</span>
+          <span class="tag">Cockpit</span>
+          <span class="tag">Nextcloud</span>
+        </div>
+        <div class="project-buttons">
+          <a href="https://github.com/walo2428/Server_IRIS" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
+          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - Nextcloud.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
+          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
+          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
+          <button class="btn-gestion" onclick="openModal()"><i class="bi bi-kanban"></i> Gestion Projet</button>
+        </div>
+        <div class="details-box">Déploiement Nextcloud via Docker Compose avec MariaDB, volumes persistants et Cockpit pour l'administration web. Accès sécurisé sur le réseau interne.</div>
+      </div>
+    </div>
+
+    <!-- Établissement ELEVEN -->
+    <div class="project-card card-stagger" data-category="system">
+      <div class="project-img-wrap">
+        <img src="img/projets/dhcp_dns.png" alt="Etablissement ELEVEN" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">Infrastructure Réseau — Établissement ELEVEN</h5>
+        <p class="project-desc">Conception et déploiement d'une infrastructure réseau complète pour un établissement hôtelier multi-bâtiments (Hôtel, SPA & Gym, Restaurant) avec segmentation VLAN, routage RIP v2 et sécurisation des équipements Cisco.</p>
+        <div class="project-tags">
+          <span class="tag">Cisco</span>
+          <span class="tag">VLAN</span>
+          <span class="tag">RIP v2</span>
+          <span class="tag">DHCP</span>
+          <span class="tag">SSH</span>
+          <span class="tag">Packet Tracer</span>
+        </div>
+        <div class="project-buttons">
+          <a href="https://github.com/walo2428/Portfolio_BTS_SIO" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
+          <a href="files/tableau_rp_eleven.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
+          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
+          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
+        </div>
+        <div class="details-box">
+          Projet réalisé en stage chez BMA Réseaux & Télécom. Infrastructure pour 3 bâtiments reliés via 3 routeurs Cisco (R-MAIN, R-WIFI, R-CLOUD). 10 VLANs par service (STAFF, ADMIN, TV, CCTV, IT, GYM, SPA, CUISINE, Guest, Staff WiFi). Configuration DHCP par VLAN, RIP v2 pour le routage dynamique, sécurisation SSH avec bannières personnalisées, et tests de connectivité inter-VLAN validés.
         </div>
       </div>
     </div>
 
-    <div class="col-md-6 project-card-wrapper" data-category="system">
-      <div class="project-card">
-        <img src="img/projets/classcord_server.png" alt="ClassCord" />
-        <div class="card-body">
-          <h5 class="card-title">ClassCord Server</h5>
-          <p class="card-text">Serveur de tchat multi-clients en Python, déployé, sécurisé et supervisé sous Linux, avec accès réseau pour les clients SLAM.</p>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Linux (Debian)</span>
-            <span class="tag">Sockets TCP</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Fail2ban</span>
-            <span class="tag">Virtualisation</span>
-          </div>
-          <div class="project-buttons">
-            <a href="https://github.com/walo2428/classcord_server" class="btn-projet-outline" target="_blank">Documentation</a>
-            <a href="files/7- Annexes 7 - Epreuve E5 - Classcord.pdf" class="btn-projet-outline" download>Télécharger RP</a>
-            <button class="btn-details">Détails</button>
-            <a href="#" class="btn-view">Voir le projet</a>
-          </div>
-          <div class="details-box">
-            ClassCord est un serveur de tchat multi-clients développé en Python, utilisé par les étudiants SLAM (développeurs) pour tester leurs clients Java.
-            Mon rôle en tant qu’étudiant SISR était de déployer le serveur Python et le rendre accessible sur le réseau pour les clients SLAM.
-          </div>
+    <!-- CinéZone -->
+    <div class="project-card card-stagger" data-category="dev">
+      <div class="project-img-wrap">
+        <img src="img/projets/cinezone.png" alt="CinéZone" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">CinéZone</h5>
+        <p class="project-desc">Portail web de consultation de films utilisant l'API TMDB, avec recherche, filtres et gestion des favoris en localStorage.</p>
+        <div class="project-tags">
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">API TMDB</span>
+          <span class="tag">Apache2</span>
+        </div>
+        <div class="project-buttons">
+          <a href="https://github.com/walo2428/Cine_pro" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
+          <a href="files/7- Annexes 7 - Epreuve E5 - Cinezone.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
+          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
+          <a href="https://walo2428.github.io/Cine_pro/index.html" target="_blank" class="btn-view"><i class="bi bi-eye"></i> Voir</a>
+          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
+        </div>
+        <div class="details-box">Portail web local permettant de consulter un catalogue de films via l'API TMDB. Interface responsive avec recherche, filtres par genre et favoris en localStorage.</div>
+      </div>
+    </div>
+
+    <!-- NutriFit -->
+    <!-- RP-02 Active Directory -->
+    <div class="project-card card-stagger" data-category="system">
+      <div class="project-img-wrap">
+        <img src="img/projets/windows_server.jpg" alt="Active Directory" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">RP-02 — Active Directory IRIS</h5>
+        <p class="project-desc">Déploiement d'un Active Directory Domain Services complet sur Windows Server 2022 pour l'école IRIS Nice : gestion centralisée des identités, GPO ANSSI, PowerShell et authentification 802.1X.</p>
+        <div class="project-tags">
+          <span class="tag">Windows Server 2022</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">GPO</span>
+          <span class="tag">PowerShell</span>
+          <span class="tag">NPS / RADIUS</span>
+          <span class="tag">802.1X</span>
+        </div>
+        <div class="project-buttons">
+          <a href="https://github.com/walo2428/Portfolio_BTS_SIO" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
+          <a href="files/tableau_rp_02.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
+          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
+          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
+        </div>
+        <div class="details-box">
+          Référence IRIS-NICE-2024-RP02. Déploiement AD DS, structure OUs (SISR, SLAM, Enseignants, Administration), GPO conformes ANSSI (mots de passe 12 car., verrouillage 5 tentatives), scripts PowerShell d'import CSV, partages de fichiers avec matrice NTFS/SMB, et intégration NPS pour l'authentification Wi-Fi 802.1X.
         </div>
       </div>
     </div>
 
-    <div class="col-md-6 project-card-wrapper" data-category="system">
-      <div class="project-card">
-        <img src="img/projets/dhcp_dns.png" alt="Serveur DHCP/DNS" />
-        <div class="card-body">
-          <h5 class="card-title">Serveur DHCP/DNS</h5>
-          <p class="card-text">Mise en place de DHCP et DNS hébergé par isc-dhcp-server et bind9.</p>
-          <div class="project-tags">
-            <span class="tag">Debian</span>
-            <span class="tag">DHCP</span>
-            <span class="tag">DNS</span>
-          </div>
-          <div class="project-buttons">
-            <a href="https://github.com/omar/dhcp-dns" class="btn-projet-outline" target="_blank">Documentation</a>
-            <a href="pdf/dhcp-dns.pdf" class="btn-projet-outline" download>Télécharger RP</a>
-            <button class="btn-details">Détails</button>
-            <a href="#" class="btn-view">Voir le projet</a>
-          </div>
-          <div class="details-box">
-            Configuration d’un serveur Debian complet : DHCP, DNS bind9, hébergement web Apache, sécurité SSH et SFTP.
-          </div>
+    <!-- RP-03 Supervision & Monitoring -->
+    <div class="project-card card-stagger" data-category="system">
+      <div class="project-img-wrap">
+        <img src="img/projets/grafana.png" alt="Supervision & Monitoring" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">RP-03 — Supervision, Monitoring & Logs</h5>
+        <p class="project-desc">Déploiement d'une stack LGP (Loki + Grafana + Prometheus), Nextcloud Hub avec authentification LDAP/AD, reverse proxy Traefik HTTPS et centralisation des logs syslog Cisco — rétention 12 mois LCEN.</p>
+        <div class="project-tags">
+          <span class="tag">Prometheus</span>
+          <span class="tag">Grafana</span>
+          <span class="tag">Loki</span>
+          <span class="tag">Traefik</span>
+          <span class="tag">Nextcloud</span>
+          <span class="tag">LDAP / AD</span>
+          <span class="tag">Docker</span>
+          <span class="tag">HTTPS / TLS</span>
+        </div>
+        <div class="project-buttons">
+          <a href="https://github.com/walo2428/Portfolio_BTS_SIO" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
+          <a href="files/AO_RP03_TALIBI_v6.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
+          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
+          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
+        </div>
+        <div class="details-box">
+          Référence IRIS-NICE-2024-RP03 — v6 (corrections Yan appliquées). Stack LGP : Prometheus + node_exporter + Alertmanager + Loki + Promtail + Grafana via Traefik HTTPS. Nextcloud Hub 28 remplace le wiki (LDAP AD natif, quotas par groupe). Chaîne syslog : Cisco IOS → rsyslog → Promtail → Loki. Rétention 12 mois LCEN. 7 headers sécurité HTTP. 8/9 tests PV recette validés.
         </div>
       </div>
     </div>
 
-    <div class="col-md-6 project-card-wrapper" data-category="system">
-      <div class="project-card">
-        <img src="img/projets/grafana.png" alt="Monitoring" />
-        <div class="card-body">
-          <h5 class="card-title">Monitoring</h5>
-          <p class="card-text">Stack complète de monitoring pour surveiller la santé des serveurs en temps réel.</p>
-          <div class="project-tags">
-            <span class="tag">Prometheus</span>
-            <span class="tag">Grafana</span>
-            <span class="tag">Node Exporter</span>
-            <span class="tag">InfluxDB</span>
-          </div>
-          <div class="project-buttons">
-            <a href="https://github.com/omar/monitoring" class="btn-projet-outline" target="_blank">Documentation</a>
-            <a href="files/7- Annexes 7 - Epreuve E5 - Monitoring.pdf" class="btn-projet-outline" download>Télécharger RP</a>
-            <button class="btn-details">Détails</button>
-            <a href="#" class="btn-view">Voir le projet</a>
-          </div>
-          <div class="details-box">
-            Mise en place d’un environnement complet de supervision avec InfluxDB, Grafana et un exporteur métrique Python.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 project-card-wrapper" data-category="system">
-      <div class="project-card">
-        <img src="img/projets/glpi.png" alt="GLPI" />
-        <div class="card-body">
-          <h5 class="card-title">GLPI</h5>
-          <p class="card-text">Fail2ban, clés RSA, déploiement de l'agent GLPI.</p>
-          <div class="project-tags">
-            <span class="tag">GLPI</span>
-            <span class="tag">Apache</span>
-            <span class="tag">SSH</span>
-            <span class="tag">Ticket</span>
-          </div>
-          <div class="project-buttons">
-            <a href="https://github.com/omar/glpi" class="btn-projet-outline" target="_blank">Documentation</a>
-            <a href="files/7- Annexes 7 - Epreuve E5 - GLPI.pdf" class="btn-projet-outline" download>Télécharger RP</a>
-            <button class="btn-details">Détails</button>
-            <a href="#" class="btn-view">Voir le projet</a>
-          </div>
-          <div class="details-box">
-            Installation GLPI complète + sécurisation avancée (fail2ban, clés RSA, durcissement SSH, droits).
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 project-card-wrapper" data-category="system">
-      <div class="project-card">
-        <img src="img/projets/cockpit.png" alt="Gestion utilisateurs" />
-        <div class="card-body">
-          <h5 class="card-title">Gestion utilisateurs et transfert fichiers</h5>
-          <p class="card-text">Déploiement d'une solution de stockage et collaboration privée sur Docker.</p>
-          <div class="project-tags">
-            <span class="tag">Docker</span>
-            <span class="tag">Linux</span>
-            <span class="tag">MariaDB</span>
-            <span class="tag">Cockpit</span>
-            <span class="tag">Nextcloud</span>
-            <span class="tag">Sécurité</span>
-          </div>
-          <div class="project-buttons">
-            <a href="https://github.com/walo2428/Server_IRIS" class="btn-projet-outline" target="_blank">Documentation</a>
-            <a href="files/7- Annexes 7 - Epreuve E5 - Nextcloud.pdf" class="btn-projet-outline" download>Télécharger RP</a>
-            <button class="btn-details">Détails</button>
-            <a href="#" class="btn-view">Voir le projet</a>
-          </div>
-          <div class="details-box">
-            Installation et configuration de Nextcloud via Docker Compose. Gestion des volumes persistants pour les données, configuration de la base de données MariaDB et sécurisation de l'accès externe.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 project-card-wrapper" data-category="dev">
-      <div class="project-card">
-        <img src="img/projets/cinezone.png" alt="CinéZone" />
-        <div class="card-body">
-          <h5 class="card-title">CinéZone</h5>
-          <p class="card-text">Portail local de consultation de films utilisant l’API TMDB, avec recherche, filtres et gestion des favoris.</p>
-          <div class="project-tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">API</span>
-            <span class="tag">Debian</span>
-            <span class="tag">Apache2</span>
-          </div>
-          <div class="project-buttons">
-            <a href="https://github.com/walo2428/Cine_pro" class="btn-projet-outline" target="_blank">Documentation</a>
-            <a href="files/7- Annexes 7 - Epreuve E5 - Cinezone.pdf" class="btn-projet-outline" download>Télécharger RP</a>
-            <button class="btn-details">Détails</button>
-            <a href="https://walo2428.github.io/Cine_pro/index.html" target="_blank" class="btn-view">Voir le projet</a>
-          </div>
-          <div class="details-box">
-            CinéZone est un portail web local permettant de consulter un catalogue de films en utilisant l’API TMDB.
-            Le site, accessible uniquement sur un réseau local, propose une interface moderne et responsive pour rechercher, filtrer et afficher des informations détaillées sur les films.
-            Les utilisateurs peuvent également gérer une liste de favoris grâce au localStorage.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 project-card-wrapper" data-category="dev">
-      <div class="project-card">
-        <img src="img/projets/nutrifit.png" alt="NutriFit" />
-        <div class="card-body">
-          <h5 class="card-title">NutriFit</h5>
-          <p class="card-text">Assistant nutritionnel local utilisant l’API Open Food Facts avec recommandations sportives et historique personnalisé.</p>
-          <div class="project-tags">
-            <span class="tag">API</span>
-            <span class="tag">HTML</span>
-            <span class="tag">CSS/Bootstrap</span>
-            <span class="tag">JS</span>
-            <span class="tag">Debian</span>
-          </div>
-          <div class="project-buttons">
-            <a href="https://github.com/delcoco95/Nutrifit" class="btn-projet-outline" target="_blank">Documentation</a>
-            <a href="files/7- Annexes 7 - Epreuve E5 - Nutrifit.docx" class="btn-projet-outline" download>Télécharger RP</a>
-            <button class="btn-details">Détails</button>
-            <a href="#" class="btn-view">Voir le projet</a>
-          </div>
-          <div class="details-box">
-            NutriFit est une application web locale destinée à être utilisée sur une borne ou un poste fixe dans une salle de sport.
-            Elle permet aux utilisateurs de rechercher consulter obtenir des recommandations personnalisées selon leur profil sportif.
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
+<!-- ===== MODALE GESTION DE PROJET ===== -->
+<div class="modal-overlay" id="modalGestion" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()"><i class="bi bi-x"></i></button>
+
+    <div class="modal-badge"><i class="bi bi-kanban"></i> Gestion de Projet — Méthodologie Agile</div>
+    <h2 class="modal-title">Server IRIS — <span>Cockpit & Nextcloud</span></h2>
+    <p class="modal-subtitle">Gestion Utilisateurs & Transfert de Fichiers · Debian 12 · Docker · MariaDB · 4 sprints · Réf. SISR-2025</p>
+
+    <div class="modal-divider"></div>
+
+    <!-- CADRAGE CQQCOQP -->
+    <div class="modal-section">
+      <h3><i class="bi bi-crosshair"></i> Cadrage CQQCOQP</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.06);">
+          <p style="color:var(--orange);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Qui</p>
+          <p style="color:var(--muted);font-size:0.87rem;line-height:1.6;">Omar Talibi (SISR) · Nedj, Julien, Rémi, Edib, Saïd, Vincent, Tiago · SLAM (MediaStock) · Tuteur : Yan</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.06);">
+          <p style="color:var(--orange);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Quoi</p>
+          <p style="color:var(--muted);font-size:0.87rem;line-height:1.6;">Cockpit (admin web port 9090) + Nextcloud via Docker Compose + MariaDB (partage fichiers port 8080)</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.06);">
+          <p style="color:var(--orange);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Quand / Combien</p>
+          <p style="color:var(--muted);font-size:0.87rem;line-height:1.6;">Déc. 2025 – Mars 2026 · 4 sprints · 5 semaines effectives</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.06);">
+          <p style="color:var(--orange);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Pourquoi</p>
+          <p style="color:var(--muted);font-size:0.87rem;line-height:1.6;">Fournir une interface d'admin web et une solution de stockage auto-hébergée sans dépendance cloud tiers</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <!-- OBJECTIFS SMART -->
+    <div class="modal-section">
+      <h3><i class="bi bi-bullseye"></i> Objectifs SMART(E)</h3>
+      <div class="sprint-list">
+        <div class="sprint-item">
+          <span class="sprint-num">S</span>
+          <p class="sprint-desc"><strong style="color:var(--light)">Spécifique</strong> — Déployer Cockpit (port 9090) et Nextcloud (port 8080) avec base MariaDB persistante sur Debian 12.</p>
+        </div>
+        <div class="sprint-item">
+          <span class="sprint-num">M</span>
+          <p class="sprint-desc"><strong style="color:var(--light)">Mesurable</strong> — 10 cas de tests définis (T01 à T10) — 9/10 validés en fin de projet.</p>
+        </div>
+        <div class="sprint-item">
+          <span class="sprint-num">A</span>
+          <p class="sprint-desc"><strong style="color:var(--light)">Atteignable</strong> — Technologies maîtrisées (Docker, Linux Debian) — 5 semaines avec un objectif par sprint.</p>
+        </div>
+        <div class="sprint-item">
+          <span class="sprint-num">T</span>
+          <p class="sprint-desc"><strong style="color:var(--light)">Temporel</strong> — Livrable final validé avant fin mars 2026 — un objectif technique par sprint hebdomadaire.</p>
+        </div>
+        <div class="sprint-item">
+          <span class="sprint-num">E</span>
+          <p class="sprint-desc"><strong style="color:var(--light)">Éthique</strong> — Données hébergées en interne, accès restreint aux utilisateurs autorisés, HTTPS prévu.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <!-- SPRINTS -->
+    <div class="modal-section">
+      <h3><i class="bi bi-arrow-repeat"></i> Découpage en Sprints</h3>
+      <div class="sprint-list">
+        <div class="sprint-item">
+          <span class="sprint-num">Sprint 1</span>
+          <p class="sprint-desc"><strong style="color:var(--light)">Sem. 1 — Déc. 2025 · Analyse & choix technologiques</strong> — Définition du périmètre, choix Cockpit vs alternatives, plan de déploiement, cahier des charges.</p>
+        </div>
+        <div class="sprint-item">
+          <span class="sprint-num">Sprint 2</span>
+          <p class="sprint-desc"><strong style="color:var(--light)">Sem. 2 — Janv. 2026 · Installation Cockpit</strong> — Installation Cockpit sur Debian 12, ouverture port 9090, tests supervision CPU/RAM (T01-T02 validés).</p>
+        </div>
+        <div class="sprint-item">
+          <span class="sprint-num">Sprint 3</span>
+          <p class="sprint-desc"><strong style="color:var(--light)">Sem. 3-4 — Fév. 2026 · Déploiement Nextcloud + MariaDB</strong> — docker-compose.yml, volumes persistants db_data & nextcloud_data, ouverture port 8080, comptes utilisateurs (T03-T09 validés).</p>
+        </div>
+        <div class="sprint-item">
+          <span class="sprint-num">Sprint 4</span>
+          <p class="sprint-desc"><strong style="color:var(--light)">Sem. 5 — Mars 2026 · Tests, validation & documentation</strong> — Tests multi-utilisateurs, persistance après reboot, README GitHub finalisé, rapport gestion de projet.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <!-- KANBAN -->
+    <div class="modal-section">
+      <h3><i class="bi bi-kanban"></i> Tableau Kanban — État fin Sprint 3</h3>
+      <div class="agile-board">
+        <div class="agile-col">
+          <p class="agile-col-title todo">À faire</p>
+          <div class="agile-card todo">HTTPS / SSL Nextcloud<br><small style="color:#475569">Dépendance Traefik (Julien) — sprint futur</small></div>
+          <div class="agile-card todo">Sauvegardes automatiques volumes<br><small style="color:#475569">Coordination Rémi — à planifier</small></div>
+        </div>
+        <div class="agile-col">
+          <p class="agile-col-title doing">En cours</p>
+          <div class="agile-card doing">Tests accès multi-utilisateurs (T08)</div>
+          <div class="agile-card doing">Documentation GitHub README</div>
+        </div>
+        <div class="agile-col">
+          <p class="agile-col-title done">Terminé ✓</p>
+          <div class="agile-card done">Installation Cockpit + port 9090</div>
+          <div class="agile-card done">Tests T01-T02 validés</div>
+          <div class="agile-card done">docker-compose.yml (versions fixes : mariadb:10.6, nextcloud:27)</div>
+          <div class="agile-card done">Volumes persistants db_data & nextcloud_data</div>
+          <div class="agile-card done">Conteneurs démarrés — T03 à T07 validés</div>
+          <div class="agile-card done">Ports 9090 & 8080 ouverts (ufw)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <!-- MATRIX EISENHOWER -->
+    <div class="modal-section">
+      <h3><i class="bi bi-grid-3x3"></i> Matrice Eisenhower — Réévaluation Sprint 3</h3>
+      <p style="color:var(--muted);font-size:0.9rem;line-height:1.65;margin-bottom:12px;">
+        Exemple concret : l'ouverture des ports était classée "priorité moyenne" le lundi matin du sprint 3.
+        Dès le mardi, aucun test de connexion n'était possible sans les ports ouverts — la tâche est passée immédiatement en <strong style="color:#f87171">CRITIQUE / faire maintenant</strong>.
+      </p>
+      <div class="risk-grid">
+        <div class="risk-item" style="border-left:3px solid #f87171;">
+          <p class="risk-label high">🔴 Urgent + Important</p>
+          <p class="risk-desc"><strong style="color:var(--light)">Ouverture ports 9090/8080</strong> — Faire maintenant. Sans les ports, aucun test possible.</p>
+        </div>
+        <div class="risk-item" style="border-left:3px solid #f87171;">
+          <p class="risk-label high">🔴 Urgent + Important</p>
+          <p class="risk-desc"><strong style="color:var(--light)">Volumes Docker persistants</strong> — Faire maintenant. Perte de données sans volumes.</p>
+        </div>
+        <div class="risk-item" style="border-left:3px solid #fbbf24;">
+          <p class="risk-label med">🟡 Non urgent + Important</p>
+          <p class="risk-desc"><strong style="color:var(--light)">Documentation GitHub README</strong> — Planifier (sprint 4). Livrable obligatoire rappelé par Yan.</p>
+        </div>
+        <div class="risk-item" style="border-left:3px solid #4ade80;">
+          <p class="risk-label low">🟢 Reporter</p>
+          <p class="risk-desc"><strong style="color:var(--light)">HTTPS / SSL Nextcloud</strong> — Dépendance Traefik (Julien) — non disponible avant fin sprint 4.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <!-- RISQUES -->
+    <div class="modal-section">
+      <h3><i class="bi bi-exclamation-triangle"></i> Gestion des risques</h3>
+      <div class="risk-grid">
+        <div class="risk-item">
+          <p class="risk-label high">⚠ Critique — R1</p>
+          <p class="risk-desc"><strong style="color:var(--light)">Perte données Nextcloud</strong> — Volumes Docker persistants db_data & nextcloud_data. Vérification survie après docker-compose down/up.</p>
+        </div>
+        <div class="risk-item">
+          <p class="risk-label med">⚡ Élevé — R2</p>
+          <p class="risk-desc"><strong style="color:var(--light)">Port bloqué par pare-feu</strong> — ufw allow 9090/tcp && ufw allow 8080/tcp. Vérification ufw status + netstat -tlnp.</p>
+        </div>
+        <div class="risk-item">
+          <p class="risk-label med">⚡ Moyen — R3</p>
+          <p class="risk-desc"><strong style="color:var(--light)">Conflit versions Docker</strong> — Versions fixes dans docker-compose.yml : mariadb:10.6, nextcloud:27. Éviter les tags "latest".</p>
+        </div>
+        <div class="risk-item">
+          <p class="risk-label low">✅ Faible — R4</p>
+          <p class="risk-desc"><strong style="color:var(--light)">Services inaccessibles après reboot</strong> — restart: always dans docker-compose.yml + systemctl enable docker.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-divider"></div>
+
+    <!-- KPI -->
+    <div class="modal-section">
+      <h3><i class="bi bi-bar-chart"></i> Indicateurs de performance (KPI)</h3>
+      <div class="bilan-grid">
+        <div class="bilan-item">
+          <i class="bi bi-check2-circle" style="color:#4ade80"></i>
+          <p><strong>Respect des délais : 82%</strong> — 9/11 tâches livrées dans les délais. T10 reporté (dépendance Traefik), T08 décalé d'une semaine.</p>
+        </div>
+        <div class="bilan-item">
+          <i class="bi bi-shield-check" style="color:#4ade80"></i>
+          <p><strong>Zéro bug bloquant</strong> — Scénario de recette T01-T09 : 0 bug critique, services stables.</p>
+        </div>
+        <div class="bilan-item">
+          <i class="bi bi-clipboard-check" style="color:#60a5fa"></i>
+          <p><strong>Tests validés : 9/10</strong> — T10 (HTTPS) reporté en sprint futur — dépendance externe documentée.</p>
+        </div>
+        <div class="bilan-item">
+          <i class="bi bi-github" style="color:#a78bfa"></i>
+          <p><strong>Documentation : 4/4 sprints</strong> — README GitHub mis à jour chaque fin de sprint, commits horodatés.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 - Omar Talibi | Portfolio BTS SIO</p>
-  <p>
-    <a href="mentions-legales.html" target="_blank" style="color: #00bfa6;">Mentions légales</a> |
-    <a href="plan-du-site.html" target="_blank" style="color: #00bfa6;">Plan du site</a> |
-    <a href="confidentialite.html" target="_blank" style="color: #00bfa6;">Politique de confidentialité</a>
+  <p>© 2025 — Omar Talibi · Portfolio BTS SIO</p>
+  <p class="mt-1">
+    <a href="mentions-legales.html" target="_blank">Mentions légales</a> |
+    <a href="plan-du-site.html" target="_blank">Plan du site</a> |
+    <a href="confidentialite.html" target="_blank">Politique de confidentialité</a>
   </p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="projets.js"></script>
+<script>
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll('.reveal');
+  const cards = document.querySelectorAll('.card-stagger');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  const cardObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); cardObs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => obs.observe(el));
+  cards.forEach(el => cardObs.observe(el));
+
+  // FILTRES
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      const grid = document.getElementById('projects-grid');
+      const allCards = grid.querySelectorAll('.project-card');
+      // Reset grid to relative positioning
+      grid.style.position = 'relative';
+      allCards.forEach(card => {
+        const cat = card.dataset.category;
+        if (filter === 'all' || cat === filter) {
+          card.classList.remove('hidden');
+          card.style.display = '';
+        } else {
+          card.classList.add('hidden');
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // DETAILS TOGGLE
+  function toggleDetails(btn) {
+    const box = btn.closest('.project-body').querySelector('.details-box');
+    const isOpen = box.style.display === 'block';
+    box.style.display = isOpen ? 'none' : 'block';
+    btn.innerHTML = isOpen ? '<i class="bi bi-info-circle"></i> Détails' : '<i class="bi bi-x-circle"></i> Fermer';
+  }
+
+  // MODALE
+  function openModal() {
+    document.getElementById('modalGestion').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modalGestion').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeModalOutside(e) {
+    if (e.target === document.getElementById('modalGestion')) closeModal();
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
 </body>
 </html>
