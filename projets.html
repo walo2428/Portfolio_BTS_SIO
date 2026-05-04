@@ -47,20 +47,108 @@
   <!-- FILTRES -->
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all">Tous les projets</button>
-    <button class="filter-btn" data-filter="system">Systèmes & Réseaux</button>
-    <button class="filter-btn" data-filter="dev">Développement Web</button>
+    <button class="filter-btn" data-filter="formation">Durant la formation</button>
+    <button class="filter-btn" data-filter="stages">Stages</button>
   </div>
 
   <!-- GRILLE -->
   <div class="projects-grid" id="projects-grid">
-
+    <!-- CinéZone -->
+    <div class="project-card card-stagger" data-category="formation">
+      <div class="project-img-wrap">
+        <img src="img/projets/cinezone.png" alt="CinéZone" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">N°1 - Déploiement et administration d'un portail web de consultation multimédia en réseau local (Cinezone)</h5>
+        <p class="project-desc">Portail web de consultation de films utilisant l'API TMDB, avec recherche, filtres et gestion des favoris en localStorage.</p>
+        <div class="project-tags">
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">API TMDB</span>
+          <span class="tag">Apache2</span>
+        </div>
+        <div class="project-buttons">
+            <a href="files/Documentation.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°1 - Déploiement et administration d\'un portail web de consultation multimédia en réseau local (Cinezone)', 'C3, C4, C6', 'files/tableau de synthese.pdf')"><i class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
+            <a href="files/Annexes.pdf" target="_blank" class="btn-doc" title="Fichiers Annexes"><i class="bi bi-folder2-open"></i> Tableau RP</a>
+          </div>
+        <div class="details-box">Portail web local permettant de consulter un catalogue de films via l'API TMDB. Interface responsive avec recherche, filtres par genre et favoris en localStorage.</div>
+      </div>
+    </div>
+    <!-- DHCP/DNS -->
+    <div class="project-card card-stagger" data-category="formation">
+      <div class="project-img-wrap">
+        <img src="img/projets/dhcp_dns.png" alt="DHCP/DNS" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">N°2 - Services réseau : déploiement DHCP / DNS et administration système</h5>
+        <p class="project-desc">Mise en place de DHCP et DNS sur Debian avec isc-dhcp-server et bind9, incluant zones de résolution directe et inverse.</p>
+        <div class="project-tags">
+          <span class="tag">Debian</span>
+          <span class="tag">DHCP</span>
+          <span class="tag">DNS</span>
+          <span class="tag">bind9</span>
+        </div>
+        <div class="project-buttons">
+            <a href="files/Documentation.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°2 - Services réseau : déploiement DHCP / DNS et administration système', 'C1, C5, C6', 'files/tableau de synthese.pdf')"><i class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
+            <a href="files/Annexes.pdf" target="_blank" class="btn-doc" title="Fichiers Annexes"><i class="bi bi-folder2-open"></i> Tableau RP</a>
+          </div>
+        <div class="details-box">Configuration d'un serveur Debian complet : DHCP avec plages dynamiques, DNS bind9 avec zones primaires et secondaires, sécurisation SSH.</div>
+      </div>
+    </div>
+    <!-- ClassCord -->
+    <div class="project-card card-stagger" data-category="formation">
+      <div class="project-img-wrap">
+        <img src="img/projets/classcord_server.png" alt="ClassCord" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">N°3 - Déploiement et sécurisation d'un service de messagerie réseau multi-clients (ClassCord)</h5>
+        <p class="project-desc">Serveur de tchat multi-clients en Python, déployé, sécurisé et supervisé sous Linux, avec accès réseau pour les clients SLAM.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Linux (Debian)</span>
+          <span class="tag">Sockets TCP</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Fail2ban</span>
+        </div>
+        <div class="project-buttons">
+            <a href="files/Documentation.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°3 - Déploiement et sécurisation d\'un service de messagerie réseau multi-clients (ClassCord)', 'C1, C4, C5, C6', 'files/tableau de synthese.pdf')"><i class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
+            <a href="files/Annexes.pdf" target="_blank" class="btn-doc" title="Fichiers Annexes"><i class="bi bi-folder2-open"></i> Tableau RP</a>
+          </div>
+        <div class="details-box">Serveur de tchat multi-clients développé en Python. Mon rôle SISR : déployer le serveur Python et le rendre accessible sur le réseau pour les clients Java des étudiants SLAM.</div>
+      </div>
+    </div>
+    <!-- Monitoring -->
+    <div class="project-card card-stagger" data-category="formation">
+      <div class="project-img-wrap">
+        <img src="img/projets/grafana.png" alt="Monitoring" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">N°4 - Supervision du système d'information et gestion des incidents</h5>
+        <p class="project-desc">Stack complète de supervision temps réel pour surveiller la santé des serveurs avec tableaux de bord Grafana.</p>
+        <div class="project-tags">
+          <span class="tag">Prometheus</span>
+          <span class="tag">Grafana</span>
+          <span class="tag">Node Exporter</span>
+          <span class="tag">InfluxDB</span>
+        </div>
+        <div class="project-buttons">
+            <a href="files/Documentation.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°4 - Supervision du système d\'information et gestion des incidents', 'C1, C2, C5, C6', 'files/tableau de synthese.pdf')"><i class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
+            <a href="files/Annexes.pdf" target="_blank" class="btn-doc" title="Fichiers Annexes"><i class="bi bi-folder2-open"></i> Tableau RP</a>
+          </div>
+        <div class="details-box">Déploiement d'une stack de supervision avec Prometheus pour la collecte de métriques, Node Exporter sur les serveurs cibles, et Grafana pour la visualisation en temps réel.</div>
+      </div>
+    </div>
     <!-- Windows Server -->
-    <div class="project-card card-stagger" data-category="system">
+    <div class="project-card card-stagger" data-category="formation">
       <div class="project-img-wrap">
         <img src="img/projets/windows_server.jpg" alt="Windows Server" class="project-img">
       </div>
       <div class="project-body">
-        <h5 class="project-title">Windows Server</h5>
+        <h5 class="project-title">N°5 - Annuaire centralisé : mise en place et gestion Active Directory</h5>
         <p class="project-desc">Déploiement d'une infrastructure Windows Server complète : AD DS, DNS, DHCP, GPO, serveur de fichiers et automatisations PowerShell.</p>
         <div class="project-tags">
           <span class="tag">Windows Server</span>
@@ -71,95 +159,20 @@
           <span class="tag">PowerShell</span>
         </div>
         <div class="project-buttons">
-          <a href="https://github.com/Mediaschool-IRIS-BTS-SISR-2025/WinServ-PowerShell" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
-          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - AD DS.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
-          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
-          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
-        </div>
+            <a href="files/Documentation.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°5 - Annuaire centralisé : mise en place et gestion Active Directory', 'C1, C2, C5, C6', 'files/tableau de synthese.pdf')"><i class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
+            <a href="files/Annexes.pdf" target="_blank" class="btn-doc" title="Fichiers Annexes"><i class="bi bi-folder2-open"></i> Tableau RP</a>
+          </div>
         <div class="details-box">Mise en place complète d'un domaine Active Directory, configuration des rôles, création d'OU, gestion des stratégies GPO et scripts PowerShell d'automatisation.</div>
       </div>
     </div>
-
-    <!-- ClassCord -->
-    <div class="project-card card-stagger" data-category="system">
-      <div class="project-img-wrap">
-        <img src="img/projets/classcord_server.png" alt="ClassCord" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title">ClassCord Server</h5>
-        <p class="project-desc">Serveur de tchat multi-clients en Python, déployé, sécurisé et supervisé sous Linux, avec accès réseau pour les clients SLAM.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Linux (Debian)</span>
-          <span class="tag">Sockets TCP</span>
-          <span class="tag">Docker</span>
-          <span class="tag">Fail2ban</span>
-        </div>
-        <div class="project-buttons">
-          <a href="https://github.com/walo2428/classcord_server" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
-          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - ClassCord.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
-          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
-          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
-        </div>
-        <div class="details-box">Serveur de tchat multi-clients développé en Python. Mon rôle SISR : déployer le serveur Python et le rendre accessible sur le réseau pour les clients Java des étudiants SLAM.</div>
-      </div>
-    </div>
-
-    <!-- DHCP/DNS -->
-    <div class="project-card card-stagger" data-category="system">
-      <div class="project-img-wrap">
-        <img src="img/projets/dhcp_dns.png" alt="DHCP/DNS" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title">Serveur DHCP / DNS</h5>
-        <p class="project-desc">Mise en place de DHCP et DNS sur Debian avec isc-dhcp-server et bind9, incluant zones de résolution directe et inverse.</p>
-        <div class="project-tags">
-          <span class="tag">Debian</span>
-          <span class="tag">DHCP</span>
-          <span class="tag">DNS</span>
-          <span class="tag">bind9</span>
-        </div>
-        <div class="project-buttons">
-          <a href="https://github.com/walo2428/DHCP_DNS" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
-          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - DHCP DNS.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
-          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
-          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
-        </div>
-        <div class="details-box">Configuration d'un serveur Debian complet : DHCP avec plages dynamiques, DNS bind9 avec zones primaires et secondaires, sécurisation SSH.</div>
-      </div>
-    </div>
-
-    <!-- Monitoring -->
-    <div class="project-card card-stagger" data-category="system">
-      <div class="project-img-wrap">
-        <img src="img/projets/grafana.png" alt="Monitoring" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title">Monitoring</h5>
-        <p class="project-desc">Stack complète de supervision temps réel pour surveiller la santé des serveurs avec tableaux de bord Grafana.</p>
-        <div class="project-tags">
-          <span class="tag">Prometheus</span>
-          <span class="tag">Grafana</span>
-          <span class="tag">Node Exporter</span>
-          <span class="tag">InfluxDB</span>
-        </div>
-        <div class="project-buttons">
-          <a href="https://github.com/Mediaschool-IRIS-BTS-SISR-2025/Vagrant_TP" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
-          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - Supervision.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
-          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
-          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
-        </div>
-        <div class="details-box">Déploiement d'une stack de supervision avec Prometheus pour la collecte de métriques, Node Exporter sur les serveurs cibles, et Grafana pour la visualisation en temps réel.</div>
-      </div>
-    </div>
-
     <!-- GLPI -->
-    <div class="project-card card-stagger" data-category="system">
+    <div class="project-card card-stagger" data-category="formation">
       <div class="project-img-wrap">
         <img src="img/projets/glpi.png" alt="GLPI" class="project-img">
       </div>
       <div class="project-body">
-        <h5 class="project-title">GLPI</h5>
+        <h5 class="project-title">N°6 - Gestion du parc informatique et outil de ticketing (GLPI)</h5>
         <p class="project-desc">Déploiement de GLPI pour la gestion de parc informatique et tickets d'incidents, avec sécurisation SSH par clés RSA.</p>
         <div class="project-tags">
           <span class="tag">GLPI</span>
@@ -168,22 +181,21 @@
           <span class="tag">Fail2ban</span>
         </div>
         <div class="project-buttons">
-          <a href="https://github.com/walo2428/GLPI_Projet" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
-          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - GLPI.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
-          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
-          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
-        </div>
+            <a href="files/Documentation.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°6 - Gestion du parc informatique et outil de ticketing (GLPI)', 'C1, C2, C5, C6', 'files/tableau de synthese.pdf')"><i class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
+            <a href="files/Annexes.pdf" target="_blank" class="btn-doc" title="Fichiers Annexes"><i class="bi bi-folder2-open"></i> Tableau RP</a>
+          
+            <button class="btn-gestion" onclick="openModal()"><i class="bi bi-diagram-3"></i> Gestion de projet</button></div>
         <div class="details-box">Installation GLPI complète sur Debian avec Apache/MariaDB, déploiement des agents sur postes clients, et sécurisation avancée : Fail2ban, clés RSA, durcissement SSH.</div>
       </div>
     </div>
-
     <!-- Server IRIS / Gestion Utilisateurs -->
-    <div class="project-card card-stagger" data-category="system">
+    <div class="project-card card-stagger" data-category="formation">
       <div class="project-img-wrap">
         <img src="img/projets/cockpit.png" alt="Server IRIS" class="project-img">
       </div>
       <div class="project-body">
-        <h5 class="project-title">Gestion Utilisateurs & Fichiers</h5>
+        <h5 class="project-title">N°7 - Gestion des utilisateurs et des accès en environnement professionnel</h5>
         <p class="project-desc">Déploiement d'un serveur complet avec Cockpit pour l'administration web et Nextcloud via Docker pour le stockage collaboratif.</p>
         <div class="project-tags">
           <span class="tag">Docker</span>
@@ -193,77 +205,20 @@
           <span class="tag">Nextcloud</span>
         </div>
         <div class="project-buttons">
-          <a href="https://github.com/walo2428/Server_IRIS" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
-          <a href="files/Annexes 7 - Epreuve E5 - BTS SIO - Nextcloud.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
-          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
-          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
-          <button class="btn-gestion" onclick="openModal()"><i class="bi bi-kanban"></i> Gestion Projet</button>
-        </div>
+            <a href="files/Documentation.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°7 - Gestion des utilisateurs et des accès en environnement professionnel', 'C1, C4, C5, C6', 'files/tableau de synthese.pdf')"><i class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
+            <a href="files/Annexes.pdf" target="_blank" class="btn-doc" title="Fichiers Annexes"><i class="bi bi-folder2-open"></i> Tableau RP</a>
+          </div>
         <div class="details-box">Déploiement Nextcloud via Docker Compose avec MariaDB, volumes persistants et Cockpit pour l'administration web. Accès sécurisé sur le réseau interne.</div>
       </div>
     </div>
-
-    <!-- Établissement ELEVEN -->
-    <div class="project-card card-stagger" data-category="system">
-      <div class="project-img-wrap">
-        <img src="img/projets/dhcp_dns.png" alt="Etablissement ELEVEN" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title">Infrastructure Réseau — Établissement ELEVEN</h5>
-        <p class="project-desc">Conception et déploiement d'une infrastructure réseau complète pour un établissement hôtelier multi-bâtiments (Hôtel, SPA & Gym, Restaurant) avec segmentation VLAN, routage RIP v2 et sécurisation des équipements Cisco.</p>
-        <div class="project-tags">
-          <span class="tag">Cisco</span>
-          <span class="tag">VLAN</span>
-          <span class="tag">RIP v2</span>
-          <span class="tag">DHCP</span>
-          <span class="tag">SSH</span>
-          <span class="tag">Packet Tracer</span>
-        </div>
-        <div class="project-buttons">
-          <a href="https://github.com/walo2428/Portfolio_BTS_SIO" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
-          <a href="files/tableau_rp_eleven.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
-          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
-          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
-        </div>
-        <div class="details-box">
-          Projet réalisé en stage chez BMA Réseaux & Télécom. Infrastructure pour 3 bâtiments reliés via 3 routeurs Cisco (R-MAIN, R-WIFI, R-CLOUD). 10 VLANs par service (STAFF, ADMIN, TV, CCTV, IT, GYM, SPA, CUISINE, Guest, Staff WiFi). Configuration DHCP par VLAN, RIP v2 pour le routage dynamique, sécurisation SSH avec bannières personnalisées, et tests de connectivité inter-VLAN validés.
-        </div>
-      </div>
-    </div>
-
-    <!-- CinéZone -->
-    <div class="project-card card-stagger" data-category="dev">
-      <div class="project-img-wrap">
-        <img src="img/projets/cinezone.png" alt="CinéZone" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title">CinéZone</h5>
-        <p class="project-desc">Portail web de consultation de films utilisant l'API TMDB, avec recherche, filtres et gestion des favoris en localStorage.</p>
-        <div class="project-tags">
-          <span class="tag">HTML/CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">API TMDB</span>
-          <span class="tag">Apache2</span>
-        </div>
-        <div class="project-buttons">
-          <a href="https://github.com/walo2428/Cine_pro" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
-          <a href="files/7- Annexes 7 - Epreuve E5 - Cinezone.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
-          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
-          <a href="https://walo2428.github.io/Cine_pro/index.html" target="_blank" class="btn-view"><i class="bi bi-eye"></i> Voir</a>
-          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
-        </div>
-        <div class="details-box">Portail web local permettant de consulter un catalogue de films via l'API TMDB. Interface responsive avec recherche, filtres par genre et favoris en localStorage.</div>
-      </div>
-    </div>
-
-    <!-- NutriFit -->
     <!-- RP-02 Active Directory -->
-    <div class="project-card card-stagger" data-category="system">
+    <div class="project-card card-stagger" data-category="formation">
       <div class="project-img-wrap">
         <img src="img/projets/windows_server.jpg" alt="Active Directory" class="project-img">
       </div>
       <div class="project-body">
-        <h5 class="project-title">RP-02 — Active Directory IRIS</h5>
+        <h5 class="project-title">RP01 - Active Directory IRIS sur infrastructure existante</h5>
         <p class="project-desc">Déploiement d'un Active Directory Domain Services complet sur Windows Server 2022 pour l'école IRIS Nice : gestion centralisée des identités, GPO ANSSI, PowerShell et authentification 802.1X.</p>
         <div class="project-tags">
           <span class="tag">Windows Server 2022</span>
@@ -274,24 +229,22 @@
           <span class="tag">802.1X</span>
         </div>
         <div class="project-buttons">
-          <a href="https://github.com/walo2428/Portfolio_BTS_SIO" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
-          <a href="files/tableau_rp_02.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
-          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
-          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
-        </div>
+            <a href="files/Documentation.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('RP01 - Active Directory IRIS sur infrastructure existante', 'C1, C2, C5, C6', 'files/tableau de synthese.pdf')"><i class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
+            <a href="files/Annexes.pdf" target="_blank" class="btn-doc" title="Fichiers Annexes"><i class="bi bi-folder2-open"></i> Tableau RP</a>
+          </div>
         <div class="details-box">
           Référence IRIS-NICE-2024-RP02. Déploiement AD DS, structure OUs (SISR, SLAM, Enseignants, Administration), GPO conformes ANSSI (mots de passe 12 car., verrouillage 5 tentatives), scripts PowerShell d'import CSV, partages de fichiers avec matrice NTFS/SMB, et intégration NPS pour l'authentification Wi-Fi 802.1X.
         </div>
       </div>
     </div>
-
     <!-- RP-03 Supervision & Monitoring -->
-    <div class="project-card card-stagger" data-category="system">
+    <div class="project-card card-stagger" data-category="formation">
       <div class="project-img-wrap">
         <img src="img/projets/grafana.png" alt="Supervision & Monitoring" class="project-img">
       </div>
       <div class="project-body">
-        <h5 class="project-title">RP-03 — Supervision, Monitoring & Logs</h5>
+        <h5 class="project-title">RP02 - Supervision, Monitoring & Services Web Internes sur infrastructure existante</h5>
         <p class="project-desc">Déploiement d'une stack LGP (Loki + Grafana + Prometheus), Nextcloud Hub avec authentification LDAP/AD, reverse proxy Traefik HTTPS et centralisation des logs syslog Cisco — rétention 12 mois LCEN.</p>
         <div class="project-tags">
           <span class="tag">Prometheus</span>
@@ -304,18 +257,45 @@
           <span class="tag">HTTPS / TLS</span>
         </div>
         <div class="project-buttons">
-          <a href="https://github.com/walo2428/Portfolio_BTS_SIO" target="_blank" class="btn-doc"><i class="bi bi-file-text"></i> Documentation</a>
-          <a href="files/AO_RP03_TALIBI_v6.pdf" target="_blank" class="btn-doc"><i class="bi bi-table"></i> Tableau RP</a>
-          <a href="files/tableau de synthese.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Tableau Synthèse</a>
-          <button class="btn-doc" onclick="toggleDetails(this)"><i class="bi bi-info-circle"></i> Détails</button>
-        </div>
+            <a href="files/Documentation.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('RP02 - Supervision, Monitoring & Services Web Internes sur infrastructure existante', 'C1, C2, C4, C5, C6', 'files/tableau de synthese.pdf')"><i class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
+            <a href="files/Annexes.pdf" target="_blank" class="btn-doc" title="Fichiers Annexes"><i class="bi bi-folder2-open"></i> Tableau RP</a>
+          </div>
         <div class="details-box">
           Référence IRIS-NICE-2024-RP03 — v6 (corrections Yan appliquées). Stack LGP : Prometheus + node_exporter + Alertmanager + Loki + Promtail + Grafana via Traefik HTTPS. Nextcloud Hub 28 remplace le wiki (LDAP AD natif, quotas par groupe). Chaîne syslog : Cisco IOS → rsyslog → Promtail → Loki. Rétention 12 mois LCEN. 7 headers sécurité HTTP. 8/9 tests PV recette validés.
         </div>
       </div>
     </div>
 
-  </div>
+  
+    <!-- Établissement ELEVEN -->
+    <div class="project-card card-stagger" data-category="stages">
+      <div class="project-img-wrap">
+        <img src="img/projets/dhcp_dns.png" alt="Etablissement ELEVEN" class="project-img">
+      </div>
+      <div class="project-body">
+        <h5 class="project-title">Déploiement d'une infrastructure réseau multi-sites</h5>
+        <p class="project-desc">Conception et déploiement d'une infrastructure réseau complète pour un établissement hôtelier multi-bâtiments (Hôtel, SPA & Gym, Restaurant) avec segmentation VLAN, routage RIP v2 et sécurisation des équipements Cisco.</p>
+        <div class="project-tags">
+          <span class="tag">Cisco</span>
+          <span class="tag">VLAN</span>
+          <span class="tag">RIP v2</span>
+          <span class="tag">DHCP</span>
+          <span class="tag">SSH</span>
+          <span class="tag">Packet Tracer</span>
+        </div>
+        <div class="project-buttons">
+            <a href="files/Documentation.pdf" target="_blank" class="btn-doc"><i class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('Déploiement d\'une infrastructure réseau multi-sites', 'C1, C2, C4, C5, C6', 'files/tableau de synthese.pdf')"><i class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
+            <a href="files/Annexes.pdf" target="_blank" class="btn-doc" title="Fichiers Annexes"><i class="bi bi-folder2-open"></i> Tableau RP</a>
+          
+            <button class="btn-gestion" onclick="openModal()"><i class="bi bi-diagram-3"></i> Gestion de projet</button></div>
+        <div class="details-box">
+          Projet réalisé en stage chez BMA Réseaux & Télécom. Infrastructure pour 3 bâtiments reliés via 3 routeurs Cisco (R-MAIN, R-WIFI, R-CLOUD). 10 VLANs par service (STAFF, ADMIN, TV, CCTV, IT, GYM, SPA, CUISINE, Guest, Staff WiFi). Configuration DHCP par VLAN, RIP v2 pour le routage dynamique, sécurisation SSH avec bannières personnalisées, et tests de connectivité inter-VLAN validés.
+        </div>
+      </div>
+    </div>
+    <!-- NutriFit --></div>
 </section>
 
 <!-- ===== MODALE GESTION DE PROJET ===== -->
@@ -516,17 +496,96 @@
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 — Omar Talibi · Portfolio BTS SIO</p>
-  <p class="mt-1">
-    <a href="mentions-legales.html" target="_blank">Mentions légales</a> |
-    <a href="plan-du-site.html" target="_blank">Plan du site</a> |
-    <a href="confidentialite.html" target="_blank">Politique de confidentialité</a>
-  </p>
-</footer>
+  <!-- BACK TO TOP -->
+  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  
+  <!-- ===== MODALE SYNTHESE DYNAMIQUE ===== -->
+  <div class="modal-overlay" id="modalSynthese" onclick="if(event.target===this) closeSyntheseModal()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeSyntheseModal()"><i class="bi bi-x"></i></button>
+      <div class="modal-badge"><i class="bi bi-clipboard-check"></i> Tableau de Synthèse</div>
+      <h2 class="modal-title" id="syntheseModalTitle">Titre</h2>
+      <p class="modal-subtitle">Compétences acquises sur ce projet d'après la grille BTS SIO SISR</p>
+      
+      <div class="modal-divider"></div>
+      
+      <div class="modal-section">
+        <h3><i class="bi bi-list-check"></i> Liste des Compétences</h3>
+        <div id="syntheseModalContent" class="risk-grid">
+           <!-- JS will fill this -->
+        </div>
+      </div>
+      
+      <div class="modal-divider"></div>
+      
+      <div style="text-align:center; margin-top: 20px;">
+         <a id="syntheseModalPdf" href="#" target="_blank" class="btn-doc" style="padding: 10px 24px; font-size: 1rem;">
+           <i class="bi bi-file-earmark-pdf"></i> Ouvrir le PDF complet
+         </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-wide">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">OT</span>
+        <div>
+          <p class="footer-name">Omar Talibi</p>
+          <p class="footer-role">BTS SIO SISR · IRIS Mediaschool Nice</p>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-nav-title">Navigation</p>
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="experiences.html">Expériences</a>
+        <a href="competences.html">Compétences</a>
+        <a href="veille.html">Veille</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-nav-title">Documents</p>
+        <a href="files/CV Professionnel stage.pdf" target="_blank">Mon CV</a>
+        <a href="files/tableau de synthese.pdf" target="_blank">Tableau de synthèse</a>
+        <a href="files/Rapport_de_Stage_1.pdf" target="_blank">Rapport de stage 1</a>
+        <a href="files/Rapport_de_Stage_2.pdf" target="_blank">Rapport de stage 2</a>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-nav-title">Contact</p>
+        <a href="mailto:omar.talibi@gmail.com">omar.talibi@gmail.com</a>
+        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
+        <a href="https://github.com/walo2428" target="_blank"><i class="bi bi-github me-1"></i>GitHub</a>
+        <a href="contact.html">Formulaire de contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 — Omar Talibi · Portfolio BTS SIO SISR</p>
+      <div class="footer-legal">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <span>·</span>
+        <a href="plan-du-site.html">Plan du site</a>
+        <span>·</span>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // ===== BACK TO TOP =====
+  const btnTop = document.getElementById('btnTop');
+  if (btnTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) btnTop.classList.add('visible');
+      else btnTop.classList.remove('visible');
+    });
+  }
+</script>
 <script>
   // SCROLL REVEAL
   const reveals = document.querySelectorAll('.reveal');
@@ -584,6 +643,41 @@
     if (e.target === document.getElementById('modalGestion')) closeModal();
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-</script>
+
+    function openSyntheseModal(title, compsStr, pdfUrl) {
+      document.getElementById('syntheseModalTitle').innerHTML = 'Synthèse — <span>' + title + '</span>';
+      document.getElementById('syntheseModalPdf').href = pdfUrl;
+      
+      const compData = {
+          'C1': 'Gérer le patrimoine informatique',
+          'C2': 'Répondre aux incidents et aux demandes d\'assistance et d\'évolution',
+          'C3': 'Développer la présence en ligne de l\'organisation',
+          'C4': 'Travailler en mode projet',
+          'C5': 'Mettre à disposition des utilisateurs un service informatique',
+          'C6': 'Organiser son développement professionnel'
+      };
+      
+      let html = '';
+      const comps = compsStr.split(', ');
+      for(let c of comps) {
+          if(compData[c]) {
+              html += `<div class="risk-item" style="border-left:3px solid #f97316;">
+                          <p class="risk-label med" style="color:#fdba74;">${c}</p>
+                          <p class="risk-desc" style="color:#e2e8f0; font-weight:500;">${compData[c]}</p>
+                       </div>`;
+          }
+      }
+      document.getElementById('syntheseModalContent').innerHTML = html;
+      
+      document.getElementById('modalSynthese').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSyntheseModal() {
+      document.getElementById('modalSynthese').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+  </script>
 </body>
 </html>
