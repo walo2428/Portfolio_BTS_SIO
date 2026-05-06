@@ -253,3 +253,44 @@ footer a:hover { color: var(--orange); }
 /* RESPONSIVE footer */
 @media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .footer-inner { grid-template-columns: 1fr; gap: 28px; } .footer-bottom { flex-direction: column; align-items: flex-start; } }
+/* SOURCES CAROUSEL */
+.source-card {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.source-card:hover {
+  border-color: var(--orange);
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.05);
+}
+.source-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: var(--orange);
+  border-radius: 12px 0 0 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.source-card:hover::before { opacity: 1; }
+.source-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  background: rgba(249,115,22,0.1);
+  color: var(--orange);
+  display: flex; justify-content: center; align-items: center;
+  font-size: 1.2rem;
+}
+.source-link {
+  text-decoration: none; color: inherit; display: block;
+}
+
+/* CAROUSEL OVERRIDES */
+.bg-orange { background-color: var(--orange) !important; }
+.carousel-indicators [data-bs-target] { width: 12px; height: 12px; border-radius: 50%; opacity: 0.5; border: 2px solid transparent; }
+.carousel-indicators .active { opacity: 1; border: 2px solid rgba(255,255,255,0.8); }

@@ -311,51 +311,67 @@
     </div>
   </div>
 
-  <div id="sourcesCarousel" class="carousel slide shadow-sm rounded bg-dark border border-secondary p-4 mt-4" data-bs-ride="carousel" style="min-height: 480px;">
-    <div class="carousel-indicators" style="bottom: -20px;">
-      <button type="button" data-bs-target="#sourcesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#sourcesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#sourcesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <div id="sourcesCarousel" class="carousel slide p-4 mt-4" data-bs-ride="carousel" style="min-height: 480px; background: transparent;">
+    <div class="carousel-indicators" style="bottom: -30px;">
+      <button type="button" data-bs-target="#sourcesCarousel" data-bs-slide-to="0" class="active bg-orange" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#sourcesCarousel" data-bs-slide-to="1" class="bg-orange" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#sourcesCarousel" data-bs-slide-to="2" class="bg-orange" aria-label="Slide 3"></button>
     </div>
     
     <div class="carousel-inner h-100">
       <!-- Slide 1 : Les Sources -->
       <div class="carousel-item active h-100">
         <div class="d-flex flex-column align-items-center text-center h-100">
-          <h3 class="h4 mb-4 text-light"><i class="bi bi-journal-text me-2"></i>Articles Majeurs (2025 - 2026)</h3>
+          <h3 class="h4 mb-4 text-light"><i class="bi bi-journal-text me-2" style="color: var(--orange)"></i>Articles Majeurs (2025 - 2026)</h3>
           
-          <div class="list-group w-100 mb-4" style="max-width: 850px;">
-            <a href="https://www.next2i.fr/blog/2024/12/07/proxmox-gagne-du-terrain-face-a-vmware-avec-un-nouvel-assistant-de-migration-pour-vsphere-esxi/" target="_blank" class="list-group-item list-group-item-action bg-transparent text-light border-secondary d-flex justify-content-between align-items-center">
-              <div class="text-start">
-                <h6 class="mb-1 text-info">Assistant de migration Proxmox pour vSphere ESXi</h6>
-                <small class="text-muted"><i class="bi bi-globe me-1"></i>NEXT2i · Décembre 2024</small>
-              </div>
-              <i class="bi bi-box-arrow-up-right ms-3 text-secondary"></i>
-            </a>
+          <div class="row w-100 g-3 mb-4" style="max-width: 850px;">
+            <div class="col-md-6">
+              <a href="https://forum.proxmox.com/threads/new-import-wizard-migrate-vmware-esxi-based-virtual-machines.144023/" target="_blank" class="source-link">
+                <div class="source-card p-3 d-flex align-items-center text-start h-100">
+                  <div class="source-icon me-3"><i class="bi bi-hdd-network"></i></div>
+                  <div>
+                    <h6 class="mb-1 text-light fw-semibold">Assistant de migration Proxmox</h6>
+                    <small class="text-muted"><i class="bi bi-globe me-1"></i>Proxmox Forum · Officiel</small>
+                  </div>
+                </div>
+              </a>
+            </div>
             
-            <a href="https://www.lemagit.fr/conseil/Migration-VMware-vers-Proxmox-Un-guide-pour-les-DSI" target="_blank" class="list-group-item list-group-item-action bg-transparent text-light border-secondary d-flex justify-content-between align-items-center">
-              <div class="text-start">
-                <h6 class="mb-1 text-info">Migration VMware vers Proxmox : Guide stratégique</h6>
-                <small class="text-muted"><i class="bi bi-globe me-1"></i>LeMagIT · Septembre 2025</small>
-              </div>
-              <i class="bi bi-box-arrow-up-right ms-3 text-secondary"></i>
-            </a>
+            <div class="col-md-6">
+              <a href="https://pve.proxmox.com/wiki/Migrate_to_Proxmox_VE" target="_blank" class="source-link">
+                <div class="source-card p-3 d-flex align-items-center text-start h-100">
+                  <div class="source-icon me-3"><i class="bi bi-arrow-left-right"></i></div>
+                  <div>
+                    <h6 class="mb-1 text-light fw-semibold">Migration VMware vers Proxmox</h6>
+                    <small class="text-muted"><i class="bi bi-globe me-1"></i>Proxmox Wiki · Guide</small>
+                  </div>
+                </div>
+              </a>
+            </div>
 
-            <a href="https://www.it-connect.fr/windows-server-2025-est-disponible-quelles-sont-les-nouveautes/" target="_blank" class="list-group-item list-group-item-action bg-transparent text-light border-secondary d-flex justify-content-between align-items-center">
-              <div class="text-start">
-                <h6 class="mb-1 text-info">Nouveautés majeures de Windows Server 2025 et Hyper-V</h6>
-                <small class="text-muted"><i class="bi bi-globe me-1"></i>IT-Connect · Mars 2025</small>
-              </div>
-              <i class="bi bi-box-arrow-up-right ms-3 text-secondary"></i>
-            </a>
+            <div class="col-md-6">
+              <a href="https://learn.microsoft.com/fr-fr/windows-server/get-started/whats-new-windows-server-2025" target="_blank" class="source-link">
+                <div class="source-card p-3 d-flex align-items-center text-start h-100">
+                  <div class="source-icon me-3"><i class="bi bi-microsoft"></i></div>
+                  <div>
+                    <h6 class="mb-1 text-light fw-semibold">Nouveautés Windows Server 2025</h6>
+                    <small class="text-muted"><i class="bi bi-globe me-1"></i>Microsoft Learn · Mars 2025</small>
+                  </div>
+                </div>
+              </a>
+            </div>
             
-            <a href="https://www.usu.com/fr/blog/broadcom-vmware-licensing/" target="_blank" class="list-group-item list-group-item-action bg-transparent text-light border-secondary d-flex justify-content-between align-items-center">
-              <div class="text-start">
-                <h6 class="mb-1 text-info">Gérer l'impact financier des nouvelles licences Broadcom</h6>
-                <small class="text-muted"><i class="bi bi-globe me-1"></i>USU Blog · Bilan 2025/2026</small>
-              </div>
-              <i class="bi bi-box-arrow-up-right ms-3 text-secondary"></i>
-            </a>
+            <div class="col-md-6">
+              <a href="https://www.lemondeinformatique.fr/actualites/lire-le-rachat-de-vmware-par-broadcom-provoque-un-seisme-tarifaire-92694.html" target="_blank" class="source-link">
+                <div class="source-card p-3 d-flex align-items-center text-start h-100">
+                  <div class="source-icon me-3"><i class="bi bi-graph-up-arrow"></i></div>
+                  <div>
+                    <h6 class="mb-1 text-light fw-semibold">Impact financier de Broadcom</h6>
+                    <small class="text-muted"><i class="bi bi-globe me-1"></i>LMI · Bilan Éco</small>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -363,65 +379,65 @@
       <!-- Slide 2 : Les Outils -->
       <div class="carousel-item h-100">
         <div class="d-flex flex-column align-items-center text-center h-100">
-          <h3 class="h4 mb-4 text-light"><i class="bi bi-tools me-2"></i>Mes Outils Techniques</h3>
+          <h3 class="h4 mb-4 text-light"><i class="bi bi-tools me-2" style="color: var(--orange)"></i>Mes Outils Techniques</h3>
           
           <div class="row w-100 g-3 mb-4" style="max-width: 850px;">
-            <div class="col-md-4 border-secondary">
-               <a href="https://feedly.com" target="_blank" class="btn btn-outline-light w-100 text-start d-flex align-items-center p-3 h-100 border-secondary">
-                 <i class="bi bi-rss-fill fs-2 text-warning me-3"></i>
-                 <div>
-                   <strong class="d-block">Feedly (RSS)</strong>
-                   <span class="small text-muted">Agrégateur de flux d'infos IT</span>
+            <div class="col-md-4">
+               <a href="https://feedly.com" target="_blank" class="source-link">
+                 <div class="source-card p-3 text-center h-100 d-flex flex-column align-items-center justify-content-center">
+                   <div class="source-icon mb-2"><i class="bi bi-rss-fill"></i></div>
+                   <strong class="d-block text-light">Feedly (RSS)</strong>
+                   <span class="small text-muted">Agrégateur de flux</span>
                  </div>
                </a>
             </div>
             
-            <div class="col-md-4 border-secondary">
-               <a href="https://www.google.com/alerts" target="_blank" class="btn btn-outline-light w-100 text-start d-flex align-items-center p-3 h-100 border-secondary">
-                 <i class="bi bi-google fs-2 text-info me-3"></i>
-                 <div>
-                   <strong class="d-block">Google Alerts</strong>
-                   <span class="small text-muted">Surveillance par mots-clés</span>
+            <div class="col-md-4">
+               <a href="https://www.google.com/alerts" target="_blank" class="source-link">
+                 <div class="source-card p-3 text-center h-100 d-flex flex-column align-items-center justify-content-center">
+                   <div class="source-icon mb-2"><i class="bi bi-google"></i></div>
+                   <strong class="d-block text-light">Google Alerts</strong>
+                   <span class="small text-muted">Suivi par mots-clés</span>
                  </div>
                </a>
             </div>
 
-            <div class="col-md-4 border-secondary">
-               <a href="https://www.ssi.gouv.fr/actualite/bulletins-et-alertes/" target="_blank" class="btn btn-outline-light w-100 text-start d-flex align-items-center p-3 h-100 border-secondary">
-                 <i class="bi bi-shield-fill-check fs-2 text-success me-3"></i>
-                 <div>
-                   <strong class="d-block">ANSSI CertFR</strong>
-                   <span class="small text-muted">Alertes de vulnérabilités</span>
+            <div class="col-md-4">
+               <a href="https://cert.ssi.gouv.fr/" target="_blank" class="source-link">
+                 <div class="source-card p-3 text-center h-100 d-flex flex-column align-items-center justify-content-center">
+                   <div class="source-icon mb-2"><i class="bi bi-shield-fill-check"></i></div>
+                   <strong class="d-block text-light">ANSSI Cert-FR</strong>
+                   <span class="small text-muted">Vulnérabilités critiques</span>
                  </div>
                </a>
             </div>
             
-            <div class="col-md-4 border-secondary">
-               <a href="https://techcommunity.microsoft.com/category/windowsserver" target="_blank" class="btn btn-outline-light w-100 text-start d-flex align-items-center p-3 h-100 border-secondary">
-                 <i class="bi bi-microsoft fs-2 text-primary me-3"></i>
-                 <div>
-                   <strong class="d-block">Microsoft Tech</strong>
+            <div class="col-md-4">
+               <a href="https://techcommunity.microsoft.com/category/windowsserver" target="_blank" class="source-link">
+                 <div class="source-card p-3 text-center h-100 d-flex flex-column align-items-center justify-content-center">
+                   <div class="source-icon mb-2"><i class="bi bi-cloud-check"></i></div>
+                   <strong class="d-block text-light">MS TechCommunity</strong>
                    <span class="small text-muted">Blog technique Hyper-V</span>
                  </div>
                </a>
             </div>
 
-            <div class="col-md-4 border-secondary">
-               <a href="https://github.com/proxmox" target="_blank" class="btn btn-outline-light w-100 text-start d-flex align-items-center p-3 h-100 border-secondary">
-                 <i class="bi bi-github fs-2 text-light me-3"></i>
-                 <div>
-                   <strong class="d-block">GitHub Releases</strong>
-                   <span class="small text-muted">Suivi des patchs Open Source</span>
+            <div class="col-md-4">
+               <a href="https://github.com/proxmox" target="_blank" class="source-link">
+                 <div class="source-card p-3 text-center h-100 d-flex flex-column align-items-center justify-content-center">
+                   <div class="source-icon mb-2"><i class="bi bi-github"></i></div>
+                   <strong class="d-block text-light">GitHub Releases</strong>
+                   <span class="small text-muted">Suivi des versions</span>
                  </div>
                </a>
             </div>
 
-            <div class="col-md-4 border-secondary">
-               <a href="https://reddit.com/r/sysadmin" target="_blank" class="btn btn-outline-light w-100 text-start d-flex align-items-center p-3 h-100 border-secondary">
-                 <i class="bi bi-reddit fs-2 text-danger me-3"></i>
-                 <div>
-                   <strong class="d-block">Reddit r/sysadmin</strong>
-                   <span class="small text-muted">Veille communautaire & retours</span>
+            <div class="col-md-4">
+               <a href="https://reddit.com/r/sysadmin" target="_blank" class="source-link">
+                 <div class="source-card p-3 text-center h-100 d-flex flex-column align-items-center justify-content-center">
+                   <div class="source-icon mb-2"><i class="bi bi-reddit"></i></div>
+                   <strong class="d-block text-light">Reddit r/sysadmin</strong>
+                   <span class="small text-muted">Veille communautaire</span>
                  </div>
                </a>
             </div>
@@ -432,34 +448,34 @@
       <!-- Slide 3 : Communautés & Newsletters -->
       <div class="carousel-item h-100">
         <div class="d-flex flex-column align-items-center text-center h-100">
-          <h3 class="h4 mb-4 text-light"><i class="bi bi-envelope-paper me-2"></i>Newsletters & Réseaux Professionnels</h3>
+          <h3 class="h4 mb-4 text-light"><i class="bi bi-envelope-paper me-2" style="color: var(--orange)"></i>Newsletters & Réseaux</h3>
           
           <div class="row w-100 g-3 mb-4 justify-content-center" style="max-width: 850px;">
-            <div class="col-md-6 border-secondary">
-               <div class="p-3 border border-secondary rounded shadow-sm text-start bg-transparent">
-                 <h5 class="text-light mb-2"><i class="bi bi-envelope-at text-info me-2"></i>IT-Connect Newsletter</h5>
-                 <p class="text-muted small mb-0">Réception hebdomadaire des derniers tutoriels et actualités en administration système francophone, particulièrement sur Windows Server.</p>
+            <div class="col-md-6">
+               <div class="source-card p-3 text-start h-100">
+                 <h5 class="text-light mb-2 fw-semibold d-flex align-items-center"><i class="bi bi-envelope-at me-2" style="color: var(--orange);"></i>IT-Connect</h5>
+                 <p class="text-muted small mb-0">Réception hebdomadaire des tutoriels et actualités en administration système francophone, particulièrement sur Windows Server.</p>
                </div>
             </div>
             
-            <div class="col-md-6 border-secondary">
-               <div class="p-3 border border-secondary rounded shadow-sm text-start bg-transparent">
-                 <h5 class="text-light mb-2"><i class="bi bi-envelope-at text-info me-2"></i>Zeste de Savoir / Developpez.com</h5>
-                 <p class="text-muted small mb-0">Suivi des forums et articles techniques sur l'évolution des infrastructures locales (virtuelles, réseau, sécurité).</p>
+            <div class="col-md-6">
+               <div class="source-card p-3 text-start h-100">
+                 <h5 class="text-light mb-2 fw-semibold d-flex align-items-center"><i class="bi bi-chat-quote me-2" style="color: var(--orange);"></i>Forums Spécialisés</h5>
+                 <p class="text-muted small mb-0">Suivi des forums (Zeste de Savoir, Developpez.com) sur l'évolution des infrastructures virtuelles et réseau.</p>
                </div>
             </div>
 
-            <div class="col-md-6 border-secondary">
-               <div class="p-3 border border-secondary rounded shadow-sm text-start bg-transparent">
-                 <h5 class="text-light mb-2"><i class="bi bi-linkedin text-primary me-2"></i>LinkedIn Groups</h5>
-                 <p class="text-muted small mb-0">Membre actif de groupes tels que "Système, Réseaux & Sécurité Francophone" pour suivre les tendances du marché du travail.</p>
+            <div class="col-md-6">
+               <div class="source-card p-3 text-start h-100">
+                 <h5 class="text-light mb-2 fw-semibold d-flex align-items-center"><i class="bi bi-linkedin me-2" style="color: var(--orange);"></i>Groupes LinkedIn</h5>
+                 <p class="text-muted small mb-0">Réseautage et veille via les groupes "Système, Réseaux & Sécurité Francophone" pour suivre les tendances du marché.</p>
                </div>
             </div>
 
-            <div class="col-md-6 border-secondary">
-               <div class="p-3 border border-secondary rounded shadow-sm text-start bg-transparent">
-                 <h5 class="text-light mb-2"><i class="bi bi-youtube text-danger me-2"></i>Chaînes YouTube Spécialisées</h5>
-                 <p class="text-muted small mb-0">Abonnements aux chaînes de vulgarisation technique (ex: L'Informatique, Cocadmin) pour des démos d'architectures.</p>
+            <div class="col-md-6">
+               <div class="source-card p-3 text-start h-100">
+                 <h5 class="text-light mb-2 fw-semibold d-flex align-items-center"><i class="bi bi-youtube me-2" style="color: var(--orange);"></i>Chaînes YouTube</h5>
+                 <p class="text-muted small mb-0">Abonnements aux chaînes spécialisées (ex: L'Informatique, IT-Connect) pour des démonstrations d'architectures et PoC.</p>
                </div>
             </div>
           </div>
@@ -468,17 +484,18 @@
     </div>
     
     <button class="carousel-control-prev" type="button" data-bs-target="#sourcesCarousel" data-bs-slide="prev" style="width: 5%;">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(0.5) sepia(1) saturate(5) hue-rotate(350deg) brightness(1.2);"></span>
       <span class="visually-hidden">Précédent</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#sourcesCarousel" data-bs-slide="next" style="width: 5%;">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(0.5) sepia(1) saturate(5) hue-rotate(350deg) brightness(1.2);"></span>
       <span class="visually-hidden">Suivant</span>
     </button>
   </div>
 </section>
 
   <!-- BACK TO TOP -->
+  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut">
   <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut">
     <i class="bi bi-arrow-up"></i>
   </button>
