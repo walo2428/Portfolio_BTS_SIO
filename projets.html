@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mes Projets – Omar Talibi</title>
-  <meta name="description" content="Projets réalisés en BTS SIO SISR : DHCP/DNS, Active Directory, GLPI, supervision, messagerie ClassCord et infrastructure multi-sites, avec documentation et annexes E5.">
+  <meta name="description" content="Projets réalisés en BTS SIO SISR : DHCP/DNS, Active Directory, GLPI, supervision, messagerie ClassCord et infrastructure multi-sites, avec documentation et tableaux de synthèse.">
   <link rel="canonical" href="https://walo2428.github.io/Portfolio_BTS_SIO/projets.html">
   <meta name="author" content="Omar Talibi">
   <meta name="theme-color" content="#0f172a">
@@ -12,11 +12,11 @@
   <meta property="og:site_name" content="Portfolio Omar Talibi">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:title" content="Mes Projets – Omar Talibi">
-  <meta property="og:description" content="Projets réalisés en BTS SIO SISR : DHCP/DNS, Active Directory, GLPI, supervision, messagerie ClassCord et infrastructure multi-sites, avec documentation et annexes E5.">
+  <meta property="og:description" content="Projets réalisés en BTS SIO SISR : DHCP/DNS, Active Directory, GLPI, supervision, messagerie ClassCord et infrastructure multi-sites, avec documentation et tableaux de synthèse.">
   <meta property="og:url" content="https://walo2428.github.io/Portfolio_BTS_SIO/projets.html">
-  <meta property="og:image" content="https://walo2428.github.io/Portfolio_BTS_SIO/img/logo.png">
+  <meta property="og:image" content="https://walo2428.github.io/Portfolio_BTS_SIO/img/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" href="img/logo-nav.png">
+  <link rel="icon" type="image/png" href="img/favicon.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="projets.css" />
@@ -29,7 +29,7 @@
 <nav aria-label="Navigation principale" class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img src="img/logo-nav.png" alt="Logo" width="70" height="38" class="me-2 rounded">
+      <img src="img/logo-nav.webp" alt="Logo" width="45" height="38" class="me-2 rounded">
       OMAR TALIBI
     </a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Afficher ou masquer le menu">
@@ -39,9 +39,13 @@
       <ul class="navbar-nav ms-auto align-items-center gap-1">
         <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
         <li class="nav-item"><a class="nav-link active" href="projets.html">Projets</a></li>
+        <li class="nav-item"><a class="nav-link" href="competences.html">Compétences</a></li>
         <li class="nav-item"><a class="nav-link" href="experiences.html">Expériences</a></li>
         <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+          <a href="files/CV Professionnel stage.pdf" class="btn-primary-custom" target="_blank" rel="noopener noreferrer">Mon CV</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -61,165 +65,20 @@
 
   <!-- FILTRES -->
   <div class="filter-bar">
-    <button class="filter-btn active" data-filter="all">Tous les projets</button>
-    <button class="filter-btn" data-filter="formation">Durant la formation</button>
-    <button class="filter-btn" data-filter="stages">Stages</button>
+    <button class="filter-btn active" data-filter="all" aria-pressed="true">Tous les projets</button>
+    <button class="filter-btn" data-filter="rp" aria-pressed="false">Réalisations professionnelles</button>
+    <button class="filter-btn" data-filter="formation" aria-pressed="false">Durant la formation</button>
+    <button class="filter-btn" data-filter="stages" aria-pressed="false">Stages</button>
   </div>
 
   <!-- GRILLE -->
   <div class="projects-grid" id="projects-grid">
-    <!-- CinéZone -->
-    <div class="project-card card-stagger" data-category="formation">
-      <div class="project-img-wrap">
-        <img loading="lazy" decoding="async" src="img/projets/cinezone.webp" alt="CinéZone" class="project-img">
-      </div>
+    <!-- RP01 Active Directory -->
+    <div class="project-card card-stagger" data-category="rp">
+      <div class="project-img-wrap project-cover cover-ad" aria-hidden="true"><i class="bi bi-people-fill"></i><span>Active Directory<br>Windows Server 2022</span></div>
       <div class="project-body">
-        <h5 class="project-title" aria-level="2">N°1 - Déploiement et administration d'un portail web de consultation multimédia en réseau local (Cinezone)</h5>
-        <p class="project-desc">Portail web de consultation de films utilisant l'API TMDB, avec recherche, filtres et gestion des favoris en localStorage.</p>
-        <div class="project-tags">
-          <span class="tag">HTML/CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">API TMDB</span>
-          <span class="tag">Apache2</span>
-        </div>
-        <div class="project-buttons">
-            <a href="https://github.com/walo2428/Cine_pro" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-github"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('N°1 - Déploiement et administration d\'un portail web de consultation multimédia en réseau local (Cinezone)', 'C3, C4, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
-        <div class="details-box">Portail web local permettant de consulter un catalogue de films via l'API TMDB. Interface responsive avec recherche, filtres par genre et favoris en localStorage.</div>
-      </div>
-    </div>
-    <!-- DHCP/DNS -->
-    <div class="project-card card-stagger" data-category="formation">
-      <div class="project-img-wrap">
-        <img loading="lazy" decoding="async" src="img/projets/dhcp_dns.webp" alt="DHCP/DNS" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title" aria-level="2">N°2 - Services réseau : déploiement DHCP / DNS et administration système</h5>
-        <p class="project-desc">Mise en place de DHCP et DNS sur Debian avec isc-dhcp-server et bind9, incluant zones de résolution directe et inverse.</p>
-        <div class="project-tags">
-          <span class="tag">Debian</span>
-          <span class="tag">DHCP</span>
-          <span class="tag">DNS</span>
-          <span class="tag">bind9</span>
-        </div>
-        <div class="project-buttons">
-            <a href="files/Docs/documentation_N2_dhcp_dns.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('N°2 - Services réseau : déploiement DHCP / DNS et administration système', 'C1, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
-        <div class="details-box">Configuration d'un serveur Debian complet : DHCP avec plages dynamiques, DNS bind9 avec zones primaires et secondaires, sécurisation SSH.</div>
-      </div>
-    </div>
-    <!-- ClassCord -->
-    <div class="project-card card-stagger" data-category="formation">
-      <div class="project-img-wrap">
-        <img loading="lazy" decoding="async" src="img/projets/classcord_server.png" alt="ClassCord" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title" aria-level="2">N°3 - Déploiement et sécurisation d'un service de messagerie réseau multi-clients (ClassCord)</h5>
-        <p class="project-desc">Serveur de tchat multi-clients en Python, déployé, sécurisé et supervisé sous Linux, avec accès réseau pour les clients SLAM.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Linux (Debian)</span>
-          <span class="tag">Sockets TCP</span>
-          <span class="tag">Docker</span>
-          <span class="tag">Fail2ban</span>
-        </div>
-        <div class="project-buttons">
-            <a href="files/Docs/documentation_ClassCord_Server.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('N°3 - Déploiement et sécurisation d\'un service de messagerie réseau multi-clients (ClassCord)', 'C1, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
-        <div class="details-box">Serveur de tchat multi-clients développé en Python. Mon rôle SISR : déployer le serveur Python et le rendre accessible sur le réseau pour les clients Java des étudiants SLAM.</div>
-      </div>
-    </div>
-    <!-- Monitoring -->
-    <div class="project-card card-stagger" data-category="formation">
-      <div class="project-img-wrap">
-        <img loading="lazy" decoding="async" src="img/projets/grafana.webp" alt="Monitoring" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title" aria-level="2">N°4 - Supervision du système d'information et gestion des incidents</h5>
-        <p class="project-desc">Stack complète de supervision temps réel pour surveiller la santé des serveurs avec tableaux de bord Grafana.</p>
-        <div class="project-tags">
-          <span class="tag">Prometheus</span>
-          <span class="tag">Grafana</span>
-          <span class="tag">Node Exporter</span>
-          <span class="tag">InfluxDB</span>
-        </div>
-        <div class="project-buttons">
-            <a href="files/Docs/documentation_VM1monit_VM2nodel.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('N°4 - Supervision du système d\'information et gestion des incidents', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
-        <div class="details-box">Déploiement d'une stack de supervision avec Prometheus pour la collecte de métriques, Node Exporter sur les serveurs cibles, et Grafana pour la visualisation en temps réel.</div>
-      </div>
-    </div>
-    <!-- Windows Server -->
-    <div class="project-card card-stagger" data-category="formation">
-      <div class="project-img-wrap">
-        <img loading="lazy" decoding="async" src="img/projets/windows_server.jpg" alt="Windows Server" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title" aria-level="2">N°5 - Annuaire centralisé : mise en place et gestion Active Directory</h5>
-        <p class="project-desc">Déploiement d'une infrastructure Windows Server complète : AD DS, DNS, DHCP, GPO, serveur de fichiers et automatisations PowerShell.</p>
-        <div class="project-tags">
-          <span class="tag">Windows Server</span>
-          <span class="tag">Active Directory</span>
-          <span class="tag">GPO</span>
-          <span class="tag">DHCP</span>
-          <span class="tag">DNS</span>
-          <span class="tag">PowerShell</span>
-        </div>
-        <div class="project-buttons">
-            <a href="https://github.com/Mediaschool-IRIS-BTS-SISR-2025/WinServ-PowerShell" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-github"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('N°5 - Annuaire centralisé : mise en place et gestion Active Directory', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
-        <div class="details-box">Mise en place complète d'un domaine Active Directory, configuration des rôles, création d'OU, gestion des stratégies GPO et scripts PowerShell d'automatisation.</div>
-      </div>
-    </div>
-    <!-- GLPI -->
-    <div class="project-card card-stagger" data-category="formation">
-      <div class="project-img-wrap">
-        <img loading="lazy" decoding="async" src="img/projets/glpi.png" alt="GLPI" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title" aria-level="2">N°6 - Gestion du parc informatique et outil de ticketing (GLPI)</h5>
-        <p class="project-desc">Déploiement de GLPI pour la gestion de parc informatique et tickets d'incidents, avec sécurisation SSH par clés RSA.</p>
-        <div class="project-tags">
-          <span class="tag">GLPI</span>
-          <span class="tag">Apache</span>
-          <span class="tag">SSH</span>
-          <span class="tag">Fail2ban</span>
-        </div>
-        <div class="project-buttons">
-            <a href="files/Docs/documentation_GLPI_AgentGLPI.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('N°6 - Gestion du parc informatique et outil de ticketing (GLPI)', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
-        <div class="details-box">Installation GLPI complète sur Debian avec Apache/MariaDB, déploiement des agents sur postes clients, et sécurisation avancée : Fail2ban, clés RSA, durcissement SSH.</div>
-      </div>
-    </div>
-    <!-- Server IRIS / Gestion Utilisateurs -->
-    <div class="project-card card-stagger" data-category="formation">
-      <div class="project-img-wrap">
-        <img loading="lazy" decoding="async" src="img/projets/cockpit.png" alt="Server IRIS" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title" aria-level="2">N°7 - Gestion des utilisateurs et des accès en environnement professionnel</h5>
-        <p class="project-desc">Déploiement d'un serveur complet avec Cockpit pour l'administration web et Nextcloud via Docker pour le stockage collaboratif.</p>
-        <div class="project-tags">
-          <span class="tag">Docker</span>
-          <span class="tag">Linux</span>
-          <span class="tag">MariaDB</span>
-          <span class="tag">Cockpit</span>
-          <span class="tag">Nextcloud</span>
-        </div>
-        <div class="project-buttons">
-            <a href="https://github.com/walo2428/Nexcloud-cockpit" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-github"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('N°7 - Gestion des utilisateurs et des accès en environnement professionnel', 'C1, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
-            <button class="btn-gestion" onclick="openModal()"><i aria-hidden="true" class="bi bi-diagram-3"></i> Gestion de projet</button></div>
-        <div class="details-box">Déploiement Nextcloud via Docker Compose avec MariaDB, volumes persistants et Cockpit pour l'administration web. Accès sécurisé sur le réseau interne.</div>
-      </div>
-    </div>
-    <!-- RP-02 Active Directory -->
-    <div class="project-card card-stagger" data-category="formation">
-      <div class="project-img-wrap">
-        <img loading="lazy" decoding="async" src="img/projets/windows_server.jpg" alt="Active Directory" class="project-img">
-      </div>
-      <div class="project-body">
-        <h5 class="project-title" aria-level="2">RP01 - Active Directory IRIS sur infrastructure existante</h5>
+        <p class="project-kicker">RP01</p>
+        <h2 class="project-title">Active Directory IRIS sur infrastructure existante</h2>
         <p class="project-desc">Déploiement d'un Active Directory Domain Services complet sur Windows Server 2022 pour l'école IRIS Nice : gestion centralisée des identités, GPO ANSSI, PowerShell et authentification 802.1X.</p>
         <div class="project-tags">
           <span class="tag">Windows Server 2022</span>
@@ -229,22 +88,21 @@
           <span class="tag">NPS / RADIUS</span>
           <span class="tag">802.1X</span>
         </div>
+        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
+        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Référence IRIS-NICE-RP01. Déploiement AD DS, structure OUs (SISR, SLAM, Enseignants, Administration), GPO conformes ANSSI (mots de passe 12 car., verrouillage 5 tentatives), scripts PowerShell d'import CSV, partages de fichiers avec matrice NTFS/SMB, et intégration NPS pour l'authentification Wi-Fi 802.1X.</div></details>
         <div class="project-buttons">
             <a href="files/Docs/documentation_rp01.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('RP01 - Active Directory IRIS sur infrastructure existante', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
-        <div class="details-box">
-          Référence IRIS-NICE-2024-RP02. Déploiement AD DS, structure OUs (SISR, SLAM, Enseignants, Administration), GPO conformes ANSSI (mots de passe 12 car., verrouillage 5 tentatives), scripts PowerShell d'import CSV, partages de fichiers avec matrice NTFS/SMB, et intégration NPS pour l'authentification Wi-Fi 802.1X.
-        </div>
+            <button class="btn-doc" onclick="openSyntheseModal('RP01 — Active Directory IRIS sur infrastructure existante', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
       </div>
     </div>
-    <!-- RP-03 Supervision & Monitoring -->
-    <div class="project-card card-stagger" data-category="formation">
-      <div class="project-img-wrap">
-        <img loading="lazy" decoding="async" src="img/projets/grafana.webp" alt="Supervision & Monitoring" class="project-img">
-      </div>
+    <!-- RP02 Supervision & Monitoring -->
+    <div class="project-card card-stagger" data-category="rp">
+      <div class="project-img-wrap project-cover cover-lgp" aria-hidden="true"><i class="bi bi-graph-up-arrow"></i><span>Loki · Grafana · Prometheus</span></div>
       <div class="project-body">
-        <h5 class="project-title" aria-level="2">RP02 - Supervision, Monitoring & Services Web Internes sur infrastructure existante</h5>
+        <p class="project-kicker">RP02</p>
+        <h2 class="project-title">Supervision, Monitoring & Services Web Internes sur infrastructure existante</h2>
         <p class="project-desc">Déploiement d'une stack LGP (Loki + Grafana + Prometheus), Nextcloud Hub avec authentification LDAP/AD, reverse proxy Traefik HTTPS et centralisation des logs syslog Cisco — rétention 12 mois LCEN.</p>
+        <p class="project-result"><i aria-hidden="true" class="bi bi-patch-check-fill"></i> Recette : 8 tests sur 9 validés</p>
         <div class="project-tags">
           <span class="tag">Prometheus</span>
           <span class="tag">Grafana</span>
@@ -255,23 +113,165 @@
           <span class="tag">Docker</span>
           <span class="tag">HTTPS / TLS</span>
         </div>
+        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Travailler en mode projet">C4</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
+        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Référence IRIS-NICE-RP02 — v6. Stack LGP : Prometheus + node_exporter + Alertmanager + Loki + Promtail + Grafana via Traefik HTTPS. Nextcloud Hub 28 remplace le wiki (LDAP AD natif, quotas par groupe). Chaîne syslog : Cisco IOS → rsyslog → Promtail → Loki. Rétention 12 mois LCEN. 7 headers sécurité HTTP. 8/9 tests PV recette validés.</div></details>
         <div class="project-buttons">
             <a href="files/Docs/documentation_rp03.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('RP02 - Supervision, Monitoring & Services Web Internes sur infrastructure existante', 'C1, C2, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
-        <div class="details-box">
-          Référence IRIS-NICE-2024-RP03 — v6. Stack LGP : Prometheus + node_exporter + Alertmanager + Loki + Promtail + Grafana via Traefik HTTPS. Nextcloud Hub 28 remplace le wiki (LDAP AD natif, quotas par groupe). Chaîne syslog : Cisco IOS → rsyslog → Promtail → Loki. Rétention 12 mois LCEN. 7 headers sécurité HTTP. 8/9 tests PV recette validés.
-        </div>
+            <button class="btn-doc" onclick="openSyntheseModal('RP02 — Supervision, Monitoring & Services Web Internes sur infrastructure existante', 'C1, C2, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
       </div>
     </div>
-
-  
+    <!-- CinéZone -->
+    <div class="project-card card-stagger" data-category="formation">
+      <div class="project-img-wrap project-cover cover-web" aria-hidden="true"><i class="bi bi-film"></i><span>CinéZone<br>Portail web multimédia</span></div>
+      <div class="project-body">
+        <p class="project-kicker">Projet N°1</p>
+        <h2 class="project-title">Déploiement et administration d'un portail web de consultation multimédia en réseau local (Cinezone)</h2>
+        <p class="project-desc">Portail web de consultation de films utilisant l'API TMDB, avec recherche, filtres et gestion des favoris en localStorage.</p>
+        <div class="project-tags">
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">API TMDB</span>
+          <span class="tag">Apache2</span>
+        </div>
+        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Développer la présence en ligne de l'organisation">C3</abbr><abbr class="skill-chip" title="Travailler en mode projet">C4</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
+        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Portail web local permettant de consulter un catalogue de films via l'API TMDB. Interface responsive avec recherche, filtres par genre et favoris en localStorage.</div></details>
+        <div class="project-buttons">
+            <a href="https://github.com/walo2428/Cine_pro" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-github"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°1 — Déploiement et administration d\'un portail web de consultation multimédia en réseau local (Cinezone)', 'C3, C4, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
+      </div>
+    </div>
+    <!-- DHCP/DNS -->
+    <div class="project-card card-stagger" data-category="formation">
+      <div class="project-img-wrap project-cover cover-dns" aria-hidden="true"><i class="bi bi-diagram-3-fill"></i><span>DHCP · DNS<br>Services réseau</span></div>
+      <div class="project-body">
+        <p class="project-kicker">Projet N°2</p>
+        <h2 class="project-title">Services réseau : déploiement DHCP / DNS et administration système</h2>
+        <p class="project-desc">Mise en place de DHCP et DNS sur Debian avec isc-dhcp-server et bind9, incluant zones de résolution directe et inverse.</p>
+        <div class="project-tags">
+          <span class="tag">Debian</span>
+          <span class="tag">DHCP</span>
+          <span class="tag">DNS</span>
+          <span class="tag">bind9</span>
+        </div>
+        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
+        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Configuration d'un serveur Debian complet : DHCP avec plages dynamiques, DNS bind9 avec zones primaires et secondaires, sécurisation SSH.</div></details>
+        <div class="project-buttons">
+            <a href="files/Docs/documentation_N2_dhcp_dns.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°2 — Services réseau : déploiement DHCP / DNS et administration système', 'C1, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
+      </div>
+    </div>
+    <!-- ClassCord -->
+    <div class="project-card card-stagger" data-category="formation">
+      <div class="project-img-wrap project-cover cover-chat" aria-hidden="true"><i class="bi bi-chat-dots-fill"></i><span>ClassCord<br>Messagerie sécurisée</span></div>
+      <div class="project-body">
+        <p class="project-kicker">Projet N°3</p>
+        <h2 class="project-title">Déploiement et sécurisation d'un service de messagerie réseau multi-clients (ClassCord)</h2>
+        <p class="project-desc">Serveur de tchat multi-clients en Python, déployé, sécurisé et supervisé sous Linux, avec accès réseau pour les clients SLAM.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Linux (Debian)</span>
+          <span class="tag">Sockets TCP</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Fail2ban</span>
+        </div>
+        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Travailler en mode projet">C4</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
+        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Serveur de tchat multi-clients développé en Python. Mon rôle SISR : déployer le serveur Python et le rendre accessible sur le réseau pour les clients Java des étudiants SLAM.</div></details>
+        <div class="project-buttons">
+            <a href="files/Docs/documentation_ClassCord_Server.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°3 — Déploiement et sécurisation d\'un service de messagerie réseau multi-clients (ClassCord)', 'C1, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
+      </div>
+    </div>
+    <!-- Monitoring -->
+    <div class="project-card card-stagger" data-category="formation">
+      <div class="project-img-wrap project-cover cover-lgp" aria-hidden="true"><i class="bi bi-graph-up-arrow"></i><span>Supervision<br>Grafana · Prometheus</span></div>
+      <div class="project-body">
+        <p class="project-kicker">Projet N°4</p>
+        <h2 class="project-title">Supervision du système d'information et gestion des incidents</h2>
+        <p class="project-desc">Stack complète de supervision temps réel pour surveiller la santé des serveurs avec tableaux de bord Grafana.</p>
+        <div class="project-tags">
+          <span class="tag">Prometheus</span>
+          <span class="tag">Grafana</span>
+          <span class="tag">Node Exporter</span>
+          <span class="tag">InfluxDB</span>
+        </div>
+        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
+        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Déploiement d'une stack de supervision avec Prometheus pour la collecte de métriques, Node Exporter sur les serveurs cibles, et Grafana pour la visualisation en temps réel.</div></details>
+        <div class="project-buttons">
+            <a href="files/Docs/documentation_VM1monit_VM2nodel.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°4 — Supervision du système d\'information et gestion des incidents', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
+      </div>
+    </div>
+    <!-- Windows Server -->
+    <div class="project-card card-stagger" data-category="formation">
+      <div class="project-img-wrap project-cover cover-ad" aria-hidden="true"><i class="bi bi-people-fill"></i><span>Active Directory<br>Windows Server</span></div>
+      <div class="project-body">
+        <p class="project-kicker">Projet N°5</p>
+        <h2 class="project-title">Annuaire centralisé : mise en place et gestion Active Directory</h2>
+        <p class="project-desc">Déploiement d'une infrastructure Windows Server complète : AD DS, DNS, DHCP, GPO, serveur de fichiers et automatisations PowerShell.</p>
+        <div class="project-tags">
+          <span class="tag">Windows Server</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">GPO</span>
+          <span class="tag">DHCP</span>
+          <span class="tag">DNS</span>
+          <span class="tag">PowerShell</span>
+        </div>
+        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
+        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Mise en place complète d'un domaine Active Directory, configuration des rôles, création d'OU, gestion des stratégies GPO et scripts PowerShell d'automatisation.</div></details>
+        <div class="project-buttons">
+            <a href="https://github.com/Mediaschool-IRIS-BTS-SISR-2025/WinServ-PowerShell" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-github"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°5 — Annuaire centralisé : mise en place et gestion Active Directory', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
+      </div>
+    </div>
+    <!-- GLPI -->
+    <div class="project-card card-stagger" data-category="formation">
+      <div class="project-img-wrap project-cover cover-glpi" aria-hidden="true"><i class="bi bi-ticket-detailed-fill"></i><span>GLPI<br>Parc &amp; ticketing</span></div>
+      <div class="project-body">
+        <p class="project-kicker">Projet N°6</p>
+        <h2 class="project-title">Gestion du parc informatique et outil de ticketing (GLPI)</h2>
+        <p class="project-desc">Déploiement de GLPI pour la gestion de parc informatique et tickets d'incidents, avec sécurisation SSH par clés RSA.</p>
+        <div class="project-tags">
+          <span class="tag">GLPI</span>
+          <span class="tag">Apache</span>
+          <span class="tag">SSH</span>
+          <span class="tag">Fail2ban</span>
+        </div>
+        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
+        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Installation GLPI complète sur Debian avec Apache/MariaDB, déploiement des agents sur postes clients, et sécurisation avancée : Fail2ban, clés RSA, durcissement SSH.</div></details>
+        <div class="project-buttons">
+            <a href="files/Docs/documentation_GLPI_AgentGLPI.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°6 — Gestion du parc informatique et outil de ticketing (GLPI)', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
+      </div>
+    </div>
+    <!-- Server IRIS / Gestion Utilisateurs -->
+    <div class="project-card card-stagger" data-category="formation">
+      <div class="project-img-wrap project-cover cover-iris" aria-hidden="true"><i class="bi bi-shield-lock-fill"></i><span>Server IRIS<br>Utilisateurs &amp; accès</span></div>
+      <div class="project-body">
+        <p class="project-kicker">Projet N°7</p>
+        <h2 class="project-title">Gestion des utilisateurs et des accès en environnement professionnel</h2>
+        <p class="project-desc">Déploiement d'un serveur complet avec Cockpit pour l'administration web et Nextcloud via Docker pour le stockage collaboratif.</p>
+        <p class="project-result"><i aria-hidden="true" class="bi bi-patch-check-fill"></i> Recette : 9 tests sur 10 validés (HTTPS reporté)</p>
+        <div class="project-tags">
+          <span class="tag">Docker</span>
+          <span class="tag">Linux</span>
+          <span class="tag">MariaDB</span>
+          <span class="tag">Cockpit</span>
+          <span class="tag">Nextcloud</span>
+        </div>
+        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Travailler en mode projet">C4</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
+        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Déploiement Nextcloud via Docker Compose avec MariaDB, volumes persistants et Cockpit pour l'administration web. Accès sécurisé sur le réseau interne.</div></details>
+        <div class="project-buttons">
+            <a href="https://github.com/walo2428/Nexcloud-cockpit" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-github"></i> Documentation</a>
+            <button class="btn-doc" onclick="openSyntheseModal('N°7 — Gestion des utilisateurs et des accès en environnement professionnel', 'C1, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button>
+            <button class="btn-gestion" onclick="openModal()"><i aria-hidden="true" class="bi bi-diagram-3"></i> Gestion de projet</button></div>
+      </div>
+    </div>
     <!-- Établissement ELEVEN -->
     <div class="project-card card-stagger" data-category="stages">
-      <div class="project-img-wrap">
-        <img loading="lazy" decoding="async" src="img/projets/dhcp_dns.webp" alt="Etablissement ELEVEN" class="project-img">
-      </div>
+      <div class="project-img-wrap project-cover cover-net" aria-hidden="true"><i class="bi bi-hdd-network-fill"></i><span>Réseau multi-sites<br>Cisco · VLAN · RIP v2</span></div>
       <div class="project-body">
-        <h5 class="project-title" aria-level="2">Déploiement d'une infrastructure réseau multi-sites</h5>
+        <p class="project-kicker">Stage · BMA Réseaux &amp; Télécom</p>
+        <h2 class="project-title">Déploiement d'une infrastructure réseau multi-sites</h2>
         <p class="project-desc">Conception et déploiement d'une infrastructure réseau complète pour un établissement hôtelier multi-bâtiments (Hôtel, SPA & Gym, Restaurant) avec segmentation VLAN, routage RIP v2 et sécurisation des équipements Cisco.</p>
         <div class="project-tags">
           <span class="tag">Cisco</span>
@@ -281,115 +281,114 @@
           <span class="tag">SSH</span>
           <span class="tag">Packet Tracer</span>
         </div>
+        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Travailler en mode projet">C4</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
+        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Projet réalisé en stage chez BMA Réseaux & Télécom. Infrastructure pour 3 bâtiments reliés via 3 routeurs Cisco (R-MAIN, R-WIFI, R-CLOUD). 10 VLANs par service (STAFF, ADMIN, TV, CCTV, IT, GYM, SPA, CUISINE, Guest, Staff WiFi). Configuration DHCP par VLAN, RIP v2 pour le routage dynamique, sécurisation SSH avec bannières personnalisées, et tests de connectivité inter-VLAN validés.</div></details>
         <div class="project-buttons">
             <a href="files/Rapport_de_Stage_2.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
             <button class="btn-doc" onclick="openSyntheseModal('Déploiement d\'une infrastructure réseau multi-sites', 'C1, C2, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
-        <div class="details-box">
-          Projet réalisé en stage chez BMA Réseaux & Télécom. Infrastructure pour 3 bâtiments reliés via 3 routeurs Cisco (R-MAIN, R-WIFI, R-CLOUD). 10 VLANs par service (STAFF, ADMIN, TV, CCTV, IT, GYM, SPA, CUISINE, Guest, Staff WiFi). Configuration DHCP par VLAN, RIP v2 pour le routage dynamique, sécurisation SSH avec bannières personnalisées, et tests de connectivité inter-VLAN validés.
-        </div>
       </div>
     </div>
-    <!-- NutriFit --></div>
+  </div>
 </section>
 
 <!-- ===== MODALE GESTION DE PROJET ===== -->
 <div class="modal-overlay" id="modalGestion" onclick="closeModalOutside(event)">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()"><i aria-hidden="true" class="bi bi-x"></i></button>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalGestionTitle">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
 
     <div class="modal-badge"><i aria-hidden="true" class="bi bi-kanban"></i> Gestion de Projet — Méthodologie Agile</div>
-    <h2 class="modal-title">Server IRIS — <span>Cockpit & Nextcloud</span></h2>
+    <h2 class="modal-title" id="modalGestionTitle">Server IRIS — <span>Cockpit & Nextcloud</span></h2>
     <p class="modal-subtitle">Gestion Utilisateurs & Transfert de Fichiers · Debian 12 · Docker · MariaDB · 4 sprints · Réf. SISR-2025</p>
 
     <div class="modal-divider"></div>
 
     <!-- CADRAGE CQQCOQP -->
-    <div class="modal-section">
-      <h3><i aria-hidden="true" class="bi bi-crosshair"></i> Cadrage CQQCOQP</h3>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-        <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.06);">
-          <p style="color:var(--orange);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Qui</p>
-          <p style="color:var(--muted);font-size:0.87rem;line-height:1.6;">Omar Talibi (SISR) · Nedj, Julien, Rémi, Edib, Saïd, Vincent, Tiago · SLAM (MediaStock) · Tuteur : Yan</p>
+    <details class="modal-section" open>
+      <summary><h3><i aria-hidden="true" class="bi bi-crosshair"></i> Cadrage CQQCOQP</h3></summary>
+      <div class="cadrage-grid">
+        <div class="cadrage-item">
+          <p class="cadrage-label">Qui</p>
+          <p class="cadrage-text">Omar Talibi (SISR) · Nedj, Julien, Rémi, Edib, Saïd, Vincent, Tiago · SLAM (MediaStock) · Tuteur : Yan</p>
         </div>
-        <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.06);">
-          <p style="color:var(--orange);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Quoi</p>
-          <p style="color:var(--muted);font-size:0.87rem;line-height:1.6;">Cockpit (admin web port 9090) + Nextcloud via Docker Compose + MariaDB (partage fichiers port 8080)</p>
+        <div class="cadrage-item">
+          <p class="cadrage-label">Quoi</p>
+          <p class="cadrage-text">Cockpit (admin web port 9090) + Nextcloud via Docker Compose + MariaDB (partage fichiers port 8080)</p>
         </div>
-        <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.06);">
-          <p style="color:var(--orange);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Quand / Combien</p>
-          <p style="color:var(--muted);font-size:0.87rem;line-height:1.6;">Déc. 2025 – Mars 2026 · 4 sprints · 5 semaines effectives</p>
+        <div class="cadrage-item">
+          <p class="cadrage-label">Quand / Combien</p>
+          <p class="cadrage-text">Déc. 2025 – Mars 2026 · 4 sprints · 5 semaines effectives</p>
         </div>
-        <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:12px 14px;border:1px solid rgba(255,255,255,0.06);">
-          <p style="color:var(--orange);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Pourquoi</p>
-          <p style="color:var(--muted);font-size:0.87rem;line-height:1.6;">Fournir une interface d'admin web et une solution de stockage auto-hébergée sans dépendance cloud tiers</p>
+        <div class="cadrage-item">
+          <p class="cadrage-label">Pourquoi</p>
+          <p class="cadrage-text">Fournir une interface d'admin web et une solution de stockage auto-hébergée sans dépendance cloud tiers</p>
         </div>
       </div>
-    </div>
+    </details>
 
     <div class="modal-divider"></div>
 
     <!-- OBJECTIFS SMART -->
-    <div class="modal-section">
-      <h3><i aria-hidden="true" class="bi bi-bullseye"></i> Objectifs SMART(E)</h3>
+    <details class="modal-section">
+      <summary><h3><i aria-hidden="true" class="bi bi-bullseye"></i> Objectifs SMART(E)</h3></summary>
       <div class="sprint-list">
         <div class="sprint-item">
           <span class="sprint-num">S</span>
-          <p class="sprint-desc"><strong style="color:var(--light)">Spécifique</strong> — Déployer Cockpit (port 9090) et Nextcloud (port 8080) avec base MariaDB persistante sur Debian 12.</p>
+          <p class="sprint-desc"><strong>Spécifique</strong> — Déployer Cockpit (port 9090) et Nextcloud (port 8080) avec base MariaDB persistante sur Debian 12.</p>
         </div>
         <div class="sprint-item">
           <span class="sprint-num">M</span>
-          <p class="sprint-desc"><strong style="color:var(--light)">Mesurable</strong> — 10 cas de tests définis (T01 à T10) — 9/10 validés en fin de projet.</p>
+          <p class="sprint-desc"><strong>Mesurable</strong> — 10 cas de tests définis (T01 à T10) — 9/10 validés en fin de projet.</p>
         </div>
         <div class="sprint-item">
           <span class="sprint-num">A</span>
-          <p class="sprint-desc"><strong style="color:var(--light)">Atteignable</strong> — Technologies maîtrisées (Docker, Linux Debian) — 5 semaines avec un objectif par sprint.</p>
+          <p class="sprint-desc"><strong>Atteignable</strong> — Technologies maîtrisées (Docker, Linux Debian) — 5 semaines avec un objectif par sprint.</p>
         </div>
         <div class="sprint-item">
           <span class="sprint-num">T</span>
-          <p class="sprint-desc"><strong style="color:var(--light)">Temporel</strong> — Livrable final validé avant fin mars 2026 — un objectif technique par sprint hebdomadaire.</p>
+          <p class="sprint-desc"><strong>Temporel</strong> — Livrable final validé avant fin mars 2026 — un objectif technique par sprint hebdomadaire.</p>
         </div>
         <div class="sprint-item">
           <span class="sprint-num">E</span>
-          <p class="sprint-desc"><strong style="color:var(--light)">Éthique</strong> — Données hébergées en interne, accès restreint aux utilisateurs autorisés, HTTPS prévu.</p>
+          <p class="sprint-desc"><strong>Éthique</strong> — Données hébergées en interne, accès restreint aux utilisateurs autorisés, HTTPS prévu.</p>
         </div>
       </div>
-    </div>
+    </details>
 
     <div class="modal-divider"></div>
 
     <!-- SPRINTS -->
-    <div class="modal-section">
-      <h3><i aria-hidden="true" class="bi bi-arrow-repeat"></i> Découpage en Sprints</h3>
+    <details class="modal-section">
+      <summary><h3><i aria-hidden="true" class="bi bi-arrow-repeat"></i> Découpage en Sprints</h3></summary>
       <div class="sprint-list">
         <div class="sprint-item">
           <span class="sprint-num">Sprint 1</span>
-          <p class="sprint-desc"><strong style="color:var(--light)">Sem. 1 — Déc. 2025 · Analyse & choix technologiques</strong> — Définition du périmètre, choix Cockpit vs alternatives, plan de déploiement, cahier des charges.</p>
+          <p class="sprint-desc"><strong>Sem. 1 — Déc. 2025 · Analyse & choix technologiques</strong> — Définition du périmètre, choix Cockpit vs alternatives, plan de déploiement, cahier des charges.</p>
         </div>
         <div class="sprint-item">
           <span class="sprint-num">Sprint 2</span>
-          <p class="sprint-desc"><strong style="color:var(--light)">Sem. 2 — Janv. 2026 · Installation Cockpit</strong> — Installation Cockpit sur Debian 12, ouverture port 9090, tests supervision CPU/RAM (T01-T02 validés).</p>
+          <p class="sprint-desc"><strong>Sem. 2 — Janv. 2026 · Installation Cockpit</strong> — Installation Cockpit sur Debian 12, ouverture port 9090, tests supervision CPU/RAM (T01-T02 validés).</p>
         </div>
         <div class="sprint-item">
           <span class="sprint-num">Sprint 3</span>
-          <p class="sprint-desc"><strong style="color:var(--light)">Sem. 3-4 — Fév. 2026 · Déploiement Nextcloud + MariaDB</strong> — docker-compose.yml, volumes persistants db_data & nextcloud_data, ouverture port 8080, comptes utilisateurs (T03-T09 validés).</p>
+          <p class="sprint-desc"><strong>Sem. 3-4 — Fév. 2026 · Déploiement Nextcloud + MariaDB</strong> — docker-compose.yml, volumes persistants db_data & nextcloud_data, ouverture port 8080, comptes utilisateurs (T03-T09 validés).</p>
         </div>
         <div class="sprint-item">
           <span class="sprint-num">Sprint 4</span>
-          <p class="sprint-desc"><strong style="color:var(--light)">Sem. 5 — Mars 2026 · Tests, validation & documentation</strong> — Tests multi-utilisateurs, persistance après reboot, README GitHub finalisé, rapport gestion de projet.</p>
+          <p class="sprint-desc"><strong>Sem. 5 — Mars 2026 · Tests, validation & documentation</strong> — Tests multi-utilisateurs, persistance après reboot, README GitHub finalisé, rapport gestion de projet.</p>
         </div>
       </div>
-    </div>
+    </details>
 
     <div class="modal-divider"></div>
 
     <!-- KANBAN -->
-    <div class="modal-section">
-      <h3><i aria-hidden="true" class="bi bi-kanban"></i> Tableau Kanban — État fin Sprint 3</h3>
+    <details class="modal-section">
+      <summary><h3><i aria-hidden="true" class="bi bi-kanban"></i> Tableau Kanban — État fin Sprint 3</h3></summary>
       <div class="agile-board">
         <div class="agile-col">
           <p class="agile-col-title todo">À faire</p>
-          <div class="agile-card todo">HTTPS / SSL Nextcloud<br><small style="color:#475569">Dépendance Traefik (Julien) — sprint futur</small></div>
-          <div class="agile-card todo">Sauvegardes automatiques volumes<br><small style="color:#475569">Coordination Rémi — à planifier</small></div>
+          <div class="agile-card todo">HTTPS / SSL Nextcloud<br><small>Dépendance Traefik (Julien) — sprint futur</small></div>
+          <div class="agile-card todo">Sauvegardes automatiques volumes<br><small>Coordination Rémi — à planifier</small></div>
         </div>
         <div class="agile-col">
           <p class="agile-col-title doing">En cours</p>
@@ -397,7 +396,7 @@
           <div class="agile-card doing">Documentation GitHub README</div>
         </div>
         <div class="agile-col">
-          <p class="agile-col-title done">Terminé ✓</p>
+          <p class="agile-col-title done">Terminé</p>
           <div class="agile-card done">Installation Cockpit + port 9090</div>
           <div class="agile-card done">Tests T01-T02 validés</div>
           <div class="agile-card done">docker-compose.yml (versions fixes : mariadb:10.6, nextcloud:27)</div>
@@ -406,67 +405,67 @@
           <div class="agile-card done">Ports 9090 & 8080 ouverts (ufw)</div>
         </div>
       </div>
-    </div>
+    </details>
 
     <div class="modal-divider"></div>
 
     <!-- MATRIX EISENHOWER -->
-    <div class="modal-section">
-      <h3><i aria-hidden="true" class="bi bi-grid-3x3"></i> Matrice Eisenhower — Réévaluation Sprint 3</h3>
-      <p style="color:var(--muted);font-size:0.9rem;line-height:1.65;margin-bottom:12px;">
-        Exemple concret : l'ouverture des ports était classée "priorité moyenne" le lundi matin du sprint 3.
-        Dès le mardi, aucun test de connexion n'était possible sans les ports ouverts — la tâche est passée immédiatement en <strong style="color:#f87171">CRITIQUE / faire maintenant</strong>.
+    <details class="modal-section">
+      <summary><h3><i aria-hidden="true" class="bi bi-grid-3x3"></i> Matrice Eisenhower — Réévaluation Sprint 3</h3></summary>
+      <p class="modal-text">
+        Exemple concret : l'ouverture des ports était classée « priorité moyenne » le lundi matin du sprint 3.
+        Dès le mardi, aucun test de connexion n'était possible sans les ports ouverts — la tâche est passée immédiatement en <strong>critique / faire maintenant</strong>.
       </p>
       <div class="risk-grid">
-        <div class="risk-item" style="border-left:3px solid #f87171;">
-          <p class="risk-label high">🔴 Urgent + Important</p>
-          <p class="risk-desc"><strong style="color:var(--light)">Ouverture ports 9090/8080</strong> — Faire maintenant. Sans les ports, aucun test possible.</p>
+        <div class="risk-item high">
+          <p class="risk-label high">Urgent + Important</p>
+          <p class="risk-desc"><strong>Ouverture ports 9090/8080</strong> — Faire maintenant. Sans les ports, aucun test possible.</p>
         </div>
-        <div class="risk-item" style="border-left:3px solid #f87171;">
-          <p class="risk-label high">🔴 Urgent + Important</p>
-          <p class="risk-desc"><strong style="color:var(--light)">Volumes Docker persistants</strong> — Faire maintenant. Perte de données sans volumes.</p>
+        <div class="risk-item high">
+          <p class="risk-label high">Urgent + Important</p>
+          <p class="risk-desc"><strong>Volumes Docker persistants</strong> — Faire maintenant. Perte de données sans volumes.</p>
         </div>
-        <div class="risk-item" style="border-left:3px solid #fbbf24;">
-          <p class="risk-label med">🟡 Non urgent + Important</p>
-          <p class="risk-desc"><strong style="color:var(--light)">Documentation GitHub README</strong> — Planifier (sprint 4). Livrable obligatoire rappelé par Yan.</p>
+        <div class="risk-item med">
+          <p class="risk-label med">Non urgent + Important</p>
+          <p class="risk-desc"><strong>Documentation GitHub README</strong> — Planifier (sprint 4). Livrable obligatoire rappelé par Yan.</p>
         </div>
-        <div class="risk-item" style="border-left:3px solid #4ade80;">
-          <p class="risk-label low">🟢 Reporter</p>
-          <p class="risk-desc"><strong style="color:var(--light)">HTTPS / SSL Nextcloud</strong> — Dépendance Traefik (Julien) — non disponible avant fin sprint 4.</p>
+        <div class="risk-item low">
+          <p class="risk-label low">Reporter</p>
+          <p class="risk-desc"><strong>HTTPS / SSL Nextcloud</strong> — Dépendance Traefik (Julien) — non disponible avant fin sprint 4.</p>
         </div>
       </div>
-    </div>
+    </details>
 
     <div class="modal-divider"></div>
 
     <!-- RISQUES -->
-    <div class="modal-section">
-      <h3><i aria-hidden="true" class="bi bi-exclamation-triangle"></i> Gestion des risques</h3>
+    <details class="modal-section">
+      <summary><h3><i aria-hidden="true" class="bi bi-exclamation-triangle"></i> Gestion des risques</h3></summary>
       <div class="risk-grid">
         <div class="risk-item">
-          <p class="risk-label high">⚠ Critique — R1</p>
-          <p class="risk-desc"><strong style="color:var(--light)">Perte données Nextcloud</strong> — Volumes Docker persistants db_data & nextcloud_data. Vérification survie après docker-compose down/up.</p>
+          <p class="risk-label high">Critique — R1</p>
+          <p class="risk-desc"><strong>Perte données Nextcloud</strong> — Volumes Docker persistants db_data & nextcloud_data. Vérification survie après docker-compose down/up.</p>
         </div>
         <div class="risk-item">
-          <p class="risk-label med">⚡ Élevé — R2</p>
-          <p class="risk-desc"><strong style="color:var(--light)">Port bloqué par pare-feu</strong> — ufw allow 9090/tcp && ufw allow 8080/tcp. Vérification ufw status + netstat -tlnp.</p>
+          <p class="risk-label med">Élevé — R2</p>
+          <p class="risk-desc"><strong>Port bloqué par pare-feu</strong> — ufw allow 9090/tcp && ufw allow 8080/tcp. Vérification ufw status + netstat -tlnp.</p>
         </div>
         <div class="risk-item">
-          <p class="risk-label med">⚡ Moyen — R3</p>
-          <p class="risk-desc"><strong style="color:var(--light)">Conflit versions Docker</strong> — Versions fixes dans docker-compose.yml : mariadb:10.6, nextcloud:27. Éviter les tags "latest".</p>
+          <p class="risk-label med">Moyen — R3</p>
+          <p class="risk-desc"><strong>Conflit versions Docker</strong> — Versions fixes dans docker-compose.yml : mariadb:10.6, nextcloud:27. Éviter les tags "latest".</p>
         </div>
         <div class="risk-item">
-          <p class="risk-label low">✅ Faible — R4</p>
-          <p class="risk-desc"><strong style="color:var(--light)">Services inaccessibles après reboot</strong> — restart: always dans docker-compose.yml + systemctl enable docker.</p>
+          <p class="risk-label low">Faible — R4</p>
+          <p class="risk-desc"><strong>Services inaccessibles après reboot</strong> — restart: always dans docker-compose.yml + systemctl enable docker.</p>
         </div>
       </div>
-    </div>
+    </details>
 
     <div class="modal-divider"></div>
 
     <!-- KPI -->
-    <div class="modal-section">
-      <h3><i aria-hidden="true" class="bi bi-bar-chart"></i> Indicateurs de performance (KPI)</h3>
+    <details class="modal-section">
+      <summary><h3><i aria-hidden="true" class="bi bi-bar-chart"></i> Indicateurs de performance (KPI)</h3></summary>
       <div class="bilan-grid">
         <div class="bilan-item">
           <i aria-hidden="true" class="bi bi-check2-circle" style="color:#4ade80"></i>
@@ -485,6 +484,14 @@
           <p><strong>Documentation : 4/4 sprints</strong> — README GitHub mis à jour chaque fin de sprint, commits horodatés.</p>
         </div>
       </div>
+    </details>
+
+    <div class="modal-divider"></div>
+
+    <div class="modal-actions">
+      <a href="files/Gestion_Projet_Server_IRIS.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc">
+        <i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Rapport de gestion de projet (PDF)
+      </a>
     </div>
 
   </div>
@@ -500,8 +507,8 @@
   
   <!-- ===== MODALE SYNTHESE DYNAMIQUE ===== -->
   <div class="modal-overlay" id="modalSynthese" onclick="if(event.target===this) closeSyntheseModal()">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeSyntheseModal()"><i aria-hidden="true" class="bi bi-x"></i></button>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="syntheseModalTitle">
+      <button class="modal-close" onclick="closeSyntheseModal()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
       <div class="modal-badge"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau de Synthèse</div>
       <h2 class="modal-title" id="syntheseModalTitle">Titre</h2>
       <p class="modal-subtitle">Compétences acquises sur ce projet d'après la grille BTS SIO SISR</p>
@@ -517,8 +524,8 @@
       
       <div class="modal-divider"></div>
       
-      <div style="text-align:center; margin-top: 20px;">
-         <a id="syntheseModalPdf" href="files/Tableau_Synthese_E4.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc" style="padding: 10px 24px; font-size: 1rem;">
+      <div class="modal-actions">
+         <a id="syntheseModalPdf" href="files/Tableau_Synthese_E4.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc">
            <i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Ouvrir le PDF complet
          </a>
       </div>
@@ -529,7 +536,7 @@
   <footer class="footer-wide">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="footer-logo">OT</span>
+        <img src="img/logo-nav.webp" alt="" class="footer-logo-img" width="54" height="46">
         <div>
           <p class="footer-name">Omar Talibi</p>
           <p class="footer-role">BTS SIO SISR · IRIS Mediaschool Nice</p>
@@ -595,11 +602,20 @@
   reveals.forEach(el => obs.observe(el));
   cards.forEach(el => cardObs.observe(el));
 
+  // COMPTEURS SUR LES FILTRES
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    const f = b.dataset.filter;
+    const all = document.querySelectorAll('.project-card');
+    const n = f === 'all' ? all.length : [...all].filter(c => c.dataset.category === f).length;
+    b.insertAdjacentHTML('beforeend', ' <span class="filter-count">' + n + '</span>');
+  });
+
   // FILTRES
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
       const filter = btn.dataset.filter;
       const grid = document.getElementById('projects-grid');
       const allCards = grid.querySelectorAll('.project-card');
@@ -618,14 +634,6 @@
     });
   });
 
-  // DETAILS TOGGLE
-  function toggleDetails(btn) {
-    const box = btn.closest('.project-body').querySelector('.details-box');
-    const isOpen = box.style.display === 'block';
-    box.style.display = isOpen ? 'none' : 'block';
-    btn.innerHTML = isOpen ? '<i aria-hidden="true" class="bi bi-info-circle"></i> Détails' : '<i aria-hidden="true" class="bi bi-x-circle"></i> Fermer';
-  }
-
   // MODALE
   function openModal() {
     document.getElementById('modalGestion').classList.add('open');
@@ -638,7 +646,9 @@
   function closeModalOutside(e) {
     if (e.target === document.getElementById('modalGestion')) closeModal();
   }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeModal(); closeSyntheseModal(); }
+  });
 
     function openSyntheseModal(title, compsStr, pdfUrl) {
       document.getElementById('syntheseModalTitle').innerHTML = 'Synthèse — <span>' + title + '</span>';
@@ -657,9 +667,9 @@
       const comps = compsStr.split(', ');
       for(let c of comps) {
           if(compData[c]) {
-              html += `<div class="risk-item" style="border-left:3px solid #f97316;">
-                          <p class="risk-label med" style="color:#fdba74;">${c}</p>
-                          <p class="risk-desc" style="color:#e2e8f0; font-weight:500;">${compData[c]}</p>
+              html += `<div class="risk-item skill">
+                          <p class="risk-label">${c}</p>
+                          <p class="risk-desc">${compData[c]}</p>
                        </div>`;
           }
       }

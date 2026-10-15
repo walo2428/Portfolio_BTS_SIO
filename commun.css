@@ -6,7 +6,7 @@
   left: 12px;
   top: -64px;
   z-index: 3000;
-  background: #f97316;
+  background: #ef4444;
   color: #0f172a;
   padding: 10px 18px;
   border-radius: 0 0 12px 12px;
@@ -28,7 +28,7 @@ textarea:focus-visible,
 select:focus-visible,
 summary:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid #fb923c;
+  outline: 3px solid #f87171;
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -51,8 +51,8 @@ main:focus { outline: none; }
   }
 }
 
-/* Contraste : le blanc sur l'orange #f97316 ne fait que 2,8:1 (minimum WCAG AA : 4,5:1).
-   On passe en texte bleu nuit sur les éléments à fond orange (≈ 6,4:1). */
+/* Contraste : le blanc sur le rouge #ef4444 ne fait que 3,8:1 (minimum WCAG AA : 4,5:1).
+   On passe en texte bleu nuit sur les éléments à fond rouge (≈ 4,8:1). */
 .btn-primary-custom,
 .btn-hero-primary,
 .btn-hero-primary:hover,
@@ -88,3 +88,148 @@ main:focus { outline: none; }
 .footer-wide .footer-inner {
   text-align: left;
 }
+
+/* ===== Bouton « Mon CV » du menu (même rendu sur toutes les pages) ===== */
+.btn-primary-custom {
+  display: inline-block;
+  background: #ef4444;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: none;
+  padding: 8px 20px !important;
+  border-radius: 100px !important;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-primary-custom:hover {
+  background: #f87171;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(239,68,68, 0.25);
+}
+
+/* ===== Compétences : icône Bootstrap à la taille des icônes image ===== */
+.competence-icon-bi {
+  display: block;
+  height: 56px;
+  margin: 0 auto 16px;
+  font-size: 2.9rem;
+  line-height: 56px;
+  text-align: center;
+  color: #ef4444;
+  filter: drop-shadow(0 4px 12px rgba(239,68,68, 0.2));
+}
+
+/* ===== Projets : résultat chiffré ===== */
+.project-result {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #86efac;
+  margin: 0 0 12px;
+}
+.project-result i { margin-right: 6px; }
+
+/* ===== Pied de page : logo OM à la place du carré « OT » ===== */
+.footer-logo-img {
+  height: 46px;
+  width: auto;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* ===== Animations plus sobres sur tout le site ===== */
+/* Grille du haut de page et cadre de la photo : immobiles */
+.hero::before,
+.about-photo-wrap::after {
+  animation: none !important;
+}
+/* Apparition au défilement : plus courte et moins ample */
+.reveal {
+  transform: translateY(14px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.card-stagger {
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card-stagger:nth-child(n) { transition-delay: 0s; }
+
+/* =====================================================================
+   CONTRASTE — le rouge #ef4444 en texte ne donne que 3,88:1 sur les
+   cartes (#1e293b) alors que la norme WCAG AA demande 4,5:1.
+   On garde #ef4444 pour les fonds, bordures et aplats, et on passe au
+   rouge clair #f87171 (5,2:1) pour tout ce qui est texte ou petite icône.
+   ===================================================================== */
+.footer-nav-title,
+.project-kicker,
+.exp-company,
+.certif-status,
+.featured-link,
+.problematique-label,
+.problematique-text strong,
+.stats-title,
+.theme-label,
+.info-label,
+.cadrage-label,
+.sitemap-link,
+.src-link,
+.tool-keywords,
+.date-badge,
+.btn-official,
+.legal-section h3,
+.legal-section a,
+.modal-section h3,
+.change-desc strong,
+.solution-target i,
+.solution-features li i,
+.exp-list li::before,
+.certif-list li::before,
+.formation-card ul li::before,
+.formation-card h4 i,
+.tool-card i,
+.reco-icon,
+.sitemap-icon,
+.file-icon,
+.info-icon,
+.problematique-icon,
+.source-icon,
+.sprint-num,
+.synthese-quote i,
+.btn-competence-custom,
+.btn-tableau:hover,
+.formation-school-link,
+.about-text h2 span,
+.section-title span,
+.theme-title span,
+.modal-title span,
+.hero h1 span,
+.hero-badge,
+.filter-btn:hover,
+.btn-doc:hover,
+.footer-nav a:hover,
+.footer-legal a:hover,
+.compare-table thead th.col-proxmox { color: #f87171; }
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active { color: #f87171 !important; }
+
+/* Numéros décoratifs des sections de la veille : lisibles sans être criards */
+.theme-number { color: #dc2626; }
+
+/* Petits textes gris trop sombres */
+.compare-table td small,
+.src-date,
+.tool-keywords,
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: #94a3b8; }
+
+/* .text-muted de Bootstrap est prévu pour un fond clair : illisible ici */
+.text-muted { color: #94a3b8 !important; }
+
+/* Ces règles sont déclarées dans un <style> en fin de page : il faut !important */
+.legal-section h3,
+.legal-section h3 i,
+.legal-section a,
+.sitemap-link,
+.sitemap-icon,
+.file-icon,
+.rgpd-badge { color: #f87171 !important; }
