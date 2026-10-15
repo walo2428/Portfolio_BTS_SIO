@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://walo2428.github.io/Portfolio_BTS_SIO/sitemap.xml

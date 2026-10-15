@@ -1,0 +1,90 @@
+/* ===== Styles communs à toutes les pages : accessibilité et petits ajustements ===== */
+
+/* Lien d'évitement : visible uniquement au clavier */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -64px;
+  z-index: 3000;
+  background: #f97316;
+  color: #0f172a;
+  padding: 10px 18px;
+  border-radius: 0 0 12px 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Contour de focus clair pour la navigation au clavier */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #fb923c;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+main:focus { outline: none; }
+
+/* Respect du réglage « réduire les animations » du système */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Contraste : le blanc sur l'orange #f97316 ne fait que 2,8:1 (minimum WCAG AA : 4,5:1).
+   On passe en texte bleu nuit sur les éléments à fond orange (≈ 6,4:1). */
+.btn-primary-custom,
+.btn-hero-primary,
+.btn-hero-primary:hover,
+.about-links a:hover,
+.btn-competence-custom:hover,
+.footer-logo,
+.btn-retour-floating,
+.btn-send,
+.btn-synthese,
+.btn-synthese:hover,
+.filter-btn.active,
+.modal-close:hover,
+.btn-official:hover,
+.info-item:hover .info-icon,
+.social-btn:hover,
+.tool-link:hover .tool-icon {
+  color: #0f172a;
+}
+
+/* Liens dans les paragraphes : soulignés (la couleur seule ne suffit pas) */
+.legal-section p a,
+.legal-section li a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Le bouton « Mon CV » force le blanc avec !important dans accueil.css */
+.btn-primary-custom { color: #0f172a !important; }
+
+/* Pied de page : texte aligné à gauche dans les colonnes
+   (le centrage hérité du <footer> décalait le nom par rapport au rôle) */
+.footer-wide,
+.footer-wide .footer-inner {
+  text-align: left;
+}

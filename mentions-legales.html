@@ -1,13 +1,26 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mentions Légales | Portfolio Omar Talibi</title>
-  <link rel="icon" type="image/png" href="img/logo.png">
+  <meta name="description" content="Mentions légales du portfolio d'Omar Talibi.">
+  <link rel="canonical" href="https://walo2428.github.io/Portfolio_BTS_SIO/mentions-legales.html">
+  <meta name="author" content="Omar Talibi">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Portfolio Omar Talibi">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Mentions Légales | Portfolio Omar Talibi">
+  <meta property="og:description" content="Mentions légales du portfolio d'Omar Talibi.">
+  <meta property="og:url" content="https://walo2428.github.io/Portfolio_BTS_SIO/mentions-legales.html">
+  <meta property="og:image" content="https://walo2428.github.io/Portfolio_BTS_SIO/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="img/logo-nav.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="commun.css" />
   <style>
     .legal-card {
       background: var(--dark-2);
@@ -55,15 +68,16 @@
   </style>
 </head>
 <body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+<nav aria-label="Navigation principale" class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img src="img/logo.png" alt="Logo" height="38" class="me-2 rounded">
+      <img src="img/logo-nav.png" alt="Logo" width="70" height="38" class="me-2 rounded">
       OMAR TALIBI
     </a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Afficher ou masquer le menu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -77,6 +91,7 @@
     </div>
   </div>
 </nav>
+<main id="contenu" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero">
@@ -91,7 +106,7 @@
   <div class="legal-card">
 
     <div class="legal-section">
-      <h3><i class="bi bi-person-fill"></i> Éditeur du site</h3>
+      <h3 aria-level="2"><i aria-hidden="true" class="bi bi-person-fill"></i> Éditeur du site</h3>
       <p>
         <strong>Nom :</strong> Omar Talibi<br>
         <strong>Statut :</strong> Étudiant BTS SIO SISR<br>
@@ -103,7 +118,7 @@
     <div class="legal-divider"></div>
 
     <div class="legal-section">
-      <h3><i class="bi bi-server"></i> Hébergement</h3>
+      <h3 aria-level="2"><i aria-hidden="true" class="bi bi-server"></i> Hébergement</h3>
       <p>
         Ce site est hébergé par <strong>GitHub Pages</strong>, service proposé par GitHub Inc.<br>
         88 Colin P. Kelly Jr. St, San Francisco, CA 94107, États-Unis.
@@ -113,7 +128,7 @@
     <div class="legal-divider"></div>
 
     <div class="legal-section">
-      <h3><i class="bi bi-shield-lock-fill"></i> Propriété intellectuelle</h3>
+      <h3 aria-level="2"><i aria-hidden="true" class="bi bi-shield-lock-fill"></i> Propriété intellectuelle</h3>
       <p>
         L'ensemble des contenus présents sur ce portfolio (textes, images, code source, projets) sont la propriété exclusive de <strong>Omar Talibi</strong>, sauf mention contraire.
         Toute reproduction, distribution ou utilisation sans autorisation préalable est interdite.
@@ -123,18 +138,20 @@
     <div class="legal-divider"></div>
 
     <div class="legal-section">
-      <h3><i class="bi bi-database-fill"></i> Collecte de données</h3>
+      <h3 aria-level="2"><i aria-hidden="true" class="bi bi-database-fill"></i> Collecte de données</h3>
       <p>
         Ce site ne collecte aucune donnée personnelle sans votre consentement explicite.
         Le formulaire de contact est utilisé uniquement à des fins de communication directe
         et les données transmises ne sont pas conservées au-delà de l'échange.
+        Les messages sont acheminés par le service Formspree (formspree.io).
+        Voir la <a href="confidentialite.html">politique de confidentialité</a>.
       </p>
     </div>
 
     <div class="legal-divider"></div>
 
     <div class="legal-section">
-      <h3><i class="bi bi-exclamation-triangle-fill"></i> Responsabilité</h3>
+      <h3 aria-level="2"><i aria-hidden="true" class="bi bi-exclamation-triangle-fill"></i> Responsabilité</h3>
       <p>
         Ce site est un <strong>projet éducatif</strong> réalisé dans le cadre d'un BTS SIO.
         Omar Talibi ne peut être tenu responsable en cas d'erreur, d'inexactitude ou de problème technique.
@@ -145,9 +162,11 @@
   </div>
 </section>
 
+  </main>
+
   <!-- BACK TO TOP -->
-  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut">
-    <i class="bi bi-arrow-up"></i>
+  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut" aria-label="Revenir en haut de la page">
+    <i aria-hidden="true" class="bi bi-arrow-up"></i>
   </button>
 
   <!-- FOOTER -->
@@ -171,16 +190,16 @@
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Documents</p>
-        <a href="files/CV Professionnel stage.pdf" target="_blank">Mon CV</a>
-        <a href="files/tableau de synthese.pdf" target="_blank">Tableau de synthèse</a>
-        <a href="files/Rapport_de_Stage_1.pdf" target="_blank">Rapport de stage 1</a>
-        <a href="files/Rapport_de_Stage_2.pdf" target="_blank">Rapport de stage 2</a>
+        <a href="files/CV Professionnel stage.pdf" target="_blank" rel="noopener noreferrer">Mon CV</a>
+        <a href="files/Tableau_Synthese_E4.pdf" target="_blank" rel="noopener noreferrer">Tableau de synthèse</a>
+        <a href="files/Rapport_de_Stage_1.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 1</a>
+        <a href="files/Rapport_de_Stage_2.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 2</a>
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Contact</p>
         <a href="mailto:omar.talibi@gmail.com">omar.talibi@gmail.com</a>
-        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
-        <a href="https://github.com/walo2428" target="_blank"><i class="bi bi-github me-1"></i>GitHub</a>
+        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-linkedin me-1"></i>LinkedIn</a>
+        <a href="https://github.com/walo2428" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-github me-1"></i>GitHub</a>
         <a href="contact.html">Formulaire de contact</a>
       </div>
     </div>

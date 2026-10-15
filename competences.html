@@ -4,21 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Compétences – Omar Talibi</title>
-  <link rel="icon" type="image/png" href="img/logo.png">
+  <meta name="description" content="Compétences techniques d'Omar Talibi : systèmes et réseaux (Linux, Windows Server, Active Directory, Cisco, Wireshark) et développement (HTML/CSS, JavaScript, Python, Docker, SQL, Git).">
+  <link rel="canonical" href="https://walo2428.github.io/Portfolio_BTS_SIO/competences.html">
+  <meta name="author" content="Omar Talibi">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Portfolio Omar Talibi">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Compétences – Omar Talibi">
+  <meta property="og:description" content="Compétences techniques d'Omar Talibi : systèmes et réseaux (Linux, Windows Server, Active Directory, Cisco, Wireshark) et développement (HTML/CSS, JavaScript, Python, Docker, SQL, Git).">
+  <meta property="og:url" content="https://walo2428.github.io/Portfolio_BTS_SIO/competences.html">
+  <meta property="og:image" content="https://walo2428.github.io/Portfolio_BTS_SIO/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="img/logo-nav.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="competences.css" />
+  <link rel="stylesheet" href="commun.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
 <!-- ===== NAVBAR ===== -->
-<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+<nav aria-label="Navigation principale" class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img src="img/logo.png" alt="Logo" height="38" class="me-2 rounded">
+      <img src="img/logo-nav.png" alt="Logo" width="70" height="38" class="me-2 rounded">
       OMAR TALIBI
     </a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Afficher ou masquer le menu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -33,6 +47,7 @@
     </div>
   </div>
 </nav>
+<main id="contenu" tabindex="-1">
 
 <!-- ===== HERO ===== -->
 <section class="hero">
@@ -46,61 +61,61 @@
 
 <!-- ===== SYSTÈMES & RÉSEAUX ===== -->
 <section class="container mt-5 reveal">
-  <p class="section-title">Systèmes & <span>Réseaux</span></p>
+  <p class="section-title" role="heading" aria-level="2">Systèmes & <span>Réseaux</span></p>
   <div class="section-divider"></div>
   <div class="competences-grid">
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/linux.png" alt="Linux" class="competence-icon" />
-      <h5 class="competence-title">Linux (Debian)</h5>
+      <img loading="lazy" decoding="async" src="img/outils/linux.png" alt="Linux" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">Linux (Debian)</h5>
       <p class="competence-desc">Installation, configuration et gestion des serveurs sous Debian.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/Vmware.png" alt="VMware" class="competence-icon" />
-      <h5 class="competence-title">VMware / VirtualBox</h5>
+      <img loading="lazy" decoding="async" src="img/outils/Vmware.png" alt="VMware" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">VMware / VirtualBox</h5>
       <p class="competence-desc">Création et gestion de machines virtuelles pour tester des environnements.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/cisco.png" alt="Cisco" class="competence-icon" />
-      <h5 class="competence-title">Cisco / Packet Tracer</h5>
+      <img loading="lazy" decoding="async" src="img/outils/cisco.png" alt="Cisco" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">Cisco / Packet Tracer</h5>
       <p class="competence-desc">Configuration de réseaux, routage, VLANs et simulation avec Cisco PT.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/windows.png" alt="Windows Server" class="competence-icon" />
-      <h5 class="competence-title">Windows Server</h5>
+      <img loading="lazy" decoding="async" src="img/outils/Windows.webp" alt="Windows Server" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">Windows Server</h5>
       <p class="competence-desc">Installation et administration : DNS, DHCP, GPO, AD DS et gestion des rôles.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/Active_Derectory.png" alt="Active Directory" class="competence-icon" />
-      <h5 class="competence-title">Active Directory</h5>
+      <img loading="lazy" decoding="async" src="img/outils/Active_Derectory.png" alt="Active Directory" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">Active Directory</h5>
       <p class="competence-desc">Gestion des utilisateurs, groupes, OU, stratégies de sécurité et domaine.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/vagrant.png" alt="Vagrant" class="competence-icon" />
-      <h5 class="competence-title">Vagrant</h5>
+      <img loading="lazy" decoding="async" src="img/outils/vagrant.webp" alt="Vagrant" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">Vagrant</h5>
       <p class="competence-desc">Automatisation de la création d'environnements virtuels reproductibles.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/wireshark.png" alt="Wireshark" class="competence-icon" />
-      <h5 class="competence-title">Wireshark</h5>
+      <img loading="lazy" decoding="async" src="img/outils/wireshark.webp" alt="Wireshark" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">Wireshark</h5>
       <p class="competence-desc">Analyse de paquets réseau, diagnostic de trafic et identification d'anomalies.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/nmap.png" alt="Nmap" class="competence-icon" />
-      <h5 class="competence-title">Nmap</h5>
+      <img loading="lazy" decoding="async" src="img/outils/nmap.png" alt="Nmap" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">Nmap</h5>
       <p class="competence-desc">Scan de ports, découverte d'hôtes et audit de sécurité réseau.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/cygwin.png" alt="Cygwin" class="competence-icon" />
-      <h5 class="competence-title">Cygwin</h5>
+      <img loading="lazy" decoding="async" src="img/outils/cygwin.webp" alt="Cygwin" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">Cygwin</h5>
       <p class="competence-desc">Environnement Unix sur Windows pour exécuter des commandes Linux.</p>
     </div>
 
@@ -109,52 +124,54 @@
 
 <!-- ===== DÉVELOPPEMENT & OUTILS ===== -->
 <section class="container reveal reveal-delay-1">
-  <p class="section-title">Développement & <span>Outils</span></p>
+  <p class="section-title" role="heading" aria-level="2">Développement & <span>Outils</span></p>
   <div class="section-divider"></div>
   <div class="competences-grid">
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/html.png" alt="HTML CSS" class="competence-icon" />
-      <h5 class="competence-title">HTML / CSS</h5>
+      <img loading="lazy" decoding="async" src="img/outils/html.png" alt="HTML CSS" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">HTML / CSS</h5>
       <p class="competence-desc">Création de sites web modernes, responsives et accessibles.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/js.webp" alt="JavaScript" class="competence-icon" />
-      <h5 class="competence-title">JavaScript</h5>
+      <img loading="lazy" decoding="async" src="img/outils/js.webp" alt="JavaScript" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">JavaScript</h5>
       <p class="competence-desc">Ajout d'interactivité et d'animations aux pages web.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/python.png" alt="Python" class="competence-icon" />
-      <h5 class="competence-title">Python</h5>
+      <img loading="lazy" decoding="async" src="img/outils/python.png" alt="Python" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">Python</h5>
       <p class="competence-desc">Scripts d'automatisation et outils pour faciliter les tâches système.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/docker.png" alt="Docker" class="competence-icon" />
-      <h5 class="competence-title">Docker</h5>
+      <img loading="lazy" decoding="async" src="img/outils/docker.webp" alt="Docker" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">Docker</h5>
       <p class="competence-desc">Création et déploiement de conteneurs pour isoler des applications.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/sql.png" alt="SQL" class="competence-icon" />
-      <h5 class="competence-title">SQL / MySQL</h5>
+      <img loading="lazy" decoding="async" src="img/outils/sql.png" alt="SQL" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">SQL / MySQL</h5>
       <p class="competence-desc">Conception de bases, requêtes SQL, jointures et gestion des utilisateurs.</p>
     </div>
 
     <div class="competence-card card-stagger">
-      <img src="img/outils/github.png" alt="Git" class="competence-icon" />
-      <h5 class="competence-title">Git / GitHub</h5>
+      <img loading="lazy" decoding="async" src="img/outils/github.png" alt="Git" class="competence-icon" />
+      <h5 class="competence-title" aria-level="3">Git / GitHub</h5>
       <p class="competence-desc">Versioning, branches, pull requests et collaboration via GitHub.</p>
     </div>
 
   </div>
 </section>
 
+  </main>
+
   <!-- BACK TO TOP -->
-  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut">
-    <i class="bi bi-arrow-up"></i>
+  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut" aria-label="Revenir en haut de la page">
+    <i aria-hidden="true" class="bi bi-arrow-up"></i>
   </button>
 
   <!-- FOOTER -->
@@ -178,16 +195,16 @@
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Documents</p>
-        <a href="files/CV Professionnel stage.pdf" target="_blank">Mon CV</a>
-        <a href="files/tableau de synthese.pdf" target="_blank">Tableau de synthèse</a>
-        <a href="files/Rapport_de_Stage_1.pdf" target="_blank">Rapport de stage 1</a>
-        <a href="files/Rapport_de_Stage_2.pdf" target="_blank">Rapport de stage 2</a>
+        <a href="files/CV Professionnel stage.pdf" target="_blank" rel="noopener noreferrer">Mon CV</a>
+        <a href="files/Tableau_Synthese_E4.pdf" target="_blank" rel="noopener noreferrer">Tableau de synthèse</a>
+        <a href="files/Rapport_de_Stage_1.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 1</a>
+        <a href="files/Rapport_de_Stage_2.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 2</a>
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Contact</p>
         <a href="mailto:omar.talibi@gmail.com">omar.talibi@gmail.com</a>
-        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
-        <a href="https://github.com/walo2428" target="_blank"><i class="bi bi-github me-1"></i>GitHub</a>
+        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-linkedin me-1"></i>LinkedIn</a>
+        <a href="https://github.com/walo2428" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-github me-1"></i>GitHub</a>
         <a href="contact.html">Formulaire de contact</a>
       </div>
     </div>

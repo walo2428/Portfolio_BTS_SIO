@@ -4,22 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio de Omar Talibi, étudiant en BTS SIO SISR passionné par l'administration système, la cybersécurité et la virtualisation.">
+  <link rel="canonical" href="https://walo2428.github.io/Portfolio_BTS_SIO/">
+  <meta name="author" content="Omar Talibi">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Portfolio Omar Talibi">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Accueil | Portfolio Omar Talibi">
+  <meta property="og:description" content="Portfolio de Omar Talibi, étudiant en BTS SIO SISR passionné par l'administration système, la cybersécurité et la virtualisation.">
+  <meta property="og:url" content="https://walo2428.github.io/Portfolio_BTS_SIO/">
+  <meta property="og:image" content="https://walo2428.github.io/Portfolio_BTS_SIO/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Accueil | Portfolio Omar Talibi</title>
-  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="icon" type="image/png" href="img/logo-nav.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="accueil.css" />
+  <link rel="stylesheet" href="commun.css" />
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Omar Talibi", "url": "https://walo2428.github.io/Portfolio_BTS_SIO/", "sameAs": ["https://www.linkedin.com/in/omar-talibi-b52989278/", "https://github.com/walo2428"], "knowsAbout": ["Administration systèmes", "Réseaux", "Cybersécurité", "Virtualisation"]}</script>
 </head>
 <body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
 <!-- ===== NAVBAR ===== -->
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm" data-bs-theme="dark">
+<nav aria-label="Navigation principale" class="navbar navbar-expand-lg sticky-top shadow-sm" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-       <img src="img/logo.png" alt="Logo OM" height="38" class="me-2 rounded">
+       <img src="img/logo-nav.png" alt="Logo OM" width="70" height="38" class="me-2 rounded">
        <span>OMAR TALIBI</span>
     </a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Afficher ou masquer le menu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -30,12 +45,13 @@
         <li class="nav-item"><a class="nav-link" href="veille.html">Veille</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-          <a href="files/CV Professionnel stage.pdf" class="btn-primary-custom" target="_blank">Mon CV</a>
+          <a href="files/CV Professionnel stage.pdf" class="btn-primary-custom" target="_blank" rel="noopener noreferrer">Mon CV</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+<main id="contenu" tabindex="-1">
 
 <!-- ===== HERO ===== -->
 <section class="hero">
@@ -44,9 +60,9 @@
     <h1>Bonjour, je suis<br><span>Omar Talibi</span></h1>
     <p class="lead">Étudiant passionné par les réseaux, la virtualisation<br>et la cybersécurité. Futur Administrateur Systèmes & Réseaux.</p>
     <div class="hero-buttons">
-      <a href="https://github.com/walo2428" target="_blank" class="btn-hero-outline"><i class="bi bi-github"></i> GitHub</a>
-      <a href="https://www.linkedin.com/in/omar-talibi-b52989278" target="_blank" class="btn-hero-outline"><i class="bi bi-linkedin"></i> LinkedIn</a>
-      <a href="files/Tableau_Synthese_E4.pdf" target="_blank" class="btn-hero-primary"><i class="bi bi-file-earmark-pdf"></i> Tableau de Synthèse</a>
+      <a href="https://github.com/walo2428" target="_blank" rel="noopener noreferrer" class="btn-hero-outline"><i aria-hidden="true" class="bi bi-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/omar-talibi-b52989278" target="_blank" rel="noopener noreferrer" class="btn-hero-outline"><i aria-hidden="true" class="bi bi-linkedin"></i> LinkedIn</a>
+      <a href="files/Tableau_Synthese_E4.pdf" target="_blank" rel="noopener noreferrer" class="btn-hero-primary"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Tableau de Synthèse</a>
     </div>
   </div>
   <div class="scroll-indicator">
@@ -57,11 +73,11 @@
 
 <!-- ===== À PROPOS ===== -->
 <section class="container mt-5 reveal">
-  <p class="section-title">À propos <span>de moi</span></p>
+  <p class="section-title" role="heading" aria-level="2">À propos <span>de moi</span></p>
   <div class="section-divider"></div>
   <div class="about-wrapper">
     <div class="about-photo-wrap">
-      <img src="img/logo.png" alt="Omar Talibi" />
+      <img loading="lazy" decoding="async" src="img/logo.png" alt="Omar Talibi" />
     </div>
     <div class="about-text">
       <h2>Omar <span>Talibi</span></h2>
@@ -76,17 +92,17 @@
         Mon objectif est de devenir <strong>Administrateur Systèmes et Réseaux</strong>.
       </p>
       <div class="about-links">
-        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank" title="LinkedIn">
-          <i class="bi bi-linkedin"></i>
+        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+          <i aria-hidden="true" class="bi bi-linkedin"></i>
         </a>
-        <a href="https://github.com/walo2428/Portfolio_BTS_SIO" target="_blank" title="GitHub">
-          <i class="bi bi-github"></i>
+        <a href="https://github.com/walo2428/Portfolio_BTS_SIO" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+          <i aria-hidden="true" class="bi bi-github"></i>
         </a>
-        <a href="contact.html" title="Email">
-          <i class="bi bi-envelope-fill"></i>
+        <a href="contact.html" title="Email" aria-label="Email">
+          <i aria-hidden="true" class="bi bi-envelope-fill"></i>
         </a>
-        <a href="experiences.html" class="btn-exp-about" title="Expériences">
-          <i class="bi bi-briefcase-fill"></i> Expériences
+        <a href="experiences.html" class="btn-exp-about" title="Expériences" aria-label="Expériences">
+          <i aria-hidden="true" class="bi bi-briefcase-fill"></i> Expériences
         </a>
       </div>
     </div>
@@ -95,12 +111,12 @@
 
 <!-- ===== FORMATION ===== -->
 <section class="container mt-2 reveal reveal-delay-1">
-  <p class="section-title">Ma <span>Formation</span></p>
+  <p class="section-title" role="heading" aria-level="2">Ma <span>Formation</span></p>
   <div class="section-divider"></div>
   <div class="formation-grid">
     <div class="formation-card">
-      <h4><i class="bi bi-hdd-network"></i>BTS SIO — Option SISR</h4>
-      <p><a href="https://ecoleiris.fr" target="_blank" class="formation-school-link">IRIS Mediaschool</a> · Nice · 2024 – 2026</p>
+      <h4 aria-level="3"><i aria-hidden="true" class="bi bi-hdd-network"></i>BTS SIO — Option SISR</h4>
+      <p><a href="https://ecoleiris.fr" target="_blank" rel="noopener noreferrer" class="formation-school-link">IRIS Mediaschool</a> · Nice · 2024 – 2026</p>
       <ul>
         <li>Configuration serveurs (Linux / Windows)</li>
         <li>Réseaux locaux, VLAN, Routage</li>
@@ -109,7 +125,7 @@
       </ul>
     </div>
     <div class="formation-card">
-      <h4><i class="bi bi-building"></i><a href="https://ecoleiris.fr" target="_blank" class="formation-school-link">IRIS Mediaschool</a></h4>
+      <h4 aria-level="3"><i aria-hidden="true" class="bi bi-building"></i><a href="https://ecoleiris.fr" target="_blank" rel="noopener noreferrer" class="formation-school-link">IRIS Mediaschool</a></h4>
       <p>École spécialisée dans le numérique</p>
       <ul>
         <li>Apprentissage pratique et concret</li>
@@ -123,27 +139,27 @@
 
 <!-- ===== OUTILS ===== -->
 <section class="container mt-2 reveal reveal-delay-2" id="outils">
-  <p class="section-title">Mes <span>Outils</span></p>
+  <p class="section-title" role="heading" aria-level="2">Mes <span>Outils</span></p>
   <div class="section-divider"></div>
   <div class="tools-grid">
     <div class="tool-card">
-      <i class="bi bi-router"></i>
-      <h5>Réseaux</h5>
+      <i aria-hidden="true" class="bi bi-router"></i>
+      <h5 aria-level="3">Réseaux</h5>
       <p>Cisco, Routage, VLAN, Wireshark</p>
     </div>
     <div class="tool-card">
-      <i class="bi bi-pc-display"></i>
-      <h5>Systèmes</h5>
+      <i aria-hidden="true" class="bi bi-pc-display"></i>
+      <h5 aria-level="3">Systèmes</h5>
       <p>Debian, Windows Server, AD, VirtualBox</p>
     </div>
     <div class="tool-card">
-      <i class="bi bi-shield-lock"></i>
-      <h5>Sécurité</h5>
+      <i aria-hidden="true" class="bi bi-shield-lock"></i>
+      <h5 aria-level="3">Sécurité</h5>
       <p>Firewall, UFW, SSH, Fail2ban</p>
     </div>
     <div class="tool-card">
-      <i class="bi bi-code-slash"></i>
-      <h5>Développement</h5>
+      <i aria-hidden="true" class="bi bi-code-slash"></i>
+      <h5 aria-level="3">Développement</h5>
       <p>HTML, CSS, JS, Python, Bash</p>
     </div>
   </div>
@@ -154,21 +170,21 @@
 
 <!-- ===== TABLEAU DE SYNTHÈSE ===== -->
 <section class="container mt-2 reveal reveal-delay-3">
-  <p class="section-title">Tableau de <span>Synthèse</span></p>
+  <p class="section-title" role="heading" aria-level="2">Tableau de <span>Synthèse</span></p>
   <div class="section-divider"></div>
   <p class="section-subtitle">Compétences acquises durant ma formation, validées par des projets concrets.</p>
   <div class="synthese-grid">
     <div class="synthese-card">
       <div class="synthese-preview">
-        <i class="bi bi-file-earmark-pdf" style="font-size: 5rem; color: var(--orange, #f97316);"></i>
+        <i aria-hidden="true" class="bi bi-file-earmark-pdf" style="font-size: 5rem; color: var(--orange, #f97316);"></i>
         <div class="preview-overlay">
-          <a href="files/Tableau_Synthese_E4.pdf" class="btn-synthese" target="_blank">
-            <i class="bi bi-file-earmark-pdf"></i> Ouvrir le PDF
+          <a href="files/Tableau_Synthese_E4.pdf" class="btn-synthese" target="_blank" rel="noopener noreferrer">
+            <i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Ouvrir le PDF
           </a>
         </div>
       </div>
       <div class="synthese-info">
-        <h4>Tableau de Synthèse (E4)</h4>
+        <h4 aria-level="3">Tableau de Synthèse (E4)</h4>
         <p>Document officiel récapitulant l'ensemble des compétences acquises lors de ma formation et de mes projets.</p>
       </div>
     </div>
@@ -177,9 +193,11 @@
 
 <!-- ===== FOOTER ===== -->
 
+  </main>
+
   <!-- BACK TO TOP -->
-  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut">
-    <i class="bi bi-arrow-up"></i>
+  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut" aria-label="Revenir en haut de la page">
+    <i aria-hidden="true" class="bi bi-arrow-up"></i>
   </button>
 
   <!-- FOOTER -->
@@ -203,16 +221,16 @@
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Documents</p>
-        <a href="files/CV Professionnel stage.pdf" target="_blank">Mon CV</a>
-        <a href="files/tableau de synthese.pdf" target="_blank">Tableau de synthèse</a>
-        <a href="files/Rapport_de_Stage_1.pdf" target="_blank">Rapport de stage 1</a>
-        <a href="files/Rapport_de_Stage_2.pdf" target="_blank">Rapport de stage 2</a>
+        <a href="files/CV Professionnel stage.pdf" target="_blank" rel="noopener noreferrer">Mon CV</a>
+        <a href="files/Tableau_Synthese_E4.pdf" target="_blank" rel="noopener noreferrer">Tableau de synthèse</a>
+        <a href="files/Rapport_de_Stage_1.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 1</a>
+        <a href="files/Rapport_de_Stage_2.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 2</a>
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Contact</p>
         <a href="mailto:omar.talibi@gmail.com">omar.talibi@gmail.com</a>
-        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
-        <a href="https://github.com/walo2428" target="_blank"><i class="bi bi-github me-1"></i>GitHub</a>
+        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-linkedin me-1"></i>LinkedIn</a>
+        <a href="https://github.com/walo2428" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-github me-1"></i>GitHub</a>
         <a href="contact.html">Formulaire de contact</a>
       </div>
     </div>

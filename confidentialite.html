@@ -1,13 +1,26 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Politique de confidentialité | Portfolio Omar Talibi</title>
-  <link rel="icon" type="image/png" href="img/logo.png">
+  <meta name="description" content="Politique de confidentialité du portfolio d'Omar Talibi : données collectées via le formulaire de contact.">
+  <link rel="canonical" href="https://walo2428.github.io/Portfolio_BTS_SIO/confidentialite.html">
+  <meta name="author" content="Omar Talibi">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Portfolio Omar Talibi">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Politique de confidentialité | Portfolio Omar Talibi">
+  <meta property="og:description" content="Politique de confidentialité du portfolio d'Omar Talibi : données collectées via le formulaire de contact.">
+  <meta property="og:url" content="https://walo2428.github.io/Portfolio_BTS_SIO/confidentialite.html">
+  <meta property="og:image" content="https://walo2428.github.io/Portfolio_BTS_SIO/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="img/logo-nav.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="commun.css" />
   <style>
     .legal-card {
       background: var(--dark-2);
@@ -70,15 +83,16 @@
   </style>
 </head>
 <body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+<nav aria-label="Navigation principale" class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img src="img/logo.png" alt="Logo" height="38" class="me-2 rounded">
+      <img src="img/logo-nav.png" alt="Logo" width="70" height="38" class="me-2 rounded">
       OMAR TALIBI
     </a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Afficher ou masquer le menu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -92,6 +106,7 @@
     </div>
   </div>
 </nav>
+<main id="contenu" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero">
@@ -106,11 +121,11 @@
   <div class="legal-card">
 
     <div class="rgpd-badge">
-      <i class="bi bi-shield-check-fill"></i> Conforme RGPD
+      <i aria-hidden="true" class="bi bi-shield-check-fill"></i> Respect de la vie privée
     </div>
 
     <div class="legal-section">
-      <h3><i class="bi bi-database-fill-slash"></i> Collecte des données</h3>
+      <h3 aria-level="2"><i aria-hidden="true" class="bi bi-database-fill-slash"></i> Collecte des données</h3>
       <p>
         Aucune donnée personnelle n'est automatiquement collectée sur ce site.
         Les seules informations que vous pourriez transmettre volontairement sont via le
@@ -121,30 +136,35 @@
     <div class="legal-divider"></div>
 
     <div class="legal-section">
-      <h3><i class="bi bi-gear-fill"></i> Utilisation des données</h3>
+      <h3 aria-level="2"><i aria-hidden="true" class="bi bi-gear-fill"></i> Utilisation des données</h3>
       <p>
         Les données envoyées via le formulaire de contact sont utilisées
         <strong>uniquement pour répondre à vos messages</strong>.
-        Elles ne sont pas conservées au-delà de la durée nécessaire à l'échange,
-        ni partagées avec des tiers.
+        Elles ne sont pas conservées au-delà de la durée nécessaire à l'échange
+        et ne sont ni vendues ni utilisées à d'autres fins.
+        Le formulaire est géré par le service <strong>Formspree</strong> (formspree.io, États-Unis),
+        qui transmet votre message à ma boîte e-mail.
       </p>
     </div>
 
     <div class="legal-divider"></div>
 
     <div class="legal-section">
-      <h3><i class="bi bi-cookie"></i> Cookies</h3>
+      <h3 aria-level="2"><i aria-hidden="true" class="bi bi-cookie"></i> Cookies</h3>
       <p>
         Ce site <strong>n'utilise pas de cookies</strong> de suivi ou de services d'analyse externes
         (tel que Google Analytics). Seuls les cookies techniques strictement nécessaires
         au bon fonctionnement du site peuvent être utilisés temporairement.
+        La page Contact intègre une carte <strong>Google Maps</strong> : Google peut y recevoir votre
+        adresse IP et déposer ses propres cookies. Les bibliothèques d'affichage (Bootstrap, icônes)
+        sont chargées depuis le CDN <strong>jsDelivr</strong>.
       </p>
     </div>
 
     <div class="legal-divider"></div>
 
     <div class="legal-section">
-      <h3><i class="bi bi-person-check-fill"></i> Droits des utilisateurs</h3>
+      <h3 aria-level="2"><i aria-hidden="true" class="bi bi-person-check-fill"></i> Droits des utilisateurs</h3>
       <p>
         Conformément au <strong>Règlement Général sur la Protection des Données (RGPD)</strong>,
         vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles.
@@ -156,7 +176,7 @@
     <div class="legal-divider"></div>
 
     <div class="legal-section">
-      <h3><i class="bi bi-lock-fill"></i> Sécurité</h3>
+      <h3 aria-level="2"><i aria-hidden="true" class="bi bi-lock-fill"></i> Sécurité</h3>
       <p>
         Ce site est hébergé sur <strong>GitHub Pages</strong> et bénéficie d'une connexion
         sécurisée via le protocole <strong>HTTPS</strong>. Toutes les communications entre
@@ -167,20 +187,22 @@
     <div class="legal-divider"></div>
 
     <div class="legal-section">
-      <h3><i class="bi bi-arrow-clockwise"></i> Mise à jour</h3>
+      <h3 aria-level="2"><i aria-hidden="true" class="bi bi-arrow-clockwise"></i> Mise à jour</h3>
       <p>
         Cette politique de confidentialité peut être mise à jour à tout moment.
-        La date de dernière modification est indiquée en pied de page.
-        <strong>Dernière mise à jour : 2026.</strong>
+        La date de dernière modification est indiquée ci-dessous.
+        <strong>Dernière mise à jour : octobre 2026.</strong>
       </p>
     </div>
 
   </div>
 </section>
 
+  </main>
+
   <!-- BACK TO TOP -->
-  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut">
-    <i class="bi bi-arrow-up"></i>
+  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut" aria-label="Revenir en haut de la page">
+    <i aria-hidden="true" class="bi bi-arrow-up"></i>
   </button>
 
   <!-- FOOTER -->
@@ -204,16 +226,16 @@
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Documents</p>
-        <a href="files/CV Professionnel stage.pdf" target="_blank">Mon CV</a>
-        <a href="files/tableau de synthese.pdf" target="_blank">Tableau de synthèse</a>
-        <a href="files/Rapport_de_Stage_1.pdf" target="_blank">Rapport de stage 1</a>
-        <a href="files/Rapport_de_Stage_2.pdf" target="_blank">Rapport de stage 2</a>
+        <a href="files/CV Professionnel stage.pdf" target="_blank" rel="noopener noreferrer">Mon CV</a>
+        <a href="files/Tableau_Synthese_E4.pdf" target="_blank" rel="noopener noreferrer">Tableau de synthèse</a>
+        <a href="files/Rapport_de_Stage_1.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 1</a>
+        <a href="files/Rapport_de_Stage_2.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 2</a>
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Contact</p>
         <a href="mailto:omar.talibi@gmail.com">omar.talibi@gmail.com</a>
-        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
-        <a href="https://github.com/walo2428" target="_blank"><i class="bi bi-github me-1"></i>GitHub</a>
+        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-linkedin me-1"></i>LinkedIn</a>
+        <a href="https://github.com/walo2428" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-github me-1"></i>GitHub</a>
         <a href="contact.html">Formulaire de contact</a>
       </div>
     </div>

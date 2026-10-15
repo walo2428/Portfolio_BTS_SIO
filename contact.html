@@ -4,21 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | Portfolio Omar Talibi</title>
-  <link rel="icon" type="image/png" href="img/logo.png">
+  <meta name="description" content="Contacter Omar Talibi, étudiant BTS SIO SISR à Nice : e-mail, LinkedIn, GitHub ou formulaire de contact.">
+  <link rel="canonical" href="https://walo2428.github.io/Portfolio_BTS_SIO/contact.html">
+  <meta name="author" content="Omar Talibi">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Portfolio Omar Talibi">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Contact | Portfolio Omar Talibi">
+  <meta property="og:description" content="Contacter Omar Talibi, étudiant BTS SIO SISR à Nice : e-mail, LinkedIn, GitHub ou formulaire de contact.">
+  <meta property="og:url" content="https://walo2428.github.io/Portfolio_BTS_SIO/contact.html">
+  <meta property="og:image" content="https://walo2428.github.io/Portfolio_BTS_SIO/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="img/logo-nav.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="commun.css" />
 </head>
 <body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+<nav aria-label="Navigation principale" class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img src="img/logo.png" alt="Logo" height="38" class="me-2 rounded">
+      <img src="img/logo-nav.png" alt="Logo" width="70" height="38" class="me-2 rounded">
       OMAR TALIBI
     </a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Afficher ou masquer le menu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -32,6 +46,7 @@
     </div>
   </div>
 </nav>
+<main id="contenu" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero">
@@ -47,10 +62,10 @@
 
     <!-- INFOS -->
     <div class="contact-info">
-      <h3>Mes Coordonnées</h3>
+      <h3 aria-level="2">Mes Coordonnées</h3>
 
       <div class="info-item">
-        <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
+        <div class="info-icon"><i aria-hidden="true" class="bi bi-envelope-fill"></i></div>
         <div>
           <p class="info-label">Email</p>
           <p class="info-value">omar.talibi@gmail.com</p>
@@ -58,7 +73,7 @@
       </div>
 
       <div class="info-item">
-        <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+        <div class="info-icon"><i aria-hidden="true" class="bi bi-geo-alt-fill"></i></div>
         <div>
           <p class="info-label">Localisation</p>
           <p class="info-value">Nice, France (06000)</p>
@@ -67,7 +82,7 @@
       </div>
 
       <div class="info-item">
-        <div class="info-icon"><i class="bi bi-mortarboard-fill"></i></div>
+        <div class="info-icon"><i aria-hidden="true" class="bi bi-mortarboard-fill"></i></div>
         <div>
           <p class="info-label">Formation</p>
           <p class="info-value">BTS SIO SISR — IRIS Mediaschool</p>
@@ -76,7 +91,7 @@
       </div>
 
       <div class="info-item">
-        <div class="info-icon"><i class="bi bi-briefcase-fill"></i></div>
+        <div class="info-icon"><i aria-hidden="true" class="bi bi-briefcase-fill"></i></div>
         <div>
           <p class="info-label">Disponibilité</p>
           <p class="info-value">Ouvert aux opportunités</p>
@@ -85,19 +100,20 @@
       </div>
 
       <div class="social-row">
-        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank" class="social-btn" title="LinkedIn">
-          <i class="bi bi-linkedin"></i>
+        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn" aria-label="LinkedIn">
+          <i aria-hidden="true" class="bi bi-linkedin"></i>
         </a>
-        <a href="https://github.com/walo2428" target="_blank" class="social-btn" title="GitHub">
-          <i class="bi bi-github"></i>
+        <a href="https://github.com/walo2428" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub" aria-label="GitHub">
+          <i aria-hidden="true" class="bi bi-github"></i>
         </a>
-        <a href="mailto:omar.talibi@gmail.com" class="social-btn" title="Email">
-          <i class="bi bi-envelope-fill"></i>
+        <a href="mailto:omar.talibi@gmail.com" class="social-btn" title="Email" aria-label="Email">
+          <i aria-hidden="true" class="bi bi-envelope-fill"></i>
         </a>
       </div>
 
       <div class="map-wrapper mt-3">
         <iframe
+          title="Carte de Nice, France"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46256.66226330999!2d7.218683569766524!3d43.70327387911762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd0106a807d7f%3A0x40819a5fd979a70!2sNice!5e0!3m2!1sfr!2sfr!4v1709289292837!5m2!1sfr!2sfr"
           width="100%" height="200" style="border:0; display:block;" allowfullscreen="" loading="lazy">
         </iframe>
@@ -106,18 +122,20 @@
 
     <!-- FORMULAIRE -->
     <div class="contact-form-card reveal reveal-delay-1">
-      <h3>Envoyer un message</h3>
+      <h3 aria-level="2">Envoyer un message</h3>
       <p>Remplissez le formulaire ci-dessous, je vous répondrai rapidement.</p>
 
       <form action="https://formspree.io/f/xkgbpypv" method="POST">
+        <!-- Champ piège anti-spam (invisible pour les humains) -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <div class="form-row">
           <div class="form-group">
             <label for="nom">Nom complet</label>
-            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            <input type="text" id="nom" name="nom" autocomplete="name" placeholder="Votre nom" required>
           </div>
           <div class="form-group">
             <label for="email">Adresse Email</label>
-            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="votre@email.com" required>
           </div>
         </div>
         <div class="form-group">
@@ -129,7 +147,7 @@
           <textarea id="message" name="message" placeholder="Votre message..." required></textarea>
         </div>
         <button type="submit" class="btn-send">
-          <i class="bi bi-send-fill"></i> Envoyer le message
+          <i aria-hidden="true" class="bi bi-send-fill"></i> Envoyer le message
         </button>
       </form>
     </div>
@@ -137,9 +155,11 @@
   </div>
 </section>
 
+  </main>
+
   <!-- BACK TO TOP -->
-  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut">
-    <i class="bi bi-arrow-up"></i>
+  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut" aria-label="Revenir en haut de la page">
+    <i aria-hidden="true" class="bi bi-arrow-up"></i>
   </button>
 
   <!-- FOOTER -->
@@ -163,16 +183,16 @@
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Documents</p>
-        <a href="files/CV Professionnel stage.pdf" target="_blank">Mon CV</a>
-        <a href="files/tableau de synthese.pdf" target="_blank">Tableau de synthèse</a>
-        <a href="files/Rapport_de_Stage_1.pdf" target="_blank">Rapport de stage 1</a>
-        <a href="files/Rapport_de_Stage_2.pdf" target="_blank">Rapport de stage 2</a>
+        <a href="files/CV Professionnel stage.pdf" target="_blank" rel="noopener noreferrer">Mon CV</a>
+        <a href="files/Tableau_Synthese_E4.pdf" target="_blank" rel="noopener noreferrer">Tableau de synthèse</a>
+        <a href="files/Rapport_de_Stage_1.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 1</a>
+        <a href="files/Rapport_de_Stage_2.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 2</a>
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Contact</p>
         <a href="mailto:omar.talibi@gmail.com">omar.talibi@gmail.com</a>
-        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
-        <a href="https://github.com/walo2428" target="_blank"><i class="bi bi-github me-1"></i>GitHub</a>
+        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-linkedin me-1"></i>LinkedIn</a>
+        <a href="https://github.com/walo2428" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-github me-1"></i>GitHub</a>
         <a href="contact.html">Formulaire de contact</a>
       </div>
     </div>

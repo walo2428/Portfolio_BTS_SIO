@@ -4,10 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Plan du site | Portfolio Omar Talibi</title>
-  <link rel="icon" type="image/png" href="img/logo.png">
+  <meta name="description" content="Plan du site du portfolio d'Omar Talibi : accès rapide à toutes les pages.">
+  <link rel="canonical" href="https://walo2428.github.io/Portfolio_BTS_SIO/plan-du-site.html">
+  <meta name="author" content="Omar Talibi">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Portfolio Omar Talibi">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Plan du site | Portfolio Omar Talibi">
+  <meta property="og:description" content="Plan du site du portfolio d'Omar Talibi : accès rapide à toutes les pages.">
+  <meta property="og:url" content="https://walo2428.github.io/Portfolio_BTS_SIO/plan-du-site.html">
+  <meta property="og:image" content="https://walo2428.github.io/Portfolio_BTS_SIO/img/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="img/logo-nav.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="commun.css" />
   <style>
     .sitemap-grid {
       display: grid;
@@ -140,15 +153,16 @@
   </style>
 </head>
 <body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+<nav aria-label="Navigation principale" class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img src="img/logo.png" alt="Logo" height="38" class="me-2 rounded">
+      <img src="img/logo-nav.png" alt="Logo" width="70" height="38" class="me-2 rounded">
       OMAR TALIBI
     </a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Afficher ou masquer le menu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -162,6 +176,7 @@
     </div>
   </div>
 </nav>
+<main id="contenu" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero">
@@ -173,50 +188,50 @@
 
 <!-- PAGES PRINCIPALES -->
 <section class="container mt-5 reveal">
-  <p class="section-title">Pages <span>principales</span></p>
+  <p class="section-title" role="heading" aria-level="2">Pages <span>principales</span></p>
   <div class="section-divider"></div>
   <div class="sitemap-grid">
 
     <div class="sitemap-card">
-      <div class="sitemap-icon"><i class="bi bi-house-fill"></i></div>
-      <h4>Accueil</h4>
+      <div class="sitemap-icon"><i aria-hidden="true" class="bi bi-house-fill"></i></div>
+      <h4 aria-level="3">Accueil</h4>
       <p>Présentation générale, à propos, formation, outils et tableau de synthèse.</p>
-      <a href="index.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+      <a href="index.html" class="sitemap-link">Visiter <i aria-hidden="true" class="bi bi-arrow-right"></i></a>
     </div>
 
     <div class="sitemap-card">
-      <div class="sitemap-icon"><i class="bi bi-folder2-open"></i></div>
-      <h4>Projets</h4>
+      <div class="sitemap-icon"><i aria-hidden="true" class="bi bi-folder2-open"></i></div>
+      <h4 aria-level="3">Projets</h4>
       <p>Sélection de projets réalisés en formation BTS SIO SISR avec documentation.</p>
-      <a href="projets.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+      <a href="projets.html" class="sitemap-link">Visiter <i aria-hidden="true" class="bi bi-arrow-right"></i></a>
     </div>
 
     <div class="sitemap-card">
-      <div class="sitemap-icon"><i class="bi bi-person-lines-fill"></i></div>
-      <h4>Expériences</h4>
+      <div class="sitemap-icon"><i aria-hidden="true" class="bi bi-person-lines-fill"></i></div>
+      <h4 aria-level="3">Expériences</h4>
       <p>Parcours scolaire, certifications, expériences professionnelles et stages.</p>
-      <a href="experiences.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+      <a href="experiences.html" class="sitemap-link">Visiter <i aria-hidden="true" class="bi bi-arrow-right"></i></a>
     </div>
 
     <div class="sitemap-card">
-      <div class="sitemap-icon"><i class="bi bi-newspaper"></i></div>
-      <h4>Veille Technologique</h4>
+      <div class="sitemap-icon"><i aria-hidden="true" class="bi bi-newspaper"></i></div>
+      <h4 aria-level="3">Veille Technologique</h4>
       <p>Évolution des solutions de virtualisation en entreprise — analyse et synthèse.</p>
-      <a href="veille.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+      <a href="veille.html" class="sitemap-link">Visiter <i aria-hidden="true" class="bi bi-arrow-right"></i></a>
     </div>
 
     <div class="sitemap-card">
-      <div class="sitemap-icon"><i class="bi bi-stars"></i></div>
-      <h4>Compétences</h4>
+      <div class="sitemap-icon"><i aria-hidden="true" class="bi bi-stars"></i></div>
+      <h4 aria-level="3">Compétences</h4>
       <p>Systèmes, réseaux, sécurité et développement — tous mes savoir-faire.</p>
-      <a href="competences.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+      <a href="competences.html" class="sitemap-link">Visiter <i aria-hidden="true" class="bi bi-arrow-right"></i></a>
     </div>
 
     <div class="sitemap-card">
-      <div class="sitemap-icon"><i class="bi bi-envelope-fill"></i></div>
-      <h4>Contact</h4>
+      <div class="sitemap-icon"><i aria-hidden="true" class="bi bi-envelope-fill"></i></div>
+      <h4 aria-level="3">Contact</h4>
       <p>Formulaire de contact, coordonnées et réseaux sociaux.</p>
-      <a href="contact.html" class="sitemap-link">Visiter <i class="bi bi-arrow-right"></i></a>
+      <a href="contact.html" class="sitemap-link">Visiter <i aria-hidden="true" class="bi bi-arrow-right"></i></a>
     </div>
 
   </div>
@@ -224,36 +239,36 @@
 
 <!-- DOCUMENTS -->
 <section class="container reveal">
-  <p class="section-title">Documents <span>disponibles</span></p>
+  <p class="section-title" role="heading" aria-level="2">Documents <span>disponibles</span></p>
   <div class="section-divider"></div>
   <div class="files-grid">
 
-    <a href="files/CV Professionnel stage.pdf" target="_blank" class="file-card">
-      <div class="file-icon"><i class="bi bi-file-person-fill"></i></div>
+    <a href="files/CV Professionnel stage.pdf" target="_blank" rel="noopener noreferrer" class="file-card">
+      <div class="file-icon"><i aria-hidden="true" class="bi bi-file-person-fill"></i></div>
       <div>
         <p class="file-name">Mon CV</p>
         <p class="file-desc">CV professionnel — PDF</p>
       </div>
     </a>
 
-    <a href="files/tableau de synthese.pdf" target="_blank" class="file-card">
-      <div class="file-icon"><i class="bi bi-table"></i></div>
+    <a href="files/Tableau_Synthese_E4.pdf" target="_blank" rel="noopener noreferrer" class="file-card">
+      <div class="file-icon"><i aria-hidden="true" class="bi bi-table"></i></div>
       <div>
         <p class="file-name">Tableau de synthèse</p>
         <p class="file-desc">Compétences BTS SIO — PDF</p>
       </div>
     </a>
 
-    <a href="files/Rapport_de_Stage_1.pdf" target="_blank" class="file-card">
-      <div class="file-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+    <a href="files/Rapport_de_Stage_1.pdf" target="_blank" rel="noopener noreferrer" class="file-card">
+      <div class="file-icon"><i aria-hidden="true" class="bi bi-file-earmark-text-fill"></i></div>
       <div>
         <p class="file-name">Rapport de Stage 1</p>
         <p class="file-desc">BMA · Juil–Août 2025 — PDF</p>
       </div>
     </a>
 
-    <a href="files/Rapport_de_Stage_2.pdf" target="_blank" class="file-card">
-      <div class="file-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+    <a href="files/Rapport_de_Stage_2.pdf" target="_blank" rel="noopener noreferrer" class="file-card">
+      <div class="file-icon"><i aria-hidden="true" class="bi bi-file-earmark-text-fill"></i></div>
       <div>
         <p class="file-name">Rapport de Stage 2</p>
         <p class="file-desc">BMA · Jan–Fév 2026 — PDF</p>
@@ -261,7 +276,7 @@
     </a>
 
     <a href="mentions-legales.html" class="file-card">
-      <div class="file-icon"><i class="bi bi-file-ruled-fill"></i></div>
+      <div class="file-icon"><i aria-hidden="true" class="bi bi-file-ruled-fill"></i></div>
       <div>
         <p class="file-name">Mentions légales</p>
         <p class="file-desc">Informations légales du site</p>
@@ -269,7 +284,7 @@
     </a>
 
     <a href="confidentialite.html" class="file-card">
-      <div class="file-icon"><i class="bi bi-shield-check-fill"></i></div>
+      <div class="file-icon"><i aria-hidden="true" class="bi bi-shield-check-fill"></i></div>
       <div>
         <p class="file-name">Confidentialité</p>
         <p class="file-desc">Politique de protection des données</p>
@@ -279,9 +294,11 @@
   </div>
 </section>
 
+  </main>
+
   <!-- BACK TO TOP -->
-  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut">
-    <i class="bi bi-arrow-up"></i>
+  <button class="btn-back-top" id="btnTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Revenir en haut" aria-label="Revenir en haut de la page">
+    <i aria-hidden="true" class="bi bi-arrow-up"></i>
   </button>
 
   <!-- FOOTER -->
@@ -305,16 +322,16 @@
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Documents</p>
-        <a href="files/CV Professionnel stage.pdf" target="_blank">Mon CV</a>
-        <a href="files/tableau de synthese.pdf" target="_blank">Tableau de synthèse</a>
-        <a href="files/Rapport_de_Stage_1.pdf" target="_blank">Rapport de stage 1</a>
-        <a href="files/Rapport_de_Stage_2.pdf" target="_blank">Rapport de stage 2</a>
+        <a href="files/CV Professionnel stage.pdf" target="_blank" rel="noopener noreferrer">Mon CV</a>
+        <a href="files/Tableau_Synthese_E4.pdf" target="_blank" rel="noopener noreferrer">Tableau de synthèse</a>
+        <a href="files/Rapport_de_Stage_1.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 1</a>
+        <a href="files/Rapport_de_Stage_2.pdf" target="_blank" rel="noopener noreferrer">Rapport de stage 2</a>
       </div>
       <div class="footer-nav">
         <p class="footer-nav-title">Contact</p>
         <a href="mailto:omar.talibi@gmail.com">omar.talibi@gmail.com</a>
-        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
-        <a href="https://github.com/walo2428" target="_blank"><i class="bi bi-github me-1"></i>GitHub</a>
+        <a href="https://www.linkedin.com/in/omar-talibi-b52989278/" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-linkedin me-1"></i>LinkedIn</a>
+        <a href="https://github.com/walo2428" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="bi bi-github me-1"></i>GitHub</a>
         <a href="contact.html">Formulaire de contact</a>
       </div>
     </div>
