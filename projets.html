@@ -228,19 +228,28 @@
       <div class="project-img-wrap project-cover cover-glpi" aria-hidden="true"><i class="bi bi-ticket-detailed-fill"></i><span>GLPI<br>Parc &amp; ticketing</span></div>
       <div class="project-body">
         <p class="project-kicker">Projet N°6</p>
-        <h2 class="project-title">Gestion du parc informatique et outil de ticketing (GLPI)</h2>
-        <p class="project-desc">Déploiement de GLPI pour la gestion de parc informatique et tickets d'incidents, avec sécurisation SSH par clés RSA.</p>
+        <h2 class="project-title">Lab GLPI 11 — Gestion de parc et ticketing ITIL</h2>
+        <p class="project-desc">Déploiement complet de GLPI 11.0.8 sur Debian 12 : inventaire multi-poste par agents, cycle de vie ITIL d'un ticket, sauvegarde et restauration testée.</p>
         <div class="project-tags">
-          <span class="tag">GLPI</span>
+          <span class="tag">GLPI 11</span>
+          <span class="tag">Debian 12</span>
           <span class="tag">Apache</span>
-          <span class="tag">SSH</span>
-          <span class="tag">Fail2ban</span>
+          <span class="tag">MariaDB</span>
+          <span class="tag">PHP-FPM</span>
+          <span class="tag">GLPI Agent</span>
+          <span class="tag">ITIL</span>
         </div>
-        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
-        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Installation GLPI complète sur Debian avec Apache/MariaDB, déploiement des agents sur postes clients, et sécurisation avancée : Fail2ban, clés RSA, durcissement SSH.</div></details>
+        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Développer la présence en ligne de l'organisation">C3</abbr><abbr class="skill-chip" title="Travailler en mode projet">C4</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
+        <!-- Tableau de synthèse compact -->
+        <div class="card-synthese">
+          <div class="synth-row"><span class="synth-label">Stack</span><span class="synth-value">Apache 2.4 + PHP-FPM 8.2 + MariaDB 10.11</span></div>
+          <div class="synth-row"><span class="synth-label">Machines</span><span class="synth-value">2 (VM Debian + PC physique Packard Bell)</span></div>
+          <div class="synth-row"><span class="synth-label">Phases</span><span class="synth-value">8 phases · 10 tests validés</span></div>
+          <div class="synth-row"><span class="synth-label">Recette</span><span class="synth-value success">10/10 validés ✓</span></div>
+        </div>
         <div class="project-buttons">
-            <a href="files/Docs/documentation_GLPI_AgentGLPI.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('N°6 — Gestion du parc informatique et outil de ticketing (GLPI)', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
+            <button class="btn-details" onclick="openGlpiModal()"><i aria-hidden="true" class="bi bi-eye"></i> Détails du projet</button>
+            <button class="btn-doc" onclick="openSyntheseModal('N°6 — Lab GLPI 11 — Gestion de parc et ticketing ITIL', 'C1, C2, C3, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
       </div>
     </div>
     <!-- Server IRIS / Gestion Utilisateurs -->
@@ -505,6 +514,447 @@
   </button>
 
   
+  <!-- ===== MODALE DÉTAILS GLPI ===== -->
+  <div class="modal-overlay" id="modalGlpi" onclick="if(event.target===this) closeGlpiModal()">
+    <div class="modal-box modal-detail" role="dialog" aria-modal="true" aria-labelledby="glpiModalTitle">
+      <button class="modal-close" onclick="closeGlpiModal()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
+
+      <div class="modal-badge"><i aria-hidden="true" class="bi bi-ticket-detailed-fill"></i> Projet N°6 — Lab GLPI 11</div>
+      <h2 class="modal-title" id="glpiModalTitle">Lab GLPI 11 — <span>Gestion de parc et ticketing ITIL</span></h2>
+      <p class="modal-subtitle">Déploiement complet sur Debian 12 · 2 machines · 8 phases · GLPI 11.0.8</p>
+
+      <div class="modal-divider"></div>
+
+      <!-- OBJECTIFS -->
+      <details class="modal-section" open>
+        <summary><h3><i aria-hidden="true" class="bi bi-bullseye"></i> Objectifs du projet</h3></summary>
+        <div class="modal-text">
+          <p>Une PME de 150 postes veut centraliser la gestion de son parc informatique et de ses demandes d'assistance. Le lab reproduit ce besoin à petite échelle.</p>
+        </div>
+        <div class="obj-grid">
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-server"></i><p><strong>Déployer GLPI 11.0.8</strong> sur un serveur Debian 12 avec stack LAMP sécurisée (Apache + PHP-FPM + MariaDB)</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-pc-display"></i><p><strong>Inventaire automatique</strong> de 2 machines (VM serveur + PC physique Packard Bell) via GLPI Agent 1.11</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-kanban"></i><p><strong>Cycle de vie ITIL complet</strong> d'un ticket : création → attribution → suivi → solution → approbation → clôture</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-shield-check"></i><p><strong>Sauvegarde et restauration</strong> vérifiée par DROP TABLE — preuve que le dump est exploitable</p></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- ARCHITECTURE -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-diagram-3"></i> Architecture technique</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-header">
+            <span>Machine</span><span>OS</span><span>Rôle</span><span>Réseau</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>SRV-GLPI-01</strong></span><span>Debian 12 (GNOME)</span><span>Serveur GLPI 11</span><span>192.168.1.200 (Bridged)</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>CLI-DEB-01</strong><br><small>Packard Bell</small></span><span>Debian 12</span><span>Client GLPI Agent</span><span>DHCP (même LAN)</span>
+          </div>
+        </div>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Web</span>Apache 2.4 + mod_rewrite + proxy_fcgi</div>
+          <div class="stack-item"><span class="stack-label">PHP</span>PHP-FPM 8.2 (bcmath, mbstring, intl, gd, zip, ldap…)</div>
+          <div class="stack-item"><span class="stack-label">BDD</span>MariaDB 10.11 — base <code>glpi</code> en utf8mb4</div>
+          <div class="stack-item"><span class="stack-label">Agent</span>GLPI Agent 1.11 — inventaire natif sans FusionInventory</div>
+          <div class="stack-item"><span class="stack-label">Cron</span>Tâche planifiée toutes les 2 min (front/cron.php)</div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- PHASES -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-list-ol"></i> Les 8 phases du déploiement</h3></summary>
+        <div class="phase-timeline">
+          <div class="phase-item"><span class="phase-num">1</span><div><strong>Socle Debian 12</strong><p>Installation avec GNOME, SSH, adressage statique sur carte Bridged</p></div></div>
+          <div class="phase-item"><span class="phase-num">2</span><div><strong>Stack LAMP</strong><p>Apache 2.4 + PHP-FPM 8.2 + MariaDB 10.11 + sécurisation</p></div></div>
+          <div class="phase-item"><span class="phase-num">3</span><div><strong>Installation GLPI 11</strong><p>Séparation FHS (/etc/glpi, /var/lib/glpi), VirtualHost sur /public</p></div></div>
+          <div class="phase-item"><span class="phase-num">4</span><div><strong>Post-installation</strong><p>Suppression install.php, changement des mots de passe, cron</p></div></div>
+          <div class="phase-item"><span class="phase-num">5</span><div><strong>Structure ITIL</strong><p>Entités, catégories, lieux, groupes (N1/N2), SLA 8h</p></div></div>
+          <div class="phase-item"><span class="phase-num">6</span><div><strong>Inventaire par agents</strong><p>GLPI Agent sur serveur + Packard Bell → 2 machines dans le Parc</p></div></div>
+          <div class="phase-item"><span class="phase-num">7</span><div><strong>Cycle ticket ITIL</strong><p>Nouveau → En cours → Résolu → Clos (incident réseau salle B204)</p></div></div>
+          <div class="phase-item"><span class="phase-num">8</span><div><strong>Sauvegarde / Restauration</strong><p>Script mysqldump + tar, test DROP TABLE + restore OK</p></div></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- CAPTURES D'ÉCRAN -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-images"></i> Captures d'écran</h3></summary>
+        <div class="screenshots-gallery">
+          <div class="screenshot-item">
+            <div class="screenshot-placeholder"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">01 — Réseau : ip addr, hostname, ping</p>
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-placeholder"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">02 — Services actifs (Apache, MariaDB, PHP-FPM)</p>
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-placeholder"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">03 — Page setup GLPI (prérequis)</p>
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-placeholder"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">04 — Page de login GLPI</p>
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-placeholder"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">05 — Dashboard GLPI (données démo)</p>
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-placeholder"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">06 — Dashboard post-installation (propre)</p>
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-placeholder"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">07 — Configuration ITIL (utilisateurs / SLA)</p>
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-placeholder"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">08 — Parc : 2 ordinateurs inventoriés</p>
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-placeholder"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">09 — Ticket complet avec historique</p>
+          </div>
+          <div class="screenshot-item">
+            <div class="screenshot-placeholder"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">10 — Sauvegarde + restauration vérifiée</p>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- PV DE RECETTE -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-patch-check"></i> PV de recette — 10/10</h3></summary>
+        <div class="recette-list">
+          <div class="recette-item ok"><span class="recette-num">T01</span><span>Ping serveur depuis client</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T02</span><span>Services actifs (Apache, MariaDB, PHP-FPM)</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T03</span><span>Page de login GLPI accessible</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T04</span><span>Connexion admin au dashboard</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T05</span><span>install.php supprimé (404)</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T06</span><span>Cron GLPI actif</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T07</span><span>Inventaire serveur (srv-glpi-01)</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T08</span><span>Inventaire client (Packard Bell)</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T09</span><span>Cycle ticket complet (Nouveau → Clos)</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T10</span><span>Sauvegarde + restauration (DROP TABLE)</span><span class="recette-status">OK</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- BOUTONS BAS -->
+      <div class="modal-actions detail-actions">
+        <a href="files/Docs/documentation_GLPI11.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-action-pdf">
+          <i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation PDF
+        </a>
+        <a href="https://github.com/walo2428/GLPI_Projet" target="_blank" rel="noopener noreferrer" class="btn-action btn-action-github">
+          <i aria-hidden="true" class="bi bi-github"></i> GitHub
+        </a>
+        <button class="btn-action btn-action-gestion" onclick="closeGlpiModal(); openGlpiGestion()">
+          <i aria-hidden="true" class="bi bi-kanban"></i> Gestion de projet
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== MODALE GESTION DE PROJET GLPI ===== -->
+  <div class="modal-overlay" id="modalGlpiGestion" onclick="if(event.target===this) closeGlpiGestion()">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="glpiGestionTitle">
+      <button class="modal-close" onclick="closeGlpiGestion()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
+
+      <div class="modal-badge"><i aria-hidden="true" class="bi bi-kanban"></i> Gestion de Projet &mdash; M&eacute;thodologie Agile</div>
+      <h2 class="modal-title" id="glpiGestionTitle">Lab GLPI 11 &mdash; <span>Gestion de parc et ticketing ITIL</span></h2>
+      <p class="modal-subtitle">Debian 12 &middot; GLPI 11.0.8 &middot; 4 sprints &middot; 8 phases &middot; R&eacute;f. SISR-2025</p>
+
+      <div class="modal-divider"></div>
+
+      <!-- CADRAGE CQQCOQP -->
+      <details class="modal-section" open>
+        <summary><h3><i aria-hidden="true" class="bi bi-crosshair"></i> Cadrage CQQCOQP</h3></summary>
+        <div class="cadrage-table">
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-person-fill"></i><span>Qui</span></div>
+            <div class="cadrage-val"><strong>Omar Talibi</strong>&nbsp;(SISR) &middot; Travail individuel &middot; Encadrant : tuteur p&eacute;dagogique</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-gear-fill"></i><span>Quoi</span></div>
+            <div class="cadrage-val">D&eacute;ploiement <strong>GLPI 11.0.8</strong> sur Debian 12 &mdash; inventaire multi-poste par agents &mdash; ticketing ITIL complet</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-geo-alt-fill"></i><span>O&ugrave;</span></div>
+            <div class="cadrage-val">VM <strong>VirtualBox</strong> (NAT + Bridged) &middot; PC physique <strong>Packard Bell</strong> sur m&ecirc;me LAN</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-tools"></i><span>Comment</span></div>
+            <div class="cadrage-val">Installation manuelle &mdash; Apache + PHP-FPM + MariaDB &mdash; s&eacute;paration FHS &mdash; sans conteneurs</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-calendar3"></i><span>Quand</span></div>
+            <div class="cadrage-val"><strong>4 sprints</strong> &middot; 8 phases techniques &middot; 10 cas de test de recette</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-question-circle-fill"></i><span>Pourquoi</span></div>
+            <div class="cadrage-val">PME de <strong>150 postes</strong> &mdash; centraliser gestion de parc et demandes d'assistance</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-currency-euro"></i><span>Combien</span></div>
+            <div class="cadrage-val">Budget : <strong>0&euro;</strong> (logiciels 100% libres) &middot; 2 machines &middot; 1 serveur + 1 client</div>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- OBJECTIFS SMART -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-bullseye"></i> Objectifs SMART(E)</h3></summary>
+        <div class="smart-list">
+          <div class="smart-item">
+            <div class="smart-letter s">S</div>
+            <div class="smart-content"><strong>Sp&eacute;cifique</strong><p>D&eacute;ployer GLPI 11.0.8 sur Debian 12 avec s&eacute;paration FHS, inventaire de 2 machines et cycle ticket ITIL complet.</p></div>
+          </div>
+          <div class="smart-item">
+            <div class="smart-letter m">M</div>
+            <div class="smart-content"><strong>Mesurable</strong><p>10 cas de tests d&eacute;finis (T01 &agrave; T10) &mdash; objectif : 10/10 valid&eacute;s en fin de projet.</p></div>
+          </div>
+          <div class="smart-item">
+            <div class="smart-letter a">A</div>
+            <div class="smart-content"><strong>Atteignable</strong><p>Technologies document&eacute;es (GLPI, Debian, LAMP) &mdash; lab reproduit en environnement contr&ocirc;l&eacute;.</p></div>
+          </div>
+          <div class="smart-item">
+            <div class="smart-letter r">R</div>
+            <div class="smart-content"><strong>R&eacute;aliste</strong><p>Comp&eacute;tences acquises en cours (Linux, r&eacute;seau, services) &mdash; documentation officielle GLPI 11 disponible.</p></div>
+          </div>
+          <div class="smart-item">
+            <div class="smart-letter t">T</div>
+            <div class="smart-content"><strong>Temporel</strong><p>4 sprints avec un livrable technique par sprint. Recette finale valid&eacute;e en fin de dernier sprint.</p></div>
+          </div>
+          <div class="smart-item">
+            <div class="smart-letter e">E</div>
+            <div class="smart-content"><strong>&Eacute;thique</strong><p>Logiciels 100% libres (GPL), donn&eacute;es h&eacute;berg&eacute;es en local, mots de passe chang&eacute;s d&egrave;s la post-installation.</p></div>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- SPRINTS -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-arrow-repeat"></i> D&eacute;coupage en Sprints</h3></summary>
+        <div class="sprint-timeline">
+          <div class="sprint-card">
+            <p class="sprint-card-num">Sprint 1</p>
+            <p class="sprint-card-title">Socle &amp; Stack</p>
+            <p class="sprint-card-desc">Debian 12 + GNOME, r&eacute;seau NAT + Bridged statique, Apache 2.4, PHP-FPM 8.2, MariaDB 10.11</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> Socle pr&ecirc;t</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Sprint 2</p>
+            <p class="sprint-card-title">Install &amp; Post-install GLPI</p>
+            <p class="sprint-card-desc">GLPI 11.0.8 + FHS, VirtualHost, suppression install.php, mots de passe, cron</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> T01&ndash;T06 valid&eacute;s</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Sprint 3</p>
+            <p class="sprint-card-title">ITIL &amp; Inventaire</p>
+            <p class="sprint-card-desc">Entit&eacute;s, cat&eacute;gories, groupes, SLA. GLPI Agent serveur + Packard Bell. Cycle ticket</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> T07&ndash;T09 valid&eacute;s</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Sprint 4</p>
+            <p class="sprint-card-title">Sauvegarde &amp; Docs</p>
+            <p class="sprint-card-desc">Script mysqldump + tar, test DROP TABLE + restore, documentation, PV de recette final</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> T10 valid&eacute;</span>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- KANBAN -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-kanban"></i> Tableau Kanban &mdash; &Eacute;tat fin Sprint 3</h3></summary>
+        <div class="kanban-board">
+          <div class="kanban-col">
+            <div class="kanban-header todo">&Agrave; faire <span class="count">2</span></div>
+            <div class="kanban-cards">
+              <div class="kanban-card">
+                <div class="kanban-card-label red"></div>
+                <div class="kanban-card-title">Script de sauvegarde</div>
+                <div class="kanban-card-sub">mysqldump + tar automatis&eacute;</div>
+                <div class="kanban-card-footer"><span><i aria-hidden="true" class="bi bi-sprint"></i> Sprint 4</span><div class="kanban-avatar">OT</div></div>
+              </div>
+              <div class="kanban-card">
+                <div class="kanban-card-label red"></div>
+                <div class="kanban-card-title">Test restauration</div>
+                <div class="kanban-card-sub">DROP TABLE + restore pour valider le dump</div>
+                <div class="kanban-card-footer"><span><i aria-hidden="true" class="bi bi-sprint"></i> Sprint 4</span><div class="kanban-avatar">OT</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="kanban-col">
+            <div class="kanban-header doing">En cours <span class="count">2</span></div>
+            <div class="kanban-cards">
+              <div class="kanban-card">
+                <div class="kanban-card-label yellow"></div>
+                <div class="kanban-card-title">Cycle ticket ITIL (T09)</div>
+                <div class="kanban-card-sub">Nouveau &rarr; En cours &rarr; R&eacute;solu &rarr; Clos</div>
+                <div class="kanban-card-footer"><span><i aria-hidden="true" class="bi bi-hourglass-split"></i> En test</span><div class="kanban-avatar">OT</div></div>
+              </div>
+              <div class="kanban-card">
+                <div class="kanban-card-label blue"></div>
+                <div class="kanban-card-title">Documentation</div>
+                <div class="kanban-card-sub">Captures d'&eacute;cran + rapport PDF</div>
+                <div class="kanban-card-footer"><span><i aria-hidden="true" class="bi bi-pencil-square"></i> R&eacute;daction</span><div class="kanban-avatar">OT</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="kanban-col">
+            <div class="kanban-header done">Termin&eacute; <span class="count">6</span></div>
+            <div class="kanban-cards">
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">Socle Debian 12</div><div class="kanban-card-sub">GNOME + r&eacute;seau NAT/Bridged</div></div>
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">Stack LAMP</div><div class="kanban-card-sub">Apache + PHP-FPM + MariaDB</div></div>
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">GLPI 11 install&eacute;</div><div class="kanban-card-sub">FHS + post-install s&eacute;curis&eacute;</div></div>
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">Structure ITIL</div><div class="kanban-card-sub">Entit&eacute;s, SLA 8h, groupes N1/N2</div></div>
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">Inventaire 2 machines</div><div class="kanban-card-sub">T07&ndash;T08 valid&eacute;s &check;</div></div>
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">Cron GLPI actif</div><div class="kanban-card-sub">T06 valid&eacute; &check;</div></div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- EISENHOWER -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-grid-3x3"></i> Matrice Eisenhower &mdash; Sprint 2</h3></summary>
+        <div class="modal-text">
+          <p>Lors du sprint 2, la suppression de install.php &eacute;tait class&eacute;e &laquo;&nbsp;important mais non urgent&nbsp;&raquo;. Apr&egrave;s lecture de la doc GLPI, elle est pass&eacute;e en <strong>critique / faire maintenant</strong> car GLPI refuse de fonctionner tant que le fichier existe.</p>
+        </div>
+        <div class="eisenhower-wrapper">
+          <div class="eisenhower-y-label">IMPORTANCE &uarr;</div>
+          <div class="eisenhower-matrix">
+            <div class="eisenhower-cell q1">
+              <p class="eisenhower-cell-title"><i aria-hidden="true" class="bi bi-lightning-fill"></i> Faire maintenant</p>
+              <div class="eisenhower-task"><strong>Suppression install.php</strong><br>GLPI bloque l'acc&egrave;s tant que le fichier existe</div>
+              <div class="eisenhower-task"><strong>Changement mots de passe</strong><br>S&eacute;curit&eacute; imm&eacute;diate obligatoire</div>
+            </div>
+            <div class="eisenhower-cell q2">
+              <p class="eisenhower-cell-title"><i aria-hidden="true" class="bi bi-calendar-check"></i> Planifier</p>
+              <div class="eisenhower-task"><strong>S&eacute;paration FHS</strong><br>Bonne pratique mais GLPI fonctionne sans</div>
+            </div>
+            <div class="eisenhower-cell q3">
+              <p class="eisenhower-cell-title"><i aria-hidden="true" class="bi bi-person-plus"></i> D&eacute;l&eacute;guer</p>
+              <div class="eisenhower-task" style="color:var(--muted)"><em>Aucune t&acirc;che identifi&eacute;e</em><br>Travail individuel</div>
+            </div>
+            <div class="eisenhower-cell q4">
+              <p class="eisenhower-cell-title"><i aria-hidden="true" class="bi bi-x-circle"></i> Reporter</p>
+              <div class="eisenhower-task"><strong>HTTPS / certificat SSL</strong><br>Lab interne &mdash; hors p&eacute;rim&egrave;tre</div>
+            </div>
+          </div>
+          <p class="eisenhower-x-label">URGENCE &rarr;</p>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- RISQUES -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-exclamation-triangle"></i> Gestion des risques</h3></summary>
+        <div class="risk-table">
+          <div class="risk-row risk-header">
+            <span>ID</span><span>Risque</span><span>Probabilit&eacute;</span><span>Impact</span><span>Mitigation</span>
+          </div>
+          <div class="risk-row">
+            <span class="risk-id crit">R1</span><span class="risk-name">Perte de la base GLPI</span>
+            <span class="risk-level"><span class="risk-dot high"></span> &Eacute;lev&eacute;e</span>
+            <span class="risk-level"><span class="risk-dot high"></span> Critique</span>
+            <span class="risk-mitigation">Script mysqldump + tar &middot; Test restore par DROP TABLE</span>
+          </div>
+          <div class="risk-row">
+            <span class="risk-id elev">R2</span><span class="risk-name">Agent non contact&eacute;</span>
+            <span class="risk-level"><span class="risk-dot med"></span> Moyenne</span>
+            <span class="risk-level"><span class="risk-dot high"></span> &Eacute;lev&eacute;</span>
+            <span class="risk-mitigation">V&eacute;rifier IP 192.168.1.200 + URL agent</span>
+          </div>
+          <div class="risk-row">
+            <span class="risk-id moy">R3</span><span class="risk-name">PHP-FPM non d&eacute;marr&eacute;</span>
+            <span class="risk-level"><span class="risk-dot med"></span> Moyenne</span>
+            <span class="risk-level"><span class="risk-dot med"></span> Moyen</span>
+            <span class="risk-mitigation">V&eacute;rifier socket php8.2-fpm.sock + proxy_fcgi</span>
+          </div>
+          <div class="risk-row">
+            <span class="risk-id faib">R4</span><span class="risk-name">Cron GLPI inactif</span>
+            <span class="risk-level"><span class="risk-dot low"></span> Faible</span>
+            <span class="risk-level"><span class="risk-dot low"></span> Faible</span>
+            <span class="risk-mitigation">/etc/cron.d/glpi avec www-data toutes les 2 min</span>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- KPI -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-bar-chart"></i> Indicateurs de performance (KPI)</h3></summary>
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon"><i aria-hidden="true" class="bi bi-clock-history"></i></div>
+            <p class="kpi-value">100%</p>
+            <p class="kpi-label">Respect des d&eacute;lais &mdash; 8/8 phases livr&eacute;es, aucun report</p>
+            <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i aria-hidden="true" class="bi bi-clipboard-check"></i></div>
+            <p class="kpi-value">10/10</p>
+            <p class="kpi-label">Tests valid&eacute;s &mdash; T01 &agrave; T10 tous pass&eacute;s avec succ&egrave;s</p>
+            <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i aria-hidden="true" class="bi bi-bug"></i></div>
+            <p class="kpi-value">0</p>
+            <p class="kpi-label">Bugs bloquants &mdash; services stables apr&egrave;s reboot</p>
+            <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i aria-hidden="true" class="bi bi-pc-display"></i></div>
+            <p class="kpi-value">2/2</p>
+            <p class="kpi-label">Machines inventori&eacute;es &mdash; VM + PC physique Packard Bell</p>
+            <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- CAPTURE NOTION -->
+      <details class="modal-section" open>
+        <summary><h3><i aria-hidden="true" class="bi bi-journal-bookmark"></i> Suivi Notion</h3></summary>
+        <div class="notion-screenshot">
+          <i aria-hidden="true" class="bi bi-image"></i>
+          <p>Capture d'&eacute;cran Notion &agrave; ins&eacute;rer ici<br><small>(planning, tableau de suivi, board Kanban&hellip;)</small></p>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-actions">
+        <a href="files/Docs/documentation_GLPI11.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Rapport gestion de projet (PDF)</a>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ===== MODALE SYNTHESE DYNAMIQUE ===== -->
   <div class="modal-overlay" id="modalSynthese" onclick="if(event.target===this) closeSyntheseModal()">
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="syntheseModalTitle">
@@ -646,8 +1096,26 @@
   function closeModalOutside(e) {
     if (e.target === document.getElementById('modalGestion')) closeModal();
   }
+  // MODALE GLPI DETAILS
+  function openGlpiModal() {
+    document.getElementById('modalGlpi').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeGlpiModal() {
+    document.getElementById('modalGlpi').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function openGlpiGestion() {
+    document.getElementById('modalGlpiGestion').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeGlpiGestion() {
+    document.getElementById('modalGlpiGestion').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeModal(); closeSyntheseModal(); }
+    if (e.key === 'Escape') { closeModal(); closeSyntheseModal(); closeGlpiModal(); closeGlpiGestion(); }
   });
 
     function openSyntheseModal(title, compsStr, pdfUrl) {
