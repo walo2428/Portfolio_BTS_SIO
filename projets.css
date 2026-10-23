@@ -727,6 +727,14 @@ details.modal-section > summary:hover h3 { color: var(--orange-light); }
   gap: 12px;
 }
 .screenshot-item { text-align: center; }
+.screenshot-item img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.screenshot-item img:hover { transform: scale(1.03); }
 .screenshot-placeholder {
   background: rgba(255,255,255,0.04);
   border: 2px dashed rgba(255,255,255,0.1);
