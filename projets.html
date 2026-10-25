@@ -181,9 +181,15 @@
           <span class="tag">Fail2ban</span>
         </div>
         <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Travailler en mode projet">C4</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
-        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Serveur de tchat multi-clients développé en Python. Mon rôle SISR : déployer le serveur Python et le rendre accessible sur le réseau pour les clients Java des étudiants SLAM.</div></details>
+        <!-- Tableau de synthèse compact -->
+        <div class="card-synthese">
+          <div class="synth-row"><span class="synth-label">Service</span><span class="synth-value">Python 3 · systemd · Docker (port TCP/12345)</span></div>
+          <div class="synth-row"><span class="synth-label">Sécurité</span><span class="synth-value">ufw · fail2ban · journalisation · sauvegarde cron</span></div>
+          <div class="synth-row"><span class="synth-label">Durée</span><span class="synth-value">5 jours · semaine intensive SISR/SLAM (juin 2025)</span></div>
+          <div class="synth-row"><span class="synth-label">Compétence clé</span><span class="synth-value">C5 — Mettre à disposition des utilisateurs un service informatique</span></div>
+        </div>
         <div class="project-buttons">
-            <a href="files/Docs/documentation_ClassCord_Server.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-details" onclick="openClasscordModal()"><i aria-hidden="true" class="bi bi-eye"></i> Détails du projet</button>
             <button class="btn-doc" onclick="openSyntheseModal('N°3 — Déploiement et sécurisation d\'un service de messagerie réseau multi-clients (ClassCord)', 'C1, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
       </div>
     </div>
@@ -758,6 +764,266 @@
     </div>
   </div>
 
+  <!-- ===== MODALE DÉTAILS CLASSCORD ===== -->
+  <div class="modal-overlay" id="modalClasscord" onclick="if(event.target===this) closeClasscordModal()">
+    <div class="modal-box modal-detail" role="dialog" aria-modal="true" aria-labelledby="classcordModalTitle">
+      <button class="modal-close" onclick="closeClasscordModal()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
+
+      <div class="modal-badge"><i aria-hidden="true" class="bi bi-chat-dots-fill"></i> Projet N°3 — ClassCord</div>
+      <h2 class="modal-title" id="classcordModalTitle">ClassCord — <span>Service de tchat multi-clients</span></h2>
+      <p class="modal-subtitle">Python · systemd · Docker · fail2ban · SQLite · Semaine intensive SISR/SLAM, juin 2025 · 5 jours</p>
+
+      <div class="modal-divider"></div>
+
+      <!-- OBJECTIFS -->
+      <details class="modal-section" open>
+        <summary><h3><i aria-hidden="true" class="bi bi-bullseye"></i> Objectifs du projet</h3></summary>
+        <div class="modal-text">
+          <p>Projet de semaine intensive : déployer, sécuriser et faire évoluer le serveur de tchat ClassCord (<code>server_classcord.py</code>, port TCP/12345), utilisé par les clients Java développés par les étudiants SLAM. Objectif : mettre à disposition un service de communication interne fiable, documenté et exploitable.</p>
+        </div>
+        <div class="obj-grid">
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-server"></i><p><strong>Déployer le serveur</strong> sur une VM Debian (VirtualBox) et le rendre joignable par les clients SLAM sur le réseau</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-gear-wide-connected"></i><p><strong>Automatiser le démarrage</strong> avec un service systemd et un utilisateur système dédié</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-shield-lock"></i><p><strong>Sécuriser le service</strong> : pare-feu ufw, fail2ban, journalisation et sauvegarde automatique</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-box-seam"></i><p><strong>Conteneuriser</strong> le serveur avec Docker et docker-compose, puis le faire évoluer (canaux, SQLite, export)</p></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- ARCHITECTURE -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-diagram-3"></i> Architecture technique</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-header">
+            <span>Élément</span><span>Support</span><span>Rôle</span><span>Accès</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>Serveur ClassCord</strong><br><small>VM VirtualBox</small></span><span>Debian</span><span>Service de tchat Python</span><span>TCP/12345</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>Poste SISR</strong><br><small>hôte physique</small></span><span>Poste de travail</span><span>Relais vers la VM (redirection NAT)</span><span>IP de l'hôte, port 12345</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>Clients</strong><br><small>étudiants SLAM</small></span><span>Application Java</span><span>Connexion au tchat</span><span>IP de l'hôte, port 12345</span>
+          </div>
+        </div>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Service</span><span>Python 3 — <code>server_classcord.py</code> — écoute sur <code>0.0.0.0:12345</code></span></div>
+          <div class="stack-item"><span class="stack-label">Démarrage</span><span>systemd — <code>classcord.service</code> — utilisateur dédié <code>classcord</code></span></div>
+          <div class="stack-item"><span class="stack-label">Conteneur</span><span>Dockerfile (python:3.11-slim) + <code>docker-compose.yml</code> — <code>restart: unless-stopped</code></span></div>
+          <div class="stack-item"><span class="stack-label">Sécurité</span><span>ufw (port 12345/tcp) — fail2ban (jail <code>classcord</code>, maxretry 3, bantime 600) — logs <code>/var/log/classcord/</code></span></div>
+          <div class="stack-item"><span class="stack-label">Données</span><span>Comptes dans <code>users.pkl</code> (sauvegarde cron) — schéma SQLite <code>classcord.db</code> défini dans <code>db.py</code></span></div>
+          <div class="stack-item"><span class="stack-label">Exploitation</span><span><code>journalctl -u classcord.service -f</code> — export des messages en CSV/JSON</span></div>
+          <div class="stack-item"><span class="stack-label">Versioning</span><span>Git + GitHub — un push par jour avec journal de bord</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- PHASES -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-list-ol"></i> Les 5 jours du projet</h3></summary>
+        <div class="phase-timeline">
+          <div class="phase-item"><span class="phase-num">1</span><div><strong>Mise en route — 16 juin 2025</strong><p>VM Debian sous VirtualBox, utilisateur projet ajouté aux sudoers, passage du NAT au mode pont pour obtenir une vraie IP locale, lancement du serveur et test par telnet depuis une autre machine</p></div></div>
+          <div class="phase-item"><span class="phase-num">2</span><div><strong>Réseau et service — 17 juin 2025</strong><p>Port 12345 ouvert avec ufw, accès depuis un poste SLAM via la redirection NAT, utilisateur dédié classcord, service systemd, Dockerfile et docker-compose, DOC_CONNEXION.md</p></div></div>
+          <div class="phase-item"><span class="phase-num">3</span><div><strong>Sécurité et sauvegardes — 18 juin 2025</strong><p>Journalisation dans un fichier de logs, fail2ban avec filtre personnalisé, script sauvegarde.sh planifié avec cron, SECURITE.md</p></div></div>
+          <div class="phase-item"><span class="phase-num">4</span><div><strong>Évolutions fonctionnelles — 19 juin 2025</strong><p>Inscription et connexion, canaux de discussion, base SQLite, messages système, export CSV/JSON, interface d'administration, FONCTIONNALITES.md</p></div></div>
+          <div class="phase-item"><span class="phase-num">5</span><div><strong>Finalisation — 20 juin 2025</strong><p>Documentation finale (connexion, Docker, sécurité), nettoyage du dépôt, version Docker prête à redéployer</p></div></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- FONCTIONNALITÉS -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-stars"></i> Fonctionnalités ajoutées au serveur</h3></summary>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Comptes</span><span>Inscription (<code>register</code>) et connexion (<code>login</code>), gestion des erreurs : utilisateur existant, mot de passe incorrect</span></div>
+          <div class="stack-item"><span class="stack-label">Canaux</span><span>Plusieurs canaux (#général, #dev, #admin), diffusion limitée aux utilisateurs du canal</span></div>
+          <div class="stack-item"><span class="stack-label">Base SQLite</span><span><code>db.py</code> : tables <code>users</code> et <code>messages</code> (id, sender, content, timestamp, channel)</span></div>
+          <div class="stack-item"><span class="stack-label">Export</span><span><code>export_messages.py</code> : export des messages de la base en JSON ou CSV</span></div>
+          <div class="stack-item"><span class="stack-label">Messages</span><span>Messages système : connexion, déconnexion, alertes du serveur</span></div>
+          <div class="stack-item"><span class="stack-label">Admin</span><span>Interface d'administration : clients connectés, alerte globale, fermeture d'un canal</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- CAPTURES D'ÉCRAN -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-images"></i> Captures d'écran</h3></summary>
+        <div class="screenshots-gallery">
+          <div class="screenshot-item">
+            <img src="files/images/classcord/classcord-01-service-systemd.webp" alt="Service systemd classcord actif" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="screenshot-placeholder" style="display:none"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">01 — Service systemd classcord : active (running)</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="files/images/classcord/classcord-02-docker-compose-build.webp" alt="Construction de l'image Docker avec docker compose" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="screenshot-placeholder" style="display:none"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">02 — Image Docker construite avec docker compose</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="files/images/classcord/classcord-04-fail2ban-actif.webp" alt="Service fail2ban actif" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="screenshot-placeholder" style="display:none"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">03 — Service fail2ban actif</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="files/images/classcord/classcord-06-cron-backups.webp" alt="Tâche cron et fichiers de sauvegarde horodatés" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="screenshot-placeholder" style="display:none"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">04 — Tâche cron et sauvegardes horodatées</p>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- BOUTONS BAS -->
+      <div class="modal-actions detail-actions">
+        <a href="files/Docs/documentation_ClassCord_Server.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-action-pdf">
+          <i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation (PDF)
+        </a>
+        <a href="https://github.com/walo2428/classcord_server" target="_blank" rel="noopener noreferrer" class="btn-action btn-action-github">
+          <i aria-hidden="true" class="bi bi-github"></i> GitHub (journal de bord)
+        </a>
+        <button class="btn-action btn-action-gestion" onclick="closeClasscordModal(); openClasscordGestion()">
+          <i aria-hidden="true" class="bi bi-kanban"></i> Gestion de projet
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== MODALE GESTION DE PROJET CLASSCORD ===== -->
+  <div class="modal-overlay" id="modalClasscordGestion" onclick="if(event.target===this) closeClasscordGestion()">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="classcordGestionTitle">
+      <button class="modal-close" onclick="closeClasscordGestion()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
+
+      <div class="modal-badge"><i aria-hidden="true" class="bi bi-kanban"></i> Gestion de Projet &mdash; Semaine intensive</div>
+      <h2 class="modal-title" id="classcordGestionTitle">ClassCord &mdash; <span>Service de tchat multi-clients</span></h2>
+      <p class="modal-subtitle">16 au 20 juin 2025 &middot; 5 jours &middot; un livrable par jour &middot; journal de bord GitHub</p>
+
+      <div class="modal-divider"></div>
+
+      <!-- CADRAGE CQQCOQP -->
+      <details class="modal-section" open>
+        <summary><h3><i aria-hidden="true" class="bi bi-crosshair"></i> Cadrage CQQCOQP</h3></summary>
+        <div class="cadrage-table">
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-person-fill"></i><span>Qui</span></div>
+            <div class="cadrage-val"><span><strong>Omar Talibi</strong>&nbsp;(SISR) pour le serveur &middot; clients Java d&eacute;velopp&eacute;s par les &eacute;tudiants SLAM</span></div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-gear-fill"></i><span>Quoi</span></div>
+            <div class="cadrage-val"><span>D&eacute;ploiement, s&eacute;curisation et &eacute;volution du serveur de tchat <strong>ClassCord</strong> (Python, port TCP/12345)</span></div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-geo-alt-fill"></i><span>O&ugrave;</span></div>
+            <div class="cadrage-val"><span>VM Debian sous <strong>VirtualBox</strong> &middot; r&eacute;seau p&eacute;dagogique, clients SLAM sur d'autres postes</span></div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-tools"></i><span>Comment</span></div>
+            <div class="cadrage-val"><span>systemd, Docker + docker-compose, ufw, fail2ban, cron, SQLite &middot; code versionn&eacute; avec Git/GitHub</span></div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-calendar3"></i><span>Quand</span></div>
+            <div class="cadrage-val"><span><strong>5 jours</strong>, du 16 au 20 juin 2025 &middot; un push GitHub par jour</span></div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-question-circle-fill"></i><span>Pourquoi</span></div>
+            <div class="cadrage-val"><span>Mettre &agrave; disposition un service de communication interne <strong>fiable, document&eacute; et exploitable</strong></span></div>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- PLANNING -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-arrow-repeat"></i> Planning et livrables</h3></summary>
+        <div class="sprint-timeline sprint-timeline-5">
+          <div class="sprint-card">
+            <p class="sprint-card-num">Jour 1</p>
+            <p class="sprint-card-title">Mise en route</p>
+            <p class="sprint-card-desc">VM Debian, mode pont, lancement du serveur, test telnet</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> README_Jour1.md</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Jour 2</p>
+            <p class="sprint-card-title">Réseau &amp; service</p>
+            <p class="sprint-card-desc">ufw, redirection NAT, systemd, Docker</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> DOC_CONNEXION.md</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Jour 3</p>
+            <p class="sprint-card-title">Sécurité</p>
+            <p class="sprint-card-desc">Logs, fail2ban, sauvegarde cron</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> SECURITE.md</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Jour 4</p>
+            <p class="sprint-card-title">Fonctionnalités</p>
+            <p class="sprint-card-desc">Canaux, SQLite, export, administration</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> FONCTIONNALITES.md</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Jour 5</p>
+            <p class="sprint-card-title">Finalisation</p>
+            <p class="sprint-card-desc">Documentation finale, nettoyage, version Docker</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> Dépôt documenté</span>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- DIFFICULTÉS -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-tools"></i> Difficultés rencontrées et solutions</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-row-2 archi-header">
+            <span>Difficulté</span><span>Solution</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span><code>sudo</code> ne fonctionnait pas au départ</span><span>Ajout de l'utilisateur <code>projet</code> aux sudoers</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>IP partag&eacute;e entre plusieurs machines en NAT</span><span>Passage en mode pont (bridge) pour obtenir une vraie IP locale</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Probl&egrave;me de connexion des clients</span><span>Connexion r&eacute;gl&eacute;e en renseignant manuellement l'h&ocirc;te et le port 12345</span>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- RISQUES -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-exclamation-triangle"></i> Risques identifi&eacute;s et recommandations</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-row-2 archi-header">
+            <span>Risque</span><span>Recommandation</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Confusion entre l'IP de la VM et celle de l'h&ocirc;te lors des tests externes</span><span>Documenter l'IP de l'h&ocirc;te et le port forwarding dans DOC_CONNEXION.md</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Absence de persistance robuste des donn&eacute;es</span><span>Basculer sur SQLite d&egrave;s que possible, avec sauvegardes cron r&eacute;guli&egrave;res</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Documentation incompl&egrave;te pour une reprise par un tiers</span><span>README &agrave; jour et proc&eacute;dures courtes de d&eacute;pannage (service arr&ecirc;t&eacute;, port ferm&eacute;)</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Service non red&eacute;marr&eacute; apr&egrave;s un reboot</span><span><code>systemctl enable classcord</code> et v&eacute;rification au d&eacute;marrage de la VM</span>
+          </div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
   <!-- ===== MODALE GESTION DE PROJET GLPI ===== -->
   <div class="modal-overlay" id="modalGlpiGestion" onclick="if(event.target===this) closeGlpiGestion()">
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="glpiGestionTitle">
@@ -1214,8 +1480,28 @@
     document.body.style.overflow = '';
   }
 
+  // MODALE CLASSCORD DETAILS
+  function openClasscordModal() {
+    document.getElementById('modalClasscord').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeClasscordModal() {
+    document.getElementById('modalClasscord').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // MODALE CLASSCORD GESTION DE PROJET
+  function openClasscordGestion() {
+    document.getElementById('modalClasscordGestion').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeClasscordGestion() {
+    document.getElementById('modalClasscordGestion').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeModal(); closeSyntheseModal(); closeGlpiModal(); closeGlpiGestion(); closeCinezoneModal(); }
+    if (e.key === 'Escape') { closeModal(); closeSyntheseModal(); closeGlpiModal(); closeGlpiGestion(); closeCinezoneModal(); closeClasscordModal(); closeClasscordGestion(); }
   });
 
     function openSyntheseModal(title, compsStr, pdfUrl) {

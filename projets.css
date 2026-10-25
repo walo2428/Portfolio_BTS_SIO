@@ -653,6 +653,7 @@ details.modal-section > summary:hover h3 { color: var(--orange-light); }
   letter-spacing: 0.04em;
 }
 .archi-row small { color: var(--muted); font-size: 0.76rem; }
+.archi-row-2 { grid-template-columns: 1fr 1fr; gap: 14px; }
 
 .archi-stack { display: flex; flex-direction: column; gap: 6px; }
 .stack-item {
@@ -891,6 +892,7 @@ details.modal-section > summary:hover h3 { color: var(--orange-light); }
 
 /* SPRINTS — timeline horizontale */
 .sprint-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.sprint-timeline.sprint-timeline-5 { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 .sprint-card {
   background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
   border-radius: 12px; padding: 16px; position: relative; transition: border-color 0.2s;
@@ -1098,3 +1100,6 @@ details.modal-section > summary:hover h3 { color: var(--orange-light); }
   .detail-actions { flex-direction: column; }
   .btn-action { justify-content: center; }
 }
+
+/* Évite le débordement horizontal des longues chaînes de code dans les modales (mobile) */
+.modal-box code { overflow-wrap: anywhere; word-break: break-word; }
