@@ -206,26 +206,6 @@
             <button class="btn-doc" onclick="openSyntheseModal('N°3 — Déploiement et sécurisation d\'un service de messagerie réseau multi-clients (ClassCord)', 'C1, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
       </div>
     </div>
-    <!-- Monitoring -->
-    <div class="project-card card-stagger" data-category="formation">
-      <div class="project-img-wrap project-cover cover-lgp" aria-hidden="true"><i class="bi bi-graph-up-arrow"></i><span>Supervision<br>Grafana · Prometheus</span></div>
-      <div class="project-body">
-        <p class="project-kicker">Projet N°4</p>
-        <h2 class="project-title">Supervision du système d'information et gestion des incidents</h2>
-        <p class="project-desc">Stack complète de supervision temps réel pour surveiller la santé des serveurs avec tableaux de bord Grafana.</p>
-        <div class="project-tags">
-          <span class="tag">Prometheus</span>
-          <span class="tag">Grafana</span>
-          <span class="tag">Node Exporter</span>
-          <span class="tag">InfluxDB</span>
-        </div>
-        <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
-        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Déploiement d'une stack de supervision avec Prometheus pour la collecte de métriques, Node Exporter sur les serveurs cibles, et Grafana pour la visualisation en temps réel.</div></details>
-        <div class="project-buttons">
-            <a href="files/Docs/documentation_VM1monit_VM2nodel.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('N°4 — Supervision du système d\'information et gestion des incidents', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
-      </div>
-    </div>
     <!-- Windows Server -->
     <div class="project-card card-stagger" data-category="formation">
       <div class="project-img-wrap project-cover cover-ad" aria-hidden="true"><i class="bi bi-people-fill"></i><span>Active Directory<br>Windows Server</span></div>
@@ -300,25 +280,32 @@
             <button class="btn-gestion" onclick="openModal()"><i aria-hidden="true" class="bi bi-diagram-3"></i> Gestion de projet</button></div>
       </div>
     </div>
-    <!-- Établissement ELEVEN -->
+    <!-- Établissement ELEVEN (stage BMA) -->
     <div class="project-card card-stagger" data-category="stages">
       <div class="project-img-wrap project-cover cover-net" aria-hidden="true"><i class="bi bi-hdd-network-fill"></i><span>Réseau multi-sites<br>Cisco · VLAN · RIP v2</span></div>
       <div class="project-body">
         <p class="project-kicker">Stage · BMA Réseaux &amp; Télécom</p>
         <h2 class="project-title">Déploiement d'une infrastructure réseau multi-sites</h2>
-        <p class="project-desc">Conception et déploiement d'une infrastructure réseau complète pour un établissement hôtelier multi-bâtiments (Hôtel, SPA & Gym, Restaurant) avec segmentation VLAN, routage RIP v2 et sécurisation des équipements Cisco.</p>
+        <p class="project-desc">Conception et configuration, sur maquette Packet Tracer, de l'infrastructure réseau de l'établissement ELEVEN (Hôtel, SPA &amp; Gym, Restaurant) : 3 routeurs et 9 switches Cisco, 10 VLANs par service, routage dynamique RIP v2, DHCP, accès SSH sécurisé et Wi-Fi Guest isolé du réseau interne.</p>
         <div class="project-tags">
           <span class="tag">Cisco</span>
           <span class="tag">VLAN</span>
+          <span class="tag">Trunk</span>
           <span class="tag">RIP v2</span>
           <span class="tag">DHCP</span>
           <span class="tag">SSH</span>
           <span class="tag">Packet Tracer</span>
         </div>
         <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Travailler en mode projet">C4</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
-        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Projet réalisé en stage chez BMA Réseaux & Télécom. Infrastructure pour 3 bâtiments reliés via 3 routeurs Cisco (R-MAIN, R-WIFI, R-CLOUD). 10 VLANs par service (STAFF, ADMIN, TV, CCTV, IT, GYM, SPA, CUISINE, Guest, Staff WiFi). Configuration DHCP par VLAN, RIP v2 pour le routage dynamique, sécurisation SSH avec bannières personnalisées, et tests de connectivité inter-VLAN validés.</div></details>
+        <!-- Tableau de synthèse compact -->
+        <div class="card-synthese">
+          <div class="synth-row"><span class="synth-label">Sites</span><span class="synth-value">3 bâtiments : Hôtel, SPA &amp; Gym, Restaurant</span></div>
+          <div class="synth-row"><span class="synth-label">Équipements</span><span class="synth-value">3 routeurs · 1 switch L3 · 8 switches d'accès</span></div>
+          <div class="synth-row"><span class="synth-label">Réseau</span><span class="synth-value">10 VLANs · RIP v2 · DHCP · SSH</span></div>
+          <div class="synth-row"><span class="synth-label">Résultat</span><span class="synth-value success">Maquette fonctionnelle ✓</span></div>
+        </div>
         <div class="project-buttons">
-            <a href="files/Rapport_de_Stage_2.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-details" onclick="openElevenModal()"><i aria-hidden="true" class="bi bi-eye"></i> Détails du projet</button>
             <button class="btn-doc" onclick="openSyntheseModal('Déploiement d\'une infrastructure réseau multi-sites', 'C1, C2, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
       </div>
     </div>
@@ -2408,6 +2395,296 @@
     </div>
   </div>
 
+  <!-- ===== MODALE DÉTAILS STAGE — INFRASTRUCTURE MULTI-SITES (ELEVEN) ===== -->
+  <div class="modal-overlay" id="modalEleven" onclick="if(event.target===this) closeElevenModal()">
+    <div class="modal-box modal-detail" role="dialog" aria-modal="true" aria-labelledby="elevenModalTitle">
+      <button class="modal-close" onclick="closeElevenModal()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
+
+      <div class="modal-badge"><i aria-hidden="true" class="bi bi-hdd-network-fill"></i> Stage BMA Réseaux &amp; Télécom — Établissement ELEVEN</div>
+      <h2 class="modal-title" id="elevenModalTitle">Établissement ELEVEN — <span>Infrastructure réseau multi-sites</span></h2>
+      <p class="modal-subtitle">Cisco · 3 routeurs · 9 switches · 10 VLANs · RIP v2 · DHCP · SSH · Packet Tracer · stage du 5 janvier au 15 février 2026</p>
+
+      <div class="modal-divider"></div>
+
+      <!-- OBJECTIFS -->
+      <details class="modal-section" open>
+        <summary><h3><i aria-hidden="true" class="bi bi-bullseye"></i> Objectifs du projet</h3></summary>
+        <div class="modal-text">
+          <p>Pendant mon stage de 6 semaines chez BMA Réseaux &amp; Télécom, intégrateur réseau niçois, j'ai conçu et configuré sur maquette l'infrastructure réseau complète d'un établissement de trois bâtiments : un hôtel (RDC + 5 étages), un SPA &amp; Gym et un restaurant. L'architecture devait être structurée, sécurisée et segmentée.</p>
+        </div>
+        <div class="obj-grid">
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-diagram-3"></i><p><strong>Segmenter</strong> : un VLAN par service (STAFF, ADMIN, TV, CCTV, IT, GYM, SPA, CUISINE) et deux VLANs Wi-Fi, soit 10 VLANs</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-signpost-split"></i><p><strong>Router</strong> : RIP v2 sur les 3 routeurs Cisco pour échanger dynamiquement les routes entre bâtiments</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-hdd-network"></i><p><strong>Distribuer les adresses</strong> : DHCP configuré sur CISCO-R-MAIN et CISCO-R-WIFI, selon le VLAN</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-shield-lock"></i><p><strong>Sécuriser</strong> : mot de passe console, enable secret, comptes dédiés, SSH et bannière personnalisée</p></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- CONTRAINTES -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-list-check"></i> Cahier des charges</h3></summary>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Matériel</span><span>Uniquement les routeurs et switches Cisco fournis</span></div>
+          <div class="stack-item"><span class="stack-label">Adressage</span><span>Plan d'adressage IP imposé et noms d'hôte (<code>hostname</code>) définis à respecter</span></div>
+          <div class="stack-item"><span class="stack-label">Réseau</span><span>VLAN par service, routage RIP v2, DHCP</span></div>
+          <div class="stack-item"><span class="stack-label">Sécurité</span><span>Sécurisation de tous les équipements</span></div>
+          <div class="stack-item"><span class="stack-label">Validation</span><span>Test de la connectivité entre les bâtiments</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- ARCHITECTURE -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-diagram-3"></i> Architecture technique</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-header">
+            <span>Équipement</span><span>Modèle</span><span>Rôle</span><span>Zone</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>CISCO-R-MAIN</strong><br><strong>CISCO-R-WIFI</strong><br><strong>CISCO-R-CLOUD</strong></span><span>Routeurs Cisco</span><span>Routage RIP v2 · DHCP sur R-MAIN et R-WIFI</span><span>Cœur de réseau</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>SW-L3-COLLECT</strong></span><span>Cisco 3560-24PS (L3)</span><span>Collecte les switches d'accès via des ports trunk</span><span>Cœur de réseau</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>SW-A-STAFF, ADMIN, TV, CCTV, IT</strong></span><span>Cisco 2960-24TT</span><span>Accès : 1 switch par service</span><span>Bâtiment A — Hôtel</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>SW-B-GYM, SW-B-SPA</strong></span><span>Cisco 2960-24TT</span><span>Accès : GYM et SPA</span><span>Bâtiment B — SPA &amp; Gym</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>SW-C-CUISINE</strong></span><span>Cisco 2960-24TT</span><span>Accès : CUISINE</span><span>Bâtiment C — Restaurant</span>
+          </div>
+        </div>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Réseau principal</span><span><code>192.168.40.0</code> — liaison <code>20.10.10.0/30</code> entre R-MAIN et R-CLOUD</span></div>
+          <div class="stack-item"><span class="stack-label">Wi-Fi</span><span><code>10.10.1.0/24</code> Wi-Fi Guest (VLAN 100) · <code>10.10.2.0/24</code> Wi-Fi Staff (VLAN 200)</span></div>
+          <div class="stack-item"><span class="stack-label">Réseau Cloud</span><span><code>172.16.100.0/29</code> — serveur 1 <code>172.16.100.1</code>, serveur 2 <code>172.16.100.2</code>, passerelle <code>172.16.100.6</code></span></div>
+          <div class="stack-item"><span class="stack-label">VLANs</span><span>10 STAFF · 20 ADMIN · 30 TV · 40 CCTV · 50 IT · 60 GYM · 70 SPA · 80 CUISINE · 100 Guest · 200 Staff WiFi</span></div>
+          <div class="stack-item"><span class="stack-label">Maquette</span><span>Réalisée sous Cisco Packet Tracer, avec une zone par bâtiment</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- ÉTAPES -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-list-ol"></i> Les 5 étapes de configuration</h3></summary>
+        <div class="phase-timeline">
+          <div class="phase-item"><span class="phase-num">1</span><div><strong>VLANs</strong><p>Création des VLANs sur les switches et attribution des ports à chaque service</p></div></div>
+          <div class="phase-item"><span class="phase-num">2</span><div><strong>DHCP</strong><p>Distribution automatique des adresses IP selon le VLAN, sur CISCO-R-MAIN et CISCO-R-WIFI</p></div></div>
+          <div class="phase-item"><span class="phase-num">3</span><div><strong>RIP v2</strong><p>Activation sur les routeurs pour l'échange dynamique des routes entre les réseaux</p></div></div>
+          <div class="phase-item"><span class="phase-num">4</span><div><strong>Sécurisation</strong><p>Mot de passe console, enable secret, comptes administrateur, SSH et bannière personnalisée</p></div></div>
+          <div class="phase-item"><span class="phase-num">5</span><div><strong>Tests</strong><p>Ping inter-VLAN, ping entre bâtiments, contrôle de la table ARP et de la table de routage</p></div></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- SÉCURITÉ -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-shield-check"></i> Sécurisation des équipements</h3></summary>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Console</span><span>Mot de passe sur l'accès console</span></div>
+          <div class="stack-item"><span class="stack-label">Mode privilégié</span><span><code>enable secret</code> pour protéger le mode privilégié</span></div>
+          <div class="stack-item"><span class="stack-label">Comptes</span><span>Un utilisateur dédié par type d'équipement : <code>Radmin</code> pour les routeurs, <code>Sadmin</code> pour les switches</span></div>
+          <div class="stack-item"><span class="stack-label">Accès distant</span><span>SSH activé pour l'administration à distance</span></div>
+          <div class="stack-item"><span class="stack-label">Bannière</span><span>Message d'avertissement personnalisé (<code>banner</code>)</span></div>
+          <div class="stack-item"><span class="stack-label">Isolation</span><span>Wi-Fi Guest séparé du réseau interne</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- CAPTURES D'ÉCRAN -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-images"></i> Maquette et rapport de stage</h3></summary>
+        <div class="screenshots-gallery">
+          <div class="screenshot-item">
+            <img src="files/images/stage_eleven/eleven_batiment_a.png" alt="Maquette Packet Tracer du bâtiment A (hôtel) : cinq switches 2960-24TT SW-A-STAFF, ADMIN, TV, CCTV et IT, chacun avec un PC et une imprimante" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="screenshot-placeholder" style="display:none"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">01 — Bâtiment A (Hôtel) : 5 switches d'accès, un par service</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="files/images/stage_eleven/eleven_batiment_b.png" alt="Maquette Packet Tracer du bâtiment B (SPA et Gym) : switches SW-B-GYM et SW-B-SPA avec leurs PC et imprimantes" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="screenshot-placeholder" style="display:none"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">02 — Bâtiment B (SPA &amp; Gym) : switches GYM et SPA</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="files/images/stage_eleven/eleven_batiment_c.png" alt="Maquette Packet Tracer du bâtiment C (restaurant) : switch SW-C-CUISINE avec un PC et une imprimante" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="screenshot-placeholder" style="display:none"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">03 — Bâtiment C (Restaurant) : switch CUISINE</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="files/images/stage_eleven/eleven_rapport_architecture.png" alt="Page du rapport de stage : architecture réseau, plan d'adressage, liste des 10 VLANs et switch L3 SW-L3-COLLECT" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="screenshot-placeholder" style="display:none"><i aria-hidden="true" class="bi bi-image"></i></div>
+            <p class="screenshot-caption">04 — Rapport de stage : architecture, adressage et VLANs</p>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- RÉSULTATS -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-patch-check"></i> Résultats de la maquette — 4 points validés</h3></summary>
+        <div class="recette-list">
+          <div class="recette-item ok"><span class="recette-num">01</span><span>Communication entre bâtiments : ping entre bâtiments validé</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">02</span><span>Wi-Fi Guest : isolé du réseau interne</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">03</span><span>Routage : RIP v2 fonctionnel, table de routage contrôlée</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">04</span><span>DHCP : adresses distribuées automatiquement selon le VLAN</span><span class="recette-status">OK</span></div>
+        </div>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Contrôles</span><span>Ping inter-VLAN, ping entre bâtiments, table ARP, table de routage</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- BILAN -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-mortarboard"></i> Ce que le projet m'a apporté</h3></summary>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Architecture</span><span>Conception d'un réseau multi-bâtiments structuré et segmenté</span></div>
+          <div class="stack-item"><span class="stack-label">Routage</span><span>Routage dynamique RIP v2 entre plusieurs routeurs Cisco</span></div>
+          <div class="stack-item"><span class="stack-label">Sécurité</span><span>Sécurisation d'une infrastructure : accès SSH, comptes, bannières</span></div>
+          <div class="stack-item"><span class="stack-label">Segmentation</span><span>Un VLAN par service et isolation du Wi-Fi invité</span></div>
+          <div class="stack-item"><span class="stack-label">Contexte</span><span>Stage en entreprise : installation de routeurs 4G/5G, dépannage, migrations d'équipements, détaillés dans le rapport de stage</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- BOUTONS BAS -->
+      <div class="modal-actions detail-actions">
+        <a href="files/Rapport_de_Stage_2.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-action-pdf">
+          <i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Rapport de stage (PDF)
+        </a>
+        <button class="btn-action btn-action-gestion" onclick="closeElevenModal(); openElevenGestion()">
+          <i aria-hidden="true" class="bi bi-kanban"></i> Gestion de projet
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== MODALE GESTION DE PROJET — STAGE ELEVEN (version allégée) ===== -->
+  <div class="modal-overlay" id="modalElevenGestion" onclick="if(event.target===this) closeElevenGestion()">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="elevenGestionTitle">
+      <button class="modal-close" onclick="closeElevenGestion()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
+
+      <div class="modal-badge"><i aria-hidden="true" class="bi bi-kanban"></i> Gestion de Projet — Stage BMA Réseaux &amp; Télécom</div>
+      <h2 class="modal-title" id="elevenGestionTitle">Établissement ELEVEN — <span>Infrastructure réseau multi-sites</span></h2>
+      <p class="modal-subtitle">Stage du 5 janvier au 15 février 2026 · 5 étapes · 4 points validés</p>
+
+      <div class="modal-divider"></div>
+
+      <!-- CADRAGE CQQCOQP -->
+      <details class="modal-section" open>
+        <summary><h3><i aria-hidden="true" class="bi bi-crosshair"></i> Cadrage CQQCOQP</h3></summary>
+        <div class="cadrage-table">
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-person-fill"></i><span>Qui</span></div>
+            <div class="cadrage-val"><strong>Omar Talibi</strong> (BTS SIO SISR) · stagiaire chez <strong>BMA Réseaux &amp; Télécom</strong>, encadré par le tuteur de stage</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-gear-fill"></i><span>Quoi</span></div>
+            <div class="cadrage-val">Concevoir et configurer l'<strong>infrastructure réseau</strong> d'un établissement : VLANs, DHCP, routage RIP v2, sécurisation</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-geo-alt-fill"></i><span>Où</span></div>
+            <div class="cadrage-val">Établissement <strong>ELEVEN</strong> en 3 bâtiments : A Hôtel (RDC + 5 étages), B SPA &amp; Gym, C Restaurant</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-tools"></i><span>Comment</span></div>
+            <div class="cadrage-val">Routeurs et switches <strong>Cisco</strong>, maquette <strong>Packet Tracer</strong> · plan d'adressage et noms d'hôte imposés</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-calendar3"></i><span>Quand</span></div>
+            <div class="cadrage-val">Pendant le <strong>stage de 6 semaines</strong>, du 5 janvier au 15 février 2026</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-question-circle-fill"></i><span>Pourquoi</span></div>
+            <div class="cadrage-val">Relier tous les services via une architecture <strong>structurée, sécurisée et segmentée</strong></div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-currency-euro"></i><span>Combien</span></div>
+            <div class="cadrage-val"><strong>Matériel fourni uniquement</strong> : 3 routeurs, 1 switch L3 et 8 switches d'accès Cisco</div>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- DÉCOUPAGE EN ÉTAPES -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-list-ol"></i> Découpage en 5 étapes</h3></summary>
+        <div class="phase-timeline">
+          <div class="phase-item"><span class="phase-num">1</span><div><strong>VLANs</strong><p>Création des 10 VLANs sur les switches, attribution des ports, trunk vers le switch L3</p></div></div>
+          <div class="phase-item"><span class="phase-num">2</span><div><strong>DHCP</strong><p>Distribution des adresses selon le VLAN, sur CISCO-R-MAIN et CISCO-R-WIFI</p></div></div>
+          <div class="phase-item"><span class="phase-num">3</span><div><strong>RIP v2</strong><p>Activation sur les routeurs pour échanger les routes entre les réseaux</p></div></div>
+          <div class="phase-item"><span class="phase-num">4</span><div><strong>Sécurisation</strong><p>Mot de passe console, enable secret, comptes Radmin et Sadmin, SSH, bannière</p></div></div>
+          <div class="phase-item"><span class="phase-num">5</span><div><strong>Tests</strong><p>Ping inter-VLAN, ping entre bâtiments, table ARP, table de routage</p></div></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- CONTRAINTES / VIGILANCE -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-exclamation-triangle"></i> Contraintes et points de vigilance</h3></summary>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Matériel</span><span>Utiliser uniquement les routeurs et switches Cisco fournis</span></div>
+          <div class="stack-item"><span class="stack-label">Adressage</span><span>Respecter le plan d'adressage IP imposé</span></div>
+          <div class="stack-item"><span class="stack-label">Nommage</span><span>Respecter les noms d'hôte définis (<code>hostname</code>)</span></div>
+          <div class="stack-item"><span class="stack-label">Services</span><span>Configurer RIP v2 et DHCP, créer un VLAN par service</span></div>
+          <div class="stack-item"><span class="stack-label">Sécurité</span><span>Sécuriser les équipements et isoler le Wi-Fi Guest du réseau interne</span></div>
+          <div class="stack-item"><span class="stack-label">Validation</span><span>Tester la connectivité entre les bâtiments avant de conclure</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- LIVRABLES ET SUIVI -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-check2-square"></i> Livrables et état final</h3></summary>
+        <div class="recette-list">
+          <div class="recette-item ok"><span class="recette-num">01</span><span>Maquette Packet Tracer des 3 bâtiments avec VLANs et routage</span><span class="recette-status">Fait</span></div>
+          <div class="recette-item ok"><span class="recette-num">02</span><span>Configuration des équipements : VLAN, DHCP, RIP v2, sécurisation</span><span class="recette-status">Fait</span></div>
+          <div class="recette-item ok"><span class="recette-num">03</span><span>Tests de connectivité entre VLANs et entre bâtiments</span><span class="recette-status">Fait</span></div>
+          <div class="recette-item ok"><span class="recette-num">04</span><span>Compte rendu dans le rapport de stage</span><span class="recette-status">Fait</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- BILAN -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-mortarboard"></i> Bilan</h3></summary>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Résultat</span><span>Maquette fonctionnelle : communication entre bâtiments validée, Wi-Fi Guest isolé, routage et DHCP opérationnels</span></div>
+          <div class="stack-item"><span class="stack-label">Techniques</span><span>Architecture réseau, routage dynamique, sécurisation d'infrastructure, segmentation VLAN, gestion multi-bâtiments</span></div>
+          <div class="stack-item"><span class="stack-label">Professionnelles</span><span>Autonomie, rigueur technique, analyse méthodique, travail en équipe</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-actions detail-actions">
+        <button class="btn-action btn-action-pdf" onclick="closeElevenGestion(); openElevenModal()">
+          <i aria-hidden="true" class="bi bi-eye"></i> Détails du projet
+        </button>
+        <a href="files/Rapport_de_Stage_2.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-action-pdf">
+          <i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Rapport de stage (PDF)
+        </a>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ===== MODALE SYNTHESE DYNAMIQUE ===== -->
   <div class="modal-overlay" id="modalSynthese" onclick="if(event.target===this) closeSyntheseModal()">
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="syntheseModalTitle">
@@ -2636,8 +2913,26 @@
     document.body.style.overflow = '';
   }
 
+  // MODALE STAGE ELEVEN (INFRASTRUCTURE MULTI-SITES) DETAILS
+  function openElevenModal() {
+    document.getElementById('modalEleven').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeElevenModal() {
+    document.getElementById('modalEleven').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function openElevenGestion() {
+    document.getElementById('modalElevenGestion').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeElevenGestion() {
+    document.getElementById('modalElevenGestion').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeModal(); closeSyntheseModal(); closeGlpiModal(); closeGlpiGestion(); closeCinezoneModal(); closeClasscordModal(); closeClasscordGestion(); closeRp01Modal(); closeRp01Gestion(); closeRp02Modal(); closeRp02Gestion(); }
+    if (e.key === 'Escape') { closeModal(); closeSyntheseModal(); closeGlpiModal(); closeGlpiGestion(); closeCinezoneModal(); closeClasscordModal(); closeClasscordGestion(); closeRp01Modal(); closeRp01Gestion(); closeRp02Modal(); closeRp02Gestion(); closeElevenModal(); closeElevenGestion(); }
   });
 
     function openSyntheseModal(title, compsStr, pdfUrl) {
