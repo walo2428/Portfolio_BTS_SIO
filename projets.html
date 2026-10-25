@@ -105,26 +105,31 @@
     </div>
     <!-- RP02 Supervision & Monitoring -->
     <div class="project-card card-stagger" data-category="rp">
-      <div class="project-img-wrap project-cover cover-lgp" aria-hidden="true"><i class="bi bi-graph-up-arrow"></i><span>Loki · Grafana · Prometheus</span></div>
+      <div class="project-img-wrap project-cover cover-lgp" aria-hidden="true"><i class="bi bi-graph-up-arrow"></i><span>Supervision<br>Loki · Grafana · Prometheus</span></div>
       <div class="project-body">
         <p class="project-kicker">RP02</p>
         <h2 class="project-title">Supervision, Monitoring & Services Web Internes sur infrastructure existante</h2>
-        <p class="project-desc">Déploiement d'une stack LGP (Loki + Grafana + Prometheus), Nextcloud Hub avec authentification LDAP/AD, reverse proxy Traefik HTTPS et centralisation des logs syslog Cisco — rétention 12 mois LCEN.</p>
-        <p class="project-result"><i aria-hidden="true" class="bi bi-patch-check-fill"></i> Recette : 8 tests sur 9 validés</p>
+        <p class="project-desc">Déploiement, sur un serveur Debian 12 entièrement conteneurisé, d'une stack de supervision Prometheus / Loki / Grafana, de Nextcloud Hub 28 avec authentification OpenLDAP, d'un reverse proxy Traefik en HTTPS, du DHCP Kea et du DNS Bind9, avec centralisation des journaux Cisco conservés 12 mois (LCEN).</p>
         <div class="project-tags">
           <span class="tag">Prometheus</span>
           <span class="tag">Grafana</span>
           <span class="tag">Loki</span>
           <span class="tag">Traefik</span>
           <span class="tag">Nextcloud</span>
-          <span class="tag">LDAP / AD</span>
+          <span class="tag">OpenLDAP</span>
           <span class="tag">Docker</span>
-          <span class="tag">HTTPS / TLS</span>
+          <span class="tag">SNMP</span>
         </div>
         <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Travailler en mode projet">C4</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
-        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Référence IRIS-NICE-RP02 — v6. Stack LGP : Prometheus + node_exporter + Alertmanager + Loki + Promtail + Grafana via Traefik HTTPS. Nextcloud Hub 28 remplace le wiki (LDAP AD natif, quotas par groupe). Chaîne syslog : Cisco IOS → rsyslog → Promtail → Loki. Rétention 12 mois LCEN. 7 headers sécurité HTTP. 8/9 tests PV recette validés.</div></details>
+        <!-- Tableau de synthèse compact -->
+        <div class="card-synthese">
+          <div class="synth-row"><span class="synth-label">Serveur</span><span class="synth-value">Debian 12 · 13 conteneurs</span></div>
+          <div class="synth-row"><span class="synth-label">Réseau</span><span class="synth-value">6 VLANs · Cisco 2960-S, 1941W</span></div>
+          <div class="synth-row"><span class="synth-label">Supervision</span><span class="synth-value">SNMP · 6 alertes · logs 12 mois</span></div>
+          <div class="synth-row"><span class="synth-label">Recette</span><span class="synth-value success">9 tests sur 9 validés ✓</span></div>
+        </div>
         <div class="project-buttons">
-            <a href="files/Docs/documentation_rp03.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation</a>
+            <button class="btn-details" onclick="openRp02Modal()"><i aria-hidden="true" class="bi bi-eye"></i> Détails du projet</button>
             <button class="btn-doc" onclick="openSyntheseModal('RP02 — Supervision, Monitoring & Services Web Internes sur infrastructure existante', 'C1, C2, C4, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
       </div>
     </div>
@@ -1832,6 +1837,577 @@
     </div>
   </div>
 
+  <!-- ===== MODALE DÉTAILS RP02 SUPERVISION ===== -->
+  <div class="modal-overlay" id="modalRp02" onclick="if(event.target===this) closeRp02Modal()">
+    <div class="modal-box modal-detail" role="dialog" aria-modal="true" aria-labelledby="rp02ModalTitle">
+      <button class="modal-close" onclick="closeRp02Modal()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
+
+      <div class="modal-badge"><i aria-hidden="true" class="bi bi-graph-up-arrow"></i> Réalisation professionnelle RP02 — Supervision &amp; services web</div>
+      <h2 class="modal-title" id="rp02ModalTitle">Supervision IRIS — <span>Monitoring &amp; services web internes</span></h2>
+      <p class="modal-subtitle">Debian 12 · Docker · 13 conteneurs · 6 VLANs · SNMP Cisco · du 23 mars au 10 avril 2026</p>
+
+      <div class="modal-divider"></div>
+
+      <!-- OBJECTIFS -->
+      <details class="modal-section" open>
+        <summary><h3><i aria-hidden="true" class="bi bi-bullseye"></i> Objectifs du projet</h3></summary>
+        <div class="modal-text">
+          <p>L'école IRIS Nice ne disposait d'aucun service web interne sécurisé, d'aucune supervision centralisée de ses serveurs et équipements réseau, ni d'aucune centralisation des journaux système. Le projet répond à cet appel d'offre en ajoutant ces services sur l'infrastructure Cisco existante, avec un seul serveur Debian 12 et des services conteneurisés avec Docker.</p>
+        </div>
+        <div class="obj-grid">
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-activity"></i><p><strong>Superviser</strong> : serveur Linux, services web et équipements Cisco (SNMP) avec Prometheus, Grafana et 6 règles d'alerte</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-journal-text"></i><p><strong>Centraliser les journaux</strong> : syslog Cisco collecté par rsyslog, Promtail et Loki, conservé 12 mois (conformité LCEN)</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-lock"></i><p><strong>Services web sécurisés</strong> : Nextcloud Hub 28 et outils d'administration derrière Traefik, en HTTPS avec en-têtes de sécurité</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-people"></i><p><strong>Authentification centralisée</strong> : annuaire OpenLDAP avec 3 groupes (Admins, Profs, Étudiants) utilisés par Nextcloud et Grafana</p></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- ARCHITECTURE -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-diagram-3"></i> Architecture technique</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-header">
+            <span>Équipement</span><span>Modèle / OS</span><span>Rôle</span><span>Adresse IP</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>Serveur</strong></span><span>Debian 12 · Docker Engine 29</span><span>Services Docker, Kea DHCP, Bind9, rsyslog</span><span>192.168.50.20</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>SW3-IRIS</strong></span><span>Cisco Catalyst 2960-S</span><span>Trunk 802.1Q, ports 802.1X, SSH</span><span>192.168.50.253</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>R1-IRIS</strong></span><span>Cisco 1941W</span><span>Router-on-stick, NAT, ACL, relais DHCP</span><span>192.168.50.254</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>AP-IRIS</strong></span><span>Cisco C9105AXI</span><span>Wi-Fi 6, WPA3, 802.1X</span><span>192.168.50.150</span>
+          </div>
+        </div>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Domaine</span><span>Zone interne <code>iris-nice.lan</code> — services joignables par nom sur <code>192.168.50.20</code></span></div>
+          <div class="stack-item"><span class="stack-label">VLANs</span><span>10 Étudiants · 20 Profs · 30 Administration · 40 Guest · 50 Management · 99 PRE-AUTH (VLAN par défaut)</span></div>
+          <div class="stack-item"><span class="stack-label">DHCP</span><span>Kea DHCP4 installé sur Debian — 6 plages <code>.10</code> à <code>.250</code>, relais par <code>ip helper-address 192.168.50.20</code> sur le routeur</span></div>
+          <div class="stack-item"><span class="stack-label">DNS</span><span>Bind9 — zone maître <code>iris-nice.lan</code>, 6 enregistrements de services, redirecteurs publics</span></div>
+          <div class="stack-item"><span class="stack-label">Reverse proxy</span><span>Traefik v2.11 — découverte des services par labels Docker, redirection HTTP vers HTTPS</span></div>
+          <div class="stack-item"><span class="stack-label">Réseaux Docker</span><span>4 réseaux : traefik-network, ldap-network, monitoring-network, nextcloud-network</span></div>
+          <div class="stack-item"><span class="stack-label">Arborescence</span><span><code>/opt/iris-services/</code> — un dossier et un <code>docker-compose.yml</code> par stack (ldap, traefik, nextcloud, monitoring)</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- FLUX UTILISATEUR -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-signpost-split"></i> Parcours d'un utilisateur</h3></summary>
+        <div class="phase-timeline">
+          <div class="phase-item"><span class="phase-num">1</span><div><strong>Connexion filaire ou Wi-Fi</strong><p>Le switch place le client dans le VLAN 99 (PRE-AUTH) par défaut, en attente d'affectation</p></div></div>
+          <div class="phase-item"><span class="phase-num">2</span><div><strong>Adressage par DHCP Kea</strong><p>Le routeur relaie la requête vers le serveur, qui attribue une adresse selon le VLAN</p></div></div>
+          <div class="phase-item"><span class="phase-num">3</span><div><strong>Résolution par Bind9</strong><p>Les noms <code>*.iris-nice.lan</code> sont résolus vers 192.168.50.20</p></div></div>
+          <div class="phase-item"><span class="phase-num">4</span><div><strong>Routage par Traefik</strong><p>Le reverse proxy dirige la requête en HTTPS vers le service demandé</p></div></div>
+          <div class="phase-item"><span class="phase-num">5</span><div><strong>Authentification OpenLDAP</strong><p>Nextcloud et Grafana vérifient l'identité dans l'annuaire, le groupe LDAP détermine les droits</p></div></div>
+          <div class="phase-item"><span class="phase-num">6</span><div><strong>Supervision en continu</strong><p>Métriques SNMP et journaux des équipements remontent vers le serveur</p></div></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- SERVICES -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-boxes"></i> Services et accès par VLAN</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-header">
+            <span>Service</span><span>URL</span><span>VLAN autorisés</span><span>Authentification</span>
+          </div>
+          <div class="archi-row"><span><strong>Nextcloud</strong></span><span>cloud.iris-nice.lan</span><span>10, 20, 30, 50</span><span>LDAP</span></div>
+          <div class="archi-row"><span><strong>Grafana</strong></span><span>grafana.iris-nice.lan</span><span>20, 30, 50</span><span>LDAP</span></div>
+          <div class="archi-row"><span><strong>Prometheus</strong></span><span>prometheus.iris-nice.lan</span><span>30, 50</span><span>—</span></div>
+          <div class="archi-row"><span><strong>Alertmanager</strong></span><span>alertmanager.iris-nice.lan</span><span>30, 50</span><span>—</span></div>
+          <div class="archi-row"><span><strong>phpLDAPadmin</strong></span><span>ldap.iris-nice.lan</span><span>50</span><span>LDAP</span></div>
+          <div class="archi-row"><span><strong>Traefik</strong></span><span>traefik.iris-nice.lan</span><span>50</span><span>BasicAuth</span></div>
+        </div>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">VLAN 10</span><span>Étudiants — Nextcloud uniquement</span></div>
+          <div class="stack-item"><span class="stack-label">VLAN 20</span><span>Professeurs — Nextcloud et Grafana</span></div>
+          <div class="stack-item"><span class="stack-label">VLAN 30 / 50</span><span>Administration et Management — accès complet</span></div>
+          <div class="stack-item"><span class="stack-label">VLAN 40</span><span>Guest — Internet uniquement : le DHCP lui donne un DNS public, les services internes restent inaccessibles</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- SUPERVISION -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-speedometer2"></i> Supervision et alertes</h3></summary>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Prometheus</span><span>Collecte toutes les 15 s sur 4 jobs : Node Exporter, sondes HTTP Blackbox sur 4 services, SNMP des 2 équipements Cisco, Prometheus lui-même</span></div>
+          <div class="stack-item"><span class="stack-label">SNMP</span><span>SNMPv2c en lecture seule sur le routeur et le switch — table IF-MIB : état, trafic entrant et sortant, description des interfaces</span></div>
+          <div class="stack-item"><span class="stack-label">Grafana</span><span>Sources Prometheus et Loki — tableaux de bord Node Exporter Full et SNMP Cisco (ID 11169)</span></div>
+          <div class="stack-item"><span class="stack-label">Alertmanager</span><span>Regroupement par alerte et instance, notification par e-mail, un incident critique masque l'avertissement correspondant</span></div>
+        </div>
+        <div class="archi-table">
+          <div class="archi-row archi-header">
+            <span>Règle</span><span>Condition</span><span>Durée</span><span>Sévérité</span>
+          </div>
+          <div class="archi-row"><span><strong>CPUHigh</strong></span><span>CPU &gt; 80 %</span><span>5 min</span><span>warning</span></div>
+          <div class="archi-row"><span><strong>MemoryHigh</strong></span><span>RAM &gt; 90 %</span><span>2 min</span><span>warning</span></div>
+          <div class="archi-row"><span><strong>DiskFull</strong></span><span>Disque &gt; 85 %</span><span>5 min</span><span>critical</span></div>
+          <div class="archi-row"><span><strong>ServiceDown</strong></span><span>Sonde HTTP en échec</span><span>1 min</span><span>critical</span></div>
+          <div class="archi-row"><span><strong>InstanceDown</strong></span><span>Cible Prometheus injoignable</span><span>1 min</span><span>critical</span></div>
+          <div class="archi-row"><span><strong>HighLoad</strong></span><span>Charge système &gt; 2</span><span>5 min</span><span>warning</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- JOURNAUX -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-file-earmark-text"></i> Centralisation des journaux (LCEN)</h3></summary>
+        <div class="phase-timeline">
+          <div class="phase-item"><span class="phase-num">1</span><div><strong>Syslog IOS</strong><p>Routeur et switch envoient leurs journaux au serveur (<code>logging host</code>, UDP 514, horodatage à la milliseconde)</p></div></div>
+          <div class="phase-item"><span class="phase-num">2</span><div><strong>rsyslog</strong><p>Réception et écriture d'un fichier par équipement dans <code>/var/log/cisco/</code></p></div></div>
+          <div class="phase-item"><span class="phase-num">3</span><div><strong>Promtail</strong><p>Lecture des journaux syslog et des conteneurs Docker, envoi vers Loki</p></div></div>
+          <div class="phase-item"><span class="phase-num">4</span><div><strong>Loki</strong><p>Stockage avec une rétention de 8760 heures, soit 12 mois, conforme à la loi LCEN</p></div></div>
+          <div class="phase-item"><span class="phase-num">5</span><div><strong>Grafana</strong><p>Consultation et recherche dans les journaux</p></div></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- ANNUAIRE ET NEXTCLOUD -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-person-lines-fill"></i> Annuaire OpenLDAP et Nextcloud</h3></summary>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Annuaire</span><span><code>dc=iris-nice,dc=lan</code> — 20 comptes nominatifs répartis en 3 groupes : Admins, Profs, Étudiants (SISR et SLAM)</span></div>
+          <div class="stack-item"><span class="stack-label">Grafana</span><span>Admins → rôle Admin · Profs → Editor · Étudiants → Viewer</span></div>
+          <div class="stack-item"><span class="stack-label">Nextcloud</span><span>Hub 28 sur PostgreSQL 15, connexion LDAP sur l'attribut <code>uid</code>, accessible en HTTPS par Traefik</span></div>
+          <div class="stack-item"><span class="stack-label">Quotas</span><span>Admins illimité · Profs 50 Go · Étudiants 5 Go</span></div>
+          <div class="stack-item"><span class="stack-label">Administration</span><span>phpLDAPadmin pour gérer l'annuaire, commandes <code>occ ldap:test-config</code> pour contrôler le lien avec Nextcloud</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- SÉCURITÉ -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-shield-check"></i> Sécurité et exploitation</h3></summary>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">HTTPS</span><span>Certificat auto-signé valable 10 ans, avec SAN DNS et IP — redirection automatique de HTTP vers HTTPS</span></div>
+          <div class="stack-item"><span class="stack-label">En-têtes</span><span>HSTS sur 1 an avec sous-domaines, X-Content-Type-Options, Referrer-Policy</span></div>
+          <div class="stack-item"><span class="stack-label">Accès</span><span>Tableau de bord Traefik protégé par BasicAuth — accès SSH uniquement sur le switch — segmentation par VLAN</span></div>
+          <div class="stack-item"><span class="stack-label">Secrets</span><span>Mots de passe dans des fichiers <code>.env</code> exclus du dépôt GitHub, seul un <code>.env.example</code> est publié</span></div>
+          <div class="stack-item"><span class="stack-label">Démarrage</span><span>Ordre documenté : ldap, traefik, nextcloud, monitoring, puis kea-dhcp4-server, named et rsyslog</span></div>
+          <div class="stack-item"><span class="stack-label">Contrôles</span><span><code>docker ps</code>, <code>systemctl is-active</code>, <code>dig</code> et un test HTTPS sur chaque service</span></div>
+          <div class="stack-item"><span class="stack-label">Sauvegarde</span><span>Configuration du switch sauvegardée et restaurée par TFTP vers le serveur</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- CAPTURES D'ÉCRAN -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-images"></i> Schéma et captures</h3></summary>
+        <div class="screenshots-gallery">
+          <div class="screenshot-item">
+            <img src="files/images/rp02/rp02_schema_reseau.png" alt="Schéma réseau RP02 : utilisateurs, switch Catalyst 2960-S, serveur Debian 12 avec ses conteneurs Docker, 6 VLANs et routeur Cisco 1941" loading="lazy">
+            <p class="screenshot-caption">01 — Schéma réseau : utilisateurs, switch, serveur Debian, VLANs et routeur</p>
+          </div>
+          <!-- EMPLACEMENT CAPTURE 02 : dépose l'image dans files/images/rp02/ puis dé-commente ce bloc
+          <div class="screenshot-item">
+            <img src="files/images/rp02/rp02_grafana_node_exporter.png" alt="Tableau de bord Grafana Node Exporter Full du serveur Debian" loading="lazy">
+            <p class="screenshot-caption">02 — Grafana : tableau de bord Node Exporter Full</p>
+          </div>
+          -->
+          <!-- EMPLACEMENT CAPTURE 03
+          <div class="screenshot-item">
+            <img src="files/images/rp02/rp02_grafana_snmp_cisco.png" alt="Tableau de bord Grafana SNMP Cisco avec l'état et le trafic des interfaces du switch et du routeur" loading="lazy">
+            <p class="screenshot-caption">03 — Grafana : supervision SNMP du switch et du routeur Cisco</p>
+          </div>
+          -->
+          <!-- EMPLACEMENT CAPTURE 04
+          <div class="screenshot-item">
+            <img src="files/images/rp02/rp02_loki_logs_cisco.png" alt="Journaux syslog des équipements Cisco consultés dans Grafana via Loki" loading="lazy">
+            <p class="screenshot-caption">04 — Loki : journaux Cisco centralisés dans Grafana</p>
+          </div>
+          -->
+          <!-- EMPLACEMENT CAPTURE 05
+          <div class="screenshot-item">
+            <img src="files/images/rp02/rp02_nextcloud_ldap.png" alt="Interface Nextcloud après connexion avec un compte de l'annuaire OpenLDAP" loading="lazy">
+            <p class="screenshot-caption">05 — Nextcloud : connexion avec un compte OpenLDAP</p>
+          </div>
+          -->
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- PV DE RECETTE -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-patch-check"></i> PV de recette — 9 tests sur 9 validés</h3></summary>
+        <div class="recette-list">
+          <div class="recette-item ok"><span class="recette-num">T01</span><span>Conteneurs et services : 13 conteneurs actifs, Kea, Bind9 et rsyslog actifs</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T02</span><span>DNS : les 6 noms <code>*.iris-nice.lan</code> résolus vers 192.168.50.20</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T03</span><span>DHCP : baux par VLAN, passerelles correctes, DNS public pour le Guest</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T04</span><span>HTTPS : 6 services joignables via Traefik, HTTP redirigé vers HTTPS</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T05</span><span>OpenLDAP : annuaire interrogeable, 20 comptes et 3 groupes</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T06</span><span>Nextcloud : connexion LDAP, <code>occ ldap:test-config</code> valide, quotas par groupe</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T07</span><span>Grafana : connexion LDAP, rôles Admin, Editor et Viewer selon le groupe</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T08</span><span>Prometheus : cibles actives (serveur, sondes HTTP, SNMP Cisco), 6 règles d'alerte chargées</span><span class="recette-status">OK</span></div>
+          <div class="recette-item ok"><span class="recette-num">T09</span><span>Journaux Cisco : un fichier par équipement, consultables dans Grafana via Loki</span><span class="recette-status">OK</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- BOUTONS BAS -->
+      <div class="modal-actions detail-actions">
+        <a href="files/Docs/documentation_rp03.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-action-pdf">
+          <i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation PDF
+        </a>
+        <a href="https://github.com/walo2428/RP2" target="_blank" rel="noopener noreferrer" class="btn-action btn-action-github">
+          <i aria-hidden="true" class="bi bi-github"></i> GitHub
+        </a>
+        <button class="btn-action btn-action-gestion" onclick="closeRp02Modal(); openRp02Gestion()">
+          <i aria-hidden="true" class="bi bi-kanban"></i> Gestion de projet
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== MODALE GESTION DE PROJET RP02 ===== -->
+  <div class="modal-overlay" id="modalRp02Gestion" onclick="if(event.target===this) closeRp02Gestion()">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="rp02GestionTitle">
+      <button class="modal-close" onclick="closeRp02Gestion()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
+
+      <div class="modal-badge"><i aria-hidden="true" class="bi bi-kanban"></i> Gestion de Projet — Méthodologie Agile</div>
+      <h2 class="modal-title" id="rp02GestionTitle">Supervision IRIS — <span>Monitoring &amp; services web internes</span></h2>
+      <p class="modal-subtitle">23 mars au 10 avril 2026 · ~3 semaines · 3 sprints · 9 tests de recette · Réf. IRIS-NICE-RP02</p>
+
+      <div class="modal-divider"></div>
+
+      <!-- CADRAGE CQQCOQP -->
+      <details class="modal-section" open>
+        <summary><h3><i aria-hidden="true" class="bi bi-crosshair"></i> Cadrage CQQCOQP</h3></summary>
+        <div class="cadrage-table">
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-person-fill"></i><span>Qui</span></div>
+            <div class="cadrage-val"><strong>Équipe projet</strong> dont <strong>Omar Talibi</strong>&nbsp;(SISR) · Mode projet · Mediaschool IRIS Nice</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-gear-fill"></i><span>Quoi</span></div>
+            <div class="cadrage-val">Supervision et <strong>services web internes</strong> : Prometheus, Loki, Grafana, Nextcloud, OpenLDAP, Traefik, Kea et Bind9</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-geo-alt-fill"></i><span>Où</span></div>
+            <div class="cadrage-val"><strong>Serveur Debian 12</strong> (192.168.50.20, VLAN 50) · équipements Cisco existants : routeur 1941W, switch 2960-S, borne C9105AXI</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-tools"></i><span>Comment</span></div>
+            <div class="cadrage-val">Services conteneurisés avec <strong>Docker Compose</strong> · configurations et documentation Markdown versionnées sur GitHub</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-calendar3"></i><span>Quand</span></div>
+            <div class="cadrage-val"><strong>3 sprints</strong> · du 23/03/2026 au 10/04/2026 · 9 cas de test de recette</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-question-circle-fill"></i><span>Pourquoi</span></div>
+            <div class="cadrage-val">L'école n'avait <strong>aucun service web interne sécurisé</strong>, aucune supervision centralisée ni centralisation des journaux</div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-currency-euro"></i><span>Combien</span></div>
+            <div class="cadrage-val"><strong>1 serveur</strong> · équipements Cisco déjà en place · logiciels libres, aucun achat de licence</div>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- OBJECTIFS SMART -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-bullseye"></i> Objectifs SMART(E)</h3></summary>
+        <div class="smart-list">
+          <div class="smart-item">
+            <div class="smart-letter s">S</div>
+            <div class="smart-content"><strong>Spécifique</strong><p>Déployer sur un serveur Debian 12 une supervision Prometheus, Loki et Grafana, un Nextcloud authentifié par OpenLDAP et un reverse proxy Traefik en HTTPS, avec centralisation des journaux Cisco.</p></div>
+          </div>
+          <div class="smart-item">
+            <div class="smart-letter m">M</div>
+            <div class="smart-content"><strong>Mesurable</strong><p>9 cas de tests (T01 à T09), 6 règles d'alerte, 2 équipements Cisco supervisés, rétention des journaux de 8760 heures soit 12 mois.</p></div>
+          </div>
+          <div class="smart-item">
+            <div class="smart-letter a">A</div>
+            <div class="smart-content"><strong>Atteignable</strong><p>Images Docker officielles et documentées, équipements Cisco déjà en service sur le réseau de l'école.</p></div>
+          </div>
+          <div class="smart-item">
+            <div class="smart-letter r">R</div>
+            <div class="smart-content"><strong>Réaliste</strong><p>Un seul serveur, quatre stacks Docker Compose indépendantes qui se démarrent dans un ordre documenté.</p></div>
+          </div>
+          <div class="smart-item">
+            <div class="smart-letter t">T</div>
+            <div class="smart-content"><strong>Temporel</strong><p>Trois semaines, du 23/03/2026 au 10/04/2026, découpées en 3 sprints avec un livrable technique par sprint.</p></div>
+          </div>
+          <div class="smart-item">
+            <div class="smart-letter e">E</div>
+            <div class="smart-content"><strong>Éthique</strong><p>Comptes nominatifs, rôles par groupe, mots de passe hors du dépôt GitHub, conservation des journaux conforme à la loi LCEN.</p></div>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- SPRINTS -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-arrow-repeat"></i> Découpage en Sprints</h3></summary>
+        <div class="sprint-timeline">
+          <div class="sprint-card">
+            <p class="sprint-card-num">Sprint 1 · 23 au 27 mars</p>
+            <p class="sprint-card-title">Socle réseau &amp; annuaire</p>
+            <p class="sprint-card-desc">VLANs, routeur et switch Cisco, serveur Debian 12, Docker, DHCP Kea, DNS Bind9 et OpenLDAP</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> T01–T03, T05 validés</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Sprint 2 · 30 mars au 3 avril</p>
+            <p class="sprint-card-title">Services web sécurisés</p>
+            <p class="sprint-card-desc">Traefik en HTTPS, Nextcloud sur PostgreSQL, phpLDAPadmin et lien LDAP de Nextcloud</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> T04, T06 validés</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Sprint 3 · 6 au 10 avril</p>
+            <p class="sprint-card-title">Supervision, journaux &amp; recette</p>
+            <p class="sprint-card-desc">Prometheus, exporters, alertes, Loki, Promtail, rsyslog, Grafana LDAP, recette et documentation</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> T07–T09 validés</span>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- KANBAN -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-kanban"></i> Tableau Kanban — État en fin de Sprint 2</h3></summary>
+        <div class="kanban-board">
+          <div class="kanban-col">
+            <div class="kanban-header todo">À faire <span class="count">3</span></div>
+            <div class="kanban-cards">
+              <div class="kanban-card">
+                <div class="kanban-card-label red"></div>
+                <div class="kanban-card-title">Loki, Promtail, rsyslog</div>
+                <div class="kanban-card-sub">Chaîne des journaux Cisco, rétention 12 mois</div>
+                <div class="kanban-card-footer"><span><i aria-hidden="true" class="bi bi-sprint"></i> Sprint 3</span></div>
+              </div>
+              <div class="kanban-card">
+                <div class="kanban-card-label red"></div>
+                <div class="kanban-card-title">Grafana LDAP</div>
+                <div class="kanban-card-sub">Rôles Admin, Editor, Viewer et tableaux de bord</div>
+                <div class="kanban-card-footer"><span><i aria-hidden="true" class="bi bi-sprint"></i> Sprint 3</span></div>
+              </div>
+              <div class="kanban-card">
+                <div class="kanban-card-label red"></div>
+                <div class="kanban-card-title">PV de recette final</div>
+                <div class="kanban-card-sub">T01 à T09 et résultats archivés</div>
+                <div class="kanban-card-footer"><span><i aria-hidden="true" class="bi bi-sprint"></i> Sprint 3</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="kanban-col">
+            <div class="kanban-header doing">En cours <span class="count">2</span></div>
+            <div class="kanban-cards">
+              <div class="kanban-card">
+                <div class="kanban-card-label yellow"></div>
+                <div class="kanban-card-title">Prometheus + exporters</div>
+                <div class="kanban-card-sub">Node, Blackbox, SNMP Cisco, 6 règles d'alerte</div>
+                <div class="kanban-card-footer"><span><i aria-hidden="true" class="bi bi-hourglass-split"></i> En test</span></div>
+              </div>
+              <div class="kanban-card">
+                <div class="kanban-card-label blue"></div>
+                <div class="kanban-card-title">Documentation</div>
+                <div class="kanban-card-sub">7 fiches, procédures d'exploitation, schéma</div>
+                <div class="kanban-card-footer"><span><i aria-hidden="true" class="bi bi-pencil-square"></i> Rédaction</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="kanban-col">
+            <div class="kanban-header done">Terminé <span class="count">6</span></div>
+            <div class="kanban-cards">
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">Réseau Cisco</div><div class="kanban-card-sub">6 VLANs, trunk, relais DHCP</div></div>
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">DHCP Kea + DNS Bind9</div><div class="kanban-card-sub">6 plages, zone iris-nice.lan</div></div>
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">Docker + OpenLDAP</div><div class="kanban-card-sub">3 groupes, 20 comptes</div></div>
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">Traefik HTTPS</div><div class="kanban-card-sub">Certificat, en-têtes, BasicAuth</div></div>
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">Nextcloud + PostgreSQL</div><div class="kanban-card-sub">Hub 28, quotas par groupe</div></div>
+              <div class="kanban-card"><div class="kanban-card-label green"></div><div class="kanban-card-title">Lien LDAP Nextcloud</div><div class="kanban-card-sub">Test occ ldap:test-config</div></div>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- EISENHOWER -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-grid-3x3"></i> Matrice Eisenhower — Sprint 3</h3></summary>
+        <div class="modal-text">
+          <p>Au sprint 3, tout reposait sur la <strong>chaîne des journaux</strong> et sur <strong>Prometheus</strong> : sans eux, ni alertes ni recette possible. Ces deux tâches sont passées en « faire maintenant », devant le reste.</p>
+        </div>
+        <div class="eisenhower-wrapper">
+          <div class="eisenhower-y-label">IMPORTANCE ↑</div>
+          <div class="eisenhower-matrix">
+            <div class="eisenhower-cell q1">
+              <p class="eisenhower-cell-title"><i aria-hidden="true" class="bi bi-lightning-fill"></i> Faire maintenant</p>
+              <div class="eisenhower-task"><strong>Prometheus et alertes</strong><br>Base de la supervision et de la recette</div>
+              <div class="eisenhower-task"><strong>Chaîne des journaux Cisco</strong><br>rsyslog, Promtail, Loki</div>
+            </div>
+            <div class="eisenhower-cell q2">
+              <p class="eisenhower-cell-title"><i aria-hidden="true" class="bi bi-calendar-check"></i> Planifier</p>
+              <div class="eisenhower-task"><strong>Rétention de 12 mois</strong><br>Exigence LCEN, à régler dans Loki</div>
+              <div class="eisenhower-task"><strong>Documentation</strong><br>Rédigée au fil des sprints</div>
+            </div>
+            <div class="eisenhower-cell q3">
+              <p class="eisenhower-cell-title"><i aria-hidden="true" class="bi bi-person-plus"></i> Déléguer</p>
+              <div class="eisenhower-task"><strong>Tâches réparties dans l'équipe</strong><br>Selon les compétences de chacun</div>
+            </div>
+            <div class="eisenhower-cell q4">
+              <p class="eisenhower-cell-title"><i aria-hidden="true" class="bi bi-x-circle"></i> Reporter</p>
+              <div class="eisenhower-task"><strong>Certificat d'une autorité publique</strong><br>Réseau interne — hors périmètre</div>
+              <div class="eisenhower-task"><strong>SNMPv3</strong><br>SNMPv2c suffisant pour ce périmètre</div>
+            </div>
+          </div>
+          <p class="eisenhower-x-label">URGENCE →</p>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- RISQUES -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-exclamation-triangle"></i> Gestion des risques</h3></summary>
+        <div class="risk-table">
+          <div class="risk-row risk-header">
+            <span>ID</span><span>Risque</span><span>Probabilité</span><span>Impact</span><span>Mitigation</span>
+          </div>
+          <div class="risk-row">
+            <span class="risk-id crit">R1</span><span class="risk-name">Changement d'adresse du serveur non répercuté</span>
+            <span class="risk-level"><span class="risk-dot med"></span> Moyenne</span>
+            <span class="risk-level"><span class="risk-dot high"></span> Critique</span>
+            <span class="risk-mitigation">Recherche de l'ancienne IP dans toutes les configurations avec <code>grep -r</code> · noms DNS plutôt que des IP</span>
+          </div>
+          <div class="risk-row">
+            <span class="risk-id elev">R2</span><span class="risk-name">Annuaire OpenLDAP injoignable</span>
+            <span class="risk-level"><span class="risk-dot low"></span> Faible</span>
+            <span class="risk-level"><span class="risk-dot high"></span> Élevé</span>
+            <span class="risk-mitigation">Hôte LDAP par nom de conteneur · test <code>occ ldap:test-config</code> · alerte ServiceDown</span>
+          </div>
+          <div class="risk-row">
+            <span class="risk-id moy">R3</span><span class="risk-name">Disque saturé par les journaux conservés 12 mois</span>
+            <span class="risk-level"><span class="risk-dot med"></span> Moyenne</span>
+            <span class="risk-level"><span class="risk-dot med"></span> Moyen</span>
+            <span class="risk-mitigation">Règle d'alerte DiskFull à 85 % · compactage Loki avec rétention automatique</span>
+          </div>
+          <div class="risk-row">
+            <span class="risk-id moy">R4</span><span class="risk-name">Perte de configuration Cisco</span>
+            <span class="risk-level"><span class="risk-dot low"></span> Faible</span>
+            <span class="risk-level"><span class="risk-dot high"></span> Élevé</span>
+            <span class="risk-mitigation">Sauvegarde et restauration TFTP vers le serveur · configurations versionnées sur GitHub</span>
+          </div>
+          <div class="risk-row">
+            <span class="risk-id faib">R5</span><span class="risk-name">Accès des invités aux services internes</span>
+            <span class="risk-level"><span class="risk-dot low"></span> Faible</span>
+            <span class="risk-level"><span class="risk-dot med"></span> Moyen</span>
+            <span class="risk-mitigation">VLAN 40 isolé · DNS public fourni par le DHCP · ACL sur le routeur</span>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- DIFFICULTÉS -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-tools"></i> Difficultés rencontrées et solutions</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-row-2 archi-header">
+            <span>Difficulté</span><span>Solution</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Ancienne adresse du serveur (<code>192.168.40.2</code>) restée dans des fichiers de configuration après le passage en VLAN 50</span><span>Recherche dans <code>/opt/iris-services/</code> avec <code>grep -r</code> sur les fichiers <code>.yml</code>, <code>.toml</code>, <code>.conf</code> et <code>.php</code>, procédure ajoutée à la documentation</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Nextcloud n'atteignait plus l'annuaire après le changement d'adresse</span><span>Hôte LDAP remplacé par le nom du conteneur avec <code>occ ldap:set-config s01 ldapHost openldap</code>, puis contrôle par <code>ldap:test-config</code></span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Interdire les services internes aux invités sans alourdir les règles du routeur</span><span>DNS public <code>8.8.8.8</code> distribué par le DHCP au VLAN 40 : les noms <code>iris-nice.lan</code> ne sont plus résolus</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Surveiller des équipements Cisco qui ne parlent pas le format Prometheus</span><span>SNMP Exporter avec le module IF-MIB et un tableau de bord Grafana dédié (ID 11169)</span>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- POINTS DE VIGILANCE -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-shield-exclamation"></i> Points de vigilance</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-row-2 archi-header">
+            <span>Constat</span><span>Position retenue</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Certificat auto-signé : avertissement du navigateur au premier accès</span><span>Acceptable sur un réseau interne ; en production, le remplacer par un certificat d'une autorité reconnue</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>SNMPv2c : communauté transmise sans chiffrement</span><span>Lecture seule et réseau de management ; SNMPv3 envisageable en évolution</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Syslog en UDP : pas d'accusé de réception</span><span>Acceptable pour ce périmètre ; une transmission fiable (TCP ou TLS) peut être ajoutée</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Mots de passe nécessaires aux services</span><span>Stockés dans des fichiers <code>.env</code> non publiés, seul un <code>.env.example</code> est sur GitHub</span>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- KPI -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-bar-chart"></i> Indicateurs de performance (KPI)</h3></summary>
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon"><i aria-hidden="true" class="bi bi-clipboard-check"></i></div>
+            <p class="kpi-value">9/9</p>
+            <p class="kpi-label">Tests validés — T01 à T09 tous passés</p>
+            <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i aria-hidden="true" class="bi bi-boxes"></i></div>
+            <p class="kpi-value">13</p>
+            <p class="kpi-label">Conteneurs Docker — 4 stacks Compose</p>
+            <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i aria-hidden="true" class="bi bi-bell"></i></div>
+            <p class="kpi-value">6</p>
+            <p class="kpi-label">Règles d'alerte — CPU, RAM, disque, service, instance, charge</p>
+            <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-icon"><i aria-hidden="true" class="bi bi-journal-text"></i></div>
+            <p class="kpi-value">7</p>
+            <p class="kpi-label">Fiches de documentation — réseau, services, LDAP, supervision, exploitation</p>
+            <div class="kpi-bar"><div class="kpi-bar-fill"></div></div>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <div class="modal-actions">
+        <a href="files/Docs/documentation_rp03.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Documentation complète (PDF)</a>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ===== MODALE SYNTHESE DYNAMIQUE ===== -->
   <div class="modal-overlay" id="modalSynthese" onclick="if(event.target===this) closeSyntheseModal()">
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="syntheseModalTitle">
@@ -2040,8 +2616,28 @@
     document.body.style.overflow = '';
   }
 
+  // MODALE RP02 SUPERVISION DETAILS
+  function openRp02Modal() {
+    document.getElementById('modalRp02').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeRp02Modal() {
+    document.getElementById('modalRp02').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // MODALE RP02 GESTION DE PROJET
+  function openRp02Gestion() {
+    document.getElementById('modalRp02Gestion').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeRp02Gestion() {
+    document.getElementById('modalRp02Gestion').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeModal(); closeSyntheseModal(); closeGlpiModal(); closeGlpiGestion(); closeCinezoneModal(); closeClasscordModal(); closeClasscordGestion(); closeRp01Modal(); closeRp01Gestion(); }
+    if (e.key === 'Escape') { closeModal(); closeSyntheseModal(); closeGlpiModal(); closeGlpiGestion(); closeCinezoneModal(); closeClasscordModal(); closeClasscordGestion(); closeRp01Modal(); closeRp01Gestion(); closeRp02Modal(); closeRp02Gestion(); }
   });
 
     function openSyntheseModal(title, compsStr, pdfUrl) {
