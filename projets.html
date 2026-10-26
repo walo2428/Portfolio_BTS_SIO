@@ -208,24 +208,32 @@
     </div>
     <!-- Windows Server -->
     <div class="project-card card-stagger" data-category="formation">
-      <div class="project-img-wrap project-cover cover-ad" aria-hidden="true"><i class="bi bi-people-fill"></i><span>Active Directory<br>Windows Server</span></div>
+      <div class="project-img-wrap project-cover cover-iac" aria-hidden="true"><i class="bi bi-terminal-fill"></i><span>Automatisation AD<br>Vagrant · PowerShell</span></div>
       <div class="project-body">
         <p class="project-kicker">Projet N°5</p>
-        <h2 class="project-title">Annuaire centralisé : mise en place et gestion Active Directory</h2>
-        <p class="project-desc">Déploiement d'une infrastructure Windows Server complète : AD DS, DNS, DHCP, GPO, serveur de fichiers et automatisations PowerShell.</p>
+        <h2 class="project-title">Automatisation d'une infrastructure Active Directory avec Vagrant et PowerShell</h2>
+        <p class="project-desc">Infrastructure as Code : un <code>Vagrantfile</code> et 3 scripts PowerShell rejouables créent seuls 3 VM Windows et configurent le domaine (AD DS, DNS, DHCP, GPO), le serveur de fichiers (quotas FSRM, WSUS, WDS) et la jonction du poste Windows 11, sans installation manuelle.</p>
         <div class="project-tags">
-          <span class="tag">Windows Server</span>
+          <span class="tag">Windows Server 2022</span>
           <span class="tag">Active Directory</span>
           <span class="tag">GPO</span>
-          <span class="tag">DHCP</span>
-          <span class="tag">DNS</span>
+          <span class="tag">DHCP / DNS</span>
+          <span class="tag">FSRM</span>
+          <span class="tag">WSUS / WDS</span>
           <span class="tag">PowerShell</span>
+          <span class="tag">Vagrant</span>
         </div>
         <p class="project-skills"><span>Compétences</span> <abbr class="skill-chip" title="Gérer le patrimoine informatique">C1</abbr><abbr class="skill-chip" title="Répondre aux incidents et aux demandes d'assistance et d'évolution">C2</abbr><abbr class="skill-chip" title="Mettre à disposition des utilisateurs un service informatique">C5</abbr><abbr class="skill-chip" title="Organiser son développement professionnel">C6</abbr></p>
-        <details class="project-more"><summary>Voir le détail</summary><div class="details-box">Mise en place complète d'un domaine Active Directory, configuration des rôles, création d'OU, gestion des stratégies GPO et scripts PowerShell d'automatisation.</div></details>
+        <!-- Tableau de synthèse compact -->
+        <div class="card-synthese">
+          <div class="synth-row"><span class="synth-label">Machines</span><span class="synth-value">3 VM · SRV-DC1, SRV-FS1 (Server 2022) + CL-W11-1 (Windows 11)</span></div>
+          <div class="synth-row"><span class="synth-label">Services</span><span class="synth-value">AD DS · DNS · DHCP · GPO · FSRM · WSUS · WDS</span></div>
+          <div class="synth-row"><span class="synth-label">Périmètre</span><span class="synth-value">domaine mediaschool.local · 5 OUs · 3 groupes · 4 GPO · 3 scripts</span></div>
+          <div class="synth-row"><span class="synth-label">Automatisation</span><span class="synth-value">Vagrant + PowerShell · vagrant up puis vagrant provision</span></div>
+        </div>
         <div class="project-buttons">
-            <a href="https://github.com/Mediaschool-IRIS-BTS-SISR-2025/WinServ-PowerShell" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-github"></i> Documentation</a>
-            <button class="btn-doc" onclick="openSyntheseModal('N°5 — Annuaire centralisé : mise en place et gestion Active Directory', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
+            <button class="btn-details" onclick="openAdTpModal()"><i aria-hidden="true" class="bi bi-eye"></i> Détails du projet</button>
+            <button class="btn-doc" onclick="openSyntheseModal('N°5 — Automatisation d\'une infrastructure Active Directory avec Vagrant et PowerShell', 'C1, C2, C5, C6', 'files/Tableau_Synthese_E4.pdf')"><i aria-hidden="true" class="bi bi-clipboard-check"></i> Tableau Synthèse</button></div>
       </div>
     </div>
     <!-- GLPI -->
@@ -1308,6 +1316,281 @@
       <div class="modal-actions">
         <a href="files/Docs/documentation_GLPI11.pdf" target="_blank" rel="noopener noreferrer" class="btn-doc"><i aria-hidden="true" class="bi bi-file-earmark-pdf"></i> Rapport gestion de projet (PDF)</a>
       </div>
+
+    </div>
+  </div>
+
+  <!-- ===== MODALE DÉTAILS N°5 ANNUAIRE CENTRALISÉ (ACTIVE DIRECTORY VAGRANT) ===== -->
+  <div class="modal-overlay" id="modalAdTp" onclick="if(event.target===this) closeAdTpModal()">
+    <div class="modal-box modal-detail" role="dialog" aria-modal="true" aria-labelledby="adTpModalTitle">
+      <button class="modal-close" onclick="closeAdTpModal()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
+
+      <div class="modal-badge"><i aria-hidden="true" class="bi bi-terminal-fill"></i> Projet N°5 — Infrastructure as Code</div>
+      <h2 class="modal-title" id="adTpModalTitle">Automatisation Active Directory — <span>Vagrant &amp; PowerShell</span></h2>
+      <p class="modal-subtitle">Déploiement automatisé · Windows Server 2022 · Vagrant / VirtualBox · 3 VM · 3 scripts PowerShell · TP SISR 2e année</p>
+
+      <div class="modal-divider"></div>
+
+      <!-- OBJECTIFS -->
+      <details class="modal-section" open>
+        <summary><h3><i aria-hidden="true" class="bi bi-bullseye"></i> Objectifs du projet</h3></summary>
+        <div class="modal-text">
+          <p>Ce projet ne se limite pas à installer un annuaire : il <strong>automatise</strong> son déploiement complet (<em>Infrastructure as Code</em>). Dans le cadre du TP « Annuaire d'établissement &amp; Masterisation », un <code>Vagrantfile</code> décrit les trois machines virtuelles et trois scripts PowerShell installent et configurent Active Directory, le DNS, le DHCP, les GPO, les partages, les quotas, WSUS et WDS. L'environnement se recrée à l'identique en deux commandes, au lieu d'être monté à la main.</p>
+        </div>
+        <div class="obj-grid">
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-people"></i><p><strong>Centraliser les identités</strong> : domaine <code>mediaschool.local</code>, 5 OUs, 3 groupes de sécurité et un compte de test par service (Administration, Profs, Élèves)</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-hdd-network"></i><p><strong>Services réseau</strong> : DNS intégré à l'annuaire et DHCP sur le contrôleur de domaine (plage .50 à .200, bail de 6 h)</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-folder-symlink"></i><p><strong>Fichiers et quotas</strong> : partage SMB des répertoires personnels (lecteur H:) et quotas FSRM de 10, 5 et 1 Go selon le profil</p></div>
+          <div class="obj-item"><i aria-hidden="true" class="bi bi-arrow-repeat"></i><p><strong>Maintenir et déployer les postes</strong> : WSUS piloté par GPO pour les mises à jour, WDS pour le démarrage PXE et préparation de MDT</p></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- ARCHITECTURE -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-diagram-3"></i> Architecture technique</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-header">
+            <span>Machine</span><span>Système</span><span>Rôles et services</span><span>Adresse IP</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>SRV-DC1</strong></span><span>Windows Server 2022</span><span>AD DS, DNS, DHCP, GPO</span><span>192.168.100.10</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>SRV-FS1</strong></span><span>Windows Server 2022</span><span>Fichiers, quotas FSRM, WSUS, WDS</span><span>192.168.100.20</span>
+          </div>
+          <div class="archi-row">
+            <span><strong>CL-W11-1</strong></span><span>Windows 11</span><span>Poste client joint au domaine</span><span>192.168.100.30</span>
+          </div>
+        </div>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Domaine</span><span><code>mediaschool.local</code> — forêt créée par <code>Install-ADDSForest</code> sur SRV-DC1</span></div>
+          <div class="stack-item"><span class="stack-label">Réseau</span><span>Réseau privé VirtualBox <code>192.168.100.0/24</code>, passerelle <code>.1</code>, DNS des serveurs et du client pointant vers le contrôleur de domaine</span></div>
+          <div class="stack-item"><span class="stack-label">Virtualisation</span><span>Vagrant + VirtualBox, boxes <code>gusztavvargadr</code> (Server 2022 et Windows 11) — 4 Go, 5 Go et 4 Go de RAM par VM, environ 16 Go conseillés sur l'hôte</span></div>
+          <div class="stack-item"><span class="stack-label">Code</span><span><code>Vagrantfile</code>, <code>setup-domain.ps1</code>, <code>setup-fileserver.ps1</code>, <code>setup-client.ps1</code> — scripts rejouables : chaque objet n'est créé que s'il n'existe pas</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- DÉPLOIEMENT -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-list-ol"></i> Procédure de déploiement en deux temps</h3></summary>
+        <div class="phase-timeline">
+          <div class="phase-item"><span class="phase-num">1</span><div><strong>vagrant up</strong><p>Création des 3 VM, renommage, adresse IP fixe, installation des rôles puis promotion de SRV-DC1 en contrôleur de domaine</p></div></div>
+          <div class="phase-item"><span class="phase-num">2</span><div><strong>Redémarrage du contrôleur de domaine</strong><p>La promotion impose un redémarrage que Vagrant ne gère pas : l'erreur affichée est attendue, il suffit d'attendre environ 3 minutes</p></div></div>
+          <div class="phase-item"><span class="phase-num">3</span><div><strong>vagrant provision</strong><p>Reprise des scripts : DHCP, OUs, groupes, comptes, GPO et GPO WSUS sur le contrôleur de domaine</p></div></div>
+          <div class="phase-item"><span class="phase-num">4</span><div><strong>Serveur de fichiers</strong><p>Jonction au domaine, puis installation de FS, FSRM, WSUS et WDS, création du partage et des quotas</p></div></div>
+          <div class="phase-item"><span class="phase-num">5</span><div><strong>Poste client</strong><p>Configuration IP et DNS, attente du contrôleur de domaine, jonction automatique à <code>mediaschool.local</code></p></div></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- ANNUAIRE, GPO, DHCP -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-gear-wide-connected"></i> Annuaire, GPO et DHCP</h3></summary>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Structure</span><span><code>ECOLE</code> › <code>Comptes-Utilisateurs</code> › <code>Administration</code>, <code>Profs</code>, <code>Eleves</code></span></div>
+          <div class="stack-item"><span class="stack-label">Groupes</span><span><code>MS-Administration</code>, <code>MS-Profs</code>, <code>MS-Eleves</code> (portée globale) — un compte de test par OU, membre de son groupe, avec le lecteur <code>H:</code> pointant vers <code>\\SRV-FS1\Homes</code></span></div>
+          <div class="stack-item"><span class="stack-label">GPO par service</span><span><code>GPO-ADM-Poste</code>, <code>GPO-PROF-Poste</code>, <code>GPO-ELEVE-Poste</code>, chacune liée à l'OU correspondante</span></div>
+          <div class="stack-item"><span class="stack-label">GPO WSUS</span><span><code>GPO-WSUS-Clients</code> liée à l'OU ECOLE : les postes interrogent <code>http://SRV-FS1:8530</code> et installent automatiquement les mises à jour</span></div>
+          <div class="stack-item"><span class="stack-label">DHCP</span><span>Serveur autorisé dans l'annuaire, étendue <code>SCOPE-LAB</code> de 192.168.100.50 à .200, bail de 6 h, options DNS, passerelle et domaine</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- FICHIERS, WSUS, WDS -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-hdd-stack"></i> Fichiers, WSUS et déploiement des postes</h3></summary>
+        <div class="archi-stack">
+          <div class="stack-item"><span class="stack-label">Partage</span><span>Partage SMB <code>Homes</code> sur <code>C:\Donnees\Homes</code> — Administrateurs en contrôle total, Utilisateurs du domaine en modification</span></div>
+          <div class="stack-item"><span class="stack-label">Quotas FSRM</span><span>Modèles <code>Quota-Admin</code> 10 Go, <code>Quota-Prof</code> 5 Go, <code>Quota-Eleve</code> 1 Go (limite stricte) — quota automatique Élève appliqué aux répertoires personnels</span></div>
+          <div class="stack-item"><span class="stack-label">WSUS</span><span>Rôle installé, post-installation <code>wsusutil</code> avec base interne (WID), contenu stocké dans <code>C:\WSUS</code></span></div>
+          <div class="stack-item"><span class="stack-label">WDS / MDT</span><span>Rôle WDS installé pour le démarrage PXE, dossier <code>C:\MDT</code> préparé — ADK et MDT installés à la main après le déploiement</span></div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- EMPLACEMENT CAPTURES N°5 : dépose les 4 images (.webp) dans files/images/ad-tp/ avec ces noms, puis dé-commente cette section
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-images"></i> Captures d'écran</h3></summary>
+        <div class="screenshots-gallery">
+          <div class="screenshot-item">
+            <img src="files/images/ad-tp/ad-tp-01-ous.webp" alt="Structure des OUs ECOLE, Administration, Profs et Eleves dans Utilisateurs et ordinateurs Active Directory" loading="lazy">
+            <p class="screenshot-caption">01 — Structure des OUs dans Active Directory</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="files/images/ad-tp/ad-tp-02-dhcp.webp" alt="Étendue DHCP SCOPE-LAB active sur SRV-DC1" loading="lazy">
+            <p class="screenshot-caption">02 — Étendue DHCP SCOPE-LAB active</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="files/images/ad-tp/ad-tp-03-quotas-fsrm.webp" alt="Modèles de quotas FSRM de 10, 5 et 1 Go sur SRV-FS1" loading="lazy">
+            <p class="screenshot-caption">03 — Modèles de quotas FSRM sur SRV-FS1</p>
+          </div>
+          <div class="screenshot-item">
+            <img src="files/images/ad-tp/ad-tp-04-client-domaine.webp" alt="Poste Windows 11 CL-W11-1 joint au domaine mediaschool.local" loading="lazy">
+            <p class="screenshot-caption">04 — Poste CL-W11-1 joint au domaine</p>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+      -->
+
+      <!-- BOUTONS BAS -->
+      <div class="modal-actions detail-actions">
+        <a href="https://github.com/Mediaschool-IRIS-BTS-SISR-2025/WinServ-PowerShell" target="_blank" rel="noopener noreferrer" class="btn-action btn-action-github">
+          <i aria-hidden="true" class="bi bi-github"></i> GitHub (README et scripts)
+        </a>
+        <button class="btn-action btn-action-gestion" onclick="closeAdTpModal(); openAdTpGestion()">
+          <i aria-hidden="true" class="bi bi-kanban"></i> Gestion de projet
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== MODALE GESTION DE PROJET N°5 ANNUAIRE CENTRALISÉ ===== -->
+  <div class="modal-overlay" id="modalAdTpGestion" onclick="if(event.target===this) closeAdTpGestion()">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="adTpGestionTitle">
+      <button class="modal-close" onclick="closeAdTpGestion()" aria-label="Fermer"><i aria-hidden="true" class="bi bi-x"></i></button>
+
+      <div class="modal-badge"><i aria-hidden="true" class="bi bi-kanban"></i> Gestion de Projet — TP SISR</div>
+      <h2 class="modal-title" id="adTpGestionTitle">Automatisation Active Directory — <span>Vagrant &amp; PowerShell</span></h2>
+      <p class="modal-subtitle">TP de 2e année · 2 parties · 5 étapes · un livrable par étape · dépôt GitHub</p>
+
+      <div class="modal-divider"></div>
+
+      <!-- CADRAGE CQQCOQP -->
+      <details class="modal-section" open>
+        <summary><h3><i aria-hidden="true" class="bi bi-crosshair"></i> Cadrage CQQCOQP</h3></summary>
+        <div class="cadrage-table">
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-person-fill"></i><span>Qui</span></div>
+            <div class="cadrage-val"><span><strong>Omar Talibi</strong>, étudiant en 2e année de BTS SIO option SISR, en environnement de formation (MediaSchool IRIS)</span></div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-gear-fill"></i><span>Quoi</span></div>
+            <div class="cadrage-val"><span>TP « Annuaire d'établissement &amp; Masterisation » : <strong>Active Directory</strong>, DHCP, partages et quotas (partie 1), WSUS et WDS/MDT (partie 2)</span></div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-geo-alt-fill"></i><span>Où</span></div>
+            <div class="cadrage-val"><span>3 VM sous <strong>VirtualBox</strong>, réseau privé <code>192.168.100.0/24</code>, domaine <code>mediaschool.local</code></span></div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-tools"></i><span>Comment</span></div>
+            <div class="cadrage-val"><span>Vagrant et 3 scripts PowerShell rejouables · code versionné avec Git/GitHub</span></div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-calendar3"></i><span>Quand</span></div>
+            <div class="cadrage-val"><span>Durant la <strong>2e année</strong> de BTS SIO SISR, en deux parties successives</span></div>
+          </div>
+          <div class="cadrage-row">
+            <div class="cadrage-key"><i aria-hidden="true" class="bi bi-question-circle-fill"></i><span>Pourquoi</span></div>
+            <div class="cadrage-val"><span>Obtenir un déploiement <strong>reproductible</strong> : l'environnement se recrée entièrement à partir du dépôt, sans installation manuelle des rôles</span></div>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- PLANNING -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-arrow-repeat"></i> Étapes et livrables</h3></summary>
+        <div class="sprint-timeline sprint-timeline-5">
+          <div class="sprint-card">
+            <p class="sprint-card-num">Étape 1</p>
+            <p class="sprint-card-title">Socle Vagrant</p>
+            <p class="sprint-card-desc">3 VM, réseau privé, paramètres WinRM</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> Vagrantfile</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Étape 2</p>
+            <p class="sprint-card-title">Contrôleur de domaine</p>
+            <p class="sprint-card-desc">AD DS, DNS, DHCP, OUs, comptes, GPO</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> setup-domain.ps1</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Étape 3</p>
+            <p class="sprint-card-title">Serveur de fichiers</p>
+            <p class="sprint-card-desc">Partage, quotas FSRM, WSUS, WDS</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> setup-fileserver.ps1</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Étape 4</p>
+            <p class="sprint-card-title">Poste client</p>
+            <p class="sprint-card-desc">IP, DNS, attente du DC, jonction au domaine</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> setup-client.ps1</span>
+          </div>
+          <div class="sprint-card">
+            <p class="sprint-card-num">Étape 5</p>
+            <p class="sprint-card-title">Documentation</p>
+            <p class="sprint-card-desc">Architecture, procédure en deux temps, choix techniques</p>
+            <span class="sprint-tests"><i aria-hidden="true" class="bi bi-check-circle-fill"></i> README.md</span>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- DIFFICULTÉS -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-tools"></i> Difficultés rencontrées et solutions</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-row-2 archi-header">
+            <span>Difficulté</span><span>Solution</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>La promotion du contrôleur de domaine redémarre la VM et Vagrant affiche une erreur</span><span>Procédure en deux temps : <code>vagrant up</code>, attente d'environ 3 minutes, puis <code>vagrant provision</code></span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Blocages réseau pendant le provisionnement WinRM</span><span>Transport WinRM <code>negotiate</code>, délai de démarrage de 1800 s et 30 tentatives espacées de 10 s</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Pas de second disque dans les boxes Vagrant</span><span>WSUS et MDT placés sur le disque système (<code>C:\WSUS</code>, <code>C:\MDT</code>)</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Serveur de fichiers et client démarrés avant que le contrôleur de domaine soit prêt</span><span>Boucle d'attente (<code>Test-Connection</code>) avant la jonction au domaine</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Risque de configurer la carte NAT de Vagrant au lieu du réseau privé</span><span>Sélection de la dernière carte active pour appliquer l'IP fixe</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>ADK et MDT trop volumineux pour un téléchargement automatique</span><span>Le script prépare WDS et <code>C:\MDT</code> ; ADK et MDT sont installés à la main ensuite</span>
+          </div>
+        </div>
+      </details>
+
+      <div class="modal-divider"></div>
+
+      <!-- RISQUES -->
+      <details class="modal-section">
+        <summary><h3><i aria-hidden="true" class="bi bi-exclamation-triangle"></i> Risques identifiés et recommandations</h3></summary>
+        <div class="archi-table">
+          <div class="archi-row archi-row-2 archi-header">
+            <span>Risque</span><span>Recommandation</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Mot de passe de laboratoire écrit en clair dans les scripts</span><span>Le sortir du dépôt (variable d'environnement ou fichier non versionné) et ne jamais le reproduire en production</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Mémoire de l'hôte : environ 16 Go conseillés pour les 3 VM</span><span>Démarrer les machines par étapes et fermer les autres applications pendant le déploiement</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Dépendance à l'ordre de démarrage : le contrôleur de domaine doit être prêt en premier</span><span>Garder les boucles d'attente dans les scripts et vérifier le domaine avant de relancer le provisionnement</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Étape MDT manuelle, non reproductible automatiquement</span><span>Documenter la procédure ADK/MDT ou fournir les installeurs en local</span>
+          </div>
+          <div class="archi-row archi-row-2">
+            <span>Seul le modèle de quota Élève est appliqué automatiquement aux répertoires personnels</span><span>Associer les modèles Admin et Prof à leurs dossiers pour obtenir 10, 5 et 1 Go selon le profil</span>
+          </div>
+        </div>
+      </details>
 
     </div>
   </div>
@@ -2873,6 +3156,26 @@
     document.body.style.overflow = '';
   }
 
+  // MODALE N°5 ANNUAIRE CENTRALISÉ DETAILS
+  function openAdTpModal() {
+    document.getElementById('modalAdTp').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeAdTpModal() {
+    document.getElementById('modalAdTp').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // MODALE N°5 ANNUAIRE CENTRALISÉ GESTION DE PROJET
+  function openAdTpGestion() {
+    document.getElementById('modalAdTpGestion').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeAdTpGestion() {
+    document.getElementById('modalAdTpGestion').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   // MODALE RP01 ACTIVE DIRECTORY DETAILS
   function openRp01Modal() {
     document.getElementById('modalRp01').classList.add('open');
@@ -2932,7 +3235,7 @@
   }
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { closeModal(); closeSyntheseModal(); closeGlpiModal(); closeGlpiGestion(); closeCinezoneModal(); closeClasscordModal(); closeClasscordGestion(); closeRp01Modal(); closeRp01Gestion(); closeRp02Modal(); closeRp02Gestion(); closeElevenModal(); closeElevenGestion(); }
+    if (e.key === 'Escape') { closeModal(); closeSyntheseModal(); closeGlpiModal(); closeGlpiGestion(); closeCinezoneModal(); closeClasscordModal(); closeClasscordGestion(); closeAdTpModal(); closeAdTpGestion(); closeRp01Modal(); closeRp01Gestion(); closeRp02Modal(); closeRp02Gestion(); closeElevenModal(); closeElevenGestion(); }
   });
 
     function openSyntheseModal(title, compsStr, pdfUrl) {

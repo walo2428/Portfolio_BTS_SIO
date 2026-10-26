@@ -435,6 +435,7 @@ footer a:hover { color: var(--orange); }
 .project-cover i { font-size: 3rem; opacity: 0.95; filter: drop-shadow(0 6px 14px rgba(0,0,0,0.35)); }
 .project-cover span { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.35; position: relative; z-index: 1; }
 .cover-ad  { background: linear-gradient(135deg, #1e3a8a, #0f172a 85%); }
+.cover-iac { background: linear-gradient(135deg, #5b21b6, #0f766e 55%, #0f172a 100%); }
 .cover-lgp { background: linear-gradient(135deg, #7c2d12, #0f172a 85%); }
 .cover-net { background: linear-gradient(135deg, #065f46, #0f172a 85%); }
 .cover-web  { background: linear-gradient(135deg, #581c87, #0f172a 85%); }
